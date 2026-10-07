@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ISTQB Foundational Level — Chapter 1 Recap</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 1 Recap &nbsp;·&nbsp;
+  <a href="../lessons/0001-1.1-what-is-testing.html">Back to lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a> &nbsp;·&nbsp;
+  <a href="../exams/chapter-1-exam.html">Chapter 1 Exam ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 1 Recap — before you sit the exam</h1>
+<p class="subtitle">Your own notes, in your own words, next to a short explanation — plus every quiz
+question you got wrong, section by section. Built from your five raw note files, the
+<code>lesson-analysis</code> write-ups, and the five formal learning records. Read the "Patterns to watch
+for" box at the bottom last, right before you open the exam.</p>
+
+<div class="callout">
+  <strong>How to use this page:</strong> the left column of each table is your own phrasing, lightly
+  cleaned up (no Obsidian <code>==highlight==</code> markup) but not reworded. The right column is the
+  explanation. The "Where this tripped you up" cards show your actual wrong pick (✗), the correct answer
+  (✓), and why — no new material, just the reasoning already worked out in your lesson-analysis notes,
+  collected in one place.
+</div>
+
+<h2 id="s1-1">1.1 — What is Testing?</h2>
+<div class="callout">
+  <strong>Error mode here:</strong> term-swap. Both misses on this section picked an option that swapped in
+  the wrong <em>partner</em> for a familiar word (verify↔validate, defect↔failure) — not a missing
+  definition.
+</div>
+
+<table class="recap-table">
+<tr><th>Your notes</th><th>Explanation</th></tr>
+<tr>
+  <td>"Software testing is a set of activities to <strong>discover defects</strong> and <strong>evaluate
+  the quality</strong> of software work products." While software is under testing it's called the
+  <strong>test object</strong>.</td>
+  <td>Your own definition, and it's accurate. Testing isn't one activity — it covers finding defects
+  (directly via static review, or indirectly by causing a failure during dynamic testing) and evaluating
+  quality, on whatever work product is currently "the test object."</td>
+</tr>
+<tr>
+  <td>Testing is not only execution — it includes planning, analysis, design, implementation, execution,
+  completion, and must be aligned with the SDLC. Testing is not only verification, but validation as well.
+  <strong>Verification</strong> — static — testing against requirements. <strong>Validation</strong> —
+  dynamic — making sure the app fulfills business/client needs and expectations.</td>
+  <td>This is the exact pair your two §1.1 misses swapped. Verification asks "does it match the
+  <em>documented, specified</em> requirement?" Validation asks "does it meet the <em>actual</em>
+  stakeholder need, in the real operating environment?" Whenever an option pairs "verifying" with something
+  that sounds like a stakeholder-need check (or vice versa), that's the trap — check which noun the verb is
+  actually paired with, not just whether the sentence sounds plausible.</td>
+</tr>
+<tr>
+  <td>Testing can be static (no execution — reviews, static analysis) or dynamic (executing the software).
+  It is not purely technical either — it needs planning, managing, estimating, monitoring, and
+  controlling.</td>
+  <td>Static = anything but running the code or app (design, requirements, SRS, etc.). Dynamic = actually
+  running the app. Both are "testing" — static testing just never triggers a failure, only finds defects
+  directly.</td>
+</tr>
+<tr>
+  <td>Testing vs. debugging: dynamic testing triggers/causes failures caused by defects; static testing
+  finds/identifies defects directly (can't cause a failure). Debugging: finds cause → analyzes → eliminates
+  the defect → confirmation test by QA → regression by QA. "Failure can not be fixed, only defect." Static
+  testing "just removes it, nothing to repro, or confirm test."</td>
+  <td>This is the second swap: a <em>failure</em> is a past event (the system already misbehaved) — you
+  can't "fix" an event, only prevent it recurring. What debugging fixes is the <em>defect</em> — the flaw
+  sitting in the artifact that caused the failure. "Debugging fixes failures" is the exact wrong phrasing to
+  watch for.</td>
+</tr>
+</table>
+
+<div class="miss">
+  <div class="miss-q">Exam C · Q1 — Which of the following is a typical test objective?</div>
+  <div class="miss-wrong">✗ You picked: "Validating that documented requirements are met"</div>
+  <div class="miss-right">✓ Correct: "Causing failures and identifying defects" — probably the most common objective of dynamic testing.</div>
+  <div class="miss-why">Why the trap worked: the option pairs "validating" with "documented requirements" — but validating checks stakeholder needs in the operational environment, not documented specs. That's verification's job. The option doesn't match any of the syllabus's 9 listed objectives at all; it's a manufactured near-miss built from the swapped term.</div>
+</div>
+
+<div class="miss">
+  <div class="miss-q">Exam C · Q2 — Which of the following statements BEST describes the difference between testing and debugging?</div>
+  <div class="miss-wrong">✗ You picked: "Testing causes failures while debugging fixes failures"</div>
+  <div class="miss-right">✓ Correct: "Testing determines that defects exist while debugging removes defects"</div>
+  <div class="miss-why">Dynamic testing genuinely does cause failures — that half is right. But "debugging fixes failures" is the swap: a failure is an event that already happened; debugging locates and fixes the <em>defect</em> that caused it. "Fixing a failure" isn't a coherent action — that's the tell.</div>
+</div>
+
+<h2 id="s1-2">1.2 — Why is Testing Necessary?</h2>
+<div class="callout">
+  <strong>Error mode here:</strong> "failure is production-only." Both misses assumed a failure only counts
+  if it happened in production and was noticed. Neither is true — see the
+  <a href="../../../ISTQB-PREPS/lesson-analysis/1.2-error-defect-failure-chain.md">full deep-dive</a> for
+  both cases worked through link by link.
+</div>
+
+<table class="recap-table">
+<tr><th>Your notes</th><th>Explanation</th></tr>
+<tr>
+  <td>Testing is a quality control that helps achieve test objectives within scope, time, quality, and
+  budget constraints. Contributions to success: detecting defects cost-effectively (early, before release —
+  debugging is a non-testing activity), directly evaluating quality (static/dynamic, any SDLC stage),
+  indirect user representation (cheaper than an actual user).</td>
+  <td>Testing is one of several things funded by, and reporting to, stakeholders — it doesn't stand alone.
+  Any stakeholder can be part of the testing process, not just dedicated testers.</td>
+</tr>
+<tr>
+  <td>Testing vs. QA table: Testing = form of quality control, product-oriented, corrective, results used to
+  fix defects. QA = about the <em>process</em> that produces the product ("if a good process is followed
+  correctly, it will generate a good product"), process-oriented, preventive, results used as feedback on
+  process performance, "responsibility of everyone on the project :D".</td>
+  <td>This distinction (product vs. process, corrective vs. preventive) is the one the syllabus tests
+  directly when a question claims "QA and testing are the same thing" or "QA is just what we call the test
+  department" — both wrong for the same reason: they collapse two genuinely different disciplines.</td>
+</tr>
+<tr>
+  <td>Root Cause → Error/Mistake → Defect/Bug/Fault → Failure. Root cause = why the mistake happened, found
+  via root cause analysis, usually done <em>after</em> a failure or defect is identified. Error = made by a
+  human (time pressure, complexity, tiredness, lack of training). Defect = the issue living in any product
+  artifact (docs, code, any work product), produced by the error. Failure = the defect gets executed and the
+  system does something wrong — "not every defect causes a failure."</td>
+  <td>This chain, stated exactly as you have it, is correct — the mistake wasn't here. It was in applying
+  the word "failure" only to production, see below.</td>
+</tr>
+<tr>
+  <td>"Failure happens in any env, during any dynamic testing, even if no-one noticed it — it's still a
+  failure."</td>
+  <td>You wrote the correct rule <em>before</em> the quiz tripped you up on it. A failure is any event where
+  an executed defect makes the system misbehave — system test, UAT, or production, all count equally. "No
+  one noticed" describes detection, not existence.</td>
+</tr>
+</table>
+
+<div class="miss">
+  <div class="miss-q">Exam A · A3 — phone-ringing / incorrectly coded upper bound, found during system testing.</div>
+  <div class="miss-wrong">✗ First picks: "An error" and "A failure" (both wrong before landing correct)</div>
+  <div class="miss-right">✓ Correct: "A defect" — the incorrectly coded upper bound itself.</div>
+  <div class="miss-why">Your own question at the time: "since the tester was doing system testing, why was the code 'not executed'? Or does failure only happen on prod?" It <em>was</em> executed — the tester ran the field and it accepted invalid input, which is itself a failure, during system test. But the question doesn't ask whether a failure occurred — it asks you to name the flaw in the code, which is the defect. Both facts are true at once: the code has been a defect since it was written, and a failure happened the moment the tester exercised it.</div>
+</div>
+
+<div class="miss">
+  <div class="miss-q">Exam D · Q2 — tired designer / time-pressured programmer / disabled-user complaints / unnoticed bonus miscalculation.</div>
+  <div class="miss-wrong">✗ First picks: "The miscalculation of bonuses is a defect that occasionally occurs" and "The fine received for failing to address some disabled users is a failure"</div>
+  <div class="miss-right">✓ Correct: "The programmer working under severe time pressure is a root cause"</div>
+  <div class="miss-why">This scenario runs two independent root-cause→error→defect→failure chains in parallel (the tired designer's UI flaw, and the time-pressured programmer's missing exception handling) on purpose — it's easy to blend them into one. The correct answer asserts exactly one link in one chain: time pressure as the root cause of the programmer's error. "No one notices" the bonus failure is the distractor — it tempts you to conclude nothing happened there, when it just means it happened undetected.</div>
+</div>
+
+<h2 id="s1-3">1.3 — Testing Principles</h2>
+<div class="callout">
+  <strong>Error mode here:</strong> shared-keyword swap — the same term-swap reflex as §1.1, but this time
+  two <em>different principles</em> share the phrase "absence of defects," and the trap is matching on the
+  words instead of the concept.
+</div>
+
+<table class="recap-table">
+<tr><th>Your notes</th><th>Explanation</th></tr>
+<tr>
+  <td>"Learn the name, not just the idea — questions frequently ask 'which principle is this?'"</td>
+  <td>Correct instinct, and exactly what the shared-keyword miss below shows: knowing the idea wasn't
+  enough when two principles' names/descriptions overlap in wording.</td>
+</tr>
+<tr>
+  <td>Testing shows the <strong>presence, not the absence</strong>, of defects — testers can only find
+  defects, never prove there are no more; "reduce probability." If no defects are found we still can't
+  prove correctness.</td>
+  <td>This is Principle #1: what testing <em>can prove</em> — that defects exist. It can never prove none
+  remain.</td>
+</tr>
+<tr>
+  <td>Exhaustive testing is impossible — testing all combinations makes no sense in a real project; use
+  techniques, prioritization, risk-based approaches. Defects cluster together (Pareto: 20% of functionality,
+  80% of issues) — use risk-based testing. Tests wear out (pesticide principle) — repeated tests get less
+  effective at finding <em>new</em> defects; modify, write new tests, use new test data; repetition is still
+  valuable for automated regression. Testing is context dependent — different context/projects need
+  different approaches, no silver bullet.</td>
+  <td>These four were not a source of any wrong answer — your notes on them are accurate as written.</td>
+</tr>
+<tr>
+  <td><strong>Absence-of-defects fallacy</strong> — verification alone is not enough, validation matters
+  too. Users still might not get their expectations/needs met; business might not reach its goals. "Fixing
+  every defect against reqs still can show some failures."</td>
+  <td>This is Principle #7 — a <em>different</em> principle from #1 above, even though both descriptions
+  contain the phrase "absence of defects." #1 is about what testing can prove (never absence). #7 is about
+  what fixing every known defect <em>doesn't guarantee</em> — the spec itself might not reflect what
+  users/business actually need, so a "defect-free against spec" product can still fail people. The fix for
+  #7 is validation (e.g. end-user acceptance testing), not more verification.</td>
+</tr>
+</table>
+
+<div class="miss">
+  <div class="miss-q">Exam C · Q3 — "The 'absence-of-defects fallacy' is one of the principles of testing. Which of the following is an example of addressing this principle in practice?"</div>
+  <div class="miss-wrong">✗ Picks: "Explaining that it is not possible for testing to show the absence of defects" and "Ensuring that no implementation defects remain in the delivered system"</div>
+  <div class="miss-right">✓ Correct: "Supporting the end users to perform acceptance testing"</div>
+  <div class="miss-why">Both wrong picks describe Principle #1 ("testing shows the presence, not the absence, of defects") instead of the fallacy the question actually named (#7). The trap is lexical: #1's description contains the words "absence of defects," and #7 is <em>named</em> the absence-of-defects fallacy — two different principles sharing that phrase makes it easy to match on the words instead of the concept. Supporting end-user acceptance testing is a <em>validation</em> activity, and validation is the fallacy's antidote — fixing every known defect against spec (verification) doesn't guarantee the product meets real needs.</div>
+</div>
+
+<h2 id="s1-4">1.4 — Test Activities, Testware and Test Roles</h2>
+<div class="callout">
+  <strong>Error mode here:</strong> activity-boundary mix-up — not knowing which of Analysis / Design /
+  Implementation a task or technique belongs to, plus a one-off traceability assumption you caught and
+  self-corrected.
+</div>
+
+<table class="recap-table">
+<tr><th>Your notes</th><th>Explanation</th></tr>
+<tr>
+  <td>The test process has 7 activities (your own "STLC"): 1. Test Planning — define objectives, select
+  approach. 2. Test Monitoring &amp; Control — check progress vs. plan; take actions to meet objectives.
+  3. Test Analysis — analyze test basis to identify testable features, define/prioritize test conditions;
+  test techniques may be used here; evaluate test object/basis for defects and testability; "what to test?"
+  4. Test Design — create test cases/testware from conditions; identify coverage items; "how to test?"
+  5. Test Implementation — create/get testware for execution, organize procedures from cases, organize
+  suites from procedures, prioritize/schedule. 6. Test Execution — run tests, compare expected vs. actual,
+  log results, analyze anomalies. 7. Test Completion — archive testware, turn off environment, create
+  change requests, lessons learned, completion report.</td>
+  <td>This table is accurate and complete — it's the reference to come back to for "which activity does X
+  belong to" questions. The one gap wasn't in this table itself, it was applying it under pressure (see the
+  BVA/EP miss below): techniques get <em>applied</em> during analysis (identify conditions) and design
+  (turn them into cases) — implementation only organizes/schedules testware that analysis and design already
+  produced, it doesn't apply techniques.</td>
+</tr>
+<tr>
+  <td>Effective monitoring and control needs traceability throughout the test process — the ability to
+  establish a relationship between test basis, testware, test results, and defects. Supports coverage
+  evaluation (trace test case → requirement; test results → risk evaluations). Also determines change
+  impact, facilitates audits, supports IT governance, clarifies progress/completion reports.</td>
+  <td>Traceability's benefits are real but not automatic — they only exist for the specific things you
+  actually traced. "We have traceability" doesn't imply "so we automatically know residual risk," unless
+  test cases were deliberately traced back to risks in the first place. That assumption is what tripped the
+  Q6 traceability pick below, before you self-corrected.</td>
+</tr>
+<tr>
+  <td>Two roles: Test Management (process, team, leadership — planning, monitoring, control, completion; in
+  Agile some tasks may be handled by the team, some by an external manager) and Testing (engineering/
+  technical side — analysis, design, implementation, execution; one person can hold both roles at the same
+  time).</td>
+  <td>Not a source of any miss — your Q7/Q8 answers on this in the raw notes were both correct on the first
+  pick.</td>
+</tr>
+</table>
+
+<div class="miss">
+  <div class="miss-q">Exam C · Q4 — "Which of the following test activities are MOST likely to involve the application of boundary value analysis and equivalence partitioning? (Select TWO options)"</div>
+  <div class="miss-wrong">✗ Picked: a) Test implementation, b) Test design</div>
+  <div class="miss-right">✓ Correct: b) Test design, e) Test analysis</div>
+  <div class="miss-why">Test techniques like BVA and equivalence partitioning are used to identify test conditions during test analysis, and to create test cases from them during test design. Implementation organizes/schedules testware that already exists — it doesn't apply techniques. Your own note describes test analysis correctly elsewhere ("analyze test basis to identify testable features... define/prioritize test conditions") — this was about connecting the technique-application step back to the activity that owns it, not a missing definition.</div>
+</div>
+
+<div class="miss">
+  <div class="miss-q">Exam A · A5 — "Which of the following is the BEST example of how traceability supports testing?" (self-corrected during the quiz)</div>
+  <div class="miss-wrong">✗ First checked: "Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk"</div>
+  <div class="miss-right">✓ Correct: "Performing the impact analysis of a change will help selecting the right test cases for regression testing"</div>
+  <div class="miss-why">Your first pick assumed traceability inherently supplies residual-risk information — it only does if test cases were deliberately traced back to risks in the first place, which isn't guaranteed by "having traceability" alone. Impact analysis of a change selecting the right regression test cases is something traceability structurally does guarantee.</div>
+</div>
+
+<h2 id="s1-5">1.5 — Essential Skills and Good Practices in Testing</h2>
+<div class="callout">
+  <strong>Error mode here:</strong> "shared X implies less individual X" — reading collective/whole-team
+  responsibility as <em>subtracting</em> individual accountability, when it only adds a layer on top.
+</div>
+
+<table class="recap-table">
+<tr><th>Your notes</th><th>Explanation</th></tr>
+<tr>
+  <td>Skill = ability to do something, through study and practice: testing knowledge (e.g. using techniques
+  efficiently), thoroughness/carefulness/curiosity/attention to detail/being methodical, good
+  communication/active listening/team player, analytical &amp; critical thinking/creativity, technical
+  knowledge (tools), domain knowledge (understanding stakeholders/end users).</td>
+  <td>Matches the syllabus's generic skill list — not a source of any miss (Q1 was correct on the first
+  pick).</td>
+</tr>
+<tr>
+  <td>Whole team approach: cross-functional team, any team member with suitable knowledge/skills can perform
+  any task, <strong>"Quality is everyone's responsibility :D"</strong>, increased communication level,
+  testers can help devs/BAs/stakeholders and vice versa.</td>
+  <td>You wrote the correct fact ("quality is everyone's responsibility") before the quiz — the miss below
+  shows the fact getting inverted under question pressure, not forgotten.</td>
+</tr>
+<tr>
+  <td>Independence of testing makes testing more efficient — author's and tester's cognitive biases differ,
+  context differs, fresh view. Spectrum: Author (no independence) → Peer, same team (some) → Tester, same
+  org (high) → Outside the org (very high). Most projects use multiple levels at once. Pros: different
+  background finds different failures/defects, another layer of requirements/change-request scrutiny. Cons:
+  isolation between teams/communications, developers may feel less responsible for quality, independent
+  testers can be blamed as a release-delay bottleneck.</td>
+  <td>Not a source of any miss — Q4/Q5 on independence were both correct on the first pick.</td>
+</tr>
+</table>
+
+<div class="miss">
+  <div class="miss-q">Exam D · Q7 — "Which of the following is an advantage of the whole team approach?"</div>
+  <div class="miss-wrong">✗ Picked: "Decreased individual accountability for quality"</div>
+  <div class="miss-right">✓ Correct: "Improved communication between team members"</div>
+  <div class="miss-why">The tell is in your own note a few lines above the quiz: "Quality is everyone's responsibility :D" — you'd already written down that responsibility <em>broadens</em>, then at the question inverted that into "so no one person is fully on the hook," which is the opposite of what the syllabus says. Collective ownership adds a layer; it doesn't subtract individual accountability — each person remains just as accountable as before, there's just more of it to go around.</div>
+</div>
+
+<h2>Patterns to watch for going into the exam</h2>
+<div class="callout">
+  <strong>1. Term-swap (§1.1, §1.3):</strong> when an option pairs a familiar word with the wrong partner
+  (verify↔validate, defect↔failure) — or two concepts share a keyword ("absence of defects") — check which
+  <em>exact</em> concept the option is naming, not whether the sentence sounds plausible.
+</div>
+<div class="callout">
+  <strong>2. Failure is not production-only (§1.2):</strong> if a scenario says something "wasn't noticed"
+  or happened somewhere that doesn't feel like production, don't read that as "no failure." Check whether a
+  defect was actually <em>exercised</em>. And if a scenario bundles more than one person's mistake into one
+  story, expect the question to test a single chain link, not the whole scenario.
+</div>
+<div class="callout">
+  <strong>3. Activity boundary (§1.4):</strong> applying a technique (BVA, EP, etc.) belongs to analysis
+  (identify conditions) and design (turn them into cases) — never implementation, which only organizes and
+  schedules testware that already exists.
+</div>
+<div class="callout">
+  <strong>4. Shared-X-implies-less-individual-X (§1.5):</strong> "quality is everyone's responsibility"
+  means an <em>added</em> layer of accountability, not a diluted one. Watch for this inversion anywhere
+  collective/shared ownership framing shows up again in later chapters.
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Questions about anything on this page? Ask your teacher (the agent) — that's what
+  it's for. If an explanation still doesn't click, ask for it a different way rather than re-reading this
+  page.</div>
+  Sources: <code>ISTQB-PREPS/Chapter-1/*.md</code> (raw notes), <code>ISTQB-PREPS/lesson-analysis/Chapter
+  1.md</code> and <code>1.2-error-defect-failure-chain.md</code> (mistake analysis),
+  <code>learning-records/0001–0005</code> (this workspace). Next: <a href="../exams/chapter-1-exam.html">Chapter 1 Practice Exam</a> — now 34 questions, including two new drills built from the patterns above.
+</footer>
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+
+</div>
+</body>
+</html>
