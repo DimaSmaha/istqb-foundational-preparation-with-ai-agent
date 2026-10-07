@@ -1,0 +1,10 @@
+# Official ISTQB® source PDFs and their extracted text — copyrighted, never committed.
+cache/
+
+# Full sample-exam replicas you generate yourself (e.g. exams/0024-sample-exam-b.local.html) —
+# complete ISTQB® documents, for local study only.
+*.local.html
+
+# Local scratch output
+.workflow-artifacts/
+.playwright-cli/
