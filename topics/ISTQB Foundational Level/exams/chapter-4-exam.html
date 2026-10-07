@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 4 Practice Exam — Test Analysis and Design</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 4 Practice Exam &nbsp;·&nbsp;
+  <a href="../lessons/0011-4.1-test-techniques-overview.html">← Back to Chapter 4 lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 4 Practice Exam — Test Analysis and Design</h1>
+<p class="subtitle">A submit-at-end practice exam covering all of Chapter 4 (§4.1–§4.5): the black-box,
+white-box, and experience-based test technique classification, the four black-box techniques (equivalence
+partitioning, boundary value analysis, decision table testing, state transition testing), statement and
+branch testing, error guessing, exploratory testing, checklist-based testing, and collaboration-based
+approaches (user stories, acceptance criteria, ATDD). 20 questions, real CTFL passing mark of 65%. Nothing
+is graded or revealed question-by-question — answer everything, then click Submit Exam to grade the whole
+thing at once.</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/20</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+
+<nav class="topic-index">
+  <a href="#s4-1">4.1 Test Techniques Overview (1)</a>
+  <a href="#s4-2">4.2 Black-Box Test Techniques (8)</a>
+  <a href="#s4-3">4.3 White-Box Test Techniques (4)</a>
+  <a href="#s4-4">4.4 Experience-based Test Techniques (3)</a>
+  <a href="#s4-5">4.5 Collaboration-based Test Approaches (4)</a>
+</nav>
+
+<h2 id="s4-1">4.1 Test Techniques Overview</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">You perform system testing of an e-commerce web application and are provided with the following requirement:
+REQ 05-017. If the total cost of purchases exceeds $100, the customer gets a 5% discount on subsequent purchases. Otherwise, the customer does not receive a discount.
+Which test techniques will be MOST helpful in designing test cases based on this requirement?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The document doesn't refer to the test object's internal structure — it specifies desired behavior, so white-box test techniques won't be helpful here.">White-box test techniques</button></li>
+    <li><button data-correct="true" data-why="The document is a requirement specifying desired behavior — exactly the test basis black-box test techniques use. Wording like &quot;exceeds $100&quot; also signals equivalence-partition boundaries suited to Boundary Value Analysis or Decision Table Testing.">Black-box test techniques</button></li>
+    <li><button data-correct="false" data-why="Experience-based techniques could be used, but black-box is more suitable here — this is a precise business rule with clear boundaries, exactly what black-box techniques like BVA are built for.">Experience-based test techniques</button></li>
+    <li><button data-correct="false" data-why="&quot;Risk-based test techniques&quot; is not a recognized category of test technique in this syllabus.">Risk-based test techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s4-2">4.2 Black-Box Test Techniques</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q20 · FL-4.2.1 · K3</div>
+  <div class="q">You are testing a simplified apartment search form which has only two search criteria:
+• floor (with three possible options: ground floor; first floor; second or higher floor)
+• garden type (with three possible options: no garden; small garden; large garden)
+
+Each of the apartment on the ground floor has a garden, apartments on higher floors don't. The form has a built-in validation mechanism that will not allow you to use the search criteria which violate this rule.
+
+Each test has two input values: floor and garden type. You want to apply equivalence partitioning (EP) to cover each floor and each garden type in your tests.
+
+What is the MINIMAL number of test cases to achieve 100% EP coverage for valid partitions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Three test cases can't cover both &quot;small garden&quot; and &quot;large garden&quot; (which only pair with ground floor) plus both remaining floor partitions.">3</button></li>
+    <li><button data-correct="true" data-why="This is Each Choice coverage. &quot;Small garden&quot; and &quot;large garden&quot; can only go with &quot;ground floor,&quot; so two test cases with ground floor cover those two garden partitions. Two more test cases cover the remaining two floor partitions (first floor, second-or-higher), each with &quot;no garden&quot; — which also covers that garden partition. Total: TC1 (ground floor, small garden), TC2 (ground floor, large garden), TC3 (first floor, no garden), TC4 (second-or-higher floor, no garden) — 4 test cases.">4</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 5 is more than the minimum required.">5</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 6 is more than the minimum required.">6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,e" data-why="The equivalence partitions here are {…,99,100} → error, {0–17} → student discount, {18–64} → no discount, {65,…} → pensioner discount, based on D = CY − BY. The two existing test cases (D=30 → no discount, D=−1 → error) already cover the &quot;no discount&quot; and &quot;error&quot; partitions. Option b gives D=65 (pensioner discount, uncovered). Option e gives D=0 (student discount, uncovered). Option a gives D=64 (no discount, already covered). Option c gives D=−65 (error, already covered). Option d gives D=18 (no discount, already covered).">
+  <div class="exam-tag">Exam D · Q20 · FL-4.2.1 · K3 · select TWO</div>
+  <div class="q">The system for selling cinema tickets calculates the discount type based on the client's birth year (BY) and on the current year (CY) as follows:
+Let D be the difference between CY and BY, that is, D = CY – BY
+• If D &lt; 0 then print the error message "birth year cannot be greater than current year"
+• If 0 ≤ D &lt; 18 then apply the student discount
+• If 18 ≤ D &lt; 65 then apply no discount
+• If D ≥ 65 then apply the pensioner discount
+
+Your test suite already contains two test cases:
+• BY = 1990, CY = 2020, expected result: no discount
+• BY = 2030, CY = 2029, expected result: print the error message
+
+Which of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> BY = 2001, CY = 2065</label></li>
+    <li><label><input type="checkbox" value="b"> BY = 1900, CY = 1965</label></li>
+    <li><label><input type="checkbox" value="c"> BY = 1965, CY = 1900</label></li>
+    <li><label><input type="checkbox" value="d"> BY = 2011, CY = 2029</label></li>
+    <li><label><input type="checkbox" value="e"> BY = 2000, CY = 2000</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A15 · FL-4.2.2 · K3</div>
+  <div class="q">A wine storage system uses a control device that measures the wine cell temperature T (measured in °C, rounded to the nearest degree) and alarms the user if it deviates from the optimal value of 12, according to the following rules:
+• if T = 12, the system says, "optimal temperature"
+• if T &lt; 12, the system says, "temperature is too low!"
+• if T &gt; 12, the system says, "temperature is too high!"
+
+You want to use the 3-point boundary value analysis (BVA) to verify the behavior of the control device. A test input is a temperature in °C provided by the device.
+
+What is the MINIMAL set of test inputs that achieves 100% of the desired coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This covers only the boundary values themselves (11, 12, 13), not their neighbors — that's 2-value coverage, not 3-value.">11, 12, 13</button></li>
+    <li><button data-correct="false" data-why="This skips 11 and 13, the boundary values themselves — 3-value BVA requires the boundary AND both its neighbors.">10, 12, 14</button></li>
+    <li><button data-correct="true" data-why="There are three equivalence partitions: {…,10,11}, {12}, {13,14,…}. The boundary values are 11, 12, and 13. In 3-value BVA, each boundary needs itself and both neighbors tested: for 11 → 10,11,12; for 12 → 11,12,13; for 13 → 12,13,14. Altogether: 10, 11, 12, 13, 14.">10, 11, 12, 13, 14</button></li>
+    <li><button data-correct="false" data-why="This omits 12 itself, one of the three boundary values that must be directly tested.">10, 11, 13, 14</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q21 · FL-4.2.2 · K3</div>
+  <div class="q">You are testing a temperature control system for a horticultural cold storage facility. The system receives the temperature (in full degrees Celsius) as the input. If the temperature is between 0 and 2 degrees inclusive, the system displays the message "temperature OK". For lower temperatures, the system displays the message "temperature too low" and for higher temperatures it displays the message "temperature too high".
+
+Using two-value boundary value analysis, which of the following sets of test inputs provides the highest level of boundary value coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This only covers 2 of the 4 boundary values (-1 and 3), missing 0 and 2.">–1, 3</button></li>
+    <li><button data-correct="false" data-why="This only covers 2 of the 4 boundary values (0 and 2), missing -1 and 3.">0, 2</button></li>
+    <li><button data-correct="true" data-why="There are three partitions: {…,-2,-1}, {0,1,2}, {3,4,…}. The boundary values are -1, 0, 2, and 3 — this option covers all four.">–1, 0, 2, 3</button></li>
+    <li><button data-correct="false" data-why="-2 and 4 aren't the closest boundary neighbors (-1 and 3 are) — this set doesn't cover the actual boundary values as tightly as -1, 0, 2, 3.">–2, 0, 2, 4</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">You are designing test cases based on the following decision table.
+| | R1 | R2 | R3 | R4 | R5 | R6 | R7 |
+|---|---|---|---|---|---|---|---|
+| C1: Age | 0-18 | 19-65 | 19-65 | &gt;65 | 0-18 | 19-65 | &gt;65 |
+| C2: Experience | - | 0-4 | &gt;4 | - | - | - | - |
+| C3: Registered? | NO | NO | NO | NO | YES | YES | YES |
+| Category (action) | A | A | B | B | B | D | C |
+
+So far you have designed the following test cases:
+• TC1: 19-year-old, unregistered man with no experience → category A
+• TC2: 65-year-old, unregistered woman with 5 years of experience → category B
+• TC3: 66-year-old, registered man with no experience → category C
+• TC4: 65-year-old, registered woman with 4 years of experience → category D
+
+Which of the following test cases, when added to the existing set of test cases, will increase the decision table coverage?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="TC1–TC4 cover rules R2, R3, R7, and R6 respectively. The conditions &quot;66-year-old, unregistered, no experience&quot; match rule R4, which isn't yet covered — so this test case increases decision table coverage.">66-year-old, unregistered man with no experience; expected result: category B</button></li>
+    <li><button data-correct="false" data-why="&quot;55-year-old, unregistered, 2 years of experience&quot; matches rule R2, already covered by TC1 — this wouldn't increase coverage.">55-year-old, unregistered woman with 2 years of experience; expected result: category A</button></li>
+    <li><button data-correct="false" data-why="&quot;19-year-old, registered, 5 years of experience&quot; matches rule R6, already covered by TC4 — this wouldn't increase coverage.">19-year-old, registered woman with 5 years of experience; expected result: category D</button></li>
+    <li><button data-correct="false" data-why="The existing test cases only cover 4 of the 7 columns (R2, R3, R6, R7) — R1, R4, and R5 remain uncovered, so additional test cases CAN increase coverage.">No additional test case can increase the already achieved decision table coverage</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">You are working on a project to develop a system to analyze driving test results. You have been asked to design test cases based on the following decision table.
+
+|                                     | R1 | R2 | R3 |
+|-------------------------------------|----|----|----|
+| C1: First attempt at the exam?      | -  | -  | F  |
+| C2: Theoretical exam passed?        | T  | F  | -  |
+| C3: Practical exam passed?          | T  | -  | F  |
+| Issue a driving license?            | X  |    |    |
+| Request additional driving lessons? |    |    | X  |
+| Request to take the exam again?     |    | X  |    |
+
+What test data will show that there are contradictory rules in the decision table?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="(T, T, F) doesn't match any rule — that's an example of omission, not contradiction.">C1 = T, C2 = T, C3 = F</button></li>
+    <li><button data-correct="false" data-why="(T, F, T) matches only R2 — no contradiction.">C1 = T, C2 = F, C3 = T</button></li>
+    <li><button data-correct="false" data-why="Both (T,T,T) and (F,T,T) match only R1 — no contradiction.">C1 = T, C2 = T, C3 = T and C1 = F, C2 = T, C3 = T</button></li>
+    <li><button data-correct="true" data-why="(F, F, F) matches both R2 and R3, but they specify different actions — that's a genuine contradiction.">C1 = F, C2 = F, C3 = F</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q23 · FL-4.2.4 · K3</div>
+  <div class="q">You are applying state transition testing to the hotel room reservation system modeled by the following state transition table, with 4 states and 5 different events. Assume all test cases start in the 'Requesting' state.
+
+| State | Available | NotAvailable | ChangeRoom | Cancel | Pay |
+|---|---|---|---|---|---|
+| S1: Requesting | S2 | S3 | | | |
+| S2: Confirmed | | | S1 | S4 | S4 |
+| S3: Waiting list | S2 | | | S4 | |
+| S4: End | | | | | |
+
+Which of the following test cases, represented as sequences of events, achieves the highest valid transitions coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both &quot;NotAvailable&quot; events here correspond to the same S1→S3 transition, so this sequence covers only 4 of the 7 valid transitions.">NotAvailable, Available, ChangeRoom, NotAvailable, Cancel</button></li>
+    <li><button data-correct="true" data-why="This sequence's two &quot;Available&quot; events correspond to two DIFFERENT transitions (S1→S2, then S3→S2, since the state changes to Waiting list via NotAvailable/ChangeRoom in between) — so all five events cover 5 distinct transitions, the highest of the four options (5 of 7 valid transitions).">Available, ChangeRoom, NotAvailable, Available, Pay</button></li>
+    <li><button data-correct="false" data-why="Both &quot;Available&quot; events here are the same S1→S2 transition and both &quot;ChangeRoom&quot; events are the same S2→S1 transition, so this sequence covers only 3 of the 7 valid transitions.">Available, ChangeRoom, Available, ChangeRoom, NotAvailable</button></li>
+    <li><button data-correct="false" data-why="This isn't even a feasible test case — after &quot;Cancel&quot; the system reaches the End state, from which no further valid transitions (like ChangeRoom, Available, Pay) exist.">NotAvailable, Cancel, ChangeRoom, Available, Pay</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q23 · FL-4.2.4 · K3</div>
+  <div class="q">You are designing test cases based on the following state transition diagram:
+
+[State transition diagram: START --(Room request)--> REQUESTING; REQUESTING --(Available)--> CONFIRMED; REQUESTING --(Not available)--> WAITING LIST; WAITING LIST --(Available)--> CONFIRMED; WAITING LIST --(Cancel)--> END; CONFIRMED --(Pay)--> END]
+
+What is the MINIMUM number of test cases required to achieve 100% valid transitions coverage?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The transitions REQUESTING→CONFIRMED, WAITING LIST→CONFIRMED, and WAITING LIST→END can't all appear in one test case, so at least 3 are needed. Three sequences suffice: TC1: Room request, Available, Pay; TC2: Room request, Not available, Available, Pay; TC3: Room request, Not available, Cancel.">3</button></li>
+    <li><button data-correct="false" data-why="3, not 2, is the minimum — 2 test cases can't cover all the required transitions.">2</button></li>
+    <li><button data-correct="false" data-why="3, not 5, is the minimum needed.">5</button></li>
+    <li><button data-correct="false" data-why="3, not 6, is the minimum needed.">6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s4-3">4.3 White-Box Test Techniques</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q24 · FL-4.3.1 · K2</div>
+  <div class="q">Your test suite achieved 100% statement coverage. What is the consequence of this fact?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Since 100% statement coverage is achieved, every statement — including ones with defects — must have been executed and evaluated at least once.">Each instruction in the code that contains a defect has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Coverage depends on WHAT is tested, not how many test cases exist. One test case (x=0) for &quot;if (x==0) y=1&quot; achieves 100% statement coverage, but two different test cases (x=1, x=2) achieve only 50%.">Any test suite containing more test cases than your test suite will also achieve 100% statement coverage</button></li>
+    <li><button data-correct="false" data-why="A loop can create infinitely many possible paths through the code, so exhaustively executing every path is not possible.">Each path in the code has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Exhaustive testing of every input combination is impossible (testing principle #2) — for &quot;input x; print x&quot;, any single test achieves 100% statement coverage while covering just one input value.">Every combination of input values has been tested at least once</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q24 · FL-4.3.1 · K2</div>
+  <div class="q">Your test suite S for a program P achieves 100% statement coverage. It consists of three test cases, each of which achieves 50% statement coverage.
+
+Which of the following statements is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="A statement with a defect, when executed, doesn't necessarily cause a failure — e.g., x := y / z only fails when z equals 0.">Executing S will cause all possible failures in P</button></li>
+    <li><button data-correct="false" data-why="100% statement coverage does not guarantee 100% branch coverage. For example, x=0 on &quot;IF (x=0) THEN A; ENDIF&quot; achieves 100% statement coverage but doesn't cover the branch skipping A.">S achieves 100% branch coverage for P</button></li>
+    <li><button data-correct="true" data-why="100% statement coverage means, by definition, that each executable statement was executed at least once.">Every executable statement in P containing a defect has been run at least once during the execution of S</button></li>
+    <li><button data-correct="false" data-why="The removed test case may have uniquely covered statements the other two don't — so the remaining two together might NOT still achieve 100% statement coverage.">After removing one test case from S, the remaining two test cases will still achieve 100% statement coverage</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A16 · FL-4.3.2 · K2</div>
+  <div class="q">Which of the following statements about branch testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="If there is at least one (unconditional) branch to cover, at least one test case is still needed to execute it — coverage isn't achieved for free.">If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases</button></li>
+    <li><button data-correct="false" data-why="Covering unconditional branches doesn't automatically cover conditional branches too — those are separate coverage items.">If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved</button></li>
+    <li><button data-correct="false" data-why="The subsumption runs the other way: 100% branch coverage implies 100% statement coverage, not the reverse. An IF without an ELSE needs only one test for 100% statement coverage, but that achieves only 50% branch coverage.">If 100% statement coverage is achieved, then 100% branch coverage is also achieved</button></li>
+    <li><button data-correct="true" data-why="Each decision outcome corresponds to a conditional branch, so achieving 100% branch coverage means every decision outcome (true/false, each case, loop continue/exit) has been exercised.">If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q25 · FL-4.3.3 · K2</div>
+  <div class="q">Which of the following is NOT true for white-box testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS true — the fundamental strength of white-box techniques is that the entire software implementation is taken into account during testing.">During white-box testing the entire software implementation is considered</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box coverage measures provide an objective measure of coverage and help identify additional tests to increase it.">White-box coverage metrics can help identify additional tests to increase code coverage</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box test techniques can be used to perform reviews, which are a form of static testing.">White-box test techniques can be used in static testing</button></li>
+    <li><button data-correct="true" data-why="This is the one that is NOT true — it's actually the weakness of white-box testing. White-box techniques analyze the test object's existing structure, so they cannot detect a requirement that was never implemented at all (a defect of omission).">White-box testing can help identify gaps in requirements implementation</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s4-4">4.4 Experience-based Test Techniques</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q26 · FL-4.4.1 · K2</div>
+  <div class="q">Which of the following is NOT anticipated by the tester while applying error guessing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a developer misunderstanding a spec is a classic anticipated error.">The developer misunderstood the formula in the user story for calculating the interest</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a specific coding mistake (transposed exponent) is exactly the kind of anticipated defect.">The developer wrote "FA = A*(1+IR^N)" instead of "FA = A*(1+IR)^N" in the source code</button></li>
+    <li><button data-correct="true" data-why="Missing a seminar on new legislation is a potential ROOT CAUSE of a defect — but it's not itself an error, defect, or failure, and it's not the kind of thing error guessing (which anticipates errors/defects/failures directly) is built to anticipate.">The developer missed the seminar on new compound interest rate legislation</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — insufficient calculation accuracy is exactly the kind of anticipated failure, perhaps drawn from experience with similar systems.">The accuracy of the interest calculated by the system is not precise enough</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q27 · FL-4.4.2 · K2</div>
+  <div class="q">Which of the following is true about exploratory testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In exploratory testing, test cases are usually created DURING the session, alongside test analysis, implementation, and execution — not designed beforehand.">Test cases are designed before the exploratory testing session starts</button></li>
+    <li><button data-correct="false" data-why="In exploratory testing, tests are simultaneously designed, executed, and evaluated — the tester absolutely does perform test design.">The tester can perform test execution, but cannot perform test design</button></li>
+    <li><button data-correct="false" data-why="Exploratory testing results depend heavily on the individual tester's experience, so they aren't reliable predictors of the exact number of remaining defects, even though they can inform relative risk assessment.">Exploratory testing results are good predictors of the number of remaining defects</button></li>
+    <li><button data-correct="true" data-why="During exploratory testing, testers can use any test technique they find useful, including black-box techniques like equivalence partitioning — the syllabus explicitly says exploratory testing &quot;can incorporate the use of other test techniques.&quot;">During exploratory testing the tester may use black-box test techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A17 · FL-4.4.3 · K2</div>
+  <div class="q">You are testing a mobile application that allows customers to access and manage their bank accounts. You are running a test suite that involves evaluating each screen, and each field on each screen, against a general list of user interface best practices derived from a popular book on the topic that maximizes usability for such applications. Which of the following options BEST categorizes the test technique you are using?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The book is general guidance, not a formal requirements document, specification, or set of use cases/user stories/business processes — so this isn't specification-based (black-box) testing.">Black-box</button></li>
+    <li><button data-correct="false" data-why="You could loosely view the list as test charters, but it much more closely resembles a set of test conditions to systematically check off — which points to a different technique.">Exploratory</button></li>
+    <li><button data-correct="true" data-why="The list of user interface best practices is exactly a list of test conditions to be systematically checked — the defining trait of checklist-based testing.">Checklist-based</button></li>
+    <li><button data-correct="false" data-why="These tests aren't focused on anticipated failures — they're based on established knowledge of what matters for usability, which is checklist-based testing, not error guessing.">Error guessing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s4-5">4.5 Collaboration-based Test Approaches</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A18 · FL-4.5.1 · K2</div>
+  <div class="q">Which of the following BEST describe the collaborative approach to user story writing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Collaborative writing means ALL stakeholders create the story together to obtain a shared vision — it's not testers/developers drafting it for later acceptance by the business side.">User stories are created by testers and developers and then accepted by business representatives</button></li>
+    <li><button data-correct="true" data-why="Collaborative user story writing means that all stakeholders — business representatives, developers, and testers — create the user stories together, to obtain the shared vision the syllabus describes.">User stories are created by business representatives, developers, and testers together</button></li>
+    <li><button data-correct="false" data-why="This still isn't truly collaborative authorship — it has business representatives writing alone with dev/test only verifying afterward, rather than all three perspectives contributing from the start.">User stories are created by business representatives and verified by developers and testers</button></li>
+    <li><button data-correct="false" data-why="INVEST (independent, negotiable, valuable, estimable, small, testable) is the list of properties a good user story should have — it doesn't describe the collaborative-authorship process itself.">User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q28 · FL-4.5.2 · K2</div>
+  <div class="q">Which of the following provides the BEST example of a scenario-oriented acceptance criterion?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This describes a rule the system must adhere to (the right to be forgotten) — that's rule-oriented, not scenario-oriented.">The application must allow users to delete their account and all associated data upon request</button></li>
+    <li><button data-correct="true" data-why="This describes a concrete example scenario the system must realize — the customer does X, then Y should happen — which is exactly what a scenario-oriented acceptance criterion looks like.">When a customer adds an item to their cart and proceeds to checkout, they should be prompted to log in or create an account if they haven't already done so</button></li>
+    <li><button data-correct="false" data-why="This reads like a line of code implementing a business rule, not an acceptance criterion written in language business representatives would understand — that defeats the purpose of collaborative documentation.">IF (contain(product(23).Name, cart.products())) THEN return FALSE</button></li>
+    <li><button data-correct="false" data-why="This describes a compliance rule and how it will be ensured — a rule-oriented acceptance criterion, not a scenario.">The website must comply with the ICT Accessibility 508 Standards and ensure that all content is accessible to users with disabilities</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">You are using acceptance test-driven development and designing test cases based on the following user story:
+
+As a Regular or Special user, I want to be able to use my electronic floor card, to access specific floors.
+
+Acceptance Criteria:
+AC1: Regular users have access to floors 1 to 3
+AC2: Floor 4 is only accessible to Special users
+AC3: Special users have all the access rights of Regular users
+
+Which test case is the MOST reasonable one to test AC3?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="AC3 is about whether Special users have the RIGHTS of Regular users — testing a Regular user's own access doesn't verify that.">Check that a Regular user can access floors 1 and 3</button></li>
+    <li><button data-correct="false" data-why="AC3 is about Special users having Regular users' rights — testing a Regular user's restriction on floor 4 doesn't address AC3 either.">Check that a Regular user cannot access floor 4</button></li>
+    <li><button data-correct="false" data-why="There's no floor 5 in the acceptance criteria at all — this test extends beyond the user story's stated scope, which ATDD test cases should not do.">Check that a Special user can access floor 5</button></li>
+    <li><button data-correct="true" data-why="This directly verifies AC3 — that a Special user retains the access rights (floors 1–3) that belong to Regular users.">Check that a Special user can access floors 1, 2 and 3</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">You have just started designing test cases for the following user story.
+
+As a customer,
+I want to be able to filter search results by price range, so that I can find products within my budget more easily.
+Acceptance criteria:
+1. The filter should work for all versions of the application from version 3.0 upwards
+2. The filter should allow the customer to set a price range with a minimum and a maximum price
+3. The search results should update dynamically as the customer adjusts the price range filter
+
+In all test cases the precondition is as follows: there are only two products available, products A and B. Product A costs $100 and product B costs $110.
+
+Which of the following is the BEST example of a test case for this user story?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This checks acceptance criteria 2 (setting a price range) and 3 (results updating dynamically as the range changes).">Enter webpage and set filter to show prices between $90 and $100. Expected result: results show product A only. Set maximum price to $110. Expected result: results now include both products A and B</button></li>
+    <li><button data-correct="false" data-why="This isn't related to any acceptance criterion — it tests whether the filter's default range updates dynamically, not whether a customer can set it.">Enter webpage. Expected result: the default minimum and maximum prices are $100 and $110 respectively. Add product C to stock, with price $120. Refresh the client's webpage. Expected result: the default maximum price changes to $120</button></li>
+    <li><button data-correct="false" data-why="This tests currency exchange, which isn't part of this user story's acceptance criteria.">Enter webpage and set filter to show prices between $90 and $115. Expected result: results show both products A and B. Change currency from USD to EUR. Expected result: the filter range changes correctly to EUR values, according to the current exchange rate</button></li>
+    <li><button data-correct="false" data-why="This tests cross-browser compatibility, which isn't part of this user story's acceptance criteria.">Enter webpage with three different browsers: Edge, Chrome and Opera. In each browser set filter between $90 and $110. Expected result: results include both products A and B and the results layout is the same in all three browsers</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If your score lands below 65%, don't just re-read the failed questions — go back to the
+  section lesson (via the section number in each exam-tag) and re-study the whole section, then come
+  back and retake just that section's questions. Ask your teacher to explain any rationale here that
+  doesn't fully make sense.</div>
+  This covers Chapter 4 (Test Analysis and Design) only.
+  Back to: <a href="../lessons/0011-4.1-test-techniques-overview.html">§4.1 — Test Techniques Overview →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

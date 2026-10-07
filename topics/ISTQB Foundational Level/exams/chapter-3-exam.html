@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 3 Practice Exam — Static Testing</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 3 Practice Exam &nbsp;·&nbsp;
+  <a href="../lessons/0009-3.1-static-testing-basics.html">← Back to Chapter 3 lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 3 Practice Exam — Static Testing</h1>
+<p class="subtitle">A submit-at-end practice exam covering all of Chapter 3 (§3.1–§3.2): what static testing
+is, which work products it can examine, its value versus dynamic testing, the five-activity review process,
+review roles and responsibilities, the four review types, and the factors behind a successful review. 10
+questions, real CTFL passing mark of 65%. Nothing is graded or revealed question-by-question — answer
+everything, then click Submit Exam to grade the whole thing at once.</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/10</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+
+<nav class="topic-index">
+  <a href="#s3-1">3.1 Static Testing Basics (4)</a>
+  <a href="#s3-2">3.2 Feedback and Review Process (6)</a>
+</nav>
+
+<h2 id="s3-1">3.1 Static Testing Basics</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q15 · FL-3.1.1 · K1</div>
+  <div class="q">Which of the following CANNOT be examined by static testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="A contract must be interpretable by humans, so it could be reviewed — a form of static testing.">Contract</button></li>
+    <li><button data-correct="false" data-why="A test plan must be interpretable by humans, so it could be reviewed — a form of static testing.">Test plan</button></li>
+    <li><button data-correct="true" data-why="Static testing is not suitable for work products too complex for human interpretation that also shouldn't be analyzed by tools. Encrypted code is too complex for a human to read, and if properly encrypted, no tool can analyze it either.">Encrypted code</button></li>
+    <li><button data-correct="false" data-why="A test charter must be interpretable by humans, so it could be reviewed — a form of static testing.">Test charter</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q15 · FL-3.1.2 · K2</div>
+  <div class="q">Which of the following is NOT a benefit of static testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This is backwards: defect management is not less expensive when defects are found later. Finding and fixing defects later in the SDLC is more costly, not less — so this is the one that is NOT a benefit.">Having less expensive defect management due to the ease of detecting defects later in the SDLC</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing.">Fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: static testing can identify defects — like certain coding defects — that dynamic testing alone might miss.">Finding coding defects that might not have been found by only performing dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: gaps and inconsistencies in requirements are a classic static-testing catch.">Detecting gaps and inconsistencies in requirements</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q16 · FL-3.1.2 · K2</div>
+  <div class="q">Which of the following statements about the value of static testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Some defect types overlap between the two approaches — it's not a clean split into entirely different types.">The defect types found by static testing are different from the defect types that can be found by dynamic testing</button></li>
+    <li><button data-correct="false" data-why="It's not that dynamic testing is a superset of static testing's catches — some defect types (e.g. unreachable code) can ONLY be found by static testing.">Dynamic testing can detect the defect types that can be found by static testing plus some additional defect types</button></li>
+    <li><button data-correct="true" data-why="There are defect types only static testing finds (e.g. unreachable code, defects in non-executable work products), defect types both can find (e.g. a coding defect visible in review that also causes a failure at runtime), and defect types only dynamic testing finds (e.g. performance or memory issues). So dynamic testing catches some — but not all — of what static testing catches.">Dynamic testing can identify some of the defects that can be found by static testing but not all of them</button></li>
+    <li><button data-correct="false" data-why="It's the reverse that's true in part: static testing finds some things dynamic testing can't (like unreachable code), but static testing cannot detect execution-dependent issues like performance or memory usage, which only dynamic testing can measure.">Static testing can identify the defect types that can be found by dynamic testing as well as some extra defect types</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q15 · FL-3.1.3 · K2</div>
+  <div class="q">Given the following example defects:
+i. Two different parts of the design specification disagree due to the complexity of the design
+ii. A response time is too long and so makes users lose patience
+iii. A path in the code cannot be reached during execution
+iv. A variable is declared but never subsequently used in the program
+v. The amount of memory needed by the program to generate a report is too high
+
+Which of the following BEST identifies example defects that could be found by static testing (rather than dynamic testing)?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both ii (response time) and v (memory usage) are only observable by executing the program — they're dynamic-testing catches, not static ones.">ii, v</button></li>
+    <li><button data-correct="false" data-why="v (memory usage) needs execution to observe, so it doesn't belong with iii, which is a static-testing catch.">iii, v</button></li>
+    <li><button data-correct="false" data-why="ii (response time) needs execution to measure, so it doesn't belong alongside i and iv, which are static-testing catches.">i, ii, iv</button></li>
+    <li><button data-correct="true" data-why="i is a specification defect (inconsistency), iii and iv are coding defects (unreachable/unused code) — all three are typical defects easier to find by static testing. ii (response time) and v (memory) can only be measured by actually running the program, so they belong to dynamic testing.">i, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s3-2">3.2 Feedback and Review Process</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q16 · FL-3.2.1 · K1</div>
+  <div class="q">Which of the following is a benefit of early and frequent stakeholder feedback?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Obtaining feedback from stakeholders early and often facilitates early communication of quality issues, prevents requirement misunderstandings, and ensures changes in stakeholder requirements are understood and implemented sooner.">Changes to requirements are understood and implemented earlier</button></li>
+    <li><button data-correct="false" data-why="The feedback flows FROM stakeholders — it doesn't improve their own understanding of requirements they already hold.">It ensures business stakeholders understand user requirements</button></li>
+    <li><button data-correct="false" data-why="Understanding changes sooner doesn't mean unlimited changes are encouraged — this overstates the benefit.">It allows product owners to change their requirements as often as they want</button></li>
+    <li><button data-correct="false" data-why="This describes communication TO end users, not feedback FROM stakeholders — and ideally requirements that won't be implemented shouldn't reach this point at all.">End users are told which requirements will not be implemented prior to release</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q17 · FL-3.2.2 · K2</div>
+  <div class="q">Given the following descriptions of review activities:
+1. Detected anomalies are deliberated upon, and determinations are reached regarding their status, ownership, and any further steps needed
+2. Defects are recorded, and any needed updates are addressed prior to the acceptance of the work product
+3. Reviewers employ techniques to come up with suggestions and questions about the work product and to spot anomalies
+4. The objective of the review and its schedule are established to ensure a focused and efficient review
+5. Participants are provided with access to the item being reviewed
+
+Which of the following is the CORRECT sequence in the review process of the activities that correspond to the descriptions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This puts individual review (3) before review initiation (5), but participants need access to the work product (initiation) before they can individually review it.">4 – 3 – 5 – 2 – 1</button></li>
+    <li><button data-correct="true" data-why="4 is Planning (defining scope and schedule), 5 is Review initiation (giving participants access), 3 is Individual review (reviewers apply techniques to spot anomalies), 1 is Communication and analysis (deciding status/ownership of anomalies), 2 is Fixing and reporting (recording defects, accepting the work product). That's exactly Planning → Review initiation → Individual review → Communication and analysis → Fixing and reporting.">4 – 5 – 3 – 1 – 2</button></li>
+    <li><button data-correct="false" data-why="This starts with review initiation (5) before planning (4) has even set the scope — planning always comes first.">5 – 4 – 1 – 3 – 2</button></li>
+    <li><button data-correct="false" data-why="This puts communication and analysis (1) before individual review (3) has even happened — you can't discuss anomalies that haven't been found yet.">5 – 4 – 3 – 2 – 1</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A13 · FL-3.2.2 · K2</div>
+  <div class="q">Which of the following statements about formal reviews is TRUE?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Every review type — even informal ones — involves more than one role.">Some reviews do not require more than one role</button></li>
+    <li><button data-correct="true" data-why="The review process consists of several distinct activities: planning, review initiation, individual review, communication and analysis, and fixing and reporting.">The review process has several activities</button></li>
+    <li><button data-correct="false" data-why="Documentation to be reviewed should be distributed as early as possible during review initiation, not withheld.">Documentation to be reviewed is not distributed before the review meeting, with the exception of the work product for specific review types</button></li>
+    <li><button data-correct="false" data-why="Defects found during a review should absolutely be reported — reporting is part of the fixing-and-reporting activity, regardless of whether the defect was found statically or dynamically.">Defects found during the review are not reported since they are not found by dynamic testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q18 · FL-3.2.3 · K1</div>
+  <div class="q">Which participant in the review process is responsible for ensuring that the review meetings run effectively and that everyone at the meetings can voice their opinions freely?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The manager decides what needs to be reviewed and allocates resources like staff and time — not meeting facilitation.">Manager</button></li>
+    <li><button data-correct="true" data-why="The moderator (facilitator) is responsible for the effective running of review meetings, including mediation, time management, and creating a safe environment where everyone can speak freely.">Moderator</button></li>
+    <li><button data-correct="false" data-why="&quot;Chairperson&quot; is not one of the principal roles the syllabus defines for reviews.">Chairperson</button></li>
+    <li><button data-correct="false" data-why="The review leader takes overall responsibility for organizing the review (who's involved, when and where) — that's logistics, not meeting facilitation.">Review Leader</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q17 · FL-3.2.4 · K2</div>
+  <div class="q">Given the following review types:
+1. Technical review
+2. Informal review
+3. Inspection
+4. Walkthrough
+
+And the following descriptions:
+A. Includes objectives such as gaining consensus, generating new ideas, and motivating authors to improve
+B. Includes objectives such as educating reviewers, gaining consensus, generating new ideas and detecting potential defects
+C. The main objective is detecting potential defects and it requires metrics collection to support process improvement
+D. The main objective is detecting potential defects and it generates no formal documented output
+
+Which of the following BEST matches the review types and the descriptions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Informal review doesn't match B (educating reviewers, generating new ideas isn't its profile — it's just anomaly detection with no formal output), and walkthrough doesn't match D (a walkthrough can produce a report; it isn't defined by having none).">1A, 2B, 3C, 4D</button></li>
+    <li><button data-correct="true" data-why="Technical review (A): moderator-led, technically qualified reviewers, objectives include gaining consensus and motivating authors to improve. Informal review (D): main objective is detecting anomalies, no formal documented output. Inspection (C): detecting anomalies is the main objective, plus metrics collection for SDLC improvement. Walkthrough (B): author-led, includes educating reviewers, gaining consensus, and detecting anomalies.">1A, 2D, 3C, 4B</button></li>
+    <li><button data-correct="false" data-why="Technical review doesn't match B (that's the walkthrough's profile — author-led, educating reviewers), and informal review doesn't match C (informal reviews don't involve metrics collection for process improvement).">1B, 2C, 3D, 4A</button></li>
+    <li><button data-correct="false" data-why="Technical review doesn't match C (metrics collection for SDLC improvement is inspection's signature, not technical review's), and inspection doesn't match A (gaining consensus and motivating authors describes technical review, not inspection).">1C, 2D, 3A, 4B</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q18 · FL-3.2.5 · K1</div>
+  <div class="q">Which of these statements is NOT a factor that contributes to successful reviews?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Adequate time for participants to prepare IS a success factor, so this doesn't answer the &quot;NOT&quot; question.">Participants should dedicate adequate time for the review</button></li>
+    <li><button data-correct="false" data-why="Splitting large work products into small chunks so reviewers stay focused IS a success factor.">Splitting large work products into small parts to make the required effort less intense</button></li>
+    <li><button data-correct="false" data-why="Avoiding behaviors like boredom, exasperation, or hostility IS a success factor for a healthy review culture.">Participants should avoid behaviors that might indicate boredom, exasperation, or hostility to other participants</button></li>
+    <li><button data-correct="true" data-why="Reviews are static testing, and static testing never executes the software — so it can only ever find defects, never failures. &quot;Failures found should be acknowledged&quot; describes something reviews structurally cannot produce, which is why this is the one that is NOT a real success factor.">Failures found should be acknowledged, appreciated, and handled objectively</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If your score lands below 65%, don't just re-read the failed questions — go back to the
+  section lesson (via the section number in each exam-tag) and re-study the whole section, then come
+  back and retake just that section's questions. Ask your teacher to explain any rationale here that
+  doesn't fully make sense.</div>
+  This covers Chapter 3 (Static Testing) only.
+  Back to: <a href="../lessons/0009-3.1-static-testing-basics.html">§3.1 — Static Testing Basics →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 2 Practice Exam — Testing Throughout the Software Development Lifecycle</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 2 Practice Exam &nbsp;·&nbsp;
+  <a href="../lessons/0006-2.1-testing-in-the-sdlc.html">← Back to Chapter 2 lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 2 Practice Exam — Testing Throughout the Software Development Lifecycle</h1>
+<p class="subtitle">A submit-at-end practice exam covering only Chapter 2 (§2.1–§2.3): testing in the context
+of an SDLC (SDLC models, good testing practices, TDD/ATDD/BDD, DevOps, shift left, retrospectives), the
+five test levels and four test types, confirmation vs. regression testing, and maintenance testing. 22
+questions, real CTFL passing mark of 65%. Nothing is graded or revealed question-by-question — answer
+everything, then click Submit Exam to grade the whole thing at once.</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/22</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+
+<nav class="topic-index">
+  <a href="#s2-1">2.1 Testing in the Context of a Software Development Lifecycle (SDLC) (14)</a>
+  <a href="#s2-2">2.2 Test Levels and Test Types (6)</a>
+  <a href="#s2-3">2.3 Maintenance Testing (2)</a>
+</nav>
+
+<h2 id="s2-1">2.1 Testing in the Context of a Software Development Lifecycle (SDLC)</h2>
+
+<div class="quiz-multi" data-correct="b,c" data-why="In sequential models like the V-model, testers can review requirements (a form of static testing) and do test planning in the initial phases. Dynamic testing, acceptance test execution, and maintenance testing all require a working product, which doesn't exist until later phases.">
+  <div class="exam-tag">Exam A · A7 · FL-2.1.1 · K2 · select TWO</div>
+  <div class="q">You are working as a tester in the team that follows the V-model. Which of the following activities CAN be performed in the initial phases of the SDLC? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Dynamic test execution</label></li>
+    <li><label><input type="checkbox" value="b"> b) Static testing</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test planning</label></li>
+    <li><label><input type="checkbox" value="d"> d) Acceptance test execution</label></li>
+    <li><label><input type="checkbox" value="e"> e) Maintenance testing</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Which of the following is a good testing practice that applies to all software development lifecycles?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This tries to equate test levels with development levels, but there's no common understanding of the term 'development level'.">For each test level, there is a corresponding development level</button></li>
+    <li><button data-correct="false" data-why="Test objectives can differ from development objectives — e.g. a contractual requirement to perform a certain type of testing has no corresponding development objective.">For each test objective, there is a corresponding development objective</button></li>
+    <li><button data-correct="false" data-why="The symmetry between quality control and development doesn't extend to users — some test activities (e.g. testing for maintainability) have no user aspect at all.">For every test activity, there is a corresponding user activity</button></li>
+    <li><button data-correct="true" data-why="Quality control applies to all development activities, meaning every software development activity has a corresponding test activity — this holds regardless of SDLC model.">For every development activity, there is a corresponding test activity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Which of the following is a good testing practice that applies to all software development lifecycles?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Each test level tests a different form of test object (e.g. a single component vs. the complete system) — overlapping test objectives would cause unnecessary duplication.">Each test level has specific and distinct test objectives</button></li>
+    <li><button data-correct="false" data-why="Test analysis and design should start during the corresponding development phase for early testing, but implementation generally starts later and execution starts during the test level itself.">Test implementation and execution for a given test level should start during the corresponding development phase</button></li>
+    <li><button data-correct="false" data-why="Test design must be based on an agreed test basis, not an early draft — otherwise effort may be wasted on test cases for a design that later changes.">Testers should start test design as soon as drafts of the relevant work products become available</button></li>
+    <li><button data-correct="false" data-why="The symmetry between development and test activities doesn't extend to dynamic vs. static testing — some static activities (e.g. static analysis) have no obvious dynamic counterpart.">Every dynamic testing activity has a corresponding static testing activity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q10 · FL-2.1.3 · K1</div>
+  <div class="q">Which of the following is an example of a test-first approach to development?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Behavior-Driven Development (BDD) is a well-known example of a test-first approach — tests, expressed as desired behavior, are defined before the code.">Behavior-Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Test Level Driven Development' is not a real test-first approach named in the syllabus.">Test Level Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Function-Driven Development' is not a real test-first approach named in the syllabus.">Function-Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Performance-Driven Development' is not a real test-first approach named in the syllabus.">Performance-Driven Development</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Consider the following rule: "for every SDLC activity there is a corresponding test activity". In which SDLC models does this rule hold?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, not only sequential ones.">Only in sequential development models</button></li>
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, not only iterative ones.">Only in iterative development models</button></li>
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, including sequential ones too.">Only in iterative and incremental development models</button></li>
+    <li><button data-correct="true" data-why="Quality control applies to all development activities, so this rule holds across sequential, incremental, and iterative SDLC models.">In sequential, incremental, and iterative development models</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q10 · FL-2.1.3 · K1</div>
+  <div class="q">Which of the following statements BEST describes the acceptance test-driven development (ATDD) approach?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Given/when/then is more typically used in behavior-driven development (BDD).">In ATDD, acceptance criteria are typically created based on the given/when/then format</button></li>
+    <li><button data-correct="false" data-why="This describes test-driven development (TDD), not ATDD.">In ATDD, test cases are mainly created at component testing and are code-oriented</button></li>
+    <li><button data-correct="true" data-why="In ATDD, tests are written from acceptance criteria as part of the design process, driving the development of the software.">In ATDD, tests are created, based on acceptance criteria to drive the development of the related software</button></li>
+    <li><button data-correct="false" data-why="This describes behavior-driven development (BDD), not ATDD.">in ATDD, tests are based on the desired behavior of the software, which makes it easier for team members to understand them</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q10 · FL-2.1.3 · K1</div>
+  <div class="q">Which of the following is an example of a test-first approach to development?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">Component Test-Driven Development</button></li>
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">Integration Test-Driven Development</button></li>
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">System Test-Driven Development</button></li>
+    <li><button data-correct="true" data-why="Acceptance Test-Driven Development (ATDD) is a well-known example of a test-first approach to development.">Acceptance Test-Driven Development</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A8 · FL-2.1.4 · K2</div>
+  <div class="q">Which of the following are advantages of DevOps?
+i. Faster product release and faster time to market
+ii. Increases the need for repetitive manual testing
+iii. Constant availability of executable software
+iv. Reduction in the number of regression tests associated with code refactoring
+v. Setting up the test automation framework is inexpensive since everything is automated</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="ii is false (DevOps reduces the need for manual testing) and iv is false (refactoring under DevOps needs MORE regression tests, not fewer).">i, ii, iv are advantages</button></li>
+    <li><button data-correct="false" data-why="Neither iii alone with v holds up — v is false, since not everything is automated and setting up test automation is expensive, not cheap.">iii, v are advantages</button></li>
+    <li><button data-correct="true" data-why="Faster time to market and constant availability of executable software are genuine DevOps advantages; the other three statements are all false.">i, iii are advantages</button></li>
+    <li><button data-correct="false" data-why="All three of these are false: DevOps reduces (not increases) manual testing need, requires more (not fewer) regression tests after refactoring, and test automation setup is expensive, not cheap.">ii, iv, v are advantages</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q11 · FL-2.1.4 · K2</div>
+  <div class="q">Which of the following is MOST likely to be a challenge encountered when implementing DevOps?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="DevOps generally increases the visibility of non-functional quality characteristics like performance and reliability — this is a benefit, not a challenge.">Making sure that non-functional quality characteristics are not overlooked</button></li>
+    <li><button data-correct="false" data-why="CI/CD, as used in DevOps, facilitates stable test environments — this is a benefit, not a challenge.">Managing continuously changing test environments</button></li>
+    <li><button data-correct="false" data-why="CI/CD as used in DevOps generally reduces the need for manual testing, not increases the need for manual testers.">The need for more manual testers with suitable experience</button></li>
+    <li><button data-correct="true" data-why="DevOps implementation risks explicitly include the need to define and establish the delivery pipeline, introduce and maintain CI/CD tools, and set up and maintain test automation.">Setting up the test automation as part of the delivery pipeline</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q11 · FL-2.1.5 · K2</div>
+  <div class="q">Which of the following provides the BEST description of shift-left?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Shift left is about moving test activities earlier in the SDLC, not about automating manual activities on a 'left-hand side of the test process' — that phrase doesn't correspond to anything in the model.">When agreed by the developers, manual activities on the left-hand side of the test process are automated to support the principle of 'early testing saves time and money'</button></li>
+    <li><button data-correct="true" data-why="Shift left emphasizes starting testing earlier in the SDLC where cost-effective, reducing total cost of quality by catching defects sooner, even though it needs more effort and training early on.">Where cost-effective, test activities are moved earlier in the software development lifecycle (SDLC) to reduce the total cost of quality by reducing the number of defects found later in the SDLC</button></li>
+    <li><button data-correct="false" data-why="Automating regression tests is valuable but is normally the developers' responsibility under CI/CD, and isn't itself what shift left means.">When they have spare time available, testers are required to automate tests for regression testing, starting with component tests and component integration tests</button></li>
+    <li><button data-correct="false" data-why="Shift left is about moving testing earlier, not about automating more activities to run later in the SDLC.">When available, testers are trained to perform tasks early in the SDLC to allow more test activities to be automated later in the SDLC</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q11 · FL-2.1.5 · K2</div>
+  <div class="q">Which of the following is NOT an example of the shift-left approach?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Early review of requirements is an example of shift-left.">Reviewing the user requirements before they are formally accepted by the stakeholders</button></li>
+    <li><button data-correct="false" data-why="TDD (writing tests before code) is an example of shift-left.">Writing a component test before the corresponding code is written</button></li>
+    <li><button data-correct="false" data-why="Early non-functional testing is an example of shift-left.">Executing a performance efficiency test for a component during component testing</button></li>
+    <li><button data-correct="true" data-why="Test scripts should be under configuration management — it makes no sense to create them before that process is set up, so this is not shift-left in action.">Writing a test script before setting up the configuration management process</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the arguments below would you use to convince your manager to organize retrospectives at the end of each release cycle?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Retrospectives are useful for identifying improvement opportunities, not for being a popular trend clients care about.">Retrospectives are very popular these days and clients would appreciate it if we added them to our processes</button></li>
+    <li><button data-correct="false" data-why="Retrospectives collect feedback about the process, not the product, and are an internal team activity — end user representatives don't attend.">Organizing retrospectives will save the organization money because without them end user representatives do not provide immediate feedback about the product</button></li>
+    <li><button data-correct="true" data-why="Regularly conducted retrospectives, with proper follow-up, are critical to the continual improvement of development and testing processes.">Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization's continuous process improvement program</button></li>
+    <li><button data-correct="false" data-why="Courage and respect are values of Extreme Programming, not something specifically tied to retrospectives.">Retrospectives embrace five values including courage and respect, which are crucial to maintain continuous improvement in the organization</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the following BEST describes retrospectives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Calling out individual team members undermines the team bonding and collaboration retrospectives are meant to build.">Retrospectives allow team members to identify other team members who did not fully contribute to achieving quality as required by the whole team approach</button></li>
+    <li><button data-correct="true" data-why="A retrospective's discussion is exactly what was successful and should be retained, plus what could be improved and how.">Retrospectives give testers an opportunity to identify activities that were successful so that these are retained when potential improvements are made in the future</button></li>
+    <li><button data-correct="false" data-why="Retrospectives are about process improvement, not an unfiltered complaints session — and results are recorded in the test completion report, so they aren't a purely blameless private venting space.">Retrospectives are where agile team members are allowed to voice their concerns about management and customers in a blameless environment</button></li>
+    <li><button data-correct="false" data-why="Planning the next iteration's technical decisions happens in iteration planning, not in a retrospective, which looks backward at the iteration just finished.">Retrospectives give agile team members a forum where they focus on discussing the plan and technical decisions for the next iteration</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the following is LEAST likely to occur as a result of a retrospective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Identifying process improvements is a purpose of retrospectives, so improved future test-object quality is a likely outcome.">The quality of future test objects improves by identifying improvements in development practices</button></li>
+    <li><button data-correct="false" data-why="Increased test efficiency through process improvements is a recognized benefit of retrospectives.">Test efficiency improves by speeding up the configuration of test environments through automation</button></li>
+    <li><button data-correct="true" data-why="End users are rarely invited to or informed about retrospectives, so it's very unlikely their understanding of dev/test processes improves through them.">End users' understanding of the development and test processes is improved</button></li>
+    <li><button data-correct="false" data-why="Improved testware quality (including automated scripts) through joint reviews with developers is a recognized benefit of retrospectives.">Automated test scripts are enhanced through feedback from developers</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s2-2">2.2 Test Levels and Test Types</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q13 · FL-2.2.1 · K2</div>
+  <div class="q">Which types of failures (1-4) fit which test levels (A-D) BEST?
+1. Failures in system behavior as it deviates from the user's business needs
+2. Failures in communication between components
+3. Failures in logic in the code
+4. Failures in not correctly implemented business rules
+
+A. Component testing
+B. Component integration testing
+C. System testing
+D. Acceptance testing</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test basis for acceptance testing is the user's business needs (1D); communication between components is tested at component integration testing (2B); logic failures are found at component testing (3A); business rules are the test basis for system testing (4C).">1D, 2B, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="This swaps components 3 and 4 into the wrong levels — logic failures belong to component testing, and business-rule failures belong to system testing.">1D, 2B, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Business needs are the test basis for acceptance testing, not component integration testing — and this option misassigns several other pairs too.">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="false" data-why="This puts business-needs failures at system testing rather than acceptance testing, among other mismatches.">1C, 2B, 3A, 4D</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q13 · FL-2.2.1 · K2</div>
+  <div class="q">Which of the following test levels is MOST likely being performed if the testing is focused on validation and is not being performed by testers?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Component testing is mostly verification against a specification, not validation, and is normally performed by developers rather than testers — but the question is asking about validation specifically.">Component testing</button></li>
+    <li><button data-correct="false" data-why="Component integration testing is mostly verification, not validation, and is usually carried out by developers.">Component integration testing</button></li>
+    <li><button data-correct="false" data-why="System integration testing is mostly verification against a specification, and this type of testing is most often performed by testers, not end users.">System integration testing</button></li>
+    <li><button data-correct="true" data-why="Acceptance testing focuses on validating that the system meets the user's business needs and is ready for deployment — ideally carried out by the end users themselves, not testers.">Acceptance testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A9 · FL-2.2.2 · K2</div>
+  <div class="q">You work as a tester on a project on a mobile application for food ordering for one of your clients. The client sent you a list of requirements. One of them, with high priority, says
+"The order must be processed in less than 10 seconds in 95% of the cases".
+You created a set of test cases in which a number of random orders were made, the processing time measured, and the test results were checked against the requirements.
+What test type did you perform?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Coming directly from the client with high priority doesn't make these tests functional — they check 'how fast' (performance), not 'what' the system does.">Functional, because the test cases cover the user's business requirement for the system</button></li>
+    <li><button data-correct="true" data-why="This is testing for performance efficiency — a non-functional quality characteristic — even though the requirement itself is high-priority and business-driven.">Non-functional, because they measure the system's performance</button></li>
+    <li><button data-correct="false" data-why="Even if the tests do interact with the UI, the main test objective here is performance, not usability or functional behavior.">Functional, because the test cases interact with the user interface</button></li>
+    <li><button data-correct="false" data-why="You don't need internal-structure knowledge to measure order processing time — this can be, and here is, tested as a black-box, non-functional concern.">White-box, because we need to know the internal structure of the program to measure the order processing time</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q13 · FL-2.2.2 · K2</div>
+  <div class="q">Which of the following tests is MOST likely to be performed as part of functional testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Checking that a sort function puts elements in ascending order is checking functional correctness — exactly what functional testing evaluates.">The test checks that the sort function puts the elements of the list or array in ascending order</button></li>
+    <li><button data-correct="false" data-why="Checking that sorting completes within one second is a performance efficiency check — non-functional testing.">The test checks whether the sort function completes sorting within one second of starting</button></li>
+    <li><button data-correct="false" data-why="Checking how easily the function can be changed from ascending to descending sort is testing modifiability — a non-functional maintainability concern.">The test checks how easily the sort function can be changed from sorting ascending to sorting descending</button></li>
+    <li><button data-correct="false" data-why="Checking correctness after moving to a new architecture is testing adaptability — a form of portability, which is non-functional.">The test checks that the sort function still functions correctly when moved from a 32-bit to a 64-bit architecture</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q14 · FL-2.2.3 · K2</div>
+  <div class="q">You are testing a user story with three acceptance criteria: AC1, AC2 and AC3. AC1 is covered by test case TC1, AC2 by TC2, and AC3 by TC3. The test execution history had three test runs on three consecutive versions of the software as follows:
+
+Execution 1: TC1 = (1) Failed, TC2 = (2) Passed, TC3 = (3) Failed
+Execution 2: TC1 = (4) Passed, TC2 = (5) Failed, TC3 = (6) Failed
+Execution 3: TC1 = (7) Passed, TC2 = (8) Passed, TC3 = (9) Passed
+
+Tests are repeated once you are informed that all defects found in the test run are corrected and a new version of the software is available.
+Which of the above tests are executed as regression tests?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Tests 4, 8, and 9 are actually confirmation tests (re-checking a previously failed case) rather than regression tests (re-checking a previously passed one).">Only 4, 7, 8, 9</button></li>
+    <li><button data-correct="true" data-why="TC2 passed in Execution 1, so test (5) — re-running TC2 in Execution 2 — is a regression test; TC1 passed in Execution 2, so test (7) — re-running TC1 in Execution 3 — is also a regression test. Tests (4), (6), (8), (9) are confirmation tests since they re-check previously failed cases.">Only 5, 7</button></li>
+    <li><button data-correct="false" data-why="Tests 4, 6, 8, and 9 are all confirmation tests, not regression tests — each re-checks a case that had previously failed.">Only 4, 6, 8, 9</button></li>
+    <li><button data-correct="false" data-why="Test 6 is a confirmation test (TC3 had failed in Execution 1), not a regression test — only test 5 in this pair is genuinely a regression test.">Only 5, 6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q14 · FL-2.2.3 · K2</div>
+  <div class="q">The navigation system software has been updated due to it suggesting routes that break traffic laws, such as driving the wrong way down one-way streets. Which of the following BEST describes the testing that will be performed?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Confirmation testing alone isn't enough — regression testing is also needed to ensure the fix didn't break anything else.">Only confirmation testing</button></li>
+    <li><button data-correct="true" data-why="Confirmation testing checks the fix was implemented correctly, and regression testing then ensures no defects were introduced or uncovered elsewhere in the unchanged system.">Confirmation testing then regression testing</button></li>
+    <li><button data-correct="false" data-why="Regression testing alone isn't enough — confirmation testing is also needed to verify the specific fix actually resolved the reported problem.">Only regression testing</button></li>
+    <li><button data-correct="false" data-why="The order is backwards — confirmation testing (checking the fix worked) precedes regression testing (checking nothing else broke), not the other way around.">Regression testing then confirmation testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s2-3">2.3 Maintenance Testing</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A10 · FL-2.3.1 · K2</div>
+  <div class="q">Your organization's test strategy suggests that once a system is going to be retired, data migration shall be tested. As part of what test type is this testing MOST likely to be performed?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="When a system is retired, this can require testing of data migration — a trigger explicitly named under maintenance testing.">Maintenance testing</button></li>
+    <li><button data-correct="false" data-why="Regression testing verifies a fix didn't accidentally break other parts of the code — this scenario is about data migration during retirement, not a fix.">Regression testing</button></li>
+    <li><button data-correct="false" data-why="Reliability testing is a non-functional quality characteristic, not a match for data-migration-at-retirement.">Reliability testing</button></li>
+    <li><button data-correct="false" data-why="Integration testing focuses on interactions between components or systems, not data migration — and it's a test level, not a test type.">Integration testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q14 · FL-2.3.1 · K2</div>
+  <div class="q">Which of the following is MOST likely to be a trigger that leads to maintenance testing of a currency exchange system?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Checking how easy the system is to change is maintainability testing, not maintenance testing — those are two different things despite the similar names.">The developers reported that changing the currency exchange system was difficult and the testers decided to check if this was true</button></li>
+    <li><button data-correct="true" data-why="Removing the faulty refund option is a corrective modification (a fix) — exactly the kind of change that triggers maintenance testing.">The refund option of the currency exchange system was removed as it did not always repay the correct amount to customers</button></li>
+    <li><button data-correct="false" data-why="Developing a brand-new user story leads to testing the new feature plus regression testing — not maintenance testing, which concerns an already-operational system's fixes, environment changes, or retirement.">The agile team has started developing a user story that adds a new customer loyalty feature to the currency exchange system</button></li>
+    <li><button data-correct="false" data-why="Enabling an existing language-support option isn't a system modification, environment change, or retirement — none of the three maintenance-testing triggers apply here.">The language support option of the currency exchange system was used to enable both English and local language currency transactions</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If your score lands below 65%, don't just re-read the failed questions — go back to the
+  section lesson (via the section number in each exam-tag) and re-study the whole section, then come
+  back and retake just that section's questions. Ask your teacher to explain any rationale here that
+  doesn't fully make sense.</div>
+  This covers Chapter 2 (Testing Throughout the Software Development Lifecycle) only.
+  Back to: <a href="../lessons/0006-2.1-testing-in-the-sdlc.html">§2.1 — Testing in the Context of a Software Development Lifecycle →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

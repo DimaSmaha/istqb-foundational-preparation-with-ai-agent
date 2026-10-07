@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Exam B &mdash; Generate Locally</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;&middot;&nbsp; Sample Exam B &nbsp;&middot;&nbsp;
+  <a href="0023-final-mock-exam-4.html">&larr; Back: Mock Exam 4</a> &nbsp;&middot;&nbsp;
+  <a href="../reference/glossary.html">Glossary &#8599;</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">&#9790; Dark</button>
+</nav>
+
+<h1>Sample Exam B &mdash; generate it with Claude</h1>
+<p class="subtitle">The official ISTQB&reg; CTFL v4.0 Sample Exam Set B is a complete 40-question paper. A full
+copy of an ISTQB&reg; document goes beyond the non-commercial <em>extracts</em> that ISTQB&reg; permits, so it
+isn't published in this repository &mdash; but you can build the same interactive, timed exam page for
+yourself in a couple of minutes with Claude Code and the <code>istqb-prep</code> skill.</p>
+
+<div class="callout">
+  <strong>What you'll get:</strong> all 40 Set B questions in their original order, in the same exam mode as
+  the four mock exams &mdash; timer, Submit Exam to grade everything at once, the official correct answers
+  and justifications, and a per-chapter score breakdown. Set B already follows the CTFL v4.0 blueprint
+  (8/6/4/11/9/2), and none of its questions appear in the mock exams, so it's a clean final check.
+</div>
+
+<h2>1. Download the official PDFs</h2>
+<p>Get <strong>ISTQB&reg; CTFL v4.0 Sample Exam B &mdash; Questions</strong> and <strong>Answers</strong>
+(v1.7 or later) free from the
+<a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">official ISTQB&reg; CTFL v4.0 page</a>.</p>
+
+<h2>2. Put them in the cache folder</h2>
+<p>Save both PDFs into <code>cache/ISTQB/Foundational/</code> at the root of this repository. That folder is
+git-ignored, so the PDFs never get committed.</p>
+
+<h2>3. Ask Claude to build the page</h2>
+<p>Open Claude Code in the repository root and paste this prompt (adjust the file names if your version
+differs from v1.7):</p>
+
+<pre id="generate-prompt" style="white-space: pre-wrap;">Using the istqb-prep skill, build a standalone exam page for the official ISTQB CTFL v4.0 Sample Exam B.
+
+Sources: cache/ISTQB/Foundational/ISTQB_CTFL_v4.0_Sample-Exam-B-Questions_v1.7.pdf and ISTQB_CTFL_v4.0_Sample-Exam-B-Answers_v1.7.pdf (extract them as described in references/source-extraction.md).
+
+Output: topics/ISTQB Foundational Level/exams/0024-sample-exam-b.local.html in exam mode per references/exam-html-contract.md, styled like exams/0023-final-mock-exam-4.html (same crumbs, submit bar, timer, results breakdown, ../assets/exam.js).
+
+Content: all 40 questions verbatim in their original order. Tag each one "Exam B · Q&lt;n&gt; · &lt;LO code&gt; · &lt;K-level&gt;" from the Answer Key, use the Answer Key's correct answers and per-option justifications as the rationale, and keep "select TWO" questions as multi-select.
+
+Footer: include the footer.istqb-notice crediting the ISTQB CTFL Syllabus v4.0.1 and Sample Exam B v1.7 (Questions &amp; Answers).
+
+This page is for my local study only. Do not commit it.</pre>
+<button class="copy-btn" type="button" id="copy-prompt">Copy prompt</button>
+
+<h2>4. Open your exam</h2>
+<p>Claude writes <code>exams/0024-sample-exam-b.local.html</code>. Once it exists:
+<a href="0024-sample-exam-b.local.html">Open Sample Exam B &rarr;</a> (if the link doesn't open, the page
+hasn't been generated yet).</p>
+
+<div class="aside">
+  <strong>Keep it local.</strong> The generated page is a full copy of an ISTQB&reg; document &mdash; for your own
+  non-commercial study only. <code>*.local.html</code> files are git-ignored in this repository; don't commit,
+  publish or share the generated page.
+</div>
+
+<footer class="lesson-footer">
+  Back to: <a href="0023-final-mock-exam-4.html">Mock Exam 4</a> &nbsp;&middot;&nbsp;
+  Start of the course: <a href="../lessons/0001-1.1-what-is-testing.html">&sect;1.1 &mdash; What is Testing? &rarr;</a>
+</footer>
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains no ISTQB&reg; exam questions. The
+  ISTQB&reg; CTFL v4.0 Sample Exam B v1.7 (Questions &amp; Answers) is copyrighted by the International Software
+  Testing Qualifications Board (ISTQB&reg;). All rights reserved. See <a href="../../../NOTICE.md">NOTICE</a>.
+  Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('copy-prompt');
+    var pre = document.getElementById('generate-prompt');
+    btn.addEventListener('click', function () {
+      var text = pre.innerText;
+      var done = function () {
+        btn.textContent = 'Copied ✓';
+        setTimeout(function () { btn.textContent = 'Copy prompt'; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var range = document.createRange();
+        range.selectNodeContents(pre);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { document.execCommand('copy'); done(); } catch (e) { /* text stays selected for manual copy */ }
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mock Exam 3 &mdash; 40 Questions (Full CTFL Blueprint)</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;&middot;&nbsp; Mock Exam 3 &nbsp;&middot;&nbsp;
+  <a href="0023-final-mock-exam-2.html">&larr; Prev: Mock Exam 2</a> &nbsp;&middot;&nbsp;
+  <a href="0023-final-mock-exam-4.html">Next: Mock Exam 4 &rarr;</a> &nbsp;&middot;&nbsp;
+  <a href="../reference/glossary.html">Glossary &#8599;</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">&#9790; Dark</button>
+</nav>
+
+<h1>Mock Exam 3 &mdash; 40 Questions</h1>
+<p class="subtitle">Full-length practice exam following the official ISTQB CTFL v4.0 question distribution &mdash; 8 from Chapter 1, 6 from Chapter 2, 4 from Chapter 3, 11 from Chapter 4, 9 from Chapter 5, and 2 from Chapter 6 (40 total). Every question is reproduced verbatim from the official Sample Exams A, C and D and presented in mixed order, just like a real sitting. The real CTFL pass mark is 65% (26/40). Nothing is graded until you press Submit Exam &mdash; answer all 40 questions, then submit to grade the whole exam at once. The four mock exams together use all 146 official questions (a few of the highest-value ones recur across exams).</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/40</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">You perform system testing of an e-commerce web application and are provided with the following requirement:
+REQ 05-017. If the total cost of purchases exceeds $100, the customer gets a 5% discount on subsequent purchases. Otherwise, the customer does not receive a discount.
+Which test techniques will be MOST helpful in designing test cases based on this requirement?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The document doesn't refer to the test object's internal structure — it specifies desired behavior, so white-box test techniques won't be helpful here.">White-box test techniques</button></li>
+    <li><button data-correct="true" data-why="The document is a requirement specifying desired behavior — exactly the test basis black-box test techniques use. Wording like &quot;exceeds $100&quot; also signals equivalence-partition boundaries suited to Boundary Value Analysis or Decision Table Testing.">Black-box test techniques</button></li>
+    <li><button data-correct="false" data-why="Experience-based techniques could be used, but black-box is more suitable here — this is a precise business rule with clear boundaries, exactly what black-box techniques like BVA are built for.">Experience-based test techniques</button></li>
+    <li><button data-correct="false" data-why="&quot;Risk-based test techniques&quot; is not a recognized category of test technique in this syllabus.">Risk-based test techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q30 · FL-5.1.2 · K1</div>
+  <div class="q">How do testers add value to iteration and release planning?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Priorities for user stories are determined by the business representative together with the development team, not by testers alone.">Testers determine the priority of the user stories to be developed</button></li>
+    <li><button data-correct="false" data-why="Testers focus on both functional and non-functional aspects of the system to be tested, not only the functional side.">Testers focus only on the functional aspects of the system to be tested</button></li>
+    <li><button data-correct="true" data-why="Testers involved in release planning participate in project and quality risk analyses, and in iteration planning participate in the detailed risk analysis of user stories — this is one of the syllabus's named ways testers add value.">Testers participate in the detailed risk identification and risk assessment of user stories</button></li>
+    <li><button data-correct="false" data-why="Early test design is not part of release planning, and by itself it does not guarantee the release of quality software.">Testers guarantee the release of high-quality software through early test design during the release planning</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following is a typical test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Identifying defects is a test objective, but fixing them is debugging — not a test activity.">Finding and fixing defects in the test object</button></li>
+    <li><button data-correct="false" data-why="Useful for other objectives (e.g. informing stakeholder decisions), but not itself a primary reason for testing.">Maintaining effective communications with developers</button></li>
+    <li><button data-correct="false" data-why="Checking legal requirements are met is a form of verification, not validation — validation is about meeting users' and stakeholders' needs in the operational environment.">Validating that legal requirements have been met</button></li>
+    <li><button data-correct="true" data-why="Building confidence in the quality of the test object is achieved by executing tests that pass — a core, real objective.">Building confidence in the quality of the test object</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Which of the following is a good testing practice that applies to all software development lifecycles?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Each test level tests a different form of test object (e.g. a single component vs. the complete system) — overlapping test objectives would cause unnecessary duplication.">Each test level has specific and distinct test objectives</button></li>
+    <li><button data-correct="false" data-why="Test analysis and design should start during the corresponding development phase for early testing, but implementation generally starts later and execution starts during the test level itself.">Test implementation and execution for a given test level should start during the corresponding development phase</button></li>
+    <li><button data-correct="false" data-why="Test design must be based on an agreed test basis, not an early draft — otherwise effort may be wasted on test cases for a design that later changes.">Testers should start test design as soon as drafts of the relevant work products become available</button></li>
+    <li><button data-correct="false" data-why="The symmetry between development and test activities doesn't extend to dynamic vs. static testing — some static activities (e.g. static analysis) have no obvious dynamic counterpart.">Every dynamic testing activity has a corresponding static testing activity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q15 · FL-3.1.2 · K2</div>
+  <div class="q">Which of the following is NOT a benefit of static testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This is backwards: defect management is not less expensive when defects are found later. Finding and fixing defects later in the SDLC is more costly, not less — so this is the one that is NOT a benefit.">Having less expensive defect management due to the ease of detecting defects later in the SDLC</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing.">Fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: static testing can identify defects — like certain coding defects — that dynamic testing alone might miss.">Finding coding defects that might not have been found by only performing dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: gaps and inconsistencies in requirements are a classic static-testing catch.">Detecting gaps and inconsistencies in requirements</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q21 · FL-4.2.2 · K3</div>
+  <div class="q">You are testing a system that calculates the final course grade for a given student.
+The final grade is assigned based on the final result, according to the following rules:
+• 0 – 50 points: failed
+• 51 – 60 points: fair
+• 61 – 70 points: satisfactory
+• 71 – 80 points: good
+• 81 – 90 points: very good
+• 91 – 100 points: excellent
+
+You have prepared the following set of test cases:
+TC1: 91 → excellent
+TC2: 50 → failed
+TC3: 81 → very good
+TC4: 60 → fair
+TC5: 70 → satisfactory
+TC6: 80 → good
+
+What is the 2-value boundary value analysis (BVA) coverage for the final result that is achieved with the existing test cases?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="There are 12 boundary values: 0, 50, 51, 60, 61, 70, 71, 80, 81, 90, 91, 100. The existing test cases cover six of them (91, 50, 81, 60, 70, and 51 — note the syllabus answer key references a &quot;TC7&quot; covering 51 that doesn't appear in the listed table, an apparent error in the original source). 6/12 = 50%.">50%</button></li>
+    <li><button data-correct="false" data-why="50% (6 of 12 boundary values) is achieved, not 60%.">60%</button></li>
+    <li><button data-correct="false" data-why="50% (6 of 12 boundary values) is achieved, not 33.3%.">33.3%</button></li>
+    <li><button data-correct="false" data-why="Only 6 of the 12 identified boundary values are covered, not all of them.">100%</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A20 · FL-5.1.4 · K3</div>
+  <div class="q">Your team uses planning poker to estimate the test effort for a newly required feature. There is a rule in your team that if there is no time to reach full agreement and the variation in the results is small, rules like "accept the number with the most votes" can be applied.
+After two rounds, the consensus was not reached, so the third round was initiated. You can see the test estimation results in the table below.
+
+Team members' estimations:
+Round 1: 21, 2, 5, 34, 13, 8, 2
+Round 2: 13, 8, 8, 34, 13, 8, 5
+Round 3: 13, 8, 13, 13, 13, 13, 8
+
+Which of the following is the BEST example of the next step?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Wideband Delphi / Planning Poker is a team activity; a single stakeholder should not override it.">The product owner has to step in and make a final decision</button></li>
+    <li><button data-correct="true" data-why="After round 3 the estimates are close (five votes for 13, two for 8) — with small variation and no time for full consensus, the syllabus permits applying a rule like &quot;accept the number with the most votes.&quot;">Accept 13 as the final test estimate as this has most of the votes</button></li>
+    <li><button data-correct="false" data-why="There is no full consensus yet — some estimators still say 8, others say 13.">No further action is needed. Consensus has been reached</button></li>
+    <li><button data-correct="false" data-why="A feature should not be dropped from a release simply because Wideband Delphi hasn't produced perfect consensus.">Remove the new feature from the current release because consensus has not been reached</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A2 · FL-1.2.2 · K1</div>
+  <div class="q">In many software organizations the test department is called the Quality Assurance (QA) department. Is this sentence correct or not and why?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing and QA do not mean exactly the same thing — testing is product-oriented/corrective, QA is process-oriented/preventive.">It is correct. Testing and QA mean exactly the same thing</button></li>
+    <li><button data-correct="false" data-why="They cannot be used interchangeably — they focus on different things (product vs. process).">It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues</button></li>
+    <li><button data-correct="false" data-why="Close, but backwards: QA is the broader process-oriented discipline; testing is the narrower activity focused on demonstrating fitness for purpose and detecting defects.">It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes</button></li>
+    <li><button data-correct="true" data-why="QA is focused on establishing, monitoring, and improving quality-related processes, while testing concentrates on demonstrating that a component or system is fit for purpose and detecting defects — genuinely different things.">It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">Your favorite bicycle daily rental store has just introduced a new Customer Relationship Management system and asked you, one of their most loyal members, to test it.
+
+The implemented features are as follows:
+• Anyone can rent a bicycle, but members receive a 20% discount
+• However, if the return deadline is missed, the discount is no longer available
+• After 15 rentals, members get a gift: a T-Shirt
+
+Decision table:
+| Conditions | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 |
+|---|---|---|---|---|---|---|---|---|
+| Being a member | T | T | T | T | F | F | F | F |
+| Missed deadline | T | F | T | F | T | F | F | T |
+| 15th rental | F | F | T | T | F | F | T | T |
+| 20% discount (action) | | X | | X | | | | |
+| Gift T-Shirt (action) | | | X | X | | | | X |
+
+Based ONLY on the feature description of the Customer Relationship Management system, which of the above rules describes an impossible situation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="R4 is consistent: a member without a missed deadline can get both the discount and, after 15 rentals, the gift T-Shirt.">R4</button></li>
+    <li><button data-correct="false" data-why="R2 is consistent: a member without a missed deadline gets the discount, and hasn't reached the 15th rental yet so no T-Shirt.">R2</button></li>
+    <li><button data-correct="false" data-why="R6 is consistent: non-members never get a discount, deadline status notwithstanding.">R6</button></li>
+    <li><button data-correct="true" data-why="R8 says: not a member, missed the deadline, at the 15th rental → no discount (correct, non-members never get one) but DOES get a gift T-Shirt. But gift T-Shirts are explicitly a members-only benefit — so a non-member receiving one is an impossible/contradictory action for this rule.">R8</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q10 · FL-2.1.3 · K1</div>
+  <div class="q">Which of the following is an example of a test-first approach to development?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">Component Test-Driven Development</button></li>
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">Integration Test-Driven Development</button></li>
+    <li><button data-correct="false" data-why="Not a recognized example of a test-first approach.">System Test-Driven Development</button></li>
+    <li><button data-correct="true" data-why="Acceptance Test-Driven Development (ATDD) is a well-known example of a test-first approach to development.">Acceptance Test-Driven Development</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Tools from which of the following categories help with the organization of test cases, detected defects and configuration management?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test execution and coverage tools facilitate the automated execution of test cases and the measurement of the coverage achieved by running those test cases. They do not help with the organization of defects and configuration management.">Test execution and coverage tools</button></li>
+    <li><button data-correct="false" data-why="Test design and test implementation tools facilitate the generation of test cases, test data and test procedures, but they do not help with the organization of defects and configuration management.">Test design and implementation tools</button></li>
+    <li><button data-correct="false" data-why="Defect management tools are used to manage defects but are not testing tools and are not used to organize test cases or configuration management.">Defect management tools</button></li>
+    <li><button data-correct="true" data-why="Test management tools increase the test process efficiency by facilitating the management of the software development lifecycle (SDLC), requirements, tests, defects, and configuration management.">Test management tools</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q32 · FL-5.1.5 · K3</div>
+  <div class="q">The table shows the traceability matrix from test cases to requirements ("X" means the test case covers the requirement):
+
+        Req1  Req2  Req3  Req4  Req5  Req6  Req7
+TC1      X           X     X                 X
+TC2      X                       X           X
+TC3                              X     X
+TC4            X
+
+You want to prioritize the test cases following the additional coverage prioritization technique. You execute all four test cases. Which test case should be executed as the LAST one?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="TC1 covers the most requirements (4/7: Req1, Req3, Req4, Req7), so it's executed first, not last.">TC1</button></li>
+    <li><button data-correct="true" data-why="TC1 goes first (highest coverage: Req1, Req3, Req4, Req7). Of the remaining Req2/Req5/Req6, TC3 covers two (Req5, Req6) so it goes second. That leaves only Req2, covered by TC4, so TC4 goes third. TC2 adds nothing new at that point, so it is executed last.">TC2</button></li>
+    <li><button data-correct="false" data-why="TC3 covers the most additional requirements (Req5, Req6) after TC1, so it runs second, not last.">TC3</button></li>
+    <li><button data-correct="false" data-why="TC4 is needed to cover the last uncovered requirement (Req2), so it runs third, not last.">TC4</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">The 'absence-of-defects fallacy' is one of the principles of testing. Which of the following is an example of addressing this principle in practice?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This describes the 'testing shows the presence, not the absence of defects' principle, not the absence-of-defects fallacy.">Explaining that it is not possible for testing to show the absence of defects</button></li>
+    <li><button data-correct="true" data-why="Letting end users perform acceptance testing validates that the system meets their actual needs and expectations — directly addressing the fallacy that fixing known defects alone guarantees success.">Supporting the end users to perform acceptance testing</button></li>
+    <li><button data-correct="false" data-why="This is impossible per the 'testing shows presence, not absence, of defects' principle — you can never guarantee zero remaining defects.">Ensuring that no implementation defects remain in the delivered system</button></li>
+    <li><button data-correct="false" data-why="This addresses the 'tests wear out' principle instead — it's about keeping tests effective, not about validating user needs.">Modifying tests that cause no failures to ensure few defects remain</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q23 · FL-4.2.4 · K3</div>
+  <div class="q">You are applying state transition testing to the hotel room reservation system modeled by the following state transition table, with 4 states and 5 different events. Assume all test cases start in the 'Requesting' state.
+
+| State | Available | NotAvailable | ChangeRoom | Cancel | Pay |
+|---|---|---|---|---|---|
+| S1: Requesting | S2 | S3 | | | |
+| S2: Confirmed | | | S1 | S4 | S4 |
+| S3: Waiting list | S2 | | | S4 | |
+| S4: End | | | | | |
+
+Which of the following test cases, represented as sequences of events, achieves the highest valid transitions coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both &quot;NotAvailable&quot; events here correspond to the same S1→S3 transition, so this sequence covers only 4 of the 7 valid transitions.">NotAvailable, Available, ChangeRoom, NotAvailable, Cancel</button></li>
+    <li><button data-correct="true" data-why="This sequence's two &quot;Available&quot; events correspond to two DIFFERENT transitions (S1→S2, then S3→S2, since the state changes to Waiting list via NotAvailable/ChangeRoom in between) — so all five events cover 5 distinct transitions, the highest of the four options (5 of 7 valid transitions).">Available, ChangeRoom, NotAvailable, Available, Pay</button></li>
+    <li><button data-correct="false" data-why="Both &quot;Available&quot; events here are the same S1→S2 transition and both &quot;ChangeRoom&quot; events are the same S2→S1 transition, so this sequence covers only 3 of the 7 valid transitions.">Available, ChangeRoom, Available, ChangeRoom, NotAvailable</button></li>
+    <li><button data-correct="false" data-why="This isn't even a feasible test case — after &quot;Cancel&quot; the system reaches the End state, from which no further valid transitions (like ChangeRoom, Available, Pay) exist.">NotAvailable, Cancel, ChangeRoom, Available, Pay</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q16 · FL-3.2.1 · K1</div>
+  <div class="q">Which of the following is a benefit of early and frequent feedback?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Feedback can improve the test process, but improving future projects doesn't require the feedback to come early or frequently within the current one.">It improves the test process for future projects</button></li>
+    <li><button data-correct="false" data-why="Feedback isn't used to force requirement prioritization.">It forces customers to prioritize their requirements based on agreed risks</button></li>
+    <li><button data-correct="false" data-why="There's no single recommended way to measure the quality of changes, and this isn't one of the benefits the syllabus lists for early feedback.">It provides a measure for the quality of changes</button></li>
+    <li><button data-correct="true" data-why="Early and frequent feedback can prevent misunderstandings about requirements — exactly the syllabus's stated benefit.">It helps avoid requirements misunderstandings</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q34 · FL-5.1.7 · K2</div>
+  <div class="q">Consider the following test categories (1-4) and agile testing quadrants (A-D):
+1. Usability testing
+2. Component testing
+3. Functional testing
+4. Reliability testing
+
+A. Agile testing quadrant Q1: technology facing, supporting the development team
+B. Agile testing quadrant Q2: business facing, supporting the development team
+C. Agile testing quadrant Q3: business facing, critique the product
+D. Agile testing quadrant Q4: technology facing, critique the product
+
+How do the following test categories map onto the agile testing quadrants?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Usability testing → Q3 (business facing, critique product); Component testing → Q1 (technology facing, support team); Functional testing → Q2 (business facing, support team); Reliability testing → Q4 (technology facing, critique product).">1C, 2A, 3B, 4D</button></li>
+    <li><button data-correct="false" data-why="Usability testing is business-facing and critiques the product (Q3), not technology-facing (Q4/D).">1D, 2A, 3C, 4B</button></li>
+    <li><button data-correct="false" data-why="Component testing is technology-facing, supporting the team (Q1/A), not Q2/B.">1C, 2B, 3D, 4A</button></li>
+    <li><button data-correct="false" data-why="Functional testing is business-facing, supporting the team (Q2/B), not Q3/C.">1D, 2B, 3C, 4A</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A16 · FL-4.3.2 · K2</div>
+  <div class="q">Which of the following statements about branch testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="If there is at least one (unconditional) branch to cover, at least one test case is still needed to execute it — coverage isn't achieved for free.">If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases</button></li>
+    <li><button data-correct="false" data-why="Covering unconditional branches doesn't automatically cover conditional branches too — those are separate coverage items.">If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved</button></li>
+    <li><button data-correct="false" data-why="The subsumption runs the other way: 100% branch coverage implies 100% statement coverage, not the reverse. An IF without an ELSE needs only one test for 100% statement coverage, but that achieves only 50% branch coverage.">If 100% statement coverage is achieved, then 100% branch coverage is also achieved</button></li>
+    <li><button data-correct="true" data-why="Each decision outcome corresponds to a conditional branch, so achieving 100% branch coverage means every decision outcome (true/false, each case, loop continue/exit) has been exercised.">If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q11 · FL-2.1.5 · K2</div>
+  <div class="q">Which of the following is NOT an example of the shift-left approach?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Early review of requirements is an example of shift-left.">Reviewing the user requirements before they are formally accepted by the stakeholders</button></li>
+    <li><button data-correct="false" data-why="TDD (writing tests before code) is an example of shift-left.">Writing a component test before the corresponding code is written</button></li>
+    <li><button data-correct="false" data-why="Early non-functional testing is an example of shift-left.">Executing a performance efficiency test for a component during component testing</button></li>
+    <li><button data-correct="true" data-why="Test scripts should be under configuration management — it makes no sense to create them before that process is set up, so this is not shift-left in action.">Writing a test script before setting up the configuration management process</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q5 · FL-1.4.2 · K2</div>
+  <div class="q">Which of the following factors have a SIGNIFICANT influence on the test approach?
+i. The SDLC
+ii. The number of defects detected in previous projects
+iii. The identified product risks
+iv. New regulatory requirements forcing formal white-box testing
+v. The test environment setup</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This omits two genuinely significant factors (product risks and regulatory requirements) and includes a weaker one (past defect counts).">i, ii have significant influence</button></li>
+    <li><button data-correct="true" data-why="The SDLC, identified product risks, and regulatory requirements are all called out as significant influences on test approach; past defect counts and environment setup are not, by comparison.">i, iii, iv have significant influence</button></li>
+    <li><button data-correct="false" data-why="Past defect counts and environment setup are the two weaker factors here — this set misses the SDLC and product risks entirely.">ii, iv, v have significant influence</button></li>
+    <li><button data-correct="false" data-why="Product risks matter a great deal; the test environment setup itself does not significantly shape the test approach.">iii, v have significant influence</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q25 · FL-4.3.3 · K2</div>
+  <div class="q">How can white-box testing be useful in support of black-box testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Black-box testing alone gives no measure of actual code coverage — white-box coverage measures provide an objective measurement and identify additional tests needed to increase confidence in the code.">White-box coverage measures can help testers evaluate black-box tests in terms of the code coverage achieved by these black-box tests</button></li>
+    <li><button data-correct="false" data-why="This is true of white-box coverage analysis, but it has nothing to do with supporting black-box testing.">White-box coverage analysis can help testers identify unreachable fragments of the source code</button></li>
+    <li><button data-correct="false" data-why="There's no such subsumption relationship between white-box and black-box techniques in general.">Branch testing subsumes black-box test techniques, so achieving full branch coverage guarantees achieving full coverage of any black-box technique</button></li>
+    <li><button data-correct="false" data-why="White-box techniques design tests from the test object's structure, black-box from the specification — there's no direct relation between their coverage items.">White-box test techniques can provide coverage items for black-box techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A22 · FL-5.2.1 · K1</div>
+  <div class="q">During risk analysis the team considered the following risk: "The system allows too high a discount for a customer". The team estimated the risk impact to be very high.
+What can one say about the risk likelihood?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Risk impact and risk likelihood are independent factors — a high impact does not imply anything about likelihood.">It is also very high. High risk impact always implies high risk likelihood</button></li>
+    <li><button data-correct="false" data-why="Risk impact and risk likelihood are independent factors.">It is very low. High risk impact always implies low risk likelihood</button></li>
+    <li><button data-correct="true" data-why="Risk impact and risk likelihood are independent — knowing one tells you nothing about the other. Both must be assessed separately to determine risk level.">One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent.</button></li>
+    <li><button data-correct="false" data-why="Both factors are needed to calculate the risk level — likelihood is not unimportant just because impact is high.">Risk likelihood is not important with such a high-risk impact. One does not need to define it.</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="a,e" data-why="Configuring test environments and analyzing the test basis are both hands-on technical tasks that fall under the testing role, not the test management role.">
+  <div class="exam-tag">Exam A · Q6 · FL-1.4.5 · K2 · select TWO</div>
+  <div class="q">Which TWO of the following tasks belong MAINLY to a testing role? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Configure test environments</label></li>
+    <li><label><input type="checkbox" value="b"> b) Maintain the product backlog</label></li>
+    <li><label><input type="checkbox" value="c"> c) Design solutions to new requirements</label></li>
+    <li><label><input type="checkbox" value="d"> d) Create the test plan</label></li>
+    <li><label><input type="checkbox" value="e"> e) Analyze the test basis</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q13 · FL-2.2.1 · K2</div>
+  <div class="q">Which types of failures (1-4) fit which test levels (A-D) BEST?
+1. Failures in system behavior as it deviates from the user's business needs
+2. Failures in communication between components
+3. Failures in logic in the code
+4. Failures in not correctly implemented business rules
+
+A. Component testing
+B. Component integration testing
+C. System testing
+D. Acceptance testing</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test basis for acceptance testing is the user's business needs (1D); communication between components is tested at component integration testing (2B); logic failures are found at component testing (3A); business rules are the test basis for system testing (4C).">1D, 2B, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="This swaps components 3 and 4 into the wrong levels — logic failures belong to component testing, and business-rule failures belong to system testing.">1D, 2B, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Business needs are the test basis for acceptance testing, not component integration testing — and this option misassigns several other pairs too.">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="false" data-why="This puts business-needs failures at system testing rather than acceptance testing, among other mismatches.">1C, 2B, 3A, 4D</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q27 · FL-4.4.2 · K2</div>
+  <div class="q">In your project there has been a delay in the release of a brand-new application and test execution started late, but you have very detailed domain knowledge and good analytical skills. The full list of requirements has not yet been shared with the team, but management is asking for some test results to be presented.
+
+Which test technique fits BEST in this situation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is a new product — you probably don't have a checklist yet, and test conditions might not even be known due to the missing requirements.">Checklist-based testing</button></li>
+    <li><button data-correct="false" data-why="This is a new product — you probably don't have enough experience with it yet to make correct error guesses.">Error guessing</button></li>
+    <li><button data-correct="true" data-why="Exploratory testing is most useful when there are few known specifications and/or significant time pressure on testing — exactly this situation, and your strong domain knowledge and analytical skills make you well-suited for it.">Exploratory testing</button></li>
+    <li><button data-correct="false" data-why="Branch testing is time-consuming and management wants results now — plus branch testing doesn't leverage domain knowledge at all.">Branch testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A24 · FL-5.2.3 · K2</div>
+  <div class="q">Which of the following is an example of how product risk analysis influences thoroughness and scope of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Daily monitoring and reporting of known risk levels is a risk monitoring activity, not risk analysis.">The test manager monitors and reports the level of all known risks on a daily basis so the stakeholders can make an informed decision on the release date</button></li>
+    <li><button data-correct="false" data-why="Choosing to integrate with an open-source database is an architectural decision, unrelated to testing thoroughness.">One of the identified risks was &quot;Lack of support of open-source databases&quot;, so the team decided to integrate the system with an open-source database</button></li>
+    <li><button data-correct="false" data-why="Estimating total residual risk is an example of performing quantitative risk analysis itself, not an example of it influencing test thoroughness or scope.">During the quantitative risk analysis, the team estimated the total level of all identified risks and reported it as the total residual risk before testing</button></li>
+    <li><button data-correct="true" data-why="A very high assessed risk level (performance risk) directly leads to more thorough testing being scheduled earlier in the SDLC — this is exactly how risk analysis shapes thoroughness and timing of testing.">Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q18 · FL-3.2.3 · K1</div>
+  <div class="q">Which participant in the review process is responsible for ensuring that the review meetings run effectively and that everyone at the meetings can voice their opinions freely?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The manager decides what needs to be reviewed and allocates resources like staff and time — not meeting facilitation.">Manager</button></li>
+    <li><button data-correct="true" data-why="The moderator (facilitator) is responsible for the effective running of review meetings, including mediation, time management, and creating a safe environment where everyone can speak freely.">Moderator</button></li>
+    <li><button data-correct="false" data-why="&quot;Chairperson&quot; is not one of the principal roles the syllabus defines for reviews.">Chairperson</button></li>
+    <li><button data-correct="false" data-why="The review leader takes overall responsibility for organizing the review (who's involved, when and where) — that's logistics, not meeting facilitation.">Review Leader</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A18 · FL-4.5.1 · K2</div>
+  <div class="q">Which of the following BEST describe the collaborative approach to user story writing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Collaborative writing means ALL stakeholders create the story together to obtain a shared vision — it's not testers/developers drafting it for later acceptance by the business side.">User stories are created by testers and developers and then accepted by business representatives</button></li>
+    <li><button data-correct="true" data-why="Collaborative user story writing means that all stakeholders — business representatives, developers, and testers — create the user stories together, to obtain the shared vision the syllabus describes.">User stories are created by business representatives, developers, and testers together</button></li>
+    <li><button data-correct="false" data-why="This still isn't truly collaborative authorship — it has business representatives writing alone with dev/test only verifying afterward, rather than all three perspectives contributing from the start.">User stories are created by business representatives and verified by developers and testers</button></li>
+    <li><button data-correct="false" data-why="INVEST (independent, negotiable, valuable, estimable, small, testable) is the list of properties a good user story should have — it doesn't describe the collaborative-authorship process itself.">User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q6 · FL-1.4.5 · K2</div>
+  <div class="q">Which of the following statements about the different testing roles is MOST likely to be CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In Agile, some test management tasks may be handled by the team itself, but the testing role is not primarily the responsibility of a single outside individual — it's spread across team members via the whole-team approach.">In Agile software development, the test management role is the primary responsibility of the team, while the testing role is primarily the responsibility of a single individual from outside the team</button></li>
+    <li><button data-correct="false" data-why="The test management role covers planning, monitoring/control, and completion — the testing role is not primarily about monitoring and control.">The testing role is primarily responsible for test monitoring and test control, while the test management role is primarily responsible for test planning and test completion</button></li>
+    <li><button data-correct="true" data-why="In Agile, some test management tasks are handled by the team itself, while test management activities spanning multiple teams are handled by test managers outside the team.">In Agile software development, test management activities that span multiple teams are handled by a test manager outside the team, while some test management tasks are handled by the team itself</button></li>
+    <li><button data-correct="false" data-why="Test management covers planning, monitoring/control, and completion — not test analysis and test design, which belong to the testing role along with implementation and execution.">The test management role is primarily responsible for test analysis and test design, while the testing role is primarily responsible for test implementation and test execution</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q36 · FL-5.3.2 · K2</div>
+  <div class="q">Which of the following activities in the test process makes the MOST use of test progress reports?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test design.">Test design</button></li>
+    <li><button data-correct="true" data-why="A test completion report is prepared during test completion, using information from test progress reports and other data gathered throughout testing.">Test completion</button></li>
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test analysis.">Test analysis</button></li>
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test planning.">Test planning</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q14 · FL-2.2.3 · K2</div>
+  <div class="q">You are testing a user story with three acceptance criteria: AC1, AC2 and AC3. AC1 is covered by test case TC1, AC2 by TC2, and AC3 by TC3. The test execution history had three test runs on three consecutive versions of the software as follows:
+
+Execution 1: TC1 = (1) Failed, TC2 = (2) Passed, TC3 = (3) Failed
+Execution 2: TC1 = (4) Passed, TC2 = (5) Failed, TC3 = (6) Failed
+Execution 3: TC1 = (7) Passed, TC2 = (8) Passed, TC3 = (9) Passed
+
+Tests are repeated once you are informed that all defects found in the test run are corrected and a new version of the software is available.
+Which of the above tests are executed as regression tests?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Tests 4, 8, and 9 are actually confirmation tests (re-checking a previously failed case) rather than regression tests (re-checking a previously passed one).">Only 4, 7, 8, 9</button></li>
+    <li><button data-correct="true" data-why="TC2 passed in Execution 1, so test (5) — re-running TC2 in Execution 2 — is a regression test; TC1 passed in Execution 2, so test (7) — re-running TC1 in Execution 3 — is also a regression test. Tests (4), (6), (8), (9) are confirmation tests since they re-check previously failed cases.">Only 5, 7</button></li>
+    <li><button data-correct="false" data-why="Tests 4, 6, 8, and 9 are all confirmation tests, not regression tests — each re-checks a case that had previously failed.">Only 4, 6, 8, 9</button></li>
+    <li><button data-correct="false" data-why="Test 6 is a confirmation test (TC3 had failed in Execution 1), not a regression test — only test 5 in this pair is genuinely a regression test.">Only 5, 6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Which test activity does a data preparation tool support?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test monitoring involves the ongoing checking of all activities and comparison of actual progress against the test plan. Test control involves taking the actions necessary to meet the test objectives of the test plan. No test data are prepared during these activities.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis includes analysis of the test basis to identify test conditions and prioritize them. Test data are not prepared during this activity.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test design and implementation can both include the identification, creation or acquisition of the testware necessary for test execution (e.g., test data).">Test design and test implementation</button></li>
+    <li><button data-correct="false" data-why="Test completion activities occur at project milestones (e.g., release, end of iteration, test level completion), so it is too late for preparing test data.">Test completion</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">Consider the following user story:
+As an Editor, I want to review content before it is published, so that I can ensure the grammar is correct.
+
+Acceptance criteria:
+• The user can log in to the content management system with "Editor" role
+• The editor can view existing content pages
+• The editor can edit the page content
+• The editor can add markup comments
+• The editor can save changes
+• The editor can reassign to the "content owner" role to make updates
+
+Which of the following is the BEST example of an ATDD test for this user story?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This test covers two acceptance criteria at once: editing the page content, and saving changes — both explicitly listed for this user story.">Test if the editor can save the document after edit the page content</button></li>
+    <li><button data-correct="false" data-why="The acceptance criteria describe the EDITOR's activities, not the content owner's — this test goes beyond the story's stated scope.">Test if the content owner can log in and make updates to the content</button></li>
+    <li><button data-correct="false" data-why="Scheduling content for publication might be a nice feature, but it isn't covered by any of the listed acceptance criteria — ATDD test cases must not go beyond the story.">Test if the editor can schedule the edited content for publication</button></li>
+    <li><button data-correct="false" data-why="The acceptance criteria describe reassigning FROM editor TO content owner — not reassigning to another editor, which isn't part of this story.">Test if the editor can reassign to another editor to make updates</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A6 · FL-1.5.3 · K2</div>
+  <div class="q">Which of the following BEST explains a benefit of independence of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Quality should be everyone's responsibility on a project, not assigned solely to the test team.">The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team</button></li>
+    <li><button data-correct="false" data-why="There's no reason to believe an external team feels less bound by delivery deadlines, and missing deadlines isn't a benefit anyway.">If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines</button></li>
+    <li><button data-correct="false" data-why="It's bad practice for a test team to work in isolation — good independent teams still stay concerned with changing requirements and communicate well with developers.">An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system</button></li>
+    <li><button data-correct="true" data-why="Specifications are never perfect — developers must make assumptions when interpreting them, and an independent tester is well-placed to challenge and verify those assumptions.">When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q37 · FL-5.4.1 · K2</div>
+  <div class="q">Which of the following is NOT an example of how configuration management supports testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS supported by configuration management. Unique identification of commits/versions makes it possible to reassemble the exact software and test-script versions a user was running, reproducing the failure faster.">All commits to the repository are uniquely identified and version controlled</button></li>
+    <li><button data-correct="false" data-why="This IS supported by configuration management. If a test environment change causes issues, CM allows rolling back to a previous version so testing continues unaffected.">All changes in the test environment elements are tracked</button></li>
+    <li><button data-correct="false" data-why="This IS supported by configuration management. CM ensures that identified documentation (e.g. requirement specifications) and software items are referenced unambiguously in testware.">All requirement specifications are referenced unambiguously in test plans</button></li>
+    <li><button data-correct="true" data-why="Assigning and tracking a defect's status is ensured by defect management, not configuration management — this is NOT an example of configuration management support.">All identified defects have an assigned status</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">What is the MAIN difference between black-box test techniques and experience-based test techniques?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In most cases both black-box and experience-based test techniques can be used for the same test objects — that's not the main difference.">The test object</button></li>
+    <li><button data-correct="false" data-why="Both black-box and experience-based test techniques can be used at all test levels.">The test level at which the test technique is used</button></li>
+    <li><button data-correct="true" data-why="Black-box test techniques are based on an analysis of the specified behavior of the test object, so the test basis is usually a specification. Experience-based test techniques effectively use the tester's knowledge and experience — the tester may not use the specification at all.">The test basis</button></li>
+    <li><button data-correct="false" data-why="Experience-based test techniques are complementary to black-box (and white-box) test techniques, and both can be used in all SDLCs — this isn't the distinguishing factor.">The software development lifecycle (SDLC) in which the test technique can be used</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q18 · FL-3.2.5 · K1</div>
+  <div class="q">Which of these statements is NOT a factor that contributes to successful reviews?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Adequate time for participants to prepare IS a success factor, so this doesn't answer the &quot;NOT&quot; question.">Participants should dedicate adequate time for the review</button></li>
+    <li><button data-correct="false" data-why="Splitting large work products into small chunks so reviewers stay focused IS a success factor.">Splitting large work products into small parts to make the required effort less intense</button></li>
+    <li><button data-correct="false" data-why="Avoiding behaviors like boredom, exasperation, or hostility IS a success factor for a healthy review culture.">Participants should avoid behaviors that might indicate boredom, exasperation, or hostility to other participants</button></li>
+    <li><button data-correct="true" data-why="Reviews are static testing, and static testing never executes the software — so it can only ever find defects, never failures. &quot;Failures found should be acknowledged&quot; describes something reviews structurally cannot produce, which is why this is the one that is NOT a real success factor.">Failures found should be acknowledged, appreciated, and handled objectively</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,c" data-why="In sequential models like the V-model, testers can review requirements (a form of static testing) and do test planning in the initial phases. Dynamic testing, acceptance test execution, and maintenance testing all require a working product, which doesn't exist until later phases.">
+  <div class="exam-tag">Exam A · A7 · FL-2.1.1 · K2 · select TWO</div>
+  <div class="q">You are working as a tester in the team that follows the V-model. Which of the following activities CAN be performed in the initial phases of the SDLC? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Dynamic test execution</label></li>
+    <li><label><input type="checkbox" value="b"> b) Static testing</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test planning</label></li>
+    <li><label><input type="checkbox" value="d"> d) Acceptance test execution</label></li>
+    <li><label><input type="checkbox" value="e"> e) Maintenance testing</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following statements describe a valid test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing principle 1 says testing can show the presence of defects, never their absence — you can't prove there are none left.">To prove that there are no unfixed defects in the system under test</button></li>
+    <li><button data-correct="false" data-why="See testing principle 7 (absence-of-defects fallacy) — passing tests never proves there will be no failures in production.">To prove that there will be no failures after the implementation of the system into production</button></li>
+    <li><button data-correct="true" data-why="Testing finds defects and failures, which reduces risk level and simultaneously builds confidence in quality — this is a real, achievable objective.">To reduce the risk level of the test object and to build confidence in the quality level</button></li>
+    <li><button data-correct="false" data-why="Testing principle 2 (exhaustive testing is impossible) rules this out — you cannot test all input combinations.">To verify that there are no untested combinations of inputs</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q38 · FL-5.5.1 · K3</div>
+  <div class="q">You received the following defect report from the developers stating that the anomaly described in this test report is not reproducible.
+
+"Application hangs up"
+2022-May-03 – John Doe – Rejected
+The application hangs up after entering "Test input: $ä" in the Name field on the new user creation screen. Tried to log off, log in with test_admin01 account, same issue. Tried with other test admin accounts, same issue. No error message received; log (see attached) contains fatal error notification. Based on the test case TC-1305, the application should accept the provided input and create the user. Please fix with high priority, this feature is related to REQ-0012, which is a critical new business requirement.
+
+What critical information is MISSING from this test report that would have been useful for the developers?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both are present: expected result is &quot;the application should accept the provided input and create the user&quot;; actual result is &quot;the application hangs up after entering the test input.&quot;">Expected result and actual result</button></li>
+    <li><button data-correct="false" data-why="There is a reference to the test case (TC-1305) and to the related requirement (REQ-0012), and the status is stated as &quot;Rejected&quot; — this information is already present.">References and defect status</button></li>
+    <li><button data-correct="true" data-why="The report never states which test environment (OS, browser, application version) the anomaly was observed in, nor precisely which test item/application version is affected — without that, developers can't be sure they're testing the same conditions, which is likely why they couldn't reproduce it.">Test environment and test item</button></li>
+    <li><button data-correct="false" data-why="The report already conveys urgency and business impact — it's stated as high priority, affecting many/all test admin accounts, and tied to a critical business requirement.">Priority and severity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q20 · FL-4.2.1 · K3</div>
+  <div class="q">You are testing a PIN validator, which accepts valid PINs and rejects invalid PINs. A PIN is a sequence of digits. A PIN is valid if it consists of four digits, which are not all the same digit. You have identified the following valid equivalence partitions:
+
+Variable: PIN code length
+• The partition "length correct" - four-digit PINs
+• The partition "length incorrect" - PINs with length other than 4
+
+Variable: Number of different digits
+• The partition "number of different digits correct" - PINs with at least two different digits
+• The partition "number of different digits incorrect" - PINs with all digits being the same
+
+Which of the following is the BEST set of input test data to cover the identified equivalence partitions?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="12 covers &quot;length incorrect&quot; (too few digits); 1111 covers &quot;length correct&quot; + &quot;digits incorrect&quot;; 1234 covers &quot;length correct&quot; + &quot;digits correct&quot;; 12345 covers &quot;length incorrect&quot; (too many digits) — all four partitions covered.">12, 1111, 1234, 12345</button></li>
+    <li><button data-correct="false" data-why="All partitions are covered, but only the lower side of &quot;length incorrect&quot; is represented (no too-many-digits case).">1, 123, 1111, 1234</button></li>
+    <li><button data-correct="false" data-why="No value here covers the &quot;correct PIN&quot; (valid four-digit, not-all-same) partition.">11, 12, 1111, 12345</button></li>
+    <li><button data-correct="false" data-why="No value here covers the &quot;number of different digits&quot; partitions properly.">123, 1222, 12345</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Below 65% (26/40)? Don't just re-read the questions you missed &mdash; use the section
+  number in each question's exam-tag (e.g. FL-4.2) to find the matching chapter lesson, re-study the whole
+  section, then retake. First click counts, so an honest 65%+ here is a real signal you're ready.</div>
+  Mock Exam 3 of 4 &mdash; each follows the official CTFL v4.0 blueprint (8/6/4/11/9/2). Sit all four for the
+  fullest coverage of the 146 official sample questions.
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mock Exam 1 &mdash; 40 Questions (Full CTFL Blueprint)</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;&middot;&nbsp; Mock Exam 1 &nbsp;&middot;&nbsp;
+  <a href="../lessons/0022-6.2-benefits-and-risks-of-test-automation.html">&larr; Back: 6.2 lesson</a> &nbsp;&middot;&nbsp;
+  <a href="0023-final-mock-exam-2.html">Next: Mock Exam 2 &rarr;</a> &nbsp;&middot;&nbsp;
+  <a href="../reference/glossary.html">Glossary &#8599;</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">&#9790; Dark</button>
+</nav>
+
+<h1>Mock Exam 1 &mdash; 40 Questions</h1>
+<p class="subtitle">Full-length practice exam following the official ISTQB CTFL v4.0 question distribution &mdash; 8 from Chapter 1, 6 from Chapter 2, 4 from Chapter 3, 11 from Chapter 4, 9 from Chapter 5, and 2 from Chapter 6 (40 total). Every question is reproduced verbatim from the official Sample Exams A, C and D and presented in mixed order, just like a real sitting. The real CTFL pass mark is 65% (26/40). Nothing is graded until you press Submit Exam &mdash; answer all 40 questions, then submit to grade the whole exam at once. The four mock exams together use all 146 official questions (a few of the highest-value ones recur across exams).</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/40</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">Which of the following is a characteristic of experience-based test techniques?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is a common characteristic of white-box test techniques — test conditions, cases, and data are derived from a test basis that may include code, software architecture, or detailed design.">Test cases are created based on detailed design information</button></li>
+    <li><button data-correct="false" data-why="This is a common characteristic of white-box test techniques — coverage is measured based on items tested within a selected structure.">Items tested within the interface code section are used to measure coverage</button></li>
+    <li><button data-correct="true" data-why="This knowledge and experience — expected use of the software, its environment, likely defects, and the distribution of those defects — is used to define tests. This is the defining characteristic of experience-based test techniques.">The test techniques heavily rely on the tester's knowledge of the software and the business domain</button></li>
+    <li><button data-correct="false" data-why="This is a common characteristic of black-box test techniques — test cases detect gaps between requirements and implementation, and deviations from requirements.">The test cases are used to identify deviations from the requirements</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A19 · FL-5.1.1 · K2</div>
+  <div class="q">Consider the following part of a test plan.
+"Testing will be performed using component testing and component integration testing. The regulations require to demonstrate that 100% branch coverage is achieved for each component classified as critical."
+Which part of the test plan does this part belong to?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not communication.">Communication</button></li>
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not the risk register.">Risk register</button></li>
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not the general context of testing.">Context of testing</button></li>
+    <li><button data-correct="true" data-why="The paragraph contains information on test levels (component testing, component integration testing) and an exit criterion (100% branch coverage for critical components) — both are part of the test approach section of a test plan.">Test approach</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following statements describe a valid test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing principle 1 says testing can show the presence of defects, never their absence — you can't prove there are none left.">To prove that there are no unfixed defects in the system under test</button></li>
+    <li><button data-correct="false" data-why="See testing principle 7 (absence-of-defects fallacy) — passing tests never proves there will be no failures in production.">To prove that there will be no failures after the implementation of the system into production</button></li>
+    <li><button data-correct="true" data-why="Testing finds defects and failures, which reduces risk level and simultaneously builds confidence in quality — this is a real, achievable objective.">To reduce the risk level of the test object and to build confidence in the quality level</button></li>
+    <li><button data-correct="false" data-why="Testing principle 2 (exhaustive testing is impossible) rules this out — you cannot test all input combinations.">To verify that there are no untested combinations of inputs</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,c" data-why="In sequential models like the V-model, testers can review requirements (a form of static testing) and do test planning in the initial phases. Dynamic testing, acceptance test execution, and maintenance testing all require a working product, which doesn't exist until later phases.">
+  <div class="exam-tag">Exam A · A7 · FL-2.1.1 · K2 · select TWO</div>
+  <div class="q">You are working as a tester in the team that follows the V-model. Which of the following activities CAN be performed in the initial phases of the SDLC? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Dynamic test execution</label></li>
+    <li><label><input type="checkbox" value="b"> b) Static testing</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test planning</label></li>
+    <li><label><input type="checkbox" value="d"> d) Acceptance test execution</label></li>
+    <li><label><input type="checkbox" value="e"> e) Maintenance testing</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A11 · FL-3.1.1 · K1</div>
+  <div class="q">The following is a list of the work products produced in the SDLC.
+i. Business requirements
+ii. Schedule
+iii. Test budget
+iv. Third-party executable code
+v. User stories and their acceptance criteria
+
+Which of them can be reviewed?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This leaves out the schedule, test budget and user stories, all of which can be read and understood, and are therefore reviewable.">i and iv can be reviewed</button></li>
+    <li><button data-correct="false" data-why="Third-party executable code is not readable by humans, so it doesn't belong on the reviewable list.">i, ii, iii and iv can be reviewed</button></li>
+    <li><button data-correct="true" data-why="Business requirements, schedule, test budget, and user stories with acceptance criteria are all human-readable work products — any of them can be the subject of a review. Third-party executable code is the one exception: it's not interpretable by humans.">i, ii, iii, and v can be reviewed</button></li>
+    <li><button data-correct="false" data-why="This drops business requirements and includes third-party executable code, which cannot be reviewed.">iii, iv, v can be reviewed</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,e" data-why="The equivalence partitions here are {…,99,100} → error, {0–17} → student discount, {18–64} → no discount, {65,…} → pensioner discount, based on D = CY − BY. The two existing test cases (D=30 → no discount, D=−1 → error) already cover the &quot;no discount&quot; and &quot;error&quot; partitions. Option b gives D=65 (pensioner discount, uncovered). Option e gives D=0 (student discount, uncovered). Option a gives D=64 (no discount, already covered). Option c gives D=−65 (error, already covered). Option d gives D=18 (no discount, already covered).">
+  <div class="exam-tag">Exam D · Q20 · FL-4.2.1 · K3 · select TWO</div>
+  <div class="q">The system for selling cinema tickets calculates the discount type based on the client's birth year (BY) and on the current year (CY) as follows:
+Let D be the difference between CY and BY, that is, D = CY – BY
+• If D &lt; 0 then print the error message "birth year cannot be greater than current year"
+• If 0 ≤ D &lt; 18 then apply the student discount
+• If 18 ≤ D &lt; 65 then apply no discount
+• If D ≥ 65 then apply the pensioner discount
+
+Your test suite already contains two test cases:
+• BY = 1990, CY = 2020, expected result: no discount
+• BY = 2030, CY = 2029, expected result: print the error message
+
+Which of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> BY = 2001, CY = 2065</label></li>
+    <li><label><input type="checkbox" value="b"> BY = 1900, CY = 1965</label></li>
+    <li><label><input type="checkbox" value="c"> BY = 1965, CY = 1900</label></li>
+    <li><label><input type="checkbox" value="d"> BY = 2011, CY = 2029</label></li>
+    <li><label><input type="checkbox" value="e"> BY = 2000, CY = 2000</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,d" data-why="Running out of budget is explicitly named in the syllabus as a valid exit criterion. Achieving a coverage target (80% statement coverage) is a measure of thoroughness — also an exit criterion. Budget approval and resource availability (test basis) are entry criteria; being ISTQB certified is an entry-criterion-style precondition, not a completion measure.">
+  <div class="exam-tag">Exam D · Q30 · FL-5.1.3 · K2 · select TWO</div>
+  <div class="q">Which of the following BEST define EXIT criteria in a testing project?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Budget is approved</label></li>
+    <li><label><input type="checkbox" value="b"> Budget runs out</label></li>
+    <li><label><input type="checkbox" value="c"> Test basis is available</label></li>
+    <li><label><input type="checkbox" value="d"> Test cases achieved at least 80% statement coverage</label></li>
+    <li><label><input type="checkbox" value="e"> All test analysts are ISTQB certified at the Foundation Level</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q2 · FL-1.1.2 · K2</div>
+  <div class="q">Which of the following statements BEST describes the difference between testing and debugging?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Dynamic testing does cause failures, but debugging fixes defects, not failures — it locates and fixes the cause, it doesn't 'fix a failure' directly.">Testing causes failures while debugging fixes failures</button></li>
+    <li><button data-correct="false" data-why="Both activities improve quality and should be seen positively; dynamic testing intentionally trying to break things is a narrow, not-typical view.">Testing is a negative activity while debugging is a positive activity</button></li>
+    <li><button data-correct="true" data-why="Testing determines defects exist (directly via review/static analysis, or indirectly by causing a failure); debugging — a separate, usually developer-performed activity — locates and fixes those defects.">Testing determines that defects exist while debugging removes defects</button></li>
+    <li><button data-correct="false" data-why="Testing finds defects (directly or via failures), it doesn't find 'the cause' of defects — that's debugging's job, and debugging fixes defects, not their causes.">Testing finds the cause of defects while debugging fixes the cause of defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q21 · FL-4.2.2 · K3</div>
+  <div class="q">A developer was asked to implement the following business rule:
+INPUT: value (integer number)
+IF (value ≤ 100 OR value ≥ 200) THEN write "value incorrect"
+ELSE write "value OK"
+
+You design the test cases using 2-value boundary value analysis.
+
+Which of the following sets of test inputs achieves the greatest coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Only 100 and 200 are valid 2-value BVA coverage items here — 50% coverage.">100, 150, 200, 201</button></li>
+    <li><button data-correct="false" data-why="Only 100 and 200 are valid 2-value BVA coverage items here — 50% coverage.">99, 100, 200, 201</button></li>
+    <li><button data-correct="false" data-why="Only 100 and 101 are valid 2-value BVA coverage items here — 50% coverage.">98, 99, 100, 101</button></li>
+    <li><button data-correct="true" data-why="The equivalence partitions are {…,99,100}, {101,…,199}, {200,201,…}, so the four boundary values are 100, 101, 199, 200. This option hits 101, 199, and 200 — three of four, or 75% coverage, the highest of the four options.">101, 150, 199, 200</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Consider the following rule: "for every SDLC activity there is a corresponding test activity". In which SDLC models does this rule hold?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, not only sequential ones.">Only in sequential development models</button></li>
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, not only iterative ones.">Only in iterative development models</button></li>
+    <li><button data-correct="false" data-why="The rule holds for all SDLC models, including sequential ones too.">Only in iterative and incremental development models</button></li>
+    <li><button data-correct="true" data-why="Quality control applies to all development activities, so this rule holds across sequential, incremental, and iterative SDLC models.">In sequential, incremental, and iterative development models</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Which test activity does a data preparation tool support?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test monitoring involves the ongoing checking of all activities and comparison of actual progress against the test plan. Test control involves taking the actions necessary to meet the test objectives of the test plan. No test data are prepared during these activities.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis includes analysis of the test basis to identify test conditions and prioritize them. Test data are not prepared during this activity.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test design and implementation can both include the identification, creation or acquisition of the testware necessary for test execution (e.g., test data).">Test design and test implementation</button></li>
+    <li><button data-correct="false" data-why="Test completion activities occur at project milestones (e.g., release, end of iteration, test level completion), so it is too late for preparing test data.">Test completion</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q32 · FL-5.1.4 · K3</div>
+  <div class="q">Your team uses the three-point estimation technique to estimate the test effort for a new high-risk feature. The following estimates were made:
+• Most optimistic estimation: 2 person-hours
+• Most likely estimation: 11 person-hours
+• Most pessimistic estimation: 14 person-hours
+
+What is the final estimate?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Using E = (optimistic + 4×most-likely + pessimistic)/6 = (2 + 44 + 14)/6 = 10, not 9.">9 person-hours</button></li>
+    <li><button data-correct="false" data-why="14 is the pessimistic estimate itself, not the weighted final estimate (10).">14 person-hours</button></li>
+    <li><button data-correct="false" data-why="11 is the most-likely estimate itself, not the weighted final estimate (10).">11 person-hours</button></li>
+    <li><button data-correct="true" data-why="E = (optimistic + 4×most-likely + pessimistic)/6 = (2 + 4×11 + 14)/6 = 60/6 = 10 person-hours.">10 person-hours</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q2 · FL-1.2.3 · K2</div>
+  <div class="q">A designer documents a design for a user interface that does not suitably address disabled users because the designer is tired. The programmer implements the user interface in line with the design but as they are working under severe time pressure, they do not include suitable exception handling in their program code for bonus calculations. When the operational system is used, complaints are made by some disabled users about the interface and the company is subsequently fined by the relevant regulatory authority. No one notices that bonus calculations are sometimes incorrect. Which of the following statements is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The miscalculation of bonuses is a failure by the system, not a defect.">The miscalculation of bonuses is a defect that occasionally occurs</button></li>
+    <li><button data-correct="false" data-why="The system failing to support disabled users is the failure — the fine is a consequence, not itself a failure (it's the regulatory system working correctly).">The fine received for failing to address some disabled users is a failure</button></li>
+    <li><button data-correct="true" data-why="The error is the mistake made by the programmer, and working under severe time pressure is the root cause of that error — and of the resulting defect.">The programmer working under severe time pressure is a root cause</button></li>
+    <li><button data-correct="false" data-why="The tired designer's mistake is the error; the resulting poor interface design is a design defect, not a 'designer error' embedded in the design.">The design of the user interface includes a designer error</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">You are working on a project to develop a system to analyze driving test results. You have been asked to design test cases based on the following decision table.
+
+|                                     | R1 | R2 | R3 |
+|-------------------------------------|----|----|----|
+| C1: First attempt at the exam?      | -  | -  | F  |
+| C2: Theoretical exam passed?        | T  | F  | -  |
+| C3: Practical exam passed?          | T  | -  | F  |
+| Issue a driving license?            | X  |    |    |
+| Request additional driving lessons? |    |    | X  |
+| Request to take the exam again?     |    | X  |    |
+
+What test data will show that there are contradictory rules in the decision table?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="(T, T, F) doesn't match any rule — that's an example of omission, not contradiction.">C1 = T, C2 = T, C3 = F</button></li>
+    <li><button data-correct="false" data-why="(T, F, T) matches only R2 — no contradiction.">C1 = T, C2 = F, C3 = T</button></li>
+    <li><button data-correct="false" data-why="Both (T,T,T) and (F,T,T) match only R1 — no contradiction.">C1 = T, C2 = T, C3 = T and C1 = F, C2 = T, C3 = T</button></li>
+    <li><button data-correct="true" data-why="(F, F, F) matches both R2 and R3, but they specify different actions — that's a genuine contradiction.">C1 = F, C2 = F, C3 = F</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q15 · FL-3.1.3 · K2</div>
+  <div class="q">Given the following example defects:
+i. Two different parts of the design specification disagree due to the complexity of the design
+ii. A response time is too long and so makes users lose patience
+iii. A path in the code cannot be reached during execution
+iv. A variable is declared but never subsequently used in the program
+v. The amount of memory needed by the program to generate a report is too high
+
+Which of the following BEST identifies example defects that could be found by static testing (rather than dynamic testing)?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both ii (response time) and v (memory usage) are only observable by executing the program — they're dynamic-testing catches, not static ones.">ii, v</button></li>
+    <li><button data-correct="false" data-why="v (memory usage) needs execution to observe, so it doesn't belong with iii, which is a static-testing catch.">iii, v</button></li>
+    <li><button data-correct="false" data-why="ii (response time) needs execution to measure, so it doesn't belong alongside i and iv, which are static-testing catches.">i, ii, iv</button></li>
+    <li><button data-correct="true" data-why="i is a specification defect (inconsistency), iii and iv are coding defects (unreachable/unused code) — all three are typical defects easier to find by static testing. ii (response time) and v (memory) can only be measured by actually running the program, so they belong to dynamic testing.">i, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A21 · FL-5.1.6 · K1</div>
+  <div class="q">Which of the following is TRUE regarding the test pyramid?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test pyramid emphasizes having a larger number of tests at the lower test levels, which are faster and cheaper to run.">It emphasizes having far more tests at the lower test levels</button></li>
+    <li><button data-correct="false" data-why="It's the opposite: lower-level tests are more atomic, checking a small, specific piece of logic — the top layer's tests check large pieces of functionality.">It suggests that each low-level test checks a large part of the functionality</button></li>
+    <li><button data-correct="false" data-why="The test pyramid shows how the number of tests is distributed across test levels, not how test types are distributed — that's closer to the testing quadrants.">It describes distribution of test types across the SDLC</button></li>
+    <li><button data-correct="false" data-why="The test pyramid model directly supports the team in test automation and test effort allocation.">It has no impact on the construction of automated tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q24 · FL-4.3.1 · K2</div>
+  <div class="q">Your test suite achieved 100% statement coverage. What is the consequence of this fact?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Since 100% statement coverage is achieved, every statement — including ones with defects — must have been executed and evaluated at least once.">Each instruction in the code that contains a defect has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Coverage depends on WHAT is tested, not how many test cases exist. One test case (x=0) for &quot;if (x==0) y=1&quot; achieves 100% statement coverage, but two different test cases (x=1, x=2) achieve only 50%.">Any test suite containing more test cases than your test suite will also achieve 100% statement coverage</button></li>
+    <li><button data-correct="false" data-why="A loop can create infinitely many possible paths through the code, so exhaustively executing every path is not possible.">Each path in the code has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Exhaustive testing of every input combination is impossible (testing principle #2) — for &quot;input x; print x&quot;, any single test achieves 100% statement coverage while covering just one input value.">Every combination of input values has been tested at least once</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q11 · FL-2.1.4 · K2</div>
+  <div class="q">Which of the following is MOST likely to be a challenge encountered when implementing DevOps?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="DevOps generally increases the visibility of non-functional quality characteristics like performance and reliability — this is a benefit, not a challenge.">Making sure that non-functional quality characteristics are not overlooked</button></li>
+    <li><button data-correct="false" data-why="CI/CD, as used in DevOps, facilitates stable test environments — this is a benefit, not a challenge.">Managing continuously changing test environments</button></li>
+    <li><button data-correct="false" data-why="CI/CD as used in DevOps generally reduces the need for manual testing, not increases the need for manual testers.">The need for more manual testers with suitable experience</button></li>
+    <li><button data-correct="true" data-why="DevOps implementation risks explicitly include the need to define and establish the delivery pipeline, introduce and maintain CI/CD tools, and set up and maintain test automation.">Setting up the test automation as part of the delivery pipeline</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">Given the following test tasks:
+1. Derive test cases from test conditions
+2. Identify reusable testware
+3. Organize test cases into test procedures
+4. Evaluate the test basis and the test object
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST matches the tasks with the activities?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test analysis evaluates the test basis/object (task 4, not 1), and completion identifies reusable testware (task 2, not 3).">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="true" data-why="Test design derives cases from conditions (1B); completion identifies reusable testware (2D); implementation organizes cases into procedures (3C); analysis evaluates the test basis/object (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Deriving test cases from conditions is test design, not implementation.">1C, 2A, 3B, 4D</button></li>
+    <li><button data-correct="false" data-why="Organizing cases into procedures is test implementation, not analysis.">1C, 2D, 3A, 4B</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q25 · FL-4.3.3 · K2</div>
+  <div class="q">Which of the following is NOT true for white-box testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS true — the fundamental strength of white-box techniques is that the entire software implementation is taken into account during testing.">During white-box testing the entire software implementation is considered</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box coverage measures provide an objective measure of coverage and help identify additional tests to increase it.">White-box coverage metrics can help identify additional tests to increase code coverage</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box test techniques can be used to perform reviews, which are a form of static testing.">White-box test techniques can be used in static testing</button></li>
+    <li><button data-correct="true" data-why="This is the one that is NOT true — it's actually the weakness of white-box testing. White-box techniques analyze the test object's existing structure, so they cannot detect a requirement that was never implemented at all (a defect of omission).">White-box testing can help identify gaps in requirements implementation</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q34 · FL-5.1.7 · K2</div>
+  <div class="q">What is the relationship between the testing quadrants, test levels and test types?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing quadrants group test levels and test types separately by criteria — they don't represent combinations tied to SDLC location.">Testing quadrants represent particular combinations of test levels and test types, defining their location in the software development lifecycle</button></li>
+    <li><button data-correct="false" data-why="Describing granularity per test level is what the test pyramid model does, not the testing quadrants.">Testing quadrants describe the degree of granularity of individual test types performed at each test level</button></li>
+    <li><button data-correct="false" data-why="Any test type can generally be performed at any test level — quadrants don't assign test types to specific levels.">Testing quadrants assign the test types that can be performed to the test levels</button></li>
+    <li><button data-correct="true" data-why="Testing quadrants group test levels, test types, activities, techniques, and work products by criteria such as business- vs. technology-facing, and supporting the team vs. critiquing the product.">Testing quadrants group test levels and test types by several criteria such as targeting specific stakeholders</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q5 · FL-1.4.3 · K2</div>
+  <div class="q">Given the following testware:
+1. Coverage items
+2. Change requests
+3. Test execution schedule
+4. Prioritized test conditions
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST shows the testware produced by the activities?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Coverage items are a test design output (1B); change requests come from test completion (2D); the test execution schedule comes from test implementation (3C); prioritized test conditions come from test analysis (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="The execution schedule is a test implementation output, not test analysis; change requests come from completion, not implementation.">1B, 2D, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="Coverage items come from test design, not completion; prioritized test conditions come from analysis, not design.">1D, 2C, 3A, 4B</button></li>
+    <li><button data-correct="false" data-why="This reverses several pairings — coverage items are a design output, and change requests come from completion, not implementation.">1D, 2C, 3B, 4A</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the following BEST describes retrospectives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Calling out individual team members undermines the team bonding and collaboration retrospectives are meant to build.">Retrospectives allow team members to identify other team members who did not fully contribute to achieving quality as required by the whole team approach</button></li>
+    <li><button data-correct="true" data-why="A retrospective's discussion is exactly what was successful and should be retained, plus what could be improved and how.">Retrospectives give testers an opportunity to identify activities that were successful so that these are retained when potential improvements are made in the future</button></li>
+    <li><button data-correct="false" data-why="Retrospectives are about process improvement, not an unfiltered complaints session — and results are recorded in the test completion report, so they aren't a purely blameless private venting space.">Retrospectives are where agile team members are allowed to voice their concerns about management and customers in a blameless environment</button></li>
+    <li><button data-correct="false" data-why="Planning the next iteration's technical decisions happens in iteration planning, not in a retrospective, which looks backward at the iteration just finished.">Retrospectives give agile team members a forum where they focus on discussing the plan and technical decisions for the next iteration</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q26 · FL-4.4.1 · K2</div>
+  <div class="q">Which of the following is NOT anticipated by the tester while applying error guessing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a developer misunderstanding a spec is a classic anticipated error.">The developer misunderstood the formula in the user story for calculating the interest</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a specific coding mistake (transposed exponent) is exactly the kind of anticipated defect.">The developer wrote "FA = A*(1+IR^N)" instead of "FA = A*(1+IR)^N" in the source code</button></li>
+    <li><button data-correct="true" data-why="Missing a seminar on new legislation is a potential ROOT CAUSE of a defect — but it's not itself an error, defect, or failure, and it's not the kind of thing error guessing (which anticipates errors/defects/failures directly) is built to anticipate.">The developer missed the seminar on new compound interest rate legislation</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — insufficient calculation accuracy is exactly the kind of anticipated failure, perhaps drawn from experience with similar systems.">The accuracy of the interest calculated by the system is not precise enough</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A23 · FL-5.2.2 · K2</div>
+  <div class="q">The following list contains risks that have been identified for a new software product to be developed:
+i. Management moves two experienced testers to another project
+ii. The system does not comply with security standards
+iii. System response time exceeds user requirements
+iv. Stakeholders have inaccurate expectations
+v. Disabled people have problems when using the system
+Which of them are project risks?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="i (staff moved to another project — a people/organizational issue) and iv (inaccurate stakeholder expectations — a project management issue) are project risks. ii, iii, and v all describe product characteristics.">i, iv are project risks</button></li>
+    <li><button data-correct="false" data-why="iv is a project risk, but v (accessibility problems) is a product risk — a characteristic of the product itself.">iv, v are project risks</button></li>
+    <li><button data-correct="false" data-why="i is a project risk, but iii (response time) is a product risk — a quality characteristic of the system.">i, iii are project risks</button></li>
+    <li><button data-correct="false" data-why="Both ii (security non-compliance) and v (accessibility) are product risks, not project risks.">ii, v are project risks</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q17 · FL-3.2.2 · K2</div>
+  <div class="q">Given the following descriptions of review activities:
+1. Detected anomalies are deliberated upon, and determinations are reached regarding their status, ownership, and any further steps needed
+2. Defects are recorded, and any needed updates are addressed prior to the acceptance of the work product
+3. Reviewers employ techniques to come up with suggestions and questions about the work product and to spot anomalies
+4. The objective of the review and its schedule are established to ensure a focused and efficient review
+5. Participants are provided with access to the item being reviewed
+
+Which of the following is the CORRECT sequence in the review process of the activities that correspond to the descriptions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This puts individual review (3) before review initiation (5), but participants need access to the work product (initiation) before they can individually review it.">4 – 3 – 5 – 2 – 1</button></li>
+    <li><button data-correct="true" data-why="4 is Planning (defining scope and schedule), 5 is Review initiation (giving participants access), 3 is Individual review (reviewers apply techniques to spot anomalies), 1 is Communication and analysis (deciding status/ownership of anomalies), 2 is Fixing and reporting (recording defects, accepting the work product). That's exactly Planning → Review initiation → Individual review → Communication and analysis → Fixing and reporting.">4 – 5 – 3 – 1 – 2</button></li>
+    <li><button data-correct="false" data-why="This starts with review initiation (5) before planning (4) has even set the scope — planning always comes first.">5 – 4 – 1 – 3 – 2</button></li>
+    <li><button data-correct="false" data-why="This puts communication and analysis (1) before individual review (3) has even happened — you can't discuss anomalies that haven't been found yet.">5 – 4 – 3 – 2 – 1</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A17 · FL-4.4.3 · K2</div>
+  <div class="q">You are testing a mobile application that allows customers to access and manage their bank accounts. You are running a test suite that involves evaluating each screen, and each field on each screen, against a general list of user interface best practices derived from a popular book on the topic that maximizes usability for such applications. Which of the following options BEST categorizes the test technique you are using?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The book is general guidance, not a formal requirements document, specification, or set of use cases/user stories/business processes — so this isn't specification-based (black-box) testing.">Black-box</button></li>
+    <li><button data-correct="false" data-why="You could loosely view the list as test charters, but it much more closely resembles a set of test conditions to systematically check off — which points to a different technique.">Exploratory</button></li>
+    <li><button data-correct="true" data-why="The list of user interface best practices is exactly a list of test conditions to be systematically checked — the defining trait of checklist-based testing.">Checklist-based</button></li>
+    <li><button data-correct="false" data-why="These tests aren't focused on anticipated failures — they're based on established knowledge of what matters for usability, which is checklist-based testing, not error guessing.">Error guessing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">You work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality.
+
+Which of the following activities is a part of test analysis?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Estimating test effort is part of test planning.">Estimating that testing the integration with the payment service will take 8 person-days</button></li>
+    <li><button data-correct="true" data-why="This is defining a test condition — part of test analysis.">Deciding that the team should test if it is possible to properly share payment between many users</button></li>
+    <li><button data-correct="false" data-why="Using a test technique (BVA) to derive test data is part of test design, not test analysis.">Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid</button></li>
+    <li><button data-correct="false" data-why="Analyzing a discrepancy and reporting a defect during dynamic testing is part of test execution.">Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="a,d" data-why="Number of defects found and defect density both directly describe the quality level of the test object. Effort-per-test-case is a test efficiency metric, executed-procedure count says nothing about quality on its own, and time-to-repair is a process metric — none of these describe product quality.">
+  <div class="exam-tag">Exam A · A25 · FL-5.3.1 · K1 · select TWO</div>
+  <div class="q">Which TWO of the following options are common metrics used for reporting on the quality level of the test object?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Number of defects found during system testing</label></li>
+    <li><label><input type="checkbox" value="b"> Total effort on test design divided by the number of designed test cases</label></li>
+    <li><label><input type="checkbox" value="c"> Number of executed test procedures</label></li>
+    <li><label><input type="checkbox" value="d"> Number of defects found divided by the size of a work product</label></li>
+    <li><label><input type="checkbox" value="e"> Time needed to repair a defect</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A9 · FL-2.2.2 · K2</div>
+  <div class="q">You work as a tester on a project on a mobile application for food ordering for one of your clients. The client sent you a list of requirements. One of them, with high priority, says
+"The order must be processed in less than 10 seconds in 95% of the cases".
+You created a set of test cases in which a number of random orders were made, the processing time measured, and the test results were checked against the requirements.
+What test type did you perform?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Coming directly from the client with high priority doesn't make these tests functional — they check 'how fast' (performance), not 'what' the system does.">Functional, because the test cases cover the user's business requirement for the system</button></li>
+    <li><button data-correct="true" data-why="This is testing for performance efficiency — a non-functional quality characteristic — even though the requirement itself is high-priority and business-driven.">Non-functional, because they measure the system's performance</button></li>
+    <li><button data-correct="false" data-why="Even if the tests do interact with the UI, the main test objective here is performance, not usability or functional behavior.">Functional, because the test cases interact with the user interface</button></li>
+    <li><button data-correct="false" data-why="You don't need internal-structure knowledge to measure order processing time — this can be, and here is, tested as a black-box, non-functional concern.">White-box, because we need to know the internal structure of the program to measure the order processing time</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q40 · FL-6.2.1 · K1</div>
+  <div class="q">Which of the following is MOST likely to be a risk of test automation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The detection of additional high-severity defects would be a benefit of test automation, rather than a risk.">The detection of additional high-severity defects</button></li>
+    <li><button data-correct="false" data-why="The provision of measures that are too complicated for humans to derive themselves is normally considered to be a benefit of test automation.">Providing measures that are too complicated for humans to derive</button></li>
+    <li><button data-correct="true" data-why="If the test automation is incompatible with the development platform, then it will not be able to integrate with it — for instance, to pass test inputs to the test object and receive test results from the test object.">Incompatibility with the development platform</button></li>
+    <li><button data-correct="false" data-why="Substantially reduced test execution times would normally be considered a benefit provided by test automation.">Substantially reduced test execution times</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q28 · FL-4.5.2 · K2</div>
+  <div class="q">Which of the following BEST describes the way acceptance criteria can be documented?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Retrospectives capture lessons learned to improve the development/testing process — they aren't a way of documenting acceptance criteria.">Performing retrospectives to determine the actual needs of the stakeholders regarding a given user story</button></li>
+    <li><button data-correct="true" data-why="Given/When/Then is the standard scenario-oriented format the syllabus names explicitly for documenting acceptance criteria (used in BDD).">Using the given/when/then format to describe an example test condition related to a given user story</button></li>
+    <li><button data-correct="false" data-why="Verbal communication doesn't physically document anything — acceptance criteria need to be captured in the &quot;Card&quot; aspect of the user story, not just spoken.">Using verbal communication to reduce the risk of misunderstanding the acceptance criteria by others</button></li>
+    <li><button data-correct="false" data-why="Acceptance criteria attach to a user story, not a test plan — and risks aren't the same thing as the conditions that must be met for a story to be considered complete.">Documenting risks related to a given user story in a test plan to facilitate the risk-based testing of a given user story</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q8 · FL-1.5.2 · K1</div>
+  <div class="q">How is the whole team approach present in the interactions between testers and business representatives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test automation approach is decided with developers, not business representatives.">Business representatives decide on test automation approaches</button></li>
+    <li><button data-correct="false" data-why="Test strategy is decided in collaboration with developers, not primarily business representatives.">Testers help business representatives to define a test strategy</button></li>
+    <li><button data-correct="false" data-why="Business representatives are explicitly part of the whole team approach, alongside testers and developers.">Business representatives are not part of the whole team approach</button></li>
+    <li><button data-correct="true" data-why="Testers work closely with business representatives, helping them create suitable acceptance tests — exactly the collaboration the whole team approach describes.">Testers help business representatives to create suitable acceptance tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q36 · FL-5.3.3 · K2</div>
+  <div class="q">Which work product can be used by an agile team to show the amount of work that has been completed and the amount of total work remaining for a given iteration?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Acceptance criteria are the conditions used to decide whether a user story is done — they don't show ongoing work progress.">Acceptance criteria</button></li>
+    <li><button data-correct="false" data-why="Defect reports inform about individual defects; they do not show iteration-level work progress.">Defect report</button></li>
+    <li><button data-correct="false" data-why="A test completion report is created after the iteration finishes, so it can't show progress continuously within the iteration.">Test completion report</button></li>
+    <li><button data-correct="true" data-why="A burn-down chart is a dashboard-style graphical representation of work remaining versus time, updated daily — exactly the kind of continuous status communication named in §5.3.3.">Burndown chart</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">You have just started designing test cases for the following user story.
+
+As a customer,
+I want to be able to filter search results by price range, so that I can find products within my budget more easily.
+Acceptance criteria:
+1. The filter should work for all versions of the application from version 3.0 upwards
+2. The filter should allow the customer to set a price range with a minimum and a maximum price
+3. The search results should update dynamically as the customer adjusts the price range filter
+
+In all test cases the precondition is as follows: there are only two products available, products A and B. Product A costs $100 and product B costs $110.
+
+Which of the following is the BEST example of a test case for this user story?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This checks acceptance criteria 2 (setting a price range) and 3 (results updating dynamically as the range changes).">Enter webpage and set filter to show prices between $90 and $100. Expected result: results show product A only. Set maximum price to $110. Expected result: results now include both products A and B</button></li>
+    <li><button data-correct="false" data-why="This isn't related to any acceptance criterion — it tests whether the filter's default range updates dynamically, not whether a customer can set it.">Enter webpage. Expected result: the default minimum and maximum prices are $100 and $110 respectively. Add product C to stock, with price $120. Refresh the client's webpage. Expected result: the default maximum price changes to $120</button></li>
+    <li><button data-correct="false" data-why="This tests currency exchange, which isn't part of this user story's acceptance criteria.">Enter webpage and set filter to show prices between $90 and $115. Expected result: results show both products A and B. Change currency from USD to EUR. Expected result: the filter range changes correctly to EUR values, according to the current exchange rate</button></li>
+    <li><button data-correct="false" data-why="This tests cross-browser compatibility, which isn't part of this user story's acceptance criteria.">Enter webpage with three different browsers: Edge, Chrome and Opera. In each browser set filter between $90 and $110. Expected result: results include both products A and B and the results layout is the same in all three browsers</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q17 · FL-3.2.4 · K2</div>
+  <div class="q">The reviews being used in your organization have the following attributes:
+• There is the role of a scribe
+• The main purpose is to evaluate quality
+• The meeting is led by the author of the work product
+• There is individual preparation
+• A review report is produced
+
+Which of the following review types is MOST likely being used?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Informal reviews don't require a formal documented output, so a produced review report doesn't fit — and informal reviews aren't described as author-led.">Informal review</button></li>
+    <li><button data-correct="true" data-why="&quot;Led by the author&quot; is the walkthrough's defining trait — inspections and technical reviews are led by a moderator instead. Evaluating quality and building confidence is one of a walkthrough's central objectives, and a walkthrough can still use a scribe, involve individual preparation, and produce a report.">Walkthrough</button></li>
+    <li><button data-correct="false" data-why="A technical review is led by a moderator, not the author — that single attribute rules this option out.">Technical review</button></li>
+    <li><button data-correct="false" data-why="Inspections are led by a moderator (the author cannot act as review leader or scribe), and their main objective is finding the maximum number of anomalies, not primarily evaluating quality.">Inspection</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A10 · FL-2.3.1 · K2</div>
+  <div class="q">Your organization's test strategy suggests that once a system is going to be retired, data migration shall be tested. As part of what test type is this testing MOST likely to be performed?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="When a system is retired, this can require testing of data migration — a trigger explicitly named under maintenance testing.">Maintenance testing</button></li>
+    <li><button data-correct="false" data-why="Regression testing verifies a fix didn't accidentally break other parts of the code — this scenario is about data migration during retirement, not a fix.">Regression testing</button></li>
+    <li><button data-correct="false" data-why="Reliability testing is a non-functional quality characteristic, not a match for data-migration-at-retirement.">Reliability testing</button></li>
+    <li><button data-correct="false" data-why="Integration testing focuses on interactions between components or systems, not data migration — and it's a test level, not a test type.">Integration testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q7 · FL-1.5.2 · K1</div>
+  <div class="q">Which of the following is an advantage of the whole-team approach?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testers still play a vital role in the whole-team approach, sharing testing expertise and collaborating with the team — it doesn't mean teams have no testers.">Teams with no testers</button></li>
+    <li><button data-correct="true" data-why="Leveraging each team member's diverse skills fosters superior team dynamics, robust communication and collaboration, and a synergistic effect that benefits the project.">Improved team dynamics</button></li>
+    <li><button data-correct="false" data-why="The whole-team approach allows any team member with the right skills to take on a task — it doesn't favor narrow specialist roles.">Specialist team members</button></li>
+    <li><button data-correct="false" data-why="There's no guidance suggesting larger teams are better under the whole-team approach.">Larger team sizes</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q38 · FL-5.5.1 · K3</div>
+  <div class="q">Consider the following defect report for a Book Lending System.
+
+Defect ID: 001 | Title: Unable to Return a Book
+Severity: High | Priority: [blank]
+Environment: Windows 10, Google Chrome
+
+Description: When attempting to return a book using the Book Return feature, the system does not register the return and the book remains checked out to the user.
+
+Steps to Reproduce:
+1. Login to the Book Lending System as a user who has checked out a book.
+2. Click on the "Book Return" button for the book that has been checked out.
+3. System does not register the return and the book remains checked out.
+
+Expected Result: The book should be returned and no longer appear as checked out to the user.
+Actual Result: The book remains checked out to the user and is not registered as returned in the system.
+
+Attachments: [empty list]
+
+Which of the following is MOST likely to help the developer reproduce the failure quickly?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Adding which specific users and which specific books the failure affects lets the developer use the same input data, making the failure much more likely to reproduce quickly, and the defect identified faster.">Adding information about which users and which books the failure affects to the &quot;Description&quot; section</button></li>
+    <li><button data-correct="false" data-why="Filling in the missing Priority value won't help reproduce the defect itself — priority is about fix urgency, not reproduction steps.">Filling in the missing value for the &quot;Priority&quot; field</button></li>
+    <li><button data-correct="false" data-why="Memory dumps and database snapshots after every single step would be excessive — most of it would be useless noise, making the report less readable and requiring more of the developer's time to analyze, lengthening the repair process.">Adding memory dumps and database snapshots taken after each step described in the &quot;Steps to Reproduce&quot; section to the &quot;Attachments&quot; section</button></li>
+    <li><button data-correct="false" data-why="The question is about reproducing the failure itself, not about testing across different environment configurations.">Repeating the same test case for different environments and writing defect reports for each of them separately</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q20 · FL-4.2.1 · K3</div>
+  <div class="q">You are testing a simplified apartment search form which has only two search criteria:
+• floor (with three possible options: ground floor; first floor; second or higher floor)
+• garden type (with three possible options: no garden; small garden; large garden)
+
+Each of the apartment on the ground floor has a garden, apartments on higher floors don't. The form has a built-in validation mechanism that will not allow you to use the search criteria which violate this rule.
+
+Each test has two input values: floor and garden type. You want to apply equivalence partitioning (EP) to cover each floor and each garden type in your tests.
+
+What is the MINIMAL number of test cases to achieve 100% EP coverage for valid partitions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Three test cases can't cover both &quot;small garden&quot; and &quot;large garden&quot; (which only pair with ground floor) plus both remaining floor partitions.">3</button></li>
+    <li><button data-correct="true" data-why="This is Each Choice coverage. &quot;Small garden&quot; and &quot;large garden&quot; can only go with &quot;ground floor,&quot; so two test cases with ground floor cover those two garden partitions. Two more test cases cover the remaining two floor partitions (first floor, second-or-higher), each with &quot;no garden&quot; — which also covers that garden partition. Total: TC1 (ground floor, small garden), TC2 (ground floor, large garden), TC3 (first floor, no garden), TC4 (second-or-higher floor, no garden) — 4 test cases.">4</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 5 is more than the minimum required.">5</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 6 is more than the minimum required.">6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Below 65% (26/40)? Don't just re-read the questions you missed &mdash; use the section
+  number in each question's exam-tag (e.g. FL-4.2) to find the matching chapter lesson, re-study the whole
+  section, then retake. First click counts, so an honest 65%+ here is a real signal you're ready.</div>
+  Mock Exam 1 of 4 &mdash; each follows the official CTFL v4.0 blueprint (8/6/4/11/9/2). Sit all four for the
+  fullest coverage of the 146 official sample questions.
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

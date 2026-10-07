@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 6 Practice Exam — Test Tools</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 6 Practice Exam &nbsp;·&nbsp;
+  <a href="../lessons/0021-6.1-tool-support-for-testing.html">← Back to Chapter 6 lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 6 Practice Exam — Test Tools</h1>
+<p class="subtitle">A submit-at-end practice exam covering all of Chapter 6 (§6.1–§6.2): tool support for
+testing (test management tools, static testing tools, test design/implementation tools, test execution
+and coverage tools, non-functional testing tools, DevOps tools, collaboration tools, and tools supporting
+scalability and deployment standardization) and the benefits and risks of test automation. 6 questions,
+real CTFL passing mark of 65%. Nothing is graded or revealed question-by-question — answer everything,
+then click Submit Exam to grade the whole thing at once.</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/6</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+
+<nav class="topic-index">
+  <a href="#s6-1">6.1 Tool Support for Testing (3)</a>
+  <a href="#s6-2">6.2 Benefits and Risks of Test Automation (3)</a>
+</nav>
+
+<h2 id="s6-1">6.1 Tool Support for Testing</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Which test activity does a data preparation tool support?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test monitoring involves the ongoing checking of all activities and comparison of actual progress against the test plan. Test control involves taking the actions necessary to meet the test objectives of the test plan. No test data are prepared during these activities.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis includes analysis of the test basis to identify test conditions and prioritize them. Test data are not prepared during this activity.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test design and implementation can both include the identification, creation or acquisition of the testware necessary for test execution (e.g., test data).">Test design and test implementation</button></li>
+    <li><button data-correct="false" data-why="Test completion activities occur at project milestones (e.g., release, end of iteration, test level completion), so it is too late for preparing test data.">Test completion</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Given the following test tool categories:
+i. Collaboration tools
+ii. DevOps tools
+iii. Management tools
+iv. Non-functional testing tools
+v. Test design and implementation tools
+
+Tools from which of the categories are MOST likely to facilitate test execution?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Collaboration tools facilitate communication, not test execution. Test design and test implementation tools facilitate generation of testware, not its execution.">i, v</button></li>
+    <li><button data-correct="true" data-why="DevOps tools support the delivery pipeline and CI/CD, which include the facilitation of test execution (e.g., component testing for CI). Non-functional testing tools allow the tester to perform non-functional testing, which can include dynamic testing — i.e., test execution.">ii, iv</button></li>
+    <li><button data-correct="false" data-why="Collaboration tools and management tools do not facilitate test execution; only test design and test implementation tools among this trio relate to testware, and even that is about generation, not execution.">i, iii, v</button></li>
+    <li><button data-correct="false" data-why="Management tools facilitate management of the SDLC, requirements, tests, defects, and configuration — not the execution of tests itself.">ii, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Tools from which of the following categories help with the organization of test cases, detected defects and configuration management?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test execution and coverage tools facilitate the automated execution of test cases and the measurement of the coverage achieved by running those test cases. They do not help with the organization of defects and configuration management.">Test execution and coverage tools</button></li>
+    <li><button data-correct="false" data-why="Test design and test implementation tools facilitate the generation of test cases, test data and test procedures, but they do not help with the organization of defects and configuration management.">Test design and implementation tools</button></li>
+    <li><button data-correct="false" data-why="Defect management tools are used to manage defects but are not testing tools and are not used to organize test cases or configuration management.">Defect management tools</button></li>
+    <li><button data-correct="true" data-why="Test management tools increase the test process efficiency by facilitating the management of the software development lifecycle (SDLC), requirements, tests, defects, and configuration management.">Test management tools</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s6-2">6.2 Benefits and Risks of Test Automation</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q40 · FL-6.2.1 · K1</div>
+  <div class="q">Which item correctly identifies a potential risk of performing test automation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test automation does not introduce unknown regressions in production.">It may introduce unknown regressions in production</button></li>
+    <li><button data-correct="true" data-why="Wrong allocation of effort to maintain testware is a risk.">Sufficient efforts to maintain testware may not be properly allocated</button></li>
+    <li><button data-correct="false" data-why="Test tools must be selected so that they and their testware can be relied upon — but the fact that they must be selected this way isn't itself framed as the risk here.">Testing tools and associated testware may not be sufficiently relied upon</button></li>
+    <li><button data-correct="false" data-why="The primary goal of test automation is to reduce manual testing. So this is a benefit, not a risk.">It may reduce the time allocated for manual testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q40 · FL-6.2.1 · K1</div>
+  <div class="q">Which of the following is MOST likely to be a risk of test automation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The detection of additional high-severity defects would be a benefit of test automation, rather than a risk.">The detection of additional high-severity defects</button></li>
+    <li><button data-correct="false" data-why="The provision of measures that are too complicated for humans to derive themselves is normally considered to be a benefit of test automation.">Providing measures that are too complicated for humans to derive</button></li>
+    <li><button data-correct="true" data-why="If the test automation is incompatible with the development platform, then it will not be able to integrate with it — for instance, to pass test inputs to the test object and receive test results from the test object.">Incompatibility with the development platform</button></li>
+    <li><button data-correct="false" data-why="Substantially reduced test execution times would normally be considered a benefit provided by test automation.">Substantially reduced test execution times</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q40 · FL-6.2.1 · K1</div>
+  <div class="q">Which of the following is MOST likely to be a benefit of test automation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The generation of test cases by either testers or tools requires access to the test basis — generating test cases without it is not possible.">The capability of generating test cases without access to the test basis</button></li>
+    <li><button data-correct="false" data-why="Test automation provides more objective assessment of coverage, but that objective assessment does not itself increase the coverage. Only by using the results of the coverage to write further test cases can the coverage possibly be increased.">The achievement of increased coverage through more objective assessment</button></li>
+    <li><button data-correct="false" data-why="This is a contradictory statement: higher processing power would normally reduce execution times, and increased execution times are not a benefit since the testing would take longer.">The increase in test execution times available with higher processing power</button></li>
+    <li><button data-correct="true" data-why="Test automation cannot suffer from human errors: tests are consistently derived from requirements, test data is created in a systematic manner, and tests are executed by a tool in the same order with the same frequency.">The prevention of human errors through greater consistency and repeatability</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If your score lands below 65%, don't just re-read the failed questions — go back to the
+  section lesson (via the section number in each exam-tag) and re-study the whole section, then come
+  back and retake just that section's questions. Ask your teacher to explain any rationale here that
+  doesn't fully make sense.</div>
+  This covers Chapter 6 (Test Tools) only.
+  Back to: <a href="../lessons/0021-6.1-tool-support-for-testing.html">§6.1 — Tool Support for Testing →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>

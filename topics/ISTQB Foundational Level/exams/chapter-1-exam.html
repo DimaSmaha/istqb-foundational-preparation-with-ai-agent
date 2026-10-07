@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter 1 Practice Exam — Fundamentals of Testing</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; Chapter 1 Practice Exam &nbsp;·&nbsp;
+  <a href="../lessons/0001-1.1-what-is-testing.html">← Back to Chapter 1 lessons</a> &nbsp;·&nbsp;
+  <a href="../reference/chapter-1-recap.html">Chapter 1 Recap ↗</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>Chapter 1 Practice Exam — Fundamentals of Testing</h1>
+<p class="subtitle">A submit-at-end practice exam covering only Chapter 1 (§1.1–§1.5): what testing is,
+why it's necessary, the seven testing principles, the test process and its roles, and the essential
+skills of a tester. 34 questions, real CTFL passing mark of 65%. Nothing is graded or revealed
+question-by-question — answer everything, then click Submit Exam to grade the whole thing at once.</p>
+
+<div id="exam-submit-bar" class="exam-submit-bar">
+  <span id="exam-progress" class="exam-progress">Answered 0/34</span>
+  <span id="exam-timer" class="exam-timer">Time: 00:00</span>
+  <span id="exam-warning" class="exam-warning" hidden></span>
+  <button id="btn-submit-exam" class="btn-submit-exam" type="button">Submit Exam</button>
+  <button id="btn-retake-exam" class="btn-retake-exam" type="button" hidden>Retake Exam</button>
+</div>
+
+<nav class="topic-index">
+  <a href="#s1-1">1.1 What is Testing? (6)</a>
+  <a href="#s1-2">1.2 Why is Testing Necessary? (5)</a>
+  <a href="#s1-3">1.3 Testing Principles (4)</a>
+  <a href="#s1-4">1.4 Test Activities, Testware and Test Roles (12)</a>
+  <a href="#s1-5">1.5 Essential Skills and Good Practices (7)</a>
+</nav>
+
+<h2 id="s1-1">1.1 What is Testing?</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following statements describe a valid test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing principle 1 says testing can show the presence of defects, never their absence — you can't prove there are none left.">To prove that there are no unfixed defects in the system under test</button></li>
+    <li><button data-correct="false" data-why="See testing principle 7 (absence-of-defects fallacy) — passing tests never proves there will be no failures in production.">To prove that there will be no failures after the implementation of the system into production</button></li>
+    <li><button data-correct="true" data-why="Testing finds defects and failures, which reduces risk level and simultaneously builds confidence in quality — this is a real, achievable objective.">To reduce the risk level of the test object and to build confidence in the quality level</button></li>
+    <li><button data-correct="false" data-why="Testing principle 2 (exhaustive testing is impossible) rules this out — you cannot test all input combinations.">To verify that there are no untested combinations of inputs</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following is a typical test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is closer to validation than verification — 'validating' checks user requirements/expectations, 'verifying' checks specified requirements.">Validating that documented requirements are met</button></li>
+    <li><button data-correct="true" data-why="Causing failures and identifying defects is probably the most common objective of dynamic testing.">Causing failures and identifying defects</button></li>
+    <li><button data-correct="false" data-why="Testers don't initiate errors — errors are typically made by developers. Identifying root causes is part of debugging, a separate activity from testing.">Initiating errors and identifying root causes</button></li>
+    <li><button data-correct="false" data-why="This describes validation, not verification — verification checks specified (documented) requirements; validation checks user expectations.">Verifying the test object meets user expectations</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following is a typical test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Identifying defects is a test objective, but fixing them is debugging — not a test activity.">Finding and fixing defects in the test object</button></li>
+    <li><button data-correct="false" data-why="Useful for other objectives (e.g. informing stakeholder decisions), but not itself a primary reason for testing.">Maintaining effective communications with developers</button></li>
+    <li><button data-correct="false" data-why="Checking legal requirements are met is a form of verification, not validation — validation is about meeting users' and stakeholders' needs in the operational environment.">Validating that legal requirements have been met</button></li>
+    <li><button data-correct="true" data-why="Building confidence in the quality of the test object is achieved by executing tests that pass — a core, real objective.">Building confidence in the quality of the test object</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A1 · FL-1.1.2 · K2</div>
+  <div class="q">You were given a task to analyze and fix causes of failures in a new system to be released. Which activity are you performing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Debugging is the process of finding, analyzing, and removing the causes of failures in a component or system.">Debugging</button></li>
+    <li><button data-correct="false" data-why="Testing plans, prepares, and evaluates a component to detect defects — it is not about fixing causes of failures.">Software testing</button></li>
+    <li><button data-correct="false" data-why="Requirement elicitation is about gathering and consolidating requirements, unrelated to fixing failures.">Requirement elicitation</button></li>
+    <li><button data-correct="false" data-why="Defect management is about recognizing, recording, and resolving defects as a process — not the technical act of finding and removing a failure's cause.">Defect management</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q2 · FL-1.1.2 · K2</div>
+  <div class="q">Which of the following statements BEST describes the difference between testing and debugging?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Dynamic testing does cause failures, but debugging fixes defects, not failures — it locates and fixes the cause, it doesn't 'fix a failure' directly.">Testing causes failures while debugging fixes failures</button></li>
+    <li><button data-correct="false" data-why="Both activities improve quality and should be seen positively; dynamic testing intentionally trying to break things is a narrow, not-typical view.">Testing is a negative activity while debugging is a positive activity</button></li>
+    <li><button data-correct="true" data-why="Testing determines defects exist (directly via review/static analysis, or indirectly by causing a failure); debugging — a separate, usually developer-performed activity — locates and fixes those defects.">Testing determines that defects exist while debugging removes defects</button></li>
+    <li><button data-correct="false" data-why="Testing finds defects (directly or via failures), it doesn't find 'the cause' of defects — that's debugging's job, and debugging fixes defects, not their causes.">Testing finds the cause of defects while debugging fixes the cause of defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-1.1.1</div>
+  <div class="q">A regulator requires proof that the system's login flow matches the documented security specification exactly. Which activity produces that evidence?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: validating checks a system against stakeholders' actual needs in the operational environment, not against a documented specification — that's verification's job.">Validating the login flow</button></li>
+    <li><button data-correct="true" data-why="Checking a system object against a documented, specified requirement is verification, whether that spec is functional, contractual, or regulatory.">Verifying the login flow</button></li>
+    <li><button data-correct="false" data-why="Debugging finds, analyzes, and removes the cause of a failure — it isn't the activity that confirms compliance with a spec.">Debugging the login flow</button></li>
+    <li><button data-correct="false" data-why="Building confidence is a broader outcome of testing in general — it's not the specific term for checking against a documented specification, which is verification.">Building confidence in the login flow</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s1-2">1.2 Why is Testing Necessary?</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q2 · FL-1.2.1 · K2</div>
+  <div class="q">Which of the following options shows an example of test activities that contribute to success?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Involving testers from the start of the SDLC increases understanding of design decisions and detects defects early.">Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products</button></li>
+    <li><button data-correct="false" data-why="The opposite is true: both developers and testers benefit from more mutual understanding of each other's work, not from testers staying out of the way.">Testers try not to disturb the developers while coding, so that the developers write better code</button></li>
+    <li><button data-correct="false" data-why="End users don't typically improve defect-report quality at integration/system testing, and users usually aren't involved at those lower test levels anyway.">Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing</button></li>
+    <li><button data-correct="false" data-why="Certification doesn't automatically translate into better test design skill.">Certified testers will design much better test cases than non-certified testers</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A2 · FL-1.2.2 · K1</div>
+  <div class="q">In many software organizations the test department is called the Quality Assurance (QA) department. Is this sentence correct or not and why?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing and QA do not mean exactly the same thing — testing is product-oriented/corrective, QA is process-oriented/preventive.">It is correct. Testing and QA mean exactly the same thing</button></li>
+    <li><button data-correct="false" data-why="They cannot be used interchangeably — they focus on different things (product vs. process).">It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues</button></li>
+    <li><button data-correct="false" data-why="Close, but backwards: QA is the broader process-oriented discipline; testing is the narrower activity focused on demonstrating fitness for purpose and detecting defects.">It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes</button></li>
+    <li><button data-correct="true" data-why="QA is focused on establishing, monitoring, and improving quality-related processes, while testing concentrates on demonstrating that a component or system is fit for purpose and detecting defects — genuinely different things.">It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A3 · FL-1.2.3 · K2</div>
+  <div class="q">A phone ringing in a neighboring cubicle distracts a programmer causing him to improperly program the logic that checks the upper boundary of an input variable. Later, during system testing, a tester notices that this input field accepts invalid input values. Which of the following correctly describes an incorrectly coded upper bound?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The root cause is the distraction (the phone ringing) that led to the programmer's mistake, not the code itself.">The root cause</button></li>
+    <li><button data-correct="false" data-why="Accepting invalid input is the failure — the incorrectly coded boundary is what caused it.">A failure</button></li>
+    <li><button data-correct="false" data-why="The error is the mistaken thinking that led to writing the wrong logic — the code itself is the resulting defect.">An error</button></li>
+    <li><button data-correct="true" data-why="The problem sitting in the code — the incorrectly coded upper bound — is the defect.">A defect</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q2 · FL-1.2.3 · K2</div>
+  <div class="q">A designer documents a design for a user interface that does not suitably address disabled users because the designer is tired. The programmer implements the user interface in line with the design but as they are working under severe time pressure, they do not include suitable exception handling in their program code for bonus calculations. When the operational system is used, complaints are made by some disabled users about the interface and the company is subsequently fined by the relevant regulatory authority. No one notices that bonus calculations are sometimes incorrect. Which of the following statements is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The miscalculation of bonuses is a failure by the system, not a defect.">The miscalculation of bonuses is a defect that occasionally occurs</button></li>
+    <li><button data-correct="false" data-why="The system failing to support disabled users is the failure — the fine is a consequence, not itself a failure (it's the regulatory system working correctly).">The fine received for failing to address some disabled users is a failure</button></li>
+    <li><button data-correct="true" data-why="The error is the mistake made by the programmer, and working under severe time pressure is the root cause of that error — and of the resulting defect.">The programmer working under severe time pressure is a root cause</button></li>
+    <li><button data-correct="false" data-why="The tired designer's mistake is the error; the resulting poor interface design is a design defect, not a 'designer error' embedded in the design.">The design of the user interface includes a designer error</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-1.2.3</div>
+  <div class="q">After the operational system started crashing on bonus calculations, the developer traced the bug back to a miscoded rounding function and rewrote it correctly. What did debugging fix?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: a failure is the past event where the system did the wrong thing — an event that already happened can't be 'fixed,' only prevented from recurring.">The failure</button></li>
+    <li><button data-correct="true" data-why="Debugging locates and removes the defect (the miscoded rounding function) — fixing the fault in the work product is what prevents the failure from recurring.">The defect</button></li>
+    <li><button data-correct="false" data-why="The root cause here would be why the miscoding happened in the first place (e.g. time pressure) — debugging fixes the defect in the code, not the human/process reason it was introduced.">The root cause</button></li>
+    <li><button data-correct="false" data-why="The error was the programmer's past mistake while writing the code — it can't be undone; debugging targets its product, the defect, not the mistake itself.">The error</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s1-3">1.3 Testing Principles</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">You have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="If the same tests run unchanged release after release, they eventually stop finding new defects — which is probably exactly why they all keep passing.">Tests wear out</button></li>
+    <li><button data-correct="false" data-why="This principle is about fixing all known defects still not guaranteeing success — not about repeating unchanged tests.">Absence-of-defects fallacy</button></li>
+    <li><button data-correct="false" data-why="This principle is about a small number of components containing most defects — unrelated to repeating unchanged regression tests.">Defects cluster together</button></li>
+    <li><button data-correct="false" data-why="This principle is about the infeasibility of testing every input/precondition combination — not about static, unchanging regression suites.">Exhaustive testing is impossible</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">The 'absence-of-defects fallacy' is one of the principles of testing. Which of the following is an example of addressing this principle in practice?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This describes the 'testing shows the presence, not the absence of defects' principle, not the absence-of-defects fallacy.">Explaining that it is not possible for testing to show the absence of defects</button></li>
+    <li><button data-correct="true" data-why="Letting end users perform acceptance testing validates that the system meets their actual needs and expectations — directly addressing the fallacy that fixing known defects alone guarantees success.">Supporting the end users to perform acceptance testing</button></li>
+    <li><button data-correct="false" data-why="This is impossible per the 'testing shows presence, not absence, of defects' principle — you can never guarantee zero remaining defects.">Ensuring that no implementation defects remain in the delivered system</button></li>
+    <li><button data-correct="false" data-why="This addresses the 'tests wear out' principle instead — it's about keeping tests effective, not about validating user needs.">Modifying tests that cause no failures to ensure few defects remain</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">Test conditions are being used by testers to generate test cases and execute tests. Even though the test conditions remain the same, the test cases are varied each time. Which of the following 'principles of testing' is being addressed through the variation of test cases?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Varying the test cases each time, even from the same conditions, directly counters tests becoming stale and losing their ability to find new defects.">Tests wear out</button></li>
+    <li><button data-correct="false" data-why="This principle is about validating user needs even when no defects are found — unrelated to varying test cases from fixed conditions.">Absence-of-defects fallacy</button></li>
+    <li><button data-correct="false" data-why="This principle is about starting testing early in the SDLC — unrelated to varying the test cases themselves.">Early testing saves time and money</button></li>
+    <li><button data-correct="false" data-why="This principle is about defect distribution following a Pareto pattern, addressed by risk-based testing — not by varying test cases.">Defects cluster together</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Shared keyword · FL-1.3.1</div>
+  <div class="q">A team fixes every defect logged against the documented requirements before release. After release, users still complain the product doesn't do what they actually need. Which testing principle explains this?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: this principle's description contains the words 'absence of defects,' but it's about what testing can prove — you can show defects exist, never that none remain. It isn't about what fixing defects against spec fails to guarantee, which is what this scenario is actually testing.">Testing shows the presence, not the absence, of defects</button></li>
+    <li><button data-correct="true" data-why="This is exactly the absence-of-defects fallacy: fixing every known defect against the documented spec still doesn't guarantee the product meets users' actual needs, because the spec itself might not reflect what they need. Validation (e.g. acceptance testing) is the antidote, not more verification.">Absence-of-defects fallacy</button></li>
+    <li><button data-correct="false" data-why="Tests wear out is about repeated, unchanged tests losing their ability to find new defects — unrelated to a spec not reflecting real user needs.">Tests wear out</button></li>
+    <li><button data-correct="false" data-why="Defects clustering together is about a small number of components containing most defects (Pareto) — unrelated to fixing every known defect and still failing users.">Defects cluster together</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s1-4">1.4 Test Activities, Testware and Test Roles</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">Given the following test tasks:
+1. Derive test cases from test conditions
+2. Identify reusable testware
+3. Organize test cases into test procedures
+4. Evaluate the test basis and the test object
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST matches the tasks with the activities?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test analysis evaluates the test basis/object (task 4, not 1), and completion identifies reusable testware (task 2, not 3).">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="true" data-why="Test design derives cases from conditions (1B); completion identifies reusable testware (2D); implementation organizes cases into procedures (3C); analysis evaluates the test basis/object (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Deriving test cases from conditions is test design, not implementation.">1C, 2A, 3B, 4D</button></li>
+    <li><button data-correct="false" data-why="Organizing cases into procedures is test implementation, not analysis.">1C, 2D, 3A, 4B</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,e" data-why="Test techniques like boundary value analysis and equivalence partitioning are used to identify test conditions during test analysis, and to create test cases from them during test design.">
+  <div class="exam-tag">Exam C · Q4 · FL-1.4.1 · K2 · select TWO</div>
+  <div class="q">Which of the following test activities are MOST likely to involve the application of boundary value analysis and equivalence partitioning? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Test implementation</label></li>
+    <li><label><input type="checkbox" value="b"> b) Test design</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test execution</label></li>
+    <li><label><input type="checkbox" value="d"> d) Test monitoring</label></li>
+    <li><label><input type="checkbox" value="e"> e) Test analysis</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q5 · FL-1.4.2 · K2</div>
+  <div class="q">Which of the following factors have a SIGNIFICANT influence on the test approach?
+i. The SDLC
+ii. The number of defects detected in previous projects
+iii. The identified product risks
+iv. New regulatory requirements forcing formal white-box testing
+v. The test environment setup</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This omits two genuinely significant factors (product risks and regulatory requirements) and includes a weaker one (past defect counts).">i, ii have significant influence</button></li>
+    <li><button data-correct="true" data-why="The SDLC, identified product risks, and regulatory requirements are all called out as significant influences on test approach; past defect counts and environment setup are not, by comparison.">i, iii, iv have significant influence</button></li>
+    <li><button data-correct="false" data-why="Past defect counts and environment setup are the two weaker factors here — this set misses the SDLC and product risks entirely.">ii, iv, v have significant influence</button></li>
+    <li><button data-correct="false" data-why="Product risks matter a great deal; the test environment setup itself does not significantly shape the test approach.">iii, v have significant influence</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A4 · FL-1.4.3 · K2</div>
+  <div class="q">Consider the following testware: a test charter (#04.018, 1h session) instructing the tester to explore the registration page with different sets of incorrect input data, to discover defects related to accepting registration with incorrect input. Which test activity produces this testware as an output?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test planning produces the test plan, schedule, and risk register — not test charters.">Test planning</button></li>
+    <li><button data-correct="false" data-why="Test monitoring and control produce progress reports and control directives — not test charters.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis produces test conditions and defect reports on the test basis — test charters come one step later.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test charters are explicitly listed as an output of test design.">Test design</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q5 · FL-1.4.3 · K2</div>
+  <div class="q">Given the following testware:
+1. Coverage items
+2. Change requests
+3. Test execution schedule
+4. Prioritized test conditions
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST shows the testware produced by the activities?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Coverage items are a test design output (1B); change requests come from test completion (2D); the test execution schedule comes from test implementation (3C); prioritized test conditions come from test analysis (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="The execution schedule is a test implementation output, not test analysis; change requests come from completion, not implementation.">1B, 2D, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="Coverage items come from test design, not completion; prioritized test conditions come from analysis, not design.">1D, 2C, 3A, 4B</button></li>
+    <li><button data-correct="false" data-why="This reverses several pairings — coverage items are a design output, and change requests come from completion, not implementation.">1D, 2C, 3B, 4A</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A5 · FL-1.4.4 · K2</div>
+  <div class="q">Which of the following is the BEST example of how traceability supports testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Impact analysis doesn't tell you about test completeness — that's more a coverage question.">Performing the impact analysis of a change will give information about the completion of the tests</button></li>
+    <li><button data-correct="false" data-why="Traceability only gives residual-risk information if test cases are actually traced back to risks in the first place — this option assumes a connection that isn't guaranteed.">Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk</button></li>
+    <li><button data-correct="true" data-why="Impact analysis of a change is exactly how traceability helps select the right test cases to run for regression testing.">Performing the impact analysis of a change will help selecting the right test cases for regression testing</button></li>
+    <li><button data-correct="false" data-why="Traceability doesn't directly help select test data — that's more a test analysis/implementation concern.">Analyzing the traceability between the test basis, the test objects and the test cases will help in selecting test data to achieve the assumed coverage of the test object</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="a,e" data-why="Configuring test environments and analyzing the test basis are both hands-on technical tasks that fall under the testing role, not the test management role.">
+  <div class="exam-tag">Exam A · Q6 · FL-1.4.5 · K2 · select TWO</div>
+  <div class="q">Which TWO of the following tasks belong MAINLY to a testing role? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Configure test environments</label></li>
+    <li><label><input type="checkbox" value="b"> b) Maintain the product backlog</label></li>
+    <li><label><input type="checkbox" value="c"> c) Design solutions to new requirements</label></li>
+    <li><label><input type="checkbox" value="d"> d) Create the test plan</label></li>
+    <li><label><input type="checkbox" value="e"> e) Analyze the test basis</label></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q6 · FL-1.4.5 · K2</div>
+  <div class="q">Which of the following is MOST likely to describe a task performed by someone in a test management role?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Evaluating the test basis and test object is part of test analysis — the testing role's territory.">Evaluate the test basis and the test object</button></li>
+    <li><button data-correct="false" data-why="Defining test environment requirements is part of test design — the testing role's territory.">Define test environment requirements</button></li>
+    <li><button data-correct="false" data-why="Assessing testability is part of test analysis — the testing role's territory.">Assess testability of the test object</button></li>
+    <li><button data-correct="true" data-why="The test completion report is the prime output of test completion, one of the test management role's core activities (planning, monitoring & control, completion).">Create the test completion report</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">You work in a team that develops a mobile application for food ordering. In the current iteration the team decided to implement the payment functionality.
+
+Which of the following activities is a part of test analysis?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Estimating test effort is part of test planning.">Estimating that testing the integration with the payment service will take 8 person-days</button></li>
+    <li><button data-correct="true" data-why="This is defining a test condition — part of test analysis.">Deciding that the team should test if it is possible to properly share payment between many users</button></li>
+    <li><button data-correct="false" data-why="Using a test technique (BVA) to derive test data is part of test design, not test analysis.">Using boundary value analysis (BVA) to derive the test data for the test cases that check the correct payment processing for the minimum allowed amount to be paid</button></li>
+    <li><button data-correct="false" data-why="Analyzing a discrepancy and reporting a defect during dynamic testing is part of test execution.">Analyzing the discrepancy between the actual result and expected result after executing a test case that checks the process of payment with a credit card, and reporting a defect</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q5 · FL-1.4.3 · K2</div>
+  <div class="q">Given the following testware:
+i. Test completion report
+ii. Data held in a database used for test inputs and expected results
+iii. The list of elements needed to build the test environment
+iv. Documented sequences of test cases in execution order
+v. Test cases
+
+Which of the following BEST shows the testware produced as a result of performing test implementation?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Test implementation produces test procedures/execution order (iv, documented sequences of test cases) and test data (ii, data held in a database for inputs/expected results). The completion report (i) is from test completion; the environment element list (iii) and test cases (v) are from test design.">ii, iv</button></li>
+    <li><button data-correct="false" data-why="Items ii and iv, not iii and v, are produced by test implementation.">iii, v</button></li>
+    <li><button data-correct="false" data-why="Items ii and iv, not i, ii, v, are produced by test implementation.">i, ii, v</button></li>
+    <li><button data-correct="false" data-why="Items ii and iv, not i, iii, iv, are produced by test implementation.">i, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q6 · FL-1.4.5 · K2</div>
+  <div class="q">Which of the following statements about the different testing roles is MOST likely to be CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In Agile, some test management tasks may be handled by the team itself, but the testing role is not primarily the responsibility of a single outside individual — it's spread across team members via the whole-team approach.">In Agile software development, the test management role is the primary responsibility of the team, while the testing role is primarily the responsibility of a single individual from outside the team</button></li>
+    <li><button data-correct="false" data-why="The test management role covers planning, monitoring/control, and completion — the testing role is not primarily about monitoring and control.">The testing role is primarily responsible for test monitoring and test control, while the test management role is primarily responsible for test planning and test completion</button></li>
+    <li><button data-correct="true" data-why="In Agile, some test management tasks are handled by the team itself, while test management activities spanning multiple teams are handled by test managers outside the team.">In Agile software development, test management activities that span multiple teams are handled by a test manager outside the team, while some test management tasks are handled by the team itself</button></li>
+    <li><button data-correct="false" data-why="Test management covers planning, monitoring/control, and completion — not test analysis and test design, which belong to the testing role along with implementation and execution.">The test management role is primarily responsible for test analysis and test design, while the testing role is primarily responsible for test implementation and test execution</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Activity boundary · FL-1.4.1</div>
+  <div class="q">A tester analyzes the acceptance criteria for a new feature and applies equivalence partitioning to identify which test conditions need to be covered — before any test cases exist yet. Which activity is this?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: implementation only organizes and schedules testware that analysis and design already produced — it doesn't apply techniques to identify conditions.">Test implementation</button></li>
+    <li><button data-correct="true" data-why="Applying a technique to identify test conditions from the test basis, before any test case exists, is test analysis's job — 'what to test?'">Test analysis</button></li>
+    <li><button data-correct="false" data-why="Design turns already-identified conditions into test cases. This scenario stops before any test case exists, so it's still analysis, not design.">Test design</button></li>
+    <li><button data-correct="false" data-why="Execution runs tests and compares actual vs. expected results — no test exists yet to run in this scenario.">Test execution</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h2 id="s1-5">1.5 Essential Skills and Good Practices in Testing</h2>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q7 · FL-1.5.1 · K2</div>
+  <div class="q">Which of the following skills (i-v) are the MOST important skills of a tester?
+i. Having domain knowledge
+ii. Creating a product vision
+iii. Being a good team player
+iv. Planning and organizing the work of the team
+v. Critical thinking</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Creating a product vision (business analyst/business representative work) and organizing the team's work (test manager/whole team, not specifically a tester skill) are both wrong fits here.">ii and iv are important</button></li>
+    <li><button data-correct="true" data-why="Domain knowledge, being a good team player, and critical thinking are all explicitly listed generic skills required for testing.">i, iii and v are important</button></li>
+    <li><button data-correct="false" data-why="Creating a product vision isn't a tester skill — that's the business analyst's/business representative's job.">i, ii and v are important</button></li>
+    <li><button data-correct="false" data-why="Planning and organizing the team's work belongs to the test manager (or the whole team in Agile), not specifically to the tester skill list.">iii and iv are important</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q8 · FL-1.5.2 · K1</div>
+  <div class="q">How is the whole team approach present in the interactions between testers and business representatives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test automation approach is decided with developers, not business representatives.">Business representatives decide on test automation approaches</button></li>
+    <li><button data-correct="false" data-why="Test strategy is decided in collaboration with developers, not primarily business representatives.">Testers help business representatives to define a test strategy</button></li>
+    <li><button data-correct="false" data-why="Business representatives are explicitly part of the whole team approach, alongside testers and developers.">Business representatives are not part of the whole team approach</button></li>
+    <li><button data-correct="true" data-why="Testers work closely with business representatives, helping them create suitable acceptance tests — exactly the collaboration the whole team approach describes.">Testers help business representatives to create suitable acceptance tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q7 · FL-1.5.2 · K1</div>
+  <div class="q">Which of the following is an advantage of the whole team approach?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The whole team approach promotes robust communication and collaboration between team members — a core stated advantage.">Improved communication between team members</button></li>
+    <li><button data-correct="false" data-why="The approach prioritizes collective accountability, but each individual is still equally accountable for quality — this isn't a decrease.">Decreased individual accountability for quality</button></li>
+    <li><button data-correct="false" data-why="The approach is about how the team works together for higher-quality deliverables — it doesn't necessarily speed up deployment.">Faster deployment of deliverables to the end users</button></li>
+    <li><button data-correct="false" data-why="The opposite is true — testers actively collaborate with business representatives under this approach, e.g. to build acceptance tests.">Reduced collaboration with external business users</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A6 · FL-1.5.3 · K2</div>
+  <div class="q">Which of the following BEST explains a benefit of independence of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Quality should be everyone's responsibility on a project, not assigned solely to the test team.">The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team</button></li>
+    <li><button data-correct="false" data-why="There's no reason to believe an external team feels less bound by delivery deadlines, and missing deadlines isn't a benefit anyway.">If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines</button></li>
+    <li><button data-correct="false" data-why="It's bad practice for a test team to work in isolation — good independent teams still stay concerned with changing requirements and communicate well with developers.">An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system</button></li>
+    <li><button data-correct="true" data-why="Specifications are never perfect — developers must make assumptions when interpreting them, and an independent tester is well-placed to challenge and verify those assumptions.">When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q8 · FL-1.5.3 · K2</div>
+  <div class="q">Which of the following statements about the independence of testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This captures both sides accurately: testers spot different defects due to differing technical perspective, but independence risks an adversarial relationship with developers.">Independent testers will find defects due to their different technical perspective from developers, but their independence may lead to an adversarial relationship with the developers</button></li>
+    <li><button data-correct="false" data-why="Backwards on both counts: familiarity means developers find many defects in their own code efficiently, and it's a different (not shared) background that explains why testers find different defects.">Developers' familiarity with their own code means they only find a few defects in it, however their shared software background with testers means these defects would also be found by the testers</button></li>
+    <li><button data-correct="false" data-why="Testers can be within the developer's own team (some independence) — very high independence (outside the organization) is only one point on a spectrum, not a requirement.">Independent testing requires testers who are outside the developer's team and ideally from outside the organization, however these testers find it difficult to understand the application domain</button></li>
+    <li><button data-correct="false" data-why="The first half is right, but the isolation/blame risk applies more to testers outside the team, not to testers from within it.">Testers from outside the developer's team are more independent than testers from within the team, but the testers from within the team are more likely to be blamed for delays in product release</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q7 · FL-1.5.2 · K1</div>
+  <div class="q">Which of the following is an advantage of the whole-team approach?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testers still play a vital role in the whole-team approach, sharing testing expertise and collaborating with the team — it doesn't mean teams have no testers.">Teams with no testers</button></li>
+    <li><button data-correct="true" data-why="Leveraging each team member's diverse skills fosters superior team dynamics, robust communication and collaboration, and a synergistic effect that benefits the project.">Improved team dynamics</button></li>
+    <li><button data-correct="false" data-why="The whole-team approach allows any team member with the right skills to take on a task — it doesn't favor narrow specialist roles.">Specialist team members</button></li>
+    <li><button data-correct="false" data-why="There's no guidance suggesting larger teams are better under the whole-team approach.">Larger team sizes</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q8 · FL-1.5.3 · K2</div>
+  <div class="q">Given the following benefits and drawbacks of the independence of testing:
+i. The testers work in a different location from the developers
+ii. Testers question the assumptions programmers make while writing code
+iii. A confrontational dynamic has been established between testers and developers
+iv. Developers have convinced themselves that testers are mostly accountable for quality
+v. Testers have different biases than those held by the developers
+
+Which are MOST likely to be considered benefits?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Working in a different location (i) reduces collaboration rather than helping it, and developers believing testers are mostly accountable for quality (iv) is a disadvantage of independence, not a benefit — so neither i nor iv is a benefit.">i, iv</button></li>
+    <li><button data-correct="true" data-why="Testers questioning programmers' assumptions (ii) and testers holding different biases than developers (v) are genuine benefits of independence — different backgrounds and viewpoints let testers spot different types of defects.">ii, v</button></li>
+    <li><button data-correct="false" data-why="All three are disadvantages of independence (isolation, an adversarial dynamic, and reduced shared accountability for quality), not benefits.">i, iii, iv</button></li>
+    <li><button data-correct="false" data-why="An established confrontational dynamic (iii) is a disadvantage, not a benefit, even though ii and v are genuine benefits on their own.">ii, iii, v</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div id="exam-results" class="exam-results" hidden>
+  <h2>Results</h2>
+  <div id="exam-score-summary" class="exam-score-summary"></div>
+  <table class="topic-breakdown">
+    <thead><tr><th>Topic</th><th>Score</th></tr></thead>
+    <tbody id="topic-breakdown-body"></tbody>
+  </table>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If your score lands below 65%, don't just re-read the failed questions — go back to the
+  section lesson (via the section number in each exam-tag) and re-study the whole section, then come
+  back and retake just that section's questions. Ask your teacher to explain any rationale here that
+  doesn't fully make sense.</div>
+  This covers Chapter 1 (Fundamentals of Testing) only.
+  Back to: <a href="../lessons/0001-1.1-what-is-testing.html">§1.1 — What is Testing? →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/exam.js"></script>
+</body>
+</html>
