@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>4.1 Test Techniques Overview</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §4.1 &nbsp;·&nbsp; Lesson 11 &nbsp;·&nbsp;
+  <a href="0010-3.2-feedback-and-review-process.html">← Back: 3.2</a> &nbsp;·&nbsp;
+  <a href="0012-4.2-black-box-test-techniques.html">Next: 4.2 Black-Box Test Techniques →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>4.1 Test Techniques Overview</h1>
+<p class="subtitle">A short section that opens the biggest chapter in the syllabus (390 of 1135 minutes):
+the three-way classification of test techniques that everything else in Chapter 4 hangs off.</p>
+<span class="lo-tag">FL-4.1.1 (K2) Distinguish black-box test techniques, white-box test techniques and experience-based test techniques</span>
+
+<h2>What test techniques are for</h2>
+<p>
+  "Test techniques support the tester in test analysis (what to test) and in test design (how to test).
+  Test techniques help to develop a relatively small, but sufficient, set of test cases in a systematic
+  way. Test techniques also help the tester to define test conditions, identify coverage items, and
+  identify test data during the test analysis and design."
+</p>
+<p>"In this syllabus, test techniques are classified as black-box, white-box, and experience-based."</p>
+
+<h2>The three categories</h2>
+<div class="compare">
+  <div class="col">
+    <h4>Black-box test techniques</h4>
+    <p>(also known as <strong>specification-based techniques</strong>) "are based on an analysis of the
+    specified behavior of the test object without reference to its internal structure. Therefore, the test
+    cases are independent of how the software is implemented. Consequently, if the implementation changes,
+    but the required behavior stays the same, then the test cases are still useful."</p>
+  </div>
+  <div class="col accent">
+    <h4>White-box test techniques</h4>
+    <p>(also known as <strong>structure-based techniques</strong>) "are based on an analysis of the test
+    object's internal structure and processing. As the test cases are dependent on how the software is
+    designed, they can only be created after the design or implementation of the test object."</p>
+  </div>
+  <div class="col good">
+    <h4>Experience-based test techniques</h4>
+    <p>"effectively use the knowledge and experience of testers for the design and implementation of test
+    cases. The effectiveness of these test techniques depends heavily on the tester's skills. Experience-based
+    test techniques can detect defects that may be missed using the black-box test techniques and white-box
+    test techniques. Hence, experience-based test techniques are complementary to the black-box test
+    techniques and white-box test techniques."</p>
+  </div>
+</div>
+<div class="callout">
+  <strong>The exam's favorite angle:</strong> what does each technique need as its <em>test basis</em>?
+  Black-box needs a specification (docs, requirements, user stories) — not the code. White-box needs the
+  code/architecture/design itself, so it can only start once that exists. Experience-based needs neither —
+  it draws on the tester's own knowledge of how software (and this application) tends to fail. That's the
+  single fact tested most often: "which technique doesn't require a specification at all?" → experience-based.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §4.1 "Test Techniques Overview" (page 39) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — it's brief,
+  but every sentence here reappears as a distinguishing fact in later sections' exam questions.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objective.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">Which of the following is a characteristic of experience-based test techniques?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is a common characteristic of white-box test techniques — test conditions, cases, and data are derived from a test basis that may include code, software architecture, or detailed design.">Test cases are created based on detailed design information</button></li>
+    <li><button data-correct="false" data-why="This is a common characteristic of white-box test techniques — coverage is measured based on items tested within a selected structure.">Items tested within the interface code section are used to measure coverage</button></li>
+    <li><button data-correct="true" data-why="This knowledge and experience — expected use of the software, its environment, likely defects, and the distribution of those defects — is used to define tests. This is the defining characteristic of experience-based test techniques.">The test techniques heavily rely on the tester's knowledge of the software and the business domain</button></li>
+    <li><button data-correct="false" data-why="This is a common characteristic of black-box test techniques — test cases detect gaps between requirements and implementation, and deviations from requirements.">The test cases are used to identify deviations from the requirements</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">What is the MAIN difference between black-box test techniques and experience-based test techniques?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In most cases both black-box and experience-based test techniques can be used for the same test objects — that's not the main difference.">The test object</button></li>
+    <li><button data-correct="false" data-why="Both black-box and experience-based test techniques can be used at all test levels.">The test level at which the test technique is used</button></li>
+    <li><button data-correct="true" data-why="Black-box test techniques are based on an analysis of the specified behavior of the test object, so the test basis is usually a specification. Experience-based test techniques effectively use the tester's knowledge and experience — the tester may not use the specification at all.">The test basis</button></li>
+    <li><button data-correct="false" data-why="Experience-based test techniques are complementary to black-box (and white-box) test techniques, and both can be used in all SDLCs — this isn't the distinguishing factor.">The software development lifecycle (SDLC) in which the test technique can be used</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q19 · FL-4.1.1 · K2</div>
+  <div class="q">You perform system testing of an e-commerce web application and are provided with the following requirement:
+REQ 05-017. If the total cost of purchases exceeds $100, the customer gets a 5% discount on subsequent purchases. Otherwise, the customer does not receive a discount.
+Which test techniques will be MOST helpful in designing test cases based on this requirement?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The document doesn't refer to the test object's internal structure — it specifies desired behavior, so white-box test techniques won't be helpful here.">White-box test techniques</button></li>
+    <li><button data-correct="true" data-why="The document is a requirement specifying desired behavior — exactly the test basis black-box test techniques use. Wording like &quot;exceeds $100&quot; also signals equivalence-partition boundaries suited to Boundary Value Analysis or Decision Table Testing.">Black-box test techniques</button></li>
+    <li><button data-correct="false" data-why="Experience-based techniques could be used, but black-box is more suitable here — this is a precise business rule with clear boundaries, exactly what black-box techniques like BVA are built for.">Experience-based test techniques</button></li>
+    <li><button data-correct="false" data-why="&quot;Risk-based test techniques&quot; is not a recognized category of test technique in this syllabus.">Risk-based test techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the black-box vs. white-box vs. experience-based distinction (specifically: what
+  each one uses as its test basis) doesn't feel automatic yet, ask your teacher before moving on — every
+  remaining section in this chapter assumes you can place a technique into one of these three buckets on
+  sight.</div>
+  §4.1 complete.
+  <a href="0012-4.2-black-box-test-techniques.html">Continue to 4.2 Black-Box Test Techniques →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

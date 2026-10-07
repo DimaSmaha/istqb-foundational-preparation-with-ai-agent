@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3.1 Static Testing Basics</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §3.1 &nbsp;·&nbsp; Lesson 9 &nbsp;·&nbsp;
+  <a href="0008-2.3-maintenance-testing.html">← Back: 2.3</a> &nbsp;·&nbsp;
+  <a href="0010-3.2-feedback-and-review-process.html">Next: 3.2 Feedback and Review Process →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>3.1 Static Testing Basics</h1>
+<p class="subtitle">Chapter 3 opens with the idea that testing doesn't require running the software at all —
+static testing finds defects by looking at a work product, not executing it.</p>
+<span class="lo-tag">FL-3.1.1 (K1) Recognize types of work products that can be examined by static testing</span>
+<span class="lo-tag">FL-3.1.2 (K2) Explain the value of static testing</span>
+<span class="lo-tag">FL-3.1.3 (K2) Compare and contrast static testing and dynamic testing</span>
+
+<h2>What static testing is (syllabus wording)</h2>
+<p>
+  "In contrast to dynamic testing, in static testing the software under test does not need to be
+  executed. Code, process specification, system architecture specification or other work products are
+  evaluated through manual examination (e.g., reviews) or with the help of a tool (e.g., static analysis).
+  Test objectives include improving quality, detecting defects and assessing characteristics like
+  readability, completeness, correctness, testability and consistency. Static testing can be applied for
+  both verification and validation."
+</p>
+<p>
+  "Testers, business representatives (Product Owner, business analyst etc.) and developers work together
+  during example mappings, collaborative user story writing and backlog refinement sessions to ensure that
+  user stories and related work products meet defined criteria, e.g., the Definition of Ready (see section
+  5.1.3). Review techniques can be applied to ensure user stories are complete and understandable and
+  include testable acceptance criteria. By asking the right questions, testers explore, challenge and help
+  improve the proposed user stories."
+</p>
+<p>
+  "Static analysis can identify problems prior to dynamic testing while often requiring less effort, since
+  no test cases are required, and tools (see chapter 6) are typically used. Static analysis is often
+  incorporated into CI frameworks (see section 2.1.4). While largely used to detect specific code defects,
+  static analysis is also used to evaluate maintainability and security. Spelling checkers and readability
+  tools are other examples of static analysis tools."
+</p>
+<div class="callout">
+  <strong>Two flavors, one family:</strong> static testing is the umbrella term. <em>Reviews</em> are the
+  manual-examination flavor (chapter 3.2 is entirely about the review process); <em>static analysis</em> is
+  the tool-driven flavor. Both fall under "static" because neither one runs the code.
+</div>
+
+<h2>3.1.1 Work products examinable by static testing</h2>
+<p>
+  "Almost any work product can be examined using static testing. Examples include requirement
+  specification documents, source code, test plans, test cases, product backlog items, test charters,
+  project documentation, contracts and models."
+</p>
+<p>
+  "Any work product that can be read and understood can be the subject of a review. However, for static
+  analysis, work products need a structure against which they can be checked (e.g., models, code or text
+  with a formal syntax)."
+</p>
+<p>
+  "Work products that are not appropriate for static testing include those that are difficult to interpret
+  by human beings and that should not be analyzed by tools (e.g., 3<sup>rd</sup> party executable code due
+  to legal reasons)."
+</p>
+<div class="callout">
+  <strong>The exam's favorite trap:</strong> "encrypted code" or "3rd-party executable code" — something
+  no human can read and no tool should analyze — is the standard wrong-fit example. If a work product is
+  either unreadable by a human <em>or</em> off-limits for tools (legally or otherwise), it's not a good
+  static testing candidate.
+</div>
+
+<h2>3.1.2 Value of static testing</h2>
+<p>
+  "Static testing can detect defects in the earliest phases of the SDLC, fulfilling the principle of early
+  testing (see section 1.3). It can also identify defects which cannot be detected by dynamic testing
+  (e.g., unreachable code, design patterns not implemented as desired, defects in non-executable work
+  products)."
+</p>
+<p>
+  "Static testing provides the ability to evaluate the quality of, and to build confidence in work
+  products. By verifying the documented requirements, the stakeholders can also make sure that these
+  requirements describe their actual needs. Since static testing can be performed early in the SDLC, a
+  shared understanding can be created among the involved stakeholders. Communication will also be improved
+  between the involved stakeholders. For this reason, it is recommended to involve a wide variety of
+  stakeholders in static testing."
+</p>
+<p>
+  "Even though reviews can be costly to implement, the overall project costs are usually much lower than
+  when no reviews are performed because less time and effort needs to be spent on fixing defects later in
+  the project."
+</p>
+<p>
+  "Certain code defects can be detected using static analysis more efficiently than in dynamic testing,
+  usually resulting in both fewer code defects and a lower overall development effort."
+</p>
+
+<h2>3.1.3 Differences between static testing and dynamic testing</h2>
+<p>
+  "Static testing and dynamic testing practices complement each other. They have similar objectives, such
+  as supporting the detection of defects in work products (see section 1.1.1), but there are also some
+  differences, such as:"
+</p>
+<ul>
+  <li>"Static testing and dynamic testing (with analysis of failures) can both lead to the detection of
+  defects, however there are some defect types that can only be found by either static or dynamic
+  testing."</li>
+  <li>"Static testing finds defects directly, while dynamic testing causes failures from which the
+  associated defects are determined through subsequent analysis"</li>
+  <li>"Static testing may more easily detect defects that lay on paths through the code that are rarely
+  executed or hard to reach using dynamic testing"</li>
+  <li>"Static testing can be applied to non-executable work products, while dynamic testing can only be
+  applied to executable work products"</li>
+  <li>"Static testing can be used to measure quality characteristics that are not dependent on executing
+  code (e.g., maintainability), while dynamic testing can be used to measure quality characteristics that
+  are dependent on executing code (e.g., performance efficiency)"</li>
+</ul>
+
+<div class="compare">
+  <div class="col accent">
+    <h4>Easier / cheaper via static testing</h4>
+    <ul>
+      <li>"Defects in requirements (e.g., inconsistencies, ambiguities, contradictions, omissions,
+      inaccuracies, duplications)"</li>
+      <li>"Design defects (e.g., inefficient database structures, poor modularization)"</li>
+      <li>"Certain types of coding defects (e.g., variables with undefined values, undeclared variables,
+      unreachable or duplicated code, excessive code complexity)"</li>
+      <li>"Deviations from standards (e.g., lack of adherence to naming conventions in coding
+      standards)"</li>
+      <li>"Incorrect interface specifications (e.g., mismatched number, type or order of parameters)"</li>
+      <li>"Specific types of security vulnerabilities (e.g., buffer overflows)"</li>
+      <li>"Gaps or inaccuracies in test basis coverage (e.g., missing tests for an acceptance
+      criterion)"</li>
+    </ul>
+  </div>
+  <div class="col good">
+    <h4>Needs execution — dynamic testing's turn</h4>
+    <ul>
+      <li>Response-time / performance defects — can only be observed by running the software and
+      measuring it</li>
+      <li>Memory-usage defects — only surface when the program actually executes</li>
+      <li>Any quality characteristic that "is dependent on executing code" (e.g., performance
+      efficiency)</li>
+    </ul>
+  </div>
+</div>
+<div class="callout">
+  <strong>Overlap exists too:</strong> some defect types can be found by <em>either</em> approach — e.g. a
+  programming defect a reviewer spots in a code review is the same defect that could also cause an
+  observable failure during dynamic testing. The three buckets are: static-only, dynamic-only, and
+  both.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §3.1 "Static Testing Basics" (pages 33–34) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A11 · FL-3.1.1 · K1</div>
+  <div class="q">The following is a list of the work products produced in the SDLC.
+i. Business requirements
+ii. Schedule
+iii. Test budget
+iv. Third-party executable code
+v. User stories and their acceptance criteria
+
+Which of them can be reviewed?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This leaves out the schedule, test budget and user stories, all of which can be read and understood, and are therefore reviewable.">i and iv can be reviewed</button></li>
+    <li><button data-correct="false" data-why="Third-party executable code is not readable by humans, so it doesn't belong on the reviewable list.">i, ii, iii and iv can be reviewed</button></li>
+    <li><button data-correct="true" data-why="Business requirements, schedule, test budget, and user stories with acceptance criteria are all human-readable work products — any of them can be the subject of a review. Third-party executable code is the one exception: it's not interpretable by humans.">i, ii, iii, and v can be reviewed</button></li>
+    <li><button data-correct="false" data-why="This drops business requirements and includes third-party executable code, which cannot be reviewed.">iii, iv, v can be reviewed</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q15 · FL-3.1.1 · K1</div>
+  <div class="q">Which of the following CANNOT be examined by static testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="A contract must be interpretable by humans, so it could be reviewed — a form of static testing.">Contract</button></li>
+    <li><button data-correct="false" data-why="A test plan must be interpretable by humans, so it could be reviewed — a form of static testing.">Test plan</button></li>
+    <li><button data-correct="true" data-why="Static testing is not suitable for work products too complex for human interpretation that also shouldn't be analyzed by tools. Encrypted code is too complex for a human to read, and if properly encrypted, no tool can analyze it either.">Encrypted code</button></li>
+    <li><button data-correct="false" data-why="A test charter must be interpretable by humans, so it could be reviewed — a form of static testing.">Test charter</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q15 · FL-3.1.2 · K2</div>
+  <div class="q">Which of the following is NOT a benefit of static testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This is backwards: defect management is not less expensive when defects are found later. Finding and fixing defects later in the SDLC is more costly, not less — so this is the one that is NOT a benefit.">Having less expensive defect management due to the ease of detecting defects later in the SDLC</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing.">Fixing defects found during static testing is generally much less expensive than fixing defects found during dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: static testing can identify defects — like certain coding defects — that dynamic testing alone might miss.">Finding coding defects that might not have been found by only performing dynamic testing</button></li>
+    <li><button data-correct="false" data-why="This is a real benefit: gaps and inconsistencies in requirements are a classic static-testing catch.">Detecting gaps and inconsistencies in requirements</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q16 · FL-3.1.2 · K2</div>
+  <div class="q">Which of the following statements about the value of static testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Some defect types overlap between the two approaches — it's not a clean split into entirely different types.">The defect types found by static testing are different from the defect types that can be found by dynamic testing</button></li>
+    <li><button data-correct="false" data-why="It's not that dynamic testing is a superset of static testing's catches — some defect types (e.g. unreachable code) can ONLY be found by static testing.">Dynamic testing can detect the defect types that can be found by static testing plus some additional defect types</button></li>
+    <li><button data-correct="true" data-why="There are defect types only static testing finds (e.g. unreachable code, defects in non-executable work products), defect types both can find (e.g. a coding defect visible in review that also causes a failure at runtime), and defect types only dynamic testing finds (e.g. performance or memory issues). So dynamic testing catches some — but not all — of what static testing catches.">Dynamic testing can identify some of the defects that can be found by static testing but not all of them</button></li>
+    <li><button data-correct="false" data-why="It's the reverse that's true in part: static testing finds some things dynamic testing can't (like unreachable code), but static testing cannot detect execution-dependent issues like performance or memory usage, which only dynamic testing can measure.">Static testing can identify the defect types that can be found by dynamic testing as well as some extra defect types</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q15 · FL-3.1.3 · K2</div>
+  <div class="q">Given the following example defects:
+i. Two different parts of the design specification disagree due to the complexity of the design
+ii. A response time is too long and so makes users lose patience
+iii. A path in the code cannot be reached during execution
+iv. A variable is declared but never subsequently used in the program
+v. The amount of memory needed by the program to generate a report is too high
+
+Which of the following BEST identifies example defects that could be found by static testing (rather than dynamic testing)?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both ii (response time) and v (memory usage) are only observable by executing the program — they're dynamic-testing catches, not static ones.">ii, v</button></li>
+    <li><button data-correct="false" data-why="v (memory usage) needs execution to observe, so it doesn't belong with iii, which is a static-testing catch.">iii, v</button></li>
+    <li><button data-correct="false" data-why="ii (response time) needs execution to measure, so it doesn't belong alongside i and iv, which are static-testing catches.">i, ii, iv</button></li>
+    <li><button data-correct="true" data-why="i is a specification defect (inconsistency), iii and iv are coding defects (unreachable/unused code) — all three are typical defects easier to find by static testing. ii (response time) and v (memory) can only be measured by actually running the program, so they belong to dynamic testing.">i, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A12 · FL-3.1.3 · K2</div>
+  <div class="q">Decide which of the following statements (i-v) are true for static testing.
+i. Abnormal external behaviors are easier to identify with this testing
+ii. Discrepancies from a coding standard are easier to find with this testing
+iii. It identifies failures caused by defects when the software is run
+iv. Its test objective is to identify defects as early as possible
+v. Missing coverage for critical security requirements is easier to find and fix</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Statement i is about abnormal external behavior while running — that's a dynamic-testing catch, not static.">i, iv, v are true for static testing</button></li>
+    <li><button data-correct="false" data-why="Statements i and iii both describe things that only show up when the software is actually executed — those belong to dynamic testing, not static.">i, iii, iv are true for static testing</button></li>
+    <li><button data-correct="false" data-why="Statement iii — identifying failures caused by defects when the software runs — is dynamic testing by definition (static testing can't cause a failure at all).">ii, iii are true for static testing</button></li>
+    <li><button data-correct="true" data-why="ii (coding-standard deviations) and v (gaps in requirements/security coverage) are classic static-testing catches. iv is true of static testing too — early testing is exactly its objective. i and iii both require the software to actually run, which rules them out.">ii, iv, v are true for static testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">The static-vs-dynamic comparison table and the "what can/can't be reviewed" distinction
+  are dense — if either one feels shaky, ask your teacher before moving on. Section 3.2 builds directly on
+  this: now that you know static testing includes reviews, the next lesson is entirely about how a review
+  actually runs.</div>
+  §3.1 (Static Testing Basics) complete.
+  <a href="0010-3.2-feedback-and-review-process.html">Continue to 3.2 Feedback and Review Process →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

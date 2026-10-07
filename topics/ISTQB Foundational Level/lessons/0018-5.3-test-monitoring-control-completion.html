@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.3 Test Monitoring, Test Control and Test Completion</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §5.3 &nbsp;·&nbsp; Lesson 18 &nbsp;·&nbsp;
+  <a href="0017-5.2-risk-management.html">← Back: 5.2</a> &nbsp;·&nbsp;
+  <a href="0019-5.4-configuration-management.html">Next: 5.4 Configuration Management →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>5.3 Test Monitoring, Test Control and Test Completion</h1>
+<p class="subtitle">How testing tracks itself while it's running, steers itself when things drift, and
+wraps up cleanly when it's done — plus the metrics and reports that make all three visible to
+stakeholders.</p>
+<span class="lo-tag">FL-5.3.1 (K1) Recall metrics used for testing</span>
+<span class="lo-tag">FL-5.3.2 (K2) Summarize the purposes, content, and audiences for test reports</span>
+<span class="lo-tag">FL-5.3.3 (K2) Exemplify how to communicate the status of testing</span>
+
+<h2>Test monitoring, test control, and test completion</h2>
+<p>"Test monitoring is concerned with gathering information about testing. This information is used to
+assess test progress and to measure whether the exit criteria or the test tasks associated with the exit
+criteria are satisfied, such as meeting the targets for coverage of product risks, requirements, or
+acceptance criteria."</p>
+<p>"Test control uses the information from test monitoring to provide, in a form of the control
+directives, guidance and the necessary corrective actions to achieve the most effective and efficient
+testing. Examples of control directives include:</p>
+<ul>
+  <li>Reprioritizing tests when an identified risk becomes an issue</li>
+  <li>Re-evaluating whether a test item meets entry criteria or exit criteria due to rework</li>
+  <li>Adjusting the test schedule to address a delay in the delivery of the test environment</li>
+  <li>Adding new resources when and where needed"</li>
+</ul>
+<p>"Test completion collects data from completed test activities to consolidate experience, testware, and
+any other relevant information. Test completion activities occur at project milestones such as when a test
+level is completed, an agile iteration is finished, a test project is completed (or cancelled), a software
+system is released, or a maintenance release is completed."</p>
+
+<h2>5.3.1 Metrics used in Testing</h2>
+<p>"Test metrics are gathered to show progress against the planned test schedule and budget, the current
+quality of the test object, and the effectiveness of the test activities with respect to the test
+objectives or an iteration goal."</p>
+<p>"Common test metrics include:</p>
+<ul>
+  <li>Project progress metrics (e.g., task completion, resource usage, test effort)</li>
+  <li>Test progress metrics (e.g., test case implementation progress, test environment preparation
+  progress, number of test cases run/not run, passed/failed, test execution time)</li>
+  <li>Product quality metrics (e.g., availability, response time, mean time to failure)</li>
+  <li>Defect metrics (e.g., number and priorities of defects found/fixed, defect density, defect detection
+  percentage)</li>
+  <li>Risk metrics (e.g., residual risk level)</li>
+  <li>Coverage metrics (e.g., requirements coverage, code coverage)</li>
+  <li>Cost metrics (e.g., cost of testing, organizational cost of quality)"</li>
+</ul>
+<div class="callout">
+  <strong>Sort metrics by what they're telling you.</strong> "Number of defects found" and "defect
+  density" describe the <em>test object's quality</em>. "Effort spent" or "time to repair a defect"
+  describes the <em>test process</em>, not the product. The exam likes to give you a metric and ask
+  which category it belongs to — check whether it says something about the product or about the work
+  being done.
+</div>
+
+<h2>5.3.2 Purpose, Content and Audience for Test Reports</h2>
+<p>"Test reporting summarizes and communicates test information during and after testing. Test progress
+reports support the ongoing test control and must provide enough information to make modifications to the
+test schedule, resources, or test plan, when such changes are needed due to deviation from the plan or
+changed circumstances. Test completion reports summarize a specific test activity (e.g., test level, test
+cycle, iteration) and can give information for subsequent testing."</p>
+<div class="compare">
+  <div class="col">
+    <h4>Test progress report</h4>
+    <p>"generated on a regular basis (e.g., daily, weekly, etc.) and include:</p>
+    <ul>
+      <li>Testing period</li>
+      <li>Test progress (e.g., ahead or behind schedule), including any notable deviations</li>
+      <li>Impediments for testing, and their workarounds</li>
+      <li>Test metrics</li>
+      <li>New and changed risks within testing period</li>
+      <li>Testing planned for the next period"</li>
+    </ul>
+  </div>
+  <div class="col accent">
+    <h4>Test completion report</h4>
+    <p>"prepared during test completion, when a project, test level, or test type is complete and when,
+    ideally, its exit criteria have been met... Typical test completion reports include:</p>
+    <ul>
+      <li>Test summary</li>
+      <li>Testing and product quality evaluation based on the original test plan (i.e., test objectives and
+      exit criteria)</li>
+      <li>Deviations from the test plan</li>
+      <li>Testing impediments and workarounds</li>
+      <li>Test metrics based on test progress reports</li>
+      <li>Unmitigated risks, defects not fixed</li>
+      <li>Lessons learned that are relevant to the testing"</li>
+    </ul>
+  </div>
+</div>
+<p>"Different audiences require different information in the reports and influence the degree of formality
+and the frequency of test reporting. Test progress reporting to others in the same team is often frequent
+and informal, while test completion reporting follows a set template and occurs only once."</p>
+<div class="callout">
+  <strong>Not a defect report:</strong> "steps to reproduce a specific defect" belongs in a <em>defect
+  report</em> (§5.5), not a test report. Test reports summarize testing as a whole — progress, metrics,
+  risks — not the diagnostic detail of one anomaly. Also watch for audience filtering: technical metrics
+  like branch coverage are of little interest to business representatives, who care more about progress,
+  impediments, and risk.
+</div>
+
+<h2>5.3.3 Communicating the Status of Testing</h2>
+<p>"The best means of communicating test status varies, depending on test management concerns,
+organizational test strategies, regulatory standards, or, in the case of self-organizing teams, on the team
+itself. The options include:</p>
+<ul>
+  <li>Verbal communication with team members and other stakeholders</li>
+  <li>Dashboards (e.g., CI/CD dashboards, task boards, and burn-down charts)</li>
+  <li>Electronic communication channels (e.g., email, chat)</li>
+  <li>Online documentation</li>
+  <li>Formal test reports"</li>
+</ul>
+<p>"One or more of these options can be used. More formal communication may be more appropriate for
+distributed teams where direct face-to-face communication is not always possible due to geographical
+distance or time differences. Typically, different stakeholders are interested in different types of
+information, so communication should be tailored accordingly."</p>
+
+<h2>Primary source</h2>
+<p>
+  Read §5.3 "Test Monitoring, Test Control and Test Completion" (pages 53–55) of the <em>ISTQB CTFL
+  Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<h3>5.3.1 — Metrics used in testing</h3>
+
+<div class="quiz-multi" data-correct="a,d" data-why="Number of defects found and defect density both directly describe the quality level of the test object. Effort-per-test-case is a test efficiency metric, executed-procedure count says nothing about quality on its own, and time-to-repair is a process metric — none of these describe product quality.">
+  <div class="exam-tag">Exam A · A25 · FL-5.3.1 · K1 · select TWO</div>
+  <div class="q">Which TWO of the following options are common metrics used for reporting on the quality level of the test object?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Number of defects found during system testing</label></li>
+    <li><label><input type="checkbox" value="b"> Total effort on test design divided by the number of designed test cases</label></li>
+    <li><label><input type="checkbox" value="c"> Number of executed test procedures</label></li>
+    <li><label><input type="checkbox" value="d"> Number of defects found divided by the size of a work product</label></li>
+    <li><label><input type="checkbox" value="e"> Time needed to repair a defect</label></li>
+  </ul>
+  <button class="check-multi">Check answer</button>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.3.2 — Purpose, content, and audience of test reports</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q36 · FL-5.3.2 · K2</div>
+  <div class="q">Which of the following is NOT a valid purpose for a test report?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS a valid purpose — supporting ongoing test control by tracking progress and flagging areas needing attention.">Tracking test progress and identifying areas that require further attention</button></li>
+    <li><button data-correct="false" data-why="This IS a valid purpose — summarizing executed tests, results, and defects found is standard test report content.">Providing information on the tests executed, their results, and defects found</button></li>
+    <li><button data-correct="true" data-why="Providing reproduction steps for an individual defect is the purpose of a defect report (§5.5), not a test report.">Providing information about each defect, such as the steps to reproduce it</button></li>
+    <li><button data-correct="false" data-why="This IS a valid purpose — test progress reports include testing planned for the next period.">Providing information on testing planned for the next period</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q36 · FL-5.3.2 · K2</div>
+  <div class="q">Which of the following activities in the test process makes the MOST use of test progress reports?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test design.">Test design</button></li>
+    <li><button data-correct="true" data-why="A test completion report is prepared during test completion, using information from test progress reports and other data gathered throughout testing.">Test completion</button></li>
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test analysis.">Test analysis</button></li>
+    <li><button data-correct="false" data-why="Test progress reports are mostly used during test monitoring/control and test completion, not test planning.">Test planning</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A26 · FL-5.3.2 · K2</div>
+  <div class="q">Which of the following pieces of information contained in a test progress report is the LEAST useful for business representatives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Impediments to testing can be high-level and business-relevant, so this is useful information for business stakeholders.">Impediments to testing</button></li>
+    <li><button data-correct="true" data-why="Branch coverage is a technical, code-level metric used by developers and technical test analysts — of little interest to business representatives.">Branch coverage achieved</button></li>
+    <li><button data-correct="false" data-why="Test progress is project-related and useful for business representatives tracking release readiness.">Test progress</button></li>
+    <li><button data-correct="false" data-why="New risks affect product quality and release decisions, so this is useful for business representatives.">New risks within the test cycle</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.3.3 — Communicating the status of testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q36 · FL-5.3.3 · K2</div>
+  <div class="q">Which work product can be used by an agile team to show the amount of work that has been completed and the amount of total work remaining for a given iteration?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Acceptance criteria are the conditions used to decide whether a user story is done — they don't show ongoing work progress.">Acceptance criteria</button></li>
+    <li><button data-correct="false" data-why="Defect reports inform about individual defects; they do not show iteration-level work progress.">Defect report</button></li>
+    <li><button data-correct="false" data-why="A test completion report is created after the iteration finishes, so it can't show progress continuously within the iteration.">Test completion report</button></li>
+    <li><button data-correct="true" data-why="A burn-down chart is a dashboard-style graphical representation of work remaining versus time, updated daily — exactly the kind of continuous status communication named in §5.3.3.">Burndown chart</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the test-progress-report vs. test-completion-report content lists (or the
+  metric-vs-product-quality sorting) feel blurry, ask your teacher before continuing — §5.4 and §5.5 both
+  assume you can tell a "report on testing" apart from a "report on one defect."</div>
+  §5.3 complete.
+  <a href="0019-5.4-configuration-management.html">Continue to 5.4 Configuration Management →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

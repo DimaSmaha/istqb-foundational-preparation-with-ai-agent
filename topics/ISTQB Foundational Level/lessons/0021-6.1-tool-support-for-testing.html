@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>6.1 Tool Support for Testing</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §6.1 &nbsp;·&nbsp; Lesson 21 &nbsp;·&nbsp;
+  <a href="0020-5.5-defect-management.html">← Back: 5.5</a> &nbsp;·&nbsp;
+  <a href="0022-6.2-benefits-and-risks-of-test-automation.html">Next: 6.2 Benefits and Risks of Test Automation →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>6.1 Tool Support for Testing</h1>
+<p class="subtitle">The opening section of the final chapter — only 20 minutes total across both of
+Chapter 6's sections. This one is a single K2 learning objective: knowing what each category of test
+tool is for.</p>
+<span class="lo-tag">FL-6.1.1 (K2) Explain how different types of test tools support testing</span>
+
+<h2>Tool Support for Testing</h2>
+<p>"Test tools support and facilitate many test activities. Examples include, but are not limited to:</p>
+<ul>
+  <li><strong>Test management tools</strong> – increase the test process efficiency by facilitating
+  management of the SDLC, requirements, tests, defects, configuration</li>
+  <li><strong>Static testing tools</strong> – support the tester in performing reviews and static
+  analysis</li>
+  <li><strong>Test design and test implementation tools</strong> – facilitate generation of test cases,
+  test data and test procedures</li>
+  <li><strong>Test execution and test coverage tools</strong> – facilitate automated test execution and
+  coverage measurement</li>
+  <li><strong>Non-functional testing tools</strong> – allow the tester to perform non-functional testing
+  that is difficult or impossible to perform manually</li>
+  <li><strong>DevOps tools</strong> – support the DevOps delivery pipeline, workflow tracking, automated
+  build process(es), CI/CD</li>
+  <li><strong>Collaboration tools</strong> – facilitate communication</li>
+  <li><strong>Tools supporting scalability and deployment standardization</strong> (e.g., virtual
+  machines, containerization tools)</li>
+  <li><strong>Any other tool that assists in testing</strong> (e.g., a spreadsheet is a test tool in the
+  context of testing)"</li>
+</ul>
+
+<div class="callout">
+  <strong>The exam's favorite trick with this list:</strong> matching a described scenario to the
+  <em>right</em> category, not just recognizing the category names. Two matching patterns worth
+  memorizing: test design and test implementation tools cover the creation of testware (test cases, test
+  data, test procedures) — not its execution. Test execution and coverage tools, and DevOps tools (via
+  the CI/CD pipeline), are the ones that actually <em>run</em> tests. If a question describes "organizing
+  test cases, defects, and configuration" together, that's the test management tools category — it's the
+  one tool category whose job spans the whole SDLC's worth of artifacts, not just one activity.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §6.1 "Tool Support for Testing" (page 59) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objective. All three
+exams contain exactly one FL-6.1.1 question each — this is the shortest chapter in the syllabus (20
+minutes total), so coverage is thin but complete.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Which test activity does a data preparation tool support?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test monitoring involves the ongoing checking of all activities and comparison of actual progress against the test plan. Test control involves taking the actions necessary to meet the test objectives of the test plan. No test data are prepared during these activities.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis includes analysis of the test basis to identify test conditions and prioritize them. Test data are not prepared during this activity.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test design and implementation can both include the identification, creation or acquisition of the testware necessary for test execution (e.g., test data).">Test design and test implementation</button></li>
+    <li><button data-correct="false" data-why="Test completion activities occur at project milestones (e.g., release, end of iteration, test level completion), so it is too late for preparing test data.">Test completion</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Given the following test tool categories:
+i. Collaboration tools
+ii. DevOps tools
+iii. Management tools
+iv. Non-functional testing tools
+v. Test design and implementation tools
+
+Tools from which of the categories are MOST likely to facilitate test execution?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Collaboration tools facilitate communication, not test execution. Test design and test implementation tools facilitate generation of testware, not its execution.">i, v</button></li>
+    <li><button data-correct="true" data-why="DevOps tools support the delivery pipeline and CI/CD, which include the facilitation of test execution (e.g., component testing for CI). Non-functional testing tools allow the tester to perform non-functional testing, which can include dynamic testing — i.e., test execution.">ii, iv</button></li>
+    <li><button data-correct="false" data-why="Collaboration tools and management tools do not facilitate test execution; only test design and test implementation tools among this trio relate to testware, and even that is about generation, not execution.">i, iii, v</button></li>
+    <li><button data-correct="false" data-why="Management tools facilitate management of the SDLC, requirements, tests, defects, and configuration — not the execution of tests itself.">ii, iii, iv</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q39 · FL-6.1.1 · K2</div>
+  <div class="q">Tools from which of the following categories help with the organization of test cases, detected defects and configuration management?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test execution and coverage tools facilitate the automated execution of test cases and the measurement of the coverage achieved by running those test cases. They do not help with the organization of defects and configuration management.">Test execution and coverage tools</button></li>
+    <li><button data-correct="false" data-why="Test design and test implementation tools facilitate the generation of test cases, test data and test procedures, but they do not help with the organization of defects and configuration management.">Test design and implementation tools</button></li>
+    <li><button data-correct="false" data-why="Defect management tools are used to manage defects but are not testing tools and are not used to organize test cases or configuration management.">Defect management tools</button></li>
+    <li><button data-correct="true" data-why="Test management tools increase the test process efficiency by facilitating the management of the software development lifecycle (SDLC), requirements, tests, defects, and configuration management.">Test management tools</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If any of these tool category boundaries feel arbitrary — especially test management
+  vs. defect management tools — ask your teacher. The exam leans on exactly this kind of adjacent-category
+  confusion.</div>
+  §6.1 complete.
+  <a href="0022-6.2-benefits-and-risks-of-test-automation.html">Continue to 6.2 Benefits and Risks of Test Automation →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.2 Test Levels and Test Types</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §2.2 &nbsp;·&nbsp; Lesson 7 &nbsp;·&nbsp;
+  <a href="0006-2.1-testing-in-the-sdlc.html">← Back: 2.1</a> &nbsp;·&nbsp;
+  <a href="0008-2.3-maintenance-testing.html">Next: 2.3 Maintenance Testing →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>2.2 Test Levels and Test Types</h1>
+<p class="subtitle">Five test levels, four test types, and the confirmation-vs-regression distinction that trips up almost everyone at first.</p>
+<span class="lo-tag">FL-2.2.1 (K2) Distinguish the different test levels</span>
+<span class="lo-tag">FL-2.2.2 (K2) Distinguish the different test types</span>
+<span class="lo-tag">FL-2.2.3 (K2) Distinguish confirmation testing from regression testing</span>
+
+<h2>Test levels vs. test types (syllabus wording)</h2>
+<p>
+  "Test levels are groups of test activities that are organized and managed together. Each test level is an
+  instance of the test process, performed in relation to software at a given phase of development, from
+  individual components to complete systems or, where applicable, systems of systems."
+</p>
+<p>
+  "Test levels are related to other activities within the SDLC. In sequential SDLC models, the test levels
+  are often defined such that the exit criteria of one level are part of the entry criteria for the next
+  level. In some iterative models, this may not apply. Development activities may span through multiple test
+  levels. Test levels may overlap in time."
+</p>
+<p>
+  "Test types are groups of test activities related to specific quality characteristics and most of those
+  test activities can be performed at every test level."
+</p>
+
+<h2>2.2.1 The five test levels</h2>
+<ul>
+  <li><strong>Component testing</strong> (also known as unit testing) — "focuses on testing components in isolation. It often requires specific support, such as test harnesses or unit test frameworks. Component testing is normally performed by developers in their development environments."</li>
+  <li><strong>Component integration testing</strong> (also known as unit integration testing) — "focuses on testing the interfaces and interactions between components. Component integration testing is heavily dependent on the integration strategy like bottom-up, top-down or big-bang."</li>
+  <li><strong>System testing</strong> — "focuses on the overall behavior and capabilities of an entire system or product, often including functional testing of end-to-end tasks and the non-functional testing of quality characteristics. For some non-functional quality characteristics, it is preferable to test them on a complete system in a representative test environment (e.g., usability). Using simulations of sub-systems is also possible. System testing may be performed by an independent test team, and is related to specifications for the system."</li>
+  <li><strong>System integration testing</strong> — "focuses on testing the interfaces of the system under test and other systems and external services. System integration testing requires suitable test environments preferably similar to the operational environment."</li>
+  <li><strong>Acceptance testing</strong> — "focuses on validation and on demonstrating readiness for deployment, which means that the system fulfills the user's business needs. Ideally, acceptance testing should be performed by the intended users." Main forms: "user acceptance testing (UAT), operational acceptance testing, contractual acceptance testing and regulatory acceptance testing, alpha testing and beta testing."</li>
+</ul>
+<p>Test levels are distinguished by this non-exhaustive list of attributes, "to avoid overlapping of test activities":</p>
+<ul>
+  <li>Test object</li>
+  <li>Test objectives</li>
+  <li>Test basis</li>
+  <li>Defects and failures</li>
+  <li>Approach and responsibilities</li>
+</ul>
+
+<h2>2.2.2 The four test types</h2>
+<div class="compare">
+  <div class="col">
+    <h4>Functional testing</h4>
+    <p>"Evaluates the functions that a component or system should perform. The functions are 'what' the test object should do. The main objective of functional testing is checking the functional completeness, functional correctness and functional appropriateness."</p>
+  </div>
+  <div class="col accent">
+    <h4>Non-functional testing</h4>
+    <p>"Evaluates attributes other than functional characteristics of a component or system. Non-functional testing is the testing of 'how well the system behaves'." Main objective: checking the non-functional quality characteristics (per ISO/IEC 25010): performance efficiency, compatibility, usability (interaction capability), reliability, security, maintainability, portability (flexibility), safety.</p>
+  </div>
+  <div class="col good">
+    <h4>Black-box testing</h4>
+    <p>"Is specification-based and derives tests from documentation not related to the internal structure of the test object. The main objective of black-box testing is checking the system's behavior against its specifications."</p>
+  </div>
+  <div class="col">
+    <h4>White-box testing</h4>
+    <p>"Is structure-based and derives tests from the system's implementation or internal structure (e.g., code, architecture, work flows, and data flows). The main objective of white-box testing is to cover the underlying structure by the tests to an acceptable level."</p>
+  </div>
+</div>
+<p>
+  "All the four above mentioned test types can be applied to all test levels, although the focus will be
+  different at each level. Different test techniques can be used to derive test conditions and test cases
+  for all the mentioned test types." "It is sometimes appropriate for non-functional testing to start early
+  in the SDLC (e.g., as part of reviews or component testing)." Many non-functional tests are derived from
+  functional tests — "they use the same functional tests, but check that while performing the function, a
+  non-functional constraint is satisfied (e.g., checking that a function performs within a specified time,
+  or a function can be ported to a new platform)." "The late discovery of non-functional defects can pose a
+  serious threat to the success of a project. Non-functional testing sometimes needs a very specific test
+  environment, such as a usability lab for usability testing."
+</p>
+
+<h2>2.2.3 Confirmation testing and regression testing</h2>
+<p>
+  "Changes are typically made to a component or system to either enhance it by adding a new feature or to
+  fix it by removing a defect. Testing should then also include confirmation testing and regression testing."
+</p>
+<div class="compare">
+  <div class="col accent">
+    <h4>Confirmation testing</h4>
+    <p>"Confirms that an original defect has been successfully fixed." Depending on risk, this may mean re-running all tests that previously failed due to the defect, adding new tests to cover the fix's changes, or — when time/money is short — simply re-exercising the steps that reproduced the failure and checking it no longer occurs.</p>
+  </div>
+  <div class="col good">
+    <h4>Regression testing</h4>
+    <p>"Confirms that no adverse consequences have been caused by a change, including a fix that has already been confirmation tested." These consequences could affect the changed component, other components in the same system, or even connected systems. "Regression testing may not be restricted to the test object itself but can also be related to the environment. It is advisable first to perform an impact analysis to recognize the extent of the regression testing. Impact analysis shows which parts of the software could be affected."</p>
+  </div>
+</div>
+<p>
+  "Regression test suites are run many times and generally the number of regression test cases will increase
+  with each iteration or release, so regression testing is a strong candidate for automation. Test automation
+  should start early in the project. Where CI is used, such as in DevOps (see section 2.1.4), it is good
+  practice to also include automated regression tests. Depending on the situation, this may include
+  regression tests on different test levels." "Confirmation testing and/or regression testing for the test
+  object are needed on all test levels if defects are fixed and/or changes are made on these test levels."
+</p>
+
+<h2>Primary source</h2>
+<p>
+  Read §2.2 "Test Levels and Test Types" (pages 28–31) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A and C, tagged to this section's learning objectives.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q13 · FL-2.2.1 · K2</div>
+  <div class="q">Which types of failures (1-4) fit which test levels (A-D) BEST?
+1. Failures in system behavior as it deviates from the user's business needs
+2. Failures in communication between components
+3. Failures in logic in the code
+4. Failures in not correctly implemented business rules
+
+A. Component testing
+B. Component integration testing
+C. System testing
+D. Acceptance testing</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test basis for acceptance testing is the user's business needs (1D); communication between components is tested at component integration testing (2B); logic failures are found at component testing (3A); business rules are the test basis for system testing (4C).">1D, 2B, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="This swaps components 3 and 4 into the wrong levels — logic failures belong to component testing, and business-rule failures belong to system testing.">1D, 2B, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Business needs are the test basis for acceptance testing, not component integration testing — and this option misassigns several other pairs too.">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="false" data-why="This puts business-needs failures at system testing rather than acceptance testing, among other mismatches.">1C, 2B, 3A, 4D</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q13 · FL-2.2.1 · K2</div>
+  <div class="q">Which of the following test levels is MOST likely being performed if the testing is focused on validation and is not being performed by testers?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Component testing is mostly verification against a specification, not validation, and is normally performed by developers rather than testers — but the question is asking about validation specifically.">Component testing</button></li>
+    <li><button data-correct="false" data-why="Component integration testing is mostly verification, not validation, and is usually carried out by developers.">Component integration testing</button></li>
+    <li><button data-correct="false" data-why="System integration testing is mostly verification against a specification, and this type of testing is most often performed by testers, not end users.">System integration testing</button></li>
+    <li><button data-correct="true" data-why="Acceptance testing focuses on validating that the system meets the user's business needs and is ready for deployment — ideally carried out by the end users themselves, not testers.">Acceptance testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A9 · FL-2.2.2 · K2</div>
+  <div class="q">You work as a tester on a project on a mobile application for food ordering for one of your clients. The client sent you a list of requirements. One of them, with high priority, says
+"The order must be processed in less than 10 seconds in 95% of the cases".
+You created a set of test cases in which a number of random orders were made, the processing time measured, and the test results were checked against the requirements.
+What test type did you perform?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Coming directly from the client with high priority doesn't make these tests functional — they check 'how fast' (performance), not 'what' the system does.">Functional, because the test cases cover the user's business requirement for the system</button></li>
+    <li><button data-correct="true" data-why="This is testing for performance efficiency — a non-functional quality characteristic — even though the requirement itself is high-priority and business-driven.">Non-functional, because they measure the system's performance</button></li>
+    <li><button data-correct="false" data-why="Even if the tests do interact with the UI, the main test objective here is performance, not usability or functional behavior.">Functional, because the test cases interact with the user interface</button></li>
+    <li><button data-correct="false" data-why="You don't need internal-structure knowledge to measure order processing time — this can be, and here is, tested as a black-box, non-functional concern.">White-box, because we need to know the internal structure of the program to measure the order processing time</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q13 · FL-2.2.2 · K2</div>
+  <div class="q">Which of the following tests is MOST likely to be performed as part of functional testing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Checking that a sort function puts elements in ascending order is checking functional correctness — exactly what functional testing evaluates.">The test checks that the sort function puts the elements of the list or array in ascending order</button></li>
+    <li><button data-correct="false" data-why="Checking that sorting completes within one second is a performance efficiency check — non-functional testing.">The test checks whether the sort function completes sorting within one second of starting</button></li>
+    <li><button data-correct="false" data-why="Checking how easily the function can be changed from ascending to descending sort is testing modifiability — a non-functional maintainability concern.">The test checks how easily the sort function can be changed from sorting ascending to sorting descending</button></li>
+    <li><button data-correct="false" data-why="Checking correctness after moving to a new architecture is testing adaptability — a form of portability, which is non-functional.">The test checks that the sort function still functions correctly when moved from a 32-bit to a 64-bit architecture</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q14 · FL-2.2.3 · K2</div>
+  <div class="q">You are testing a user story with three acceptance criteria: AC1, AC2 and AC3. AC1 is covered by test case TC1, AC2 by TC2, and AC3 by TC3. The test execution history had three test runs on three consecutive versions of the software as follows:
+
+Execution 1: TC1 = (1) Failed, TC2 = (2) Passed, TC3 = (3) Failed
+Execution 2: TC1 = (4) Passed, TC2 = (5) Failed, TC3 = (6) Failed
+Execution 3: TC1 = (7) Passed, TC2 = (8) Passed, TC3 = (9) Passed
+
+Tests are repeated once you are informed that all defects found in the test run are corrected and a new version of the software is available.
+Which of the above tests are executed as regression tests?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Tests 4, 8, and 9 are actually confirmation tests (re-checking a previously failed case) rather than regression tests (re-checking a previously passed one).">Only 4, 7, 8, 9</button></li>
+    <li><button data-correct="true" data-why="TC2 passed in Execution 1, so test (5) — re-running TC2 in Execution 2 — is a regression test; TC1 passed in Execution 2, so test (7) — re-running TC1 in Execution 3 — is also a regression test. Tests (4), (6), (8), (9) are confirmation tests since they re-check previously failed cases.">Only 5, 7</button></li>
+    <li><button data-correct="false" data-why="Tests 4, 6, 8, and 9 are all confirmation tests, not regression tests — each re-checks a case that had previously failed.">Only 4, 6, 8, 9</button></li>
+    <li><button data-correct="false" data-why="Test 6 is a confirmation test (TC3 had failed in Execution 1), not a regression test — only test 5 in this pair is genuinely a regression test.">Only 5, 6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q14 · FL-2.2.3 · K2</div>
+  <div class="q">The navigation system software has been updated due to it suggesting routes that break traffic laws, such as driving the wrong way down one-way streets. Which of the following BEST describes the testing that will be performed?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Confirmation testing alone isn't enough — regression testing is also needed to ensure the fix didn't break anything else.">Only confirmation testing</button></li>
+    <li><button data-correct="true" data-why="Confirmation testing checks the fix was implemented correctly, and regression testing then ensures no defects were introduced or uncovered elsewhere in the unchanged system.">Confirmation testing then regression testing</button></li>
+    <li><button data-correct="false" data-why="Regression testing alone isn't enough — confirmation testing is also needed to verify the specific fix actually resolved the reported problem.">Only regression testing</button></li>
+    <li><button data-correct="false" data-why="The order is backwards — confirmation testing (checking the fix worked) precedes regression testing (checking nothing else broke), not the other way around.">Regression testing then confirmation testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the five test levels or the confirmation/regression distinction still feel fuzzy
+  after the practice questions, ask your teacher to walk through a concrete example end to end.</div>
+  Next up: <a href="0008-2.3-maintenance-testing.html">§2.3 — Maintenance Testing →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

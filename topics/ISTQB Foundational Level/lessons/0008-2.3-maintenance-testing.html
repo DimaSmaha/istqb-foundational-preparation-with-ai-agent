@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.3 Maintenance Testing</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §2.3 &nbsp;·&nbsp; Lesson 8 &nbsp;·&nbsp;
+  <a href="0007-2.2-test-levels-and-test-types.html">← Back: 2.2</a> &nbsp;·&nbsp;
+  <a href="0009-3.1-static-testing-basics.html">Next: 3.1 Static Testing Basics →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>2.3 Maintenance Testing</h1>
+<p class="subtitle">The shortest section in Chapter 2, and the last one — testing a system that's already live.</p>
+<span class="lo-tag">FL-2.3.1 (K2) Summarize maintenance testing and its triggers</span>
+
+<h2>Maintenance testing (syllabus wording)</h2>
+<p>
+  "There are different categories of maintenance, it can be corrective, adaptive to changes in the
+  environment or improve performance or maintainability (see ISO/IEC 14764 for details), so maintenance can
+  involve planned releases/deployments and unplanned releases/deployments (hot fixes). Impact analysis may
+  be done before a change is made, to help decide if the change should be made, based on the potential
+  consequences in other areas of the system. Testing the changes to an operational system includes both
+  evaluating the success of the implementation of the change and the checking for possible regressions in
+  parts of the system that remain unchanged (which is usually most of the system)."
+</p>
+
+<h2>Scope of maintenance testing</h2>
+<p>"The scope of maintenance testing typically depends on:"</p>
+<ul>
+  <li>"The degree of risk of the change"</li>
+  <li>"The size of the existing system"</li>
+  <li>"The size of the change"</li>
+</ul>
+
+<h2>Three triggers</h2>
+<p>"The triggers for maintenance and maintenance testing can be classified as follows:"</p>
+<ul>
+  <li>
+    <strong>Modifications</strong> — "such as planned enhancements (i.e., release-based), corrective changes
+    or hot fixes."
+  </li>
+  <li>
+    <strong>Upgrades or migrations of the operational environment</strong> — "such as from one platform to
+    another, which can require tests associated with the new environment as well as of the changed software,
+    or tests of data conversion when data from another application is migrated into the system being
+    maintained."
+  </li>
+  <li>
+    <strong>Retirement</strong> — "such as when an application reaches the end of its life. When a system is
+    retired, this can require testing of data archiving if long data retention periods are required. Testing
+    of restore and retrieval procedures after archiving may also be needed in the event that certain data is
+    required during the archiving period."
+  </li>
+</ul>
+<div class="callout">
+  <strong>Both halves matter:</strong> testing a maintenance change always covers two things — did the
+  change itself work, <em>and</em> did it break anything in the (usually much larger) unchanged part of the
+  system. The second half is exactly why maintenance testing leans so heavily on regression testing (§2.2.3).
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §2.3 "Maintenance Testing" (page 31) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — it's short, but
+  every phrase in it (categories, scope factors, the three triggers) is fair game verbatim on the exam.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A and D, tagged to this section's learning objective.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A10 · FL-2.3.1 · K2</div>
+  <div class="q">Your organization's test strategy suggests that once a system is going to be retired, data migration shall be tested. As part of what test type is this testing MOST likely to be performed?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="When a system is retired, this can require testing of data migration — a trigger explicitly named under maintenance testing.">Maintenance testing</button></li>
+    <li><button data-correct="false" data-why="Regression testing verifies a fix didn't accidentally break other parts of the code — this scenario is about data migration during retirement, not a fix.">Regression testing</button></li>
+    <li><button data-correct="false" data-why="Reliability testing is a non-functional quality characteristic, not a match for data-migration-at-retirement.">Reliability testing</button></li>
+    <li><button data-correct="false" data-why="Integration testing focuses on interactions between components or systems, not data migration — and it's a test level, not a test type.">Integration testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q14 · FL-2.3.1 · K2</div>
+  <div class="q">Which of the following is MOST likely to be a trigger that leads to maintenance testing of a currency exchange system?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Checking how easy the system is to change is maintainability testing, not maintenance testing — those are two different things despite the similar names.">The developers reported that changing the currency exchange system was difficult and the testers decided to check if this was true</button></li>
+    <li><button data-correct="true" data-why="Removing the faulty refund option is a corrective modification (a fix) — exactly the kind of change that triggers maintenance testing.">The refund option of the currency exchange system was removed as it did not always repay the correct amount to customers</button></li>
+    <li><button data-correct="false" data-why="Developing a brand-new user story leads to testing the new feature plus regression testing — not maintenance testing, which concerns an already-operational system's fixes, environment changes, or retirement.">The agile team has started developing a user story that adds a new customer loyalty feature to the currency exchange system</button></li>
+    <li><button data-correct="false" data-why="Enabling an existing language-support option isn't a system modification, environment change, or retirement — none of the three maintenance-testing triggers apply here.">The language support option of the currency exchange system was used to enable both English and local language currency transactions</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">That's Chapter 2 done. If the three maintenance triggers or the DevOps/shift-left
+  material from earlier in this chapter still feel shaky, ask your teacher before moving on — Chapter 3
+  builds on the idea of static testing that this chapter only touched briefly.</div>
+  Chapter 2 (Testing Throughout the Software Development Lifecycle) complete.
+  <a href="0009-3.1-static-testing-basics.html">Continue to 3.1 Static Testing Basics →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

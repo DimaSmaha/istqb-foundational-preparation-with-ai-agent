@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2.1 Testing in the Context of a Software Development Lifecycle</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §2.1 &nbsp;·&nbsp; Lesson 6 &nbsp;·&nbsp;
+  <a href="0005-1.5-essential-skills-and-good-practices.html">← Back: 1.5</a> &nbsp;·&nbsp;
+  <a href="0007-2.2-test-levels-and-test-types.html">Next: 2.2 Test Levels and Test Types →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>2.1 Testing in the Context of a Software Development Lifecycle (SDLC)</h1>
+<p class="subtitle">Chapter 2 opens the syllabus's own words: testing must be adapted to the SDLC to succeed. This is the densest section of the chapter — six sub-topics from SDLC models through DevOps, shift left, and retrospectives.</p>
+<span class="lo-tag">FL-2.1.1 (K2) Explain the impact of the chosen software development lifecycle on testing</span>
+<span class="lo-tag">FL-2.1.2 (K1) Recall good testing practices that apply to all software development lifecycles</span>
+<span class="lo-tag">FL-2.1.3 (K1) Recall the examples of test-first approaches to development</span>
+<span class="lo-tag">FL-2.1.4 (K2) Summarize how DevOps might have an impact on testing</span>
+<span class="lo-tag">FL-2.1.5 (K2) Explain shift left</span>
+<span class="lo-tag">FL-2.1.6 (K2) Explain how retrospectives can be used as a mechanism for process improvement</span>
+
+<h2>SDLC models (syllabus wording)</h2>
+<p>
+  "An SDLC model is an abstract, high-level representation of the software development process. An SDLC
+  model defines how different development phases and types of activities performed within this process
+  relate to each other, both logically and chronologically." Examples of SDLC models include:
+</p>
+<ul>
+  <li><strong>Sequential development models</strong> (e.g., waterfall model, V-model)</li>
+  <li><strong>Iterative development models</strong> (e.g., spiral model, prototyping)</li>
+  <li><strong>Incremental development models</strong> (e.g., Unified Process)</li>
+</ul>
+<p>
+  Some activities within software development processes can also be described by more detailed software
+  development methods and Agile practices. Examples include: acceptance test-driven development (ATDD),
+  behavior-driven development (BDD), domain-driven design (DDD), extreme programming (XP), feature-driven
+  development (FDD), Kanban, Lean IT, Scrum, and test-driven development (TDD).
+</p>
+
+<h2>2.1.1 Impact of the SDLC on testing</h2>
+<p>"Testing must be adapted to the SDLC to succeed." The choice of the SDLC impacts on the:</p>
+<ul>
+  <li>Scope and timing of test activities (e.g., test levels and test types)</li>
+  <li>Level of detail of test documentation</li>
+  <li>Choice of test techniques and test approach</li>
+  <li>Extent of test automation</li>
+  <li>Role and responsibilities of a tester</li>
+</ul>
+<div class="compare">
+  <div class="col">
+    <h4>Sequential models</h4>
+    <p>"In the initial phases testers typically participate in requirement reviews, test analysis, and test design. The executable code is usually created in the later phases, so typically dynamic testing cannot be performed early in the SDLC."</p>
+  </div>
+  <div class="col accent">
+    <h4>Iterative &amp; incremental models</h4>
+    <p>"It is assumed that each iteration delivers a working prototype or product increment. This implies that in each iteration both static testing and dynamic testing may be performed at all test levels. Frequent delivery of increments requires fast feedback and extensive regression testing."</p>
+  </div>
+  <div class="col good">
+    <h4>Agile software development</h4>
+    <p>"Agile software development assumes that change may occur throughout the project." Lightweight documentation and extensive test automation (for easier regression testing) are favored. "Also, most of the manual testing tends to be done using experience-based test techniques (see Section 4.4) that do not require extensive prior test analysis and design."</p>
+  </div>
+</div>
+
+<h2>2.1.2 SDLC and good testing practices</h2>
+<p>"Good testing practices, independent of the chosen SDLC model, include the following:"</p>
+<ul>
+  <li>"For every software development activity, there is a corresponding test activity, so that all development activities are subject to quality control"</li>
+  <li>"Different test levels (see chapter 2.2.1) have specific and different test objectives, which allows for testing to be appropriately comprehensive while avoiding redundancy"</li>
+  <li>"Test analysis and design for a given test level begins during the corresponding development phase of the SDLC, so that testing can adhere to the principle of early testing (see section 1.3)"</li>
+  <li>"Testers are involved in reviewing work products as soon as drafts of these work products are available, so that this earlier testing and defect detection can support shift left (see section 2.1.5)"</li>
+</ul>
+
+<h2>2.1.3 Testing as a driver for development: TDD, ATDD, BDD</h2>
+<p>
+  "TDD, ATDD and BDD are similar development approaches, where tests are defined as a means of directing
+  development. Each of these approaches implements the principle of early testing (see section 1.3) and
+  follows shift left (see section 2.1.5), since the tests are defined before the code is written. They
+  support an iterative development model."
+</p>
+<div class="compare">
+  <div class="col">
+    <h4>Test-Driven Development (TDD)</h4>
+    <ul>
+      <li>"Directs the coding through test cases (instead of extensive software design)"</li>
+      <li>"Tests are written first, then the code is written to satisfy the tests, and then the tests and code are refactored"</li>
+    </ul>
+  </div>
+  <div class="col accent">
+    <h4>Acceptance Test-Driven Development (ATDD)</h4>
+    <ul>
+      <li>"Derives tests from acceptance criteria as part of the system design process"</li>
+      <li>"Tests are written before the part of the application is developed to satisfy the tests"</li>
+    </ul>
+  </div>
+  <div class="col good">
+    <h4>Behavior-Driven Development (BDD)</h4>
+    <ul>
+      <li>"Expresses the desired behavior of an application with test cases written in a simple form of natural language, which is easy to understand by stakeholders — usually using the Given/When/Then format"</li>
+      <li>"Test cases should then automatically be translated into executable tests"</li>
+    </ul>
+  </div>
+</div>
+<p>"For all the above approaches, tests may persist as automated tests to ensure the code quality in future adaptions / refactoring."</p>
+
+<h2>2.1.4 DevOps and testing</h2>
+<p>
+  "DevOps is an organizational approach aiming to create synergy by getting development (including
+  testing) and operations to work together to achieve a set of common goals. DevOps requires a cultural
+  shift within an organization to bridge the gaps between development (including testing) and operations
+  while treating their functions with equal value. DevOps promotes team autonomy, fast feedback, integrated
+  toolchains, and technical practices like continuous integration (CI) and continuous delivery (CD). This
+  enables the teams to build, test and release high-quality code faster through a DevOps delivery
+  pipeline."
+</p>
+<p>From the testing perspective, benefits of DevOps include:</p>
+<ul>
+  <li>"Fast feedback on the code quality, and whether changes adversely affect existing code"</li>
+  <li>"CI promotes shift left in testing (see section 2.1.5) by encouraging developers to submit high quality code accompanied by component tests and static analysis"</li>
+  <li>"Automated processes are promoted like CI/CD that facilitates establishing stable test environments"</li>
+  <li>"The visibility on non-functional quality characteristics increases (e.g., performance efficiency, reliability)"</li>
+  <li>"Automation through a delivery pipeline reduces the need for repetitive manual testing"</li>
+  <li>"The risk of regression is minimized due to the scale and range of automated regression tests"</li>
+</ul>
+<p>"DevOps is not without its risks and challenges, which include:"</p>
+<ul>
+  <li>"The DevOps delivery pipeline must be defined and established"</li>
+  <li>"CI / CD tools must be introduced and maintained"</li>
+  <li>"Test automation requires additional resources and may be difficult to establish and maintain"</li>
+</ul>
+<div class="callout">
+  <strong>Don't over-read this:</strong> "Although DevOps comes with a high level of automated testing,
+  manual testing – especially from the user's perspective – will still be needed."
+</div>
+
+<h2>2.1.5 Shift left</h2>
+<p>
+  "The principle of early testing (see section 1.3) is sometimes referred to as shift left because it is an
+  approach where testing is performed earlier in the SDLC. Shift left basically suggests that testing
+  should be done earlier (e.g., not waiting for code to be implemented or for components to be integrated),
+  but it does not mean that testing later in the SDLC should be neglected."
+</p>
+<p>Good practices that illustrate how to achieve a "shift left" in testing include:</p>
+<ul>
+  <li>"Reviewing the specification from the perspective of testers. These review activities on specifications often find potential defects, such as ambiguities, incompleteness, and inconsistencies"</li>
+  <li>"Writing test cases before the code is written and have the code run in a test harness during code implementation"</li>
+  <li>"Using CI and even better CD as it comes with fast feedback and automated component tests to accompany source code when it is submitted to the code repository"</li>
+  <li>"Completing static analysis of source code prior to dynamic testing, or as part of an automated process"</li>
+  <li>"Performing non-functional testing starting at the component test level, where possible. This is a form of shift left as these non-functional test types tend to be performed later in the SDLC when a complete system and a representative test environment are available"</li>
+</ul>
+<p>
+  "Shift left might result in extra training, effort and/or costs earlier in the process but is expected to
+  save efforts and/or costs later in the process." And critically: "For shift left it is important that
+  stakeholders are convinced and bought into this concept."
+</p>
+
+<h2>2.1.6 Retrospectives and process improvement</h2>
+<p>
+  "Retrospectives are often held at the end of a project or an iteration, at a release milestone, or can be
+  held when needed. The timing and organization of the retrospectives depend on the particular SDLC model
+  being followed." Participants — "not only testers, but also e.g., developers, architects, product owner,
+  business analysts" — discuss:
+</p>
+<ul>
+  <li>"What was successful, and should be retained?"</li>
+  <li>"What was not successful and could be improved?"</li>
+  <li>"How to incorporate the improvements and retain the successes in the future?"</li>
+</ul>
+<p>"The results should be recorded and are normally part of the test completion report (see section 5.3.2).
+  Retrospectives are critical for the successful implementation of continuous improvement, and it is
+  important that any recommended improvements are followed up."</p>
+<p>Typical benefits for testing include:</p>
+<ul>
+  <li>"Increased test effectiveness / efficiency (e.g., by implementing suggestions for process improvement)"</li>
+  <li>"Increased quality of testware (e.g., by jointly reviewing the test processes)"</li>
+  <li>"Team bonding and learning (e.g., as a result of the opportunity to raise issues and propose improvement points)"</li>
+  <li>"Improved quality of the test basis (e.g., as deficiencies in the extent and quality of the requirements could be addressed and solved)"</li>
+  <li>"Better cooperation between development and testing (e.g., as collaboration is reviewed and optimized regularly)"</li>
+</ul>
+
+<h2>Primary source</h2>
+<p>
+  Read §2.1 "Testing in the Context of a Software Development Lifecycle" (pages 25–28) of the
+  <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<div class="quiz-multi" data-correct="b,c" data-why="In sequential models like the V-model, testers can review requirements (a form of static testing) and do test planning in the initial phases. Dynamic testing, acceptance test execution, and maintenance testing all require a working product, which doesn't exist until later phases.">
+  <div class="exam-tag">Exam A · A7 · FL-2.1.1 · K2</div>
+  <div class="q">You are working as a tester in the team that follows the V-model. Which of the following activities CAN be performed in the initial phases of the SDLC? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Dynamic test execution</label></li>
+    <li><label><input type="checkbox" value="b"> b) Static testing</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test planning</label></li>
+    <li><label><input type="checkbox" value="d"> d) Acceptance test execution</label></li>
+    <li><label><input type="checkbox" value="e"> e) Maintenance testing</label></li>
+  </ul>
+  <button class="check-multi">Check answers</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q9 · FL-2.1.2 · K1</div>
+  <div class="q">Which of the following is a good testing practice that applies to all software development lifecycles?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This tries to equate test levels with development levels, but there's no common understanding of the term 'development level'.">For each test level, there is a corresponding development level</button></li>
+    <li><button data-correct="false" data-why="Test objectives can differ from development objectives — e.g. a contractual requirement to perform a certain type of testing has no corresponding development objective.">For each test objective, there is a corresponding development objective</button></li>
+    <li><button data-correct="false" data-why="The symmetry between quality control and development doesn't extend to users — some test activities (e.g. testing for maintainability) have no user aspect at all.">For every test activity, there is a corresponding user activity</button></li>
+    <li><button data-correct="true" data-why="Quality control applies to all development activities, meaning every software development activity has a corresponding test activity — this holds regardless of SDLC model.">For every development activity, there is a corresponding test activity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q10 · FL-2.1.3 · K1</div>
+  <div class="q">Which of the following is an example of a test-first approach to development?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Behavior-Driven Development (BDD) is a well-known example of a test-first approach — tests, expressed as desired behavior, are defined before the code.">Behavior-Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Test Level Driven Development' is not a real test-first approach named in the syllabus.">Test Level Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Function-Driven Development' is not a real test-first approach named in the syllabus.">Function-Driven Development</button></li>
+    <li><button data-correct="false" data-why="'Performance-Driven Development' is not a real test-first approach named in the syllabus.">Performance-Driven Development</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A8 · FL-2.1.4 · K2</div>
+  <div class="q">Which of the following are advantages of DevOps?
+i. Faster product release and faster time to market
+ii. Increases the need for repetitive manual testing
+iii. Constant availability of executable software
+iv. Reduction in the number of regression tests associated with code refactoring
+v. Setting up the test automation framework is inexpensive since everything is automated</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="ii is false (DevOps reduces the need for manual testing) and iv is false (refactoring under DevOps needs MORE regression tests, not fewer).">i, ii, iv are advantages</button></li>
+    <li><button data-correct="false" data-why="Neither iii alone with v holds up — v is false, since not everything is automated and setting up test automation is expensive, not cheap.">iii, v are advantages</button></li>
+    <li><button data-correct="true" data-why="Faster time to market and constant availability of executable software are genuine DevOps advantages; the other three statements are all false.">i, iii are advantages</button></li>
+    <li><button data-correct="false" data-why="All three of these are false: DevOps reduces (not increases) manual testing need, requires more (not fewer) regression tests after refactoring, and test automation setup is expensive, not cheap.">ii, iv, v are advantages</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q11 · FL-2.1.4 · K2</div>
+  <div class="q">Which of the following is MOST likely to be a challenge encountered when implementing DevOps?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="DevOps generally increases the visibility of non-functional quality characteristics like performance and reliability — this is a benefit, not a challenge.">Making sure that non-functional quality characteristics are not overlooked</button></li>
+    <li><button data-correct="false" data-why="CI/CD, as used in DevOps, facilitates stable test environments — this is a benefit, not a challenge.">Managing continuously changing test environments</button></li>
+    <li><button data-correct="false" data-why="CI/CD as used in DevOps generally reduces the need for manual testing, not increases the need for manual testers.">The need for more manual testers with suitable experience</button></li>
+    <li><button data-correct="true" data-why="DevOps implementation risks explicitly include the need to define and establish the delivery pipeline, introduce and maintain CI/CD tools, and set up and maintain test automation.">Setting up the test automation as part of the delivery pipeline</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q11 · FL-2.1.5 · K2</div>
+  <div class="q">Which of the following provides the BEST description of shift-left?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Shift left is about moving test activities earlier in the SDLC, not about automating manual activities on a 'left-hand side of the test process' — that phrase doesn't correspond to anything in the model.">When agreed by the developers, manual activities on the left-hand side of the test process are automated to support the principle of 'early testing saves time and money'</button></li>
+    <li><button data-correct="true" data-why="Shift left emphasizes starting testing earlier in the SDLC where cost-effective, reducing total cost of quality by catching defects sooner — even though it needs more effort and training early on.">Where cost-effective, test activities are moved earlier in the software development lifecycle (SDLC) to reduce the total cost of quality by reducing the number of defects found later in the SDLC</button></li>
+    <li><button data-correct="false" data-why="Automating regression tests is valuable but is normally the developers' responsibility under CI/CD, and isn't itself what shift left means.">When they have spare time available, testers are required to automate tests for regression testing, starting with component tests and component integration tests</button></li>
+    <li><button data-correct="false" data-why="Shift left is about moving testing earlier, not about automating more activities to run later in the SDLC.">When available, testers are trained to perform tasks early in the SDLC to allow more test activities to be automated later in the SDLC</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the arguments below would you use to convince your manager to organize retrospectives at the end of each release cycle?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Retrospectives are useful for identifying improvement opportunities, not for being a popular trend clients care about.">Retrospectives are very popular these days and clients would appreciate it if we added them to our processes</button></li>
+    <li><button data-correct="false" data-why="Retrospectives collect feedback about the process, not the product, and are an internal team activity — end user representatives don't attend.">Organizing retrospectives will save the organization money because without them end user representatives do not provide immediate feedback about the product</button></li>
+    <li><button data-correct="true" data-why="Regularly conducted retrospectives, with proper follow-up, are critical to the continual improvement of development and testing processes.">Process weaknesses identified during the retrospective can be analyzed and serve as a to do list for the organization's continuous process improvement program</button></li>
+    <li><button data-correct="false" data-why="Courage and respect are values of Extreme Programming, not something specifically tied to retrospectives.">Retrospectives embrace five values including courage and respect, which are crucial to maintain continuous improvement in the organization</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q12 · FL-2.1.6 · K2</div>
+  <div class="q">Which of the following BEST describes retrospectives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Calling out individual team members undermines the team bonding and collaboration retrospectives are meant to build.">Retrospectives allow team members to identify other team members who did not fully contribute to achieving quality as required by the whole team approach</button></li>
+    <li><button data-correct="true" data-why="A retrospective's discussion is exactly what was successful and should be retained, plus what could be improved and how.">Retrospectives give testers an opportunity to identify activities that were successful so that these are retained when potential improvements are made in the future</button></li>
+    <li><button data-correct="false" data-why="Retrospectives are about process improvement, not an unfiltered complaints session — and results are recorded in the test completion report, so they aren't a purely blameless private venting space.">Retrospectives are where agile team members are allowed to voice their concerns about management and customers in a blameless environment</button></li>
+    <li><button data-correct="false" data-why="Planning the next iteration's technical decisions happens in iteration planning, not in a retrospective, which looks backward at the iteration just finished.">Retrospectives give agile team members a forum where they focus on discussing the plan and technical decisions for the next iteration</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Six sub-topics in one section is a lot — if DevOps vs. shift left vs. retrospectives
+  start blurring together, ask your teacher to walk through the distinctions rather than re-reading alone.</div>
+  Next up: <a href="0007-2.2-test-levels-and-test-types.html">§2.2 — Test Levels and Test Types →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

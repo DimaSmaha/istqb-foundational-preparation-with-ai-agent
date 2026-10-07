@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.1 Test Planning</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §5.1 &nbsp;·&nbsp; Lesson 16 &nbsp;·&nbsp;
+  <a href="0015-4.5-collaboration-based-test-approaches.html">← Back: 4.5</a> &nbsp;·&nbsp;
+  <a href="0017-5.2-risk-management.html">Next: 5.2 Risk Management →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>5.1 Test Planning</h1>
+<p class="subtitle">The opening section of Chapter 5 (335 minutes, the second-largest chapter) and the
+densest single section in the course: seven sub-LOs, three of them K3 "apply" — estimation techniques,
+test case prioritization, and (via 5.5) defect reports. Expect worked calculations, not just definitions.</p>
+<span class="lo-tag">FL-5.1.1 (K2) Exemplify the purpose and content of a test plan</span>
+<span class="lo-tag">FL-5.1.2 (K1) Recognize how a tester adds value to iteration and release planning</span>
+<span class="lo-tag">FL-5.1.3 (K2) Compare and contrast entry criteria and exit criteria</span>
+<span class="lo-tag">FL-5.1.4 (K3) Use estimation techniques to calculate the required test effort</span>
+<span class="lo-tag">FL-5.1.5 (K3) Apply test case prioritization</span>
+<span class="lo-tag">FL-5.1.6 (K1) Recall the concepts of the test pyramid</span>
+<span class="lo-tag">FL-5.1.7 (K2) Summarize the testing quadrants and their relationships with test levels and test types</span>
+
+<h2>5.1.1 Purpose and Content of a Test Plan</h2>
+<p>"A test plan describes the test objectives, resources and processes for a test project. A test plan:</p>
+<ul>
+  <li>Documents the means and schedule for achieving test objectives</li>
+  <li>Helps to ensure that the performed test activities will meet the established criteria</li>
+  <li>Serves as a means of communication with team members and other stakeholders</li>
+  <li>Demonstrates that testing will adhere to the existing test policy and test strategy (or explains why
+  the testing will deviate from them)"</li>
+</ul>
+<p>"Test planning guides the testers' thinking and forces the testers to confront the future challenges
+related to risks, schedules, people, tools, costs, effort, etc. The process of preparing a test plan is a
+useful way to think through the efforts needed to achieve the test objectives."</p>
+<p>"The typical content of a test plan includes:</p>
+<ul>
+  <li>Context of testing (e.g., test scope, test objectives, test basis)</li>
+  <li>Assumptions and constraints of the test project</li>
+  <li>Stakeholders (e.g., roles, responsibilities, relevance to testing, hiring and training needs)</li>
+  <li>Communication (e.g., forms and frequency of communication, documentation templates)</li>
+  <li>Risk register (e.g., product risks, project risks)</li>
+  <li>Test approach (e.g., test levels, test types, test techniques, test deliverables, entry criteria and
+  exit criteria, independence of testing, metrics to be collected, test data requirements, test
+  environment requirements, deviations from the test policy and test strategy)</li>
+  <li>Budget and schedule"</li>
+</ul>
+<div class="callout">
+  <strong>Exam angle:</strong> given a snippet of test-plan text, identify which content bucket it belongs
+  to. A sentence naming test levels + exit criteria (e.g., "100% branch coverage for critical components")
+  is <strong>test approach</strong> — not risk register, not context of testing. A sentence about report
+  field templates is <strong>communication</strong>. A test plan does <em>not</em> normally contain
+  detailed test data for not-yet-designed test cases — that lives in the test cases themselves.
+</div>
+
+<h2>5.1.2 Tester's Contribution to Iteration and Release Planning</h2>
+<p>"In iterative SDLCs, typically two kinds of planning occur: release planning and iteration planning."</p>
+<div class="compare">
+  <div class="col">
+    <h4>Release planning</h4>
+    <p>"looks ahead to the release of a product, defines and re-defines the product backlog, and may
+    involve refining larger user stories into a set of smaller user stories. It also serves as the basis
+    for the test approach and test plan across all iterations. Testers involved in release planning
+    participate in writing testable user stories and acceptance criteria (see section 4.5), participate in
+    project and quality risk analyses (see section 5.2), estimate test effort associated with user stories
+    (see section 5.1.4), determine the test approach, and plan the testing for the release."</p>
+  </div>
+  <div class="col accent">
+    <h4>Iteration planning</h4>
+    <p>"looks ahead to the end of a single iteration and is concerned with the iteration backlog. Testers
+    involved in iteration planning participate in the detailed risk analysis of user stories, determine the
+    testability of user stories, break down user stories into tasks (particularly testing tasks), estimate
+    test effort for all testing tasks, and identify and refine functional and non-functional aspects of the
+    test object."</p>
+  </div>
+</div>
+
+<h2>5.1.3 Entry Criteria and Exit Criteria</h2>
+<p>"Entry criteria define the preconditions for undertaking a given activity. If entry criteria are not met,
+it is likely that the activity will prove to be more difficult, time-consuming, costly, and riskier. Exit
+criteria define what must be achieved to declare an activity completed. Entry criteria and exit criteria
+should be defined for each test level, and will differ based on the test objectives."</p>
+<div class="compare">
+  <div class="col">
+    <h4>Entry criteria (typical)</h4>
+    <p>"Availability of resources (e.g., people, tools, environments, test data, budget, time), availability
+    of testware (e.g., test basis, testable requirements, user stories, test cases), and initial quality
+    level of a test object (e.g., all smoke tests have passed)."</p>
+  </div>
+  <div class="col good">
+    <h4>Exit criteria (typical)</h4>
+    <p>"Measures of thoroughness (e.g., achieved level of coverage, number of unresolved defects, defect
+    density, number of failed test cases), and binary "yes/no" criteria (e.g., planned tests have been
+    executed, static testing has been performed, all defects found are reported, all regression tests are
+    automated)."</p>
+  </div>
+</div>
+<p>"Running out of time or budget can also be viewed as valid exit criteria. Even without other exit
+criteria being satisfied, it can be acceptable to end testing under such circumstances, if the stakeholders
+have reviewed and accepted the risk to go live without further testing."</p>
+<p>"In Agile software development, exit criteria are often called <strong>Definition of Done</strong>,
+defining the team's objective metrics for a releasable item. Entry criteria that a user story must fulfill
+to start the development and/or testing activities are called <strong>Definition of Ready</strong>."</p>
+
+<h2>5.1.4 Estimation Techniques</h2>
+<p>"Test effort estimation involves predicting the amount of test-related work needed to meet the test
+objectives of a test project. It is important to make it clear to the stakeholders that the estimate is
+based on a number of assumptions and is always subject to estimation error. Estimation for small tasks is
+usually more accurate than for the large ones. Therefore, when estimating a large task, it can be
+decomposed into a set of smaller tasks which then in turn can be estimated."</p>
+<p>The syllabus describes four estimation techniques:</p>
+<p><strong>Estimation based on ratios.</strong> "figures are collected from previous projects within the
+organization, which makes it possible to derive "standard" ratios for similar projects... For example, if
+in the previous project the development-to-test effort ratio was 3:2, and in the current project the
+development effort is expected to be 600 person-days, the test effort can be estimated to be 400
+person-days."</p>
+<p><strong>Extrapolation.</strong> "measurements are made as early as possible in the current project to
+gather the data. Having enough observations, the effort required for the remaining work can be
+approximated by extrapolating this data (usually by applying a mathematical model). This method is very
+suitable in iterative SDLCs."</p>
+<p><strong>Wideband Delphi.</strong> "experts make experience-based estimations. Each expert, in isolation,
+estimates the effort. The results are collected and if there are deviations of an expert's estimate that
+are out of range of the agreed upon boundaries, the experts discuss their current estimates. Each expert is
+then asked to make a new estimation based on that feedback, again in isolation. This process is repeated
+until a consensus is reached. <strong>Planning Poker</strong> is a variant of Wideband Delphi, commonly used
+in Agile software development... estimates are usually made using cards with numbers that represent the
+effort size."</p>
+<p><strong>Three-point estimation.</strong> "three estimations are made by the experts: the most optimistic
+estimation (a), the most likely estimation (m) and the most pessimistic estimation (b). The final estimate
+(E) is their weighted arithmetic mean. In the most popular version of this technique, the estimate is
+calculated as <strong>E = (a + 4*m + b) / 6</strong>. The advantage of this technique is that it allows the
+experts to calculate the measurement error: <strong>SD = (b – a) / 6</strong>. For example, if the estimates
+(in person-hours) are: a=6, m=9 and b=18, then the final estimation is 10±2 person-hours (i.e., between 8
+and 12 person-hours), because E = (6 + 4*9 + 18) / 6 = 10 and SD = (18 – 6) / 6 = 2."</p>
+<div class="callout">
+  <strong>Memorize the formula, not just the name:</strong> E = (a + 4m + b) / 6 is the single most
+  exam-tested piece of arithmetic in this chapter. Practice plugging in numbers until it's automatic — the
+  practice questions below give three worked variants (three-point estimation twice, extrapolation once,
+  and a Planning Poker consensus-reaching scenario).
+</div>
+
+<h2>5.1.5 Test Case Prioritization</h2>
+<p>"Once the test cases and test procedures are specified and assembled into test suites, these test
+suites can be arranged in a test execution schedule that defines the order in which they are to be run.
+When prioritizing test cases, different factors can be taken into account. The most commonly used test
+case prioritization strategies are as follows:</p>
+<ul>
+  <li><strong>Risk-based prioritization</strong>, where the order of test execution is based on the results
+  of risk analysis. Test cases covering the most important risks are executed first.</li>
+  <li><strong>Coverage-based prioritization</strong>, where the order of test execution is based on
+  coverage (e.g., statement coverage). Test cases achieving the highest coverage are executed first. In
+  another variant, called <strong>additional coverage prioritization</strong>, the test case achieving the
+  highest coverage is executed first; each subsequent test case is the one that achieves the highest
+  additional coverage.</li>
+  <li><strong>Requirements-based prioritization</strong>, where the order of test execution is based on the
+  priorities of the requirements traced back to the corresponding test cases. Requirement priorities are
+  defined by stakeholders. Test cases related to the most important requirements are executed first."</li>
+</ul>
+<p>"Ideally, test cases would be ordered to run based on their priority levels... However, this practice
+may not work if the test cases or the features being tested have dependencies. If a test case with a
+higher priority is dependent on a test case with a lower priority, the lower priority test case must be
+executed first."</p>
+<p>"The order of test execution must also take into account the availability of resources. For example,
+the required test tools, test environments or people that may only be available for a specific time
+window."</p>
+<div class="callout">
+  <strong>The exam's favorite trap:</strong> priority number and execution order are not the same thing once
+  dependencies exist. Work out the dependency chain first, then slot in priority order among the cases
+  that remain free to run — both worked examples below hinge on exactly this.
+</div>
+
+<h2>5.1.6 Test Pyramid</h2>
+<p>"The test pyramid is a model showing that different tests may have different granularity. The test
+pyramid model supports the team in test automation and in test effort allocation by showing that different
+test objectives are supported by different levels of test automation. The pyramid layers represent groups
+of tests. The higher the layer, the lower the test granularity, the lower the test isolation (i.e., the
+degree of dependency on other elements of the system) and the higher the test execution time. Tests in the
+bottom layer are small, isolated, fast, and check a small piece of functionality, so usually a lot of them
+are needed to achieve a reasonable coverage. The top layer represents complex, high-level, end-to-end
+tests. These high-level tests are generally slower than the tests from the lower layers, and they typically
+check a large piece of functionality, so usually just a few of them are needed to achieve a reasonable level
+of coverage."</p>
+<p>"The number and naming of the layers may differ. For example, the original test pyramid model (Cohn
+2009) defines three layers: "unit tests", "service tests" and "UI tests". Another popular model defines
+unit (component) tests, integration (component integration) tests, and end-to-end tests. Other test levels
+can also be used."</p>
+
+<h2>5.1.7 Testing Quadrants</h2>
+<p>"The testing quadrants, defined by Brian Marick, group the test levels with the appropriate test types,
+activities, test techniques and work products in the Agile software development. The model supports test
+management in visualizing these to ensure that all appropriate test types and test levels are included in
+the SDLC and in understanding that some test types are more relevant to certain test levels than others.
+This model also provides a way to differentiate and describe the test types to all stakeholders, including
+developers, testers, and business representatives."</p>
+<p>"In this model, tests can be business facing or technology facing. Tests can also support the team (i.e.,
+guide the development) or critique the product (i.e., measure its behavior against the expectations). The
+combination of these two viewpoints determines the four quadrants:</p>
+<ul>
+  <li><strong>Quadrant Q1 (technology facing, support the team).</strong> Component tests and component
+  integration tests. Automated, included in the CI process.</li>
+  <li><strong>Quadrant Q2 (business facing, support the team).</strong> Functional tests, examples, user
+  story tests, user experience prototypes, API testing, and simulations. Check acceptance criteria; manual
+  or automated.</li>
+  <li><strong>Quadrant Q3 (business facing, critique the product).</strong> Exploratory testing, usability
+  testing, user acceptance testing. User-oriented and often manual.</li>
+  <li><strong>Quadrant Q4 (technology facing, critique the product).</strong> Smoke tests and non-functional
+  tests (except usability tests). Often automated."</li>
+</ul>
+<div class="callout">
+  <strong>Test pyramid vs. testing quadrants — don't conflate them:</strong> the pyramid is about
+  <em>granularity and automation volume across test levels</em> (how many tests, how fast). The quadrants
+  are about <em>what kind of test and who it's for</em> across two independent axes (business- vs.
+  technology-facing; support-the-team vs. critique-the-product). A pyramid layer and a quadrant are
+  different classification schemes answering different questions — the exam likes to test that you know
+  neither one describes the other.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §5.1 "Test Planning" (pages 48–51) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — this section alone
+  covers seven sub-LOs and three of the four estimation techniques get their own worked example in the
+  practice section below.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<h3>5.1.1 — Test plan purpose and content</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A19 · FL-5.1.1 · K2</div>
+  <div class="q">Consider the following part of a test plan.
+"Testing will be performed using component testing and component integration testing. The regulations require to demonstrate that 100% branch coverage is achieved for each component classified as critical."
+Which part of the test plan does this part belong to?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not communication.">Communication</button></li>
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not the risk register.">Risk register</button></li>
+    <li><button data-correct="false" data-why="The paragraph contains information on test levels and exit criteria, which are part of the test approach, not the general context of testing.">Context of testing</button></li>
+    <li><button data-correct="true" data-why="The paragraph contains information on test levels (component testing, component integration testing) and an exit criterion (100% branch coverage for critical components) — both are part of the test approach section of a test plan.">Test approach</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q30 · FL-5.1.1 · K2</div>
+  <div class="q">Which of the following is NOT a purpose of a test plan?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test plan may include test data requirements (as part of the test approach), but not the detailed test data for test cases — that belongs to the test cases themselves, and is usually not even known when the test plan is created.">To define test data and expected results for component tests and component integration tests</button></li>
+    <li><button data-correct="false" data-why="This IS a purpose. One purpose of a test plan is to help ensure test activities meet the established criteria, by including entry criteria and exit criteria — code coverage targets are an example.">To define as exit criteria from the component test level that &quot;100% statement coverage and 100% branch coverage must be achieved&quot;</button></li>
+    <li><button data-correct="false" data-why="This IS a purpose. Documentation templates are typical test plan content, helping standardize communication or reporting between stakeholders.">To describe what fields the test progress report shall contain and what should be the form of this report</button></li>
+    <li><button data-correct="false" data-why="This IS a purpose. A test plan should demonstrate adherence to the test policy/strategy or explain deviations from them — excluding a test level is exactly such a deviation to explain.">To explain why system integration testing will be excluded from testing, although the test strategy requires this test level</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.2 — Tester's contribution to iteration and release planning</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q30 · FL-5.1.2 · K1</div>
+  <div class="q">How do testers add value to iteration and release planning?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Priorities for user stories are determined by the business representative together with the development team, not by testers alone.">Testers determine the priority of the user stories to be developed</button></li>
+    <li><button data-correct="false" data-why="Testers focus on both functional and non-functional aspects of the system to be tested, not only the functional side.">Testers focus only on the functional aspects of the system to be tested</button></li>
+    <li><button data-correct="true" data-why="Testers involved in release planning participate in project and quality risk analyses, and in iteration planning participate in the detailed risk analysis of user stories — this is one of the syllabus's named ways testers add value.">Testers participate in the detailed risk identification and risk assessment of user stories</button></li>
+    <li><button data-correct="false" data-why="Early test design is not part of release planning, and by itself it does not guarantee the release of quality software.">Testers guarantee the release of high-quality software through early test design during the release planning</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.3 — Entry criteria and exit criteria</h3>
+
+<div class="quiz-multi" data-correct="c,e" data-why="Estimated defect density is a measure of thoroughness, and automation of regression tests is a completion criterion — both are exit criteria. Test environment readiness and the ability to log in are resource-availability entry criteria; requirements translated into given/when/then format produce testable requirements, also an entry criterion (Definition of Ready).">
+  <div class="exam-tag">Exam A · Q31 · FL-5.1.3 · K2 · select TWO</div>
+  <div class="q">Which TWO of the following options are the exit criteria for testing a system?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Test environment readiness</label></li>
+    <li><label><input type="checkbox" value="b"> The ability to log in to the test object by the tester</label></li>
+    <li><label><input type="checkbox" value="c"> Estimated defect density is reached</label></li>
+    <li><label><input type="checkbox" value="d"> Requirements are translated into given/when/then format</label></li>
+    <li><label><input type="checkbox" value="e"> Regression tests are automated</label></li>
+  </ul>
+  <button class="check-multi">Check answer</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,d" data-why="Running out of budget is explicitly named in the syllabus as a valid exit criterion. Achieving a coverage target (80% statement coverage) is a measure of thoroughness — also an exit criterion. Budget approval and resource availability (test basis) are entry criteria; being ISTQB certified is an entry-criterion-style precondition, not a completion measure.">
+  <div class="exam-tag">Exam D · Q30 · FL-5.1.3 · K2 · select TWO</div>
+  <div class="q">Which of the following BEST define EXIT criteria in a testing project?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Budget is approved</label></li>
+    <li><label><input type="checkbox" value="b"> Budget runs out</label></li>
+    <li><label><input type="checkbox" value="c"> Test basis is available</label></li>
+    <li><label><input type="checkbox" value="d"> Test cases achieved at least 80% statement coverage</label></li>
+    <li><label><input type="checkbox" value="e"> All test analysts are ISTQB certified at the Foundation Level</label></li>
+  </ul>
+  <button class="check-multi">Check answer</button>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.4 — Estimation techniques (worked calculations)</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q31 · FL-5.1.4 · K3</div>
+  <div class="q">The team wants to estimate the time needed for one tester to execute four test cases for a software component. The team has gathered the following measures of the effort used to execute a single test case:
+Best-case scenario: 1 hour
+Worst-case scenario: 8 hours
+Most likely scenario: 3 hours
+Given that the three-point estimation technique is being used, what is the final estimate of the time needed to execute all four test cases?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="E = (a + 4m + b) / 6 = (1 + 4×3 + 8) / 6 = 21/6 = 3.5 hours per test case. For four test cases: 3.5 × 4 = 14 hours.">14 hours</button></li>
+    <li><button data-correct="false" data-why="3.5 hours is the per-test-case estimate (E), not the total for all four test cases — the question asks for the total.">3.5 hours</button></li>
+    <li><button data-correct="false" data-why="Incorrect application of the formula.">16 hours</button></li>
+    <li><button data-correct="false" data-why="Incorrect application of the formula.">12 hours</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A20 · FL-5.1.4 · K3</div>
+  <div class="q">Your team uses planning poker to estimate the test effort for a newly required feature. There is a rule in your team that if there is no time to reach full agreement and the variation in the results is small, rules like "accept the number with the most votes" can be applied.
+After two rounds, the consensus was not reached, so the third round was initiated. You can see the test estimation results in the table below.
+
+Team members' estimations:
+Round 1: 21, 2, 5, 34, 13, 8, 2
+Round 2: 13, 8, 8, 34, 13, 8, 5
+Round 3: 13, 8, 13, 13, 13, 13, 8
+
+Which of the following is the BEST example of the next step?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Wideband Delphi / Planning Poker is a team activity; a single stakeholder should not override it.">The product owner has to step in and make a final decision</button></li>
+    <li><button data-correct="true" data-why="After round 3 the estimates are close (five votes for 13, two for 8) — with small variation and no time for full consensus, the syllabus permits applying a rule like &quot;accept the number with the most votes.&quot;">Accept 13 as the final test estimate as this has most of the votes</button></li>
+    <li><button data-correct="false" data-why="There is no full consensus yet — some estimators still say 8, others say 13.">No further action is needed. Consensus has been reached</button></li>
+    <li><button data-correct="false" data-why="A feature should not be dropped from a release simply because Wideband Delphi hasn't produced perfect consensus.">Remove the new feature from the current release because consensus has not been reached</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q31 · FL-5.1.4 · K3</div>
+  <div class="q">At the beginning of each iteration, the team estimates the amount of work (in person-days) they will need to complete during the iteration. Let E(n) be the estimated amount of work for iteration n, and let A(n) be the actual amount of work done in iteration n. From the third iteration, the team uses the following estimation model based on extrapolation:
+
+E(n) = (3 × A(n − 1) + A(n − 2)) / 4
+
+From the recorded data for iterations #3 and #4: A(3) = 8 person-days, A(4) = 6 person-days.
+
+What is the estimated amount of work for iteration #5?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Incorrect application of the extrapolation formula.">10.5 person-days</button></li>
+    <li><button data-correct="false" data-why="Incorrect application of the extrapolation formula.">8.25 person-days</button></li>
+    <li><button data-correct="true" data-why="E(5) = (3×A(4) + A(3)) / 4 = (3×6 + 8) / 4 = 26/4 = 6.5 person-days. This is the extrapolation technique: using early observations from recent iterations to project the effort for the next one.">6.5 person-days</button></li>
+    <li><button data-correct="false" data-why="Incorrect application of the extrapolation formula.">9.4 person-days</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.5 — Test case prioritization (worked scenarios)</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q33 · FL-5.1.5 · K3</div>
+  <div class="q">You are testing a mobile application that allows users to find a nearby restaurant based on the type of food they want to eat. Consider the following list of test cases, priorities (i.e., a smaller number means a higher priority), and dependencies:
+
+TC 001 — Select type of food — priority 3 — no dependency
+TC 002 — Select restaurant — priority 2 — depends on TC 001
+TC 003 — Get direction — priority 1 — depends on TC 002
+TC 004 — Call restaurant — priority 2 — depends on TC 002
+TC 005 — Make reservation — priority 3 — depends on TC 002
+
+Which of the following test cases should be executed as the third one?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Dependencies force TC 001 then TC 002 to run first. Among the three remaining (TC 003, TC 004, TC 005), TC 003 has the highest priority (1), so it runs third: TC 001 – TC 002 – TC 003 – TC 004 – TC 005.">TC 003</button></li>
+    <li><button data-correct="false" data-why="TC 005 has priority 3 (lowest among the remaining) so it runs last, not third.">TC 005</button></li>
+    <li><button data-correct="false" data-why="TC 002 must run second — it's a dependency for TC 003, TC 004, and TC 005, but TC 001 must run before it.">TC 002</button></li>
+    <li><button data-correct="false" data-why="TC 001 has no dependencies and must run first, not third.">TC 001</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q32 · FL-5.1.5 · K3</div>
+  <div class="q">The table shows the traceability matrix from test cases to requirements ("X" means the test case covers the requirement):
+
+        Req1  Req2  Req3  Req4  Req5  Req6  Req7
+TC1      X           X     X                 X
+TC2      X                       X           X
+TC3                              X     X
+TC4            X
+
+You want to prioritize the test cases following the additional coverage prioritization technique. You execute all four test cases. Which test case should be executed as the LAST one?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="TC1 covers the most requirements (4/7: Req1, Req3, Req4, Req7), so it's executed first, not last.">TC1</button></li>
+    <li><button data-correct="true" data-why="TC1 goes first (highest coverage: Req1, Req3, Req4, Req7). Of the remaining Req2/Req5/Req6, TC3 covers two (Req5, Req6) so it goes second. That leaves only Req2, covered by TC4, so TC4 goes third. TC2 adds nothing new at that point, so it is executed last.">TC2</button></li>
+    <li><button data-correct="false" data-why="TC3 covers the most additional requirements (Req5, Req6) after TC1, so it runs second, not last.">TC3</button></li>
+    <li><button data-correct="false" data-why="TC4 is needed to cover the last uncovered requirement (Req2), so it runs third, not last.">TC4</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-5.1.5</div>
+  <div class="q">A team orders its test cases so that the ones tracing back to the most important requirements — as ranked by the stakeholders who own those requirements — run first. Which prioritization strategy are they using?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: risk-based prioritization orders execution by the results of risk analysis, not by requirement priorities set by stakeholders.">Risk-based prioritization</button></li>
+    <li><button data-correct="false" data-why="Swap trap: coverage-based prioritization orders execution by how much coverage (e.g. statement coverage) each test case achieves — nothing to do with requirement priority.">Coverage-based prioritization</button></li>
+    <li><button data-correct="true" data-why="Requirements-based prioritization orders test execution by the priorities of the requirements traced back to each test case, as defined by stakeholders — exactly what's described here.">Requirements-based prioritization</button></li>
+    <li><button data-correct="false" data-why="Additional coverage prioritization is a variant of coverage-based prioritization (each subsequent test case adds the most new coverage) — still about coverage, not requirement priority.">Additional coverage prioritization</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.6 — Test pyramid</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A21 · FL-5.1.6 · K1</div>
+  <div class="q">Which of the following is TRUE regarding the test pyramid?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The test pyramid emphasizes having a larger number of tests at the lower test levels, which are faster and cheaper to run.">It emphasizes having far more tests at the lower test levels</button></li>
+    <li><button data-correct="false" data-why="It's the opposite: lower-level tests are more atomic, checking a small, specific piece of logic — the top layer's tests check large pieces of functionality.">It suggests that each low-level test checks a large part of the functionality</button></li>
+    <li><button data-correct="false" data-why="The test pyramid shows how the number of tests is distributed across test levels, not how test types are distributed — that's closer to the testing quadrants.">It describes distribution of test types across the SDLC</button></li>
+    <li><button data-correct="false" data-why="The test pyramid model directly supports the team in test automation and test effort allocation.">It has no impact on the construction of automated tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q33 · FL-5.1.6 · K1</div>
+  <div class="q">What does the test pyramid model show?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The test pyramid model does not provide information about test priorities.">That tests may have different priorities</button></li>
+    <li><button data-correct="true" data-why="The test pyramid model shows that different tests have different levels of granularity — small and isolated at the bottom, large and end-to-end at the top.">That tests may have different granularity</button></li>
+    <li><button data-correct="false" data-why="The test pyramid model is independent of coverage criteria.">That tests may require different coverage criteria</button></li>
+    <li><button data-correct="false" data-why="The test pyramid model does not show relations/dependencies between individual tests.">That tests may depend on other tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.1.7 — Testing quadrants</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q34 · FL-5.1.7 · K2</div>
+  <div class="q">Consider the following test categories (1-4) and agile testing quadrants (A-D):
+1. Usability testing
+2. Component testing
+3. Functional testing
+4. Reliability testing
+
+A. Agile testing quadrant Q1: technology facing, supporting the development team
+B. Agile testing quadrant Q2: business facing, supporting the development team
+C. Agile testing quadrant Q3: business facing, critique the product
+D. Agile testing quadrant Q4: technology facing, critique the product
+
+How do the following test categories map onto the agile testing quadrants?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Usability testing → Q3 (business facing, critique product); Component testing → Q1 (technology facing, support team); Functional testing → Q2 (business facing, support team); Reliability testing → Q4 (technology facing, critique product).">1C, 2A, 3B, 4D</button></li>
+    <li><button data-correct="false" data-why="Usability testing is business-facing and critiques the product (Q3), not technology-facing (Q4/D).">1D, 2A, 3C, 4B</button></li>
+    <li><button data-correct="false" data-why="Component testing is technology-facing, supporting the team (Q1/A), not Q2/B.">1C, 2B, 3D, 4A</button></li>
+    <li><button data-correct="false" data-why="Functional testing is business-facing, supporting the team (Q2/B), not Q3/C.">1D, 2B, 3C, 4A</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q33 · FL-5.1.7 · K2</div>
+  <div class="q">How can the testing quadrants be beneficial for testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing quadrants have nothing to do with describing relationships between test levels or dividing the process into phases matching test levels.">They help in test planning by dividing the test process into four phases, corresponding to the four basic test levels: component, integration, system, and acceptance testing</button></li>
+    <li><button data-correct="false" data-why="Testing quadrants cannot help assess any type of coverage — that's not their purpose.">They help in assessing the high-level coverage (e.g., requirements coverage) based on low-level coverage (e.g., code coverage)</button></li>
+    <li><button data-correct="true" data-why="Testing quadrants allow managers and stakeholders to understand relationships between test types, the activities they support (team support or product critique), and the viewpoint they focus on (business- or technology-facing).">They help non-technical stakeholders to understand the different test types and that some test types are more relevant to certain test levels than others</button></li>
+    <li><button data-correct="false" data-why="The testing quadrants model is not a psychological model of team communication styles.">They help agile teams to develop a communication strategy based on classifying people according to four basic psychological types, and on modelling the relations between them</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Three-point estimation's formula, the difference between risk-based/coverage-based/
+  requirements-based prioritization, and the test pyramid vs. testing quadrants distinction are the three
+  things most likely to trip you up here — ask your teacher if any of the worked examples above didn't
+  fully click before moving on.</div>
+  §5.1 complete.
+  <a href="0017-5.2-risk-management.html">Continue to 5.2 Risk Management →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.5 Defect Management</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §5.5 &nbsp;·&nbsp; Lesson 20 &nbsp;·&nbsp;
+  <a href="0019-5.4-configuration-management.html">← Back: 5.4</a> &nbsp;·&nbsp;
+  <a href="0021-6.1-tool-support-for-testing.html">Next: 6.1 Tool Support for Testing →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>5.5 Defect Management</h1>
+<p class="subtitle">The last section of Chapter 5 — and the only other K3 "apply" objective in this
+chapter besides estimation and prioritization. All three practice questions below ask the same real-world
+question: given a defect report, what's missing that a developer needs?</p>
+<span class="lo-tag">FL-5.5.1 (K3) Prepare a defect report</span>
+
+<h2>Defect management process</h2>
+<p>"Since one of the major test objectives is to find defects, an established defect management process is
+essential. Although we refer to "defects" here, the reported anomalies may turn out to be real defects or
+something else (e.g., false–positive result, change request) - this is resolved during the process of
+dealing with the defect reports. Anomalies may be reported during any phase of the SDLC and the form
+depends on the SDLC. At a minimum, the defect management process includes a workflow for handling
+individual defects or anomalies from their discovery to their closure and rules for their classification.
+The workflow typically comprises activities to log the reported anomalies, analyze and classify them,
+decide on a suitable response such as to fix or keep it as it is and finally to close the defect report.
+The process must be followed by all involved stakeholders. It is advisable to handle defects from static
+testing (especially static analysis) in a similar way."</p>
+
+<h2>Objectives of a defect report</h2>
+<p>"Typical defect reports have the following objectives:</p>
+<ul>
+  <li>Provide those responsible for handling and resolving reported defects with sufficient information to
+  resolve the issue</li>
+  <li>Provide a means of tracking the quality of the work product</li>
+  <li>Provide ideas for improvement of the development and test process"</li>
+</ul>
+
+<h2>Content of a defect report</h2>
+<p>"A defect report logged during dynamic testing typically includes:</p>
+<ul>
+  <li>Unique identifier</li>
+  <li>Title with a short summary of the anomaly being reported</li>
+  <li>Date when the anomaly was observed, issuing organization, and author, including their role</li>
+  <li>Identification of the test object and test environment</li>
+  <li>Context of the defect (e.g., test case being run, test activity being performed, SDLC phase, and
+  other relevant information such as the test technique, checklist or test data being used)</li>
+  <li>Description of the failure to enable reproduction and resolution including the test steps that
+  detected the anomaly, and any relevant test logs, database dumps, screenshots, or recordings</li>
+  <li>Expected results and actual results</li>
+  <li>Severity of the defect (degree of impact) on the interests of stakeholders or requirements</li>
+  <li>Priority to fix</li>
+  <li>Status of the defect (e.g., open, deferred, duplicate, waiting to be fixed, awaiting confirmation
+  testing, re-opened, closed, rejected)</li>
+  <li>References (e.g., to the test case)"</li>
+</ul>
+<p>"Some of this data may be automatically included when using defect management tools (e.g., identifier,
+date, author and initial status). Document templates for a defect report and example defect reports can be
+found in the ISO/IEC/IEEE 29119-3 standard, which refers to defect reports as <strong>incident
+reports</strong>."</p>
+<div class="callout">
+  <strong>The exam's recurring scenario:</strong> you're shown a defect report and asked what's missing
+  that would help a developer reproduce the failure. The three practice questions below each have a
+  <em>different</em> correct gap — specific reproduction data (which user, which book), the test
+  environment (browser/device/OS and versions), and the test object/environment identification. There's
+  no single "always missing" field: read what's already present in the report carefully, since severity,
+  priority, and status are often already filled in as decoys, while the real gap is something needed
+  specifically to <em>reproduce</em> the failure.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §5.5 "Defect Management" (pages 56–57) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objective — all three
+show a full defect report and ask what's missing.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q38 · FL-5.5.1 · K3</div>
+  <div class="q">Consider the following defect report for a Book Lending System.
+
+Defect ID: 001 | Title: Unable to Return a Book
+Severity: High | Priority: [blank]
+Environment: Windows 10, Google Chrome
+
+Description: When attempting to return a book using the Book Return feature, the system does not register the return and the book remains checked out to the user.
+
+Steps to Reproduce:
+1. Login to the Book Lending System as a user who has checked out a book.
+2. Click on the "Book Return" button for the book that has been checked out.
+3. System does not register the return and the book remains checked out.
+
+Expected Result: The book should be returned and no longer appear as checked out to the user.
+Actual Result: The book remains checked out to the user and is not registered as returned in the system.
+
+Attachments: [empty list]
+
+Which of the following is MOST likely to help the developer reproduce the failure quickly?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Adding which specific users and which specific books the failure affects lets the developer use the same input data, making the failure much more likely to reproduce quickly, and the defect identified faster.">Adding information about which users and which books the failure affects to the &quot;Description&quot; section</button></li>
+    <li><button data-correct="false" data-why="Filling in the missing Priority value won't help reproduce the defect itself — priority is about fix urgency, not reproduction steps.">Filling in the missing value for the &quot;Priority&quot; field</button></li>
+    <li><button data-correct="false" data-why="Memory dumps and database snapshots after every single step would be excessive — most of it would be useless noise, making the report less readable and requiring more of the developer's time to analyze, lengthening the repair process.">Adding memory dumps and database snapshots taken after each step described in the &quot;Steps to Reproduce&quot; section to the &quot;Attachments&quot; section</button></li>
+    <li><button data-correct="false" data-why="The question is about reproducing the failure itself, not about testing across different environment configurations.">Repeating the same test case for different environments and writing defect reports for each of them separately</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q38 · FL-5.5.1 · K3</div>
+  <div class="q">Consider the following defect report for a web-based shopping application:
+
+Application: WebShop v0.99
+Defect: Login button not working
+
+Steps to Reproduce:
+1. Launch the website
+2. Click on the login button
+
+Expected result: The user should be redirected to the login page.
+Actual result: The login button does not respond when clicked.
+
+Severity: High
+Priority: Urgent
+
+What is the MOST important information that is missing from this defect report?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Tester name and date are useful, but not as critical to reproduction as the test environment.">Name of the tester and date</button></li>
+    <li><button data-correct="true" data-why="The browser and device used for testing are missing. This kind of defect can be browser- or device-specific — a login button might work fine on one browser (or version) but not another — so this information helps developers reproduce the issue and find the root cause faster.">Test environment elements and their version numbers</button></li>
+    <li><button data-correct="false" data-why="The test object is already identified: WebShop v0.99.">Identification of the test object</button></li>
+    <li><button data-correct="false" data-why="The impact is already included as Severity: High.">Impact on the interests of stakeholders</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q38 · FL-5.5.1 · K3</div>
+  <div class="q">You received the following defect report from the developers stating that the anomaly described in this test report is not reproducible.
+
+"Application hangs up"
+2022-May-03 – John Doe – Rejected
+The application hangs up after entering "Test input: $ä" in the Name field on the new user creation screen. Tried to log off, log in with test_admin01 account, same issue. Tried with other test admin accounts, same issue. No error message received; log (see attached) contains fatal error notification. Based on the test case TC-1305, the application should accept the provided input and create the user. Please fix with high priority, this feature is related to REQ-0012, which is a critical new business requirement.
+
+What critical information is MISSING from this test report that would have been useful for the developers?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both are present: expected result is &quot;the application should accept the provided input and create the user&quot;; actual result is &quot;the application hangs up after entering the test input.&quot;">Expected result and actual result</button></li>
+    <li><button data-correct="false" data-why="There is a reference to the test case (TC-1305) and to the related requirement (REQ-0012), and the status is stated as &quot;Rejected&quot; — this information is already present.">References and defect status</button></li>
+    <li><button data-correct="true" data-why="The report never states which test environment (OS, browser, application version) the anomaly was observed in, nor precisely which test item/application version is affected — without that, developers can't be sure they're testing the same conditions, which is likely why they couldn't reproduce it.">Test environment and test item</button></li>
+    <li><button data-correct="false" data-why="The report already conveys urgency and business impact — it's stated as high priority, affecting many/all test admin accounts, and tied to a critical business requirement.">Priority and severity</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-5.5.1</div>
+  <div class="q">Per the ISO/IEC/IEEE 29119-3 standard, what is a "defect report" called?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: an anomaly is the general term for any unexpected result observed during any SDLC phase, before it's been classified as a real defect, a false-positive, or a change request — it's not the standard's name for the report document.">An anomaly</button></li>
+    <li><button data-correct="true" data-why="The lesson's own primary source states it directly: the ISO/IEC/IEEE 29119-3 standard refers to defect reports as incident reports.">An incident report</button></li>
+    <li><button data-correct="false" data-why="&quot;Defect report&quot; is the generic term used throughout this course (and the ISTQB glossary) — the question specifically asks what the ISO 29119-3 standard calls it, which is a different word.">A defect report</button></li>
+    <li><button data-correct="false" data-why="A failure is the event of the system misbehaving, not the name of the standard's report document.">A failure report</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Practice writing one defect report from scratch for a bug you've actually seen —
+  include every field from the list above — and ask your teacher to check it. That's the most direct way
+  to confirm this K3 objective has actually landed, not just the multiple-choice recognition of it.</div>
+  §5.5 complete. Chapter 5 (Managing the Test Activities) complete.
+  <a href="0021-6.1-tool-support-for-testing.html">Continue to 6.1 Tool Support for Testing →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

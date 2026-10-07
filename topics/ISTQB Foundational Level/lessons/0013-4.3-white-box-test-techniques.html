@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>4.3 White-Box Test Techniques</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §4.3 &nbsp;·&nbsp; Lesson 13 &nbsp;·&nbsp;
+  <a href="0012-4.2-black-box-test-techniques.html">← Back: 4.2</a> &nbsp;·&nbsp;
+  <a href="0014-4.4-experience-based-test-techniques.html">Next: 4.4 Experience-based Test Techniques →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>4.3 White-Box Test Techniques</h1>
+<p class="subtitle">Two structure-based techniques — statement testing and branch testing — plus the
+argument for why looking at the code itself (not just the spec) catches defects black-box testing can't.</p>
+<span class="lo-tag">FL-4.3.1 (K2) Explain statement testing</span>
+<span class="lo-tag">FL-4.3.2 (K2) Explain branch testing</span>
+<span class="lo-tag">FL-4.3.3 (K2) Explain the value of white-box testing</span>
+
+<p>
+  "Because of their popularity and simplicity, this section focuses on two code-related white-box test
+  techniques:" statement testing and branch testing. More rigorous white-box techniques exist for
+  safety-critical/mission-critical/high-integrity environments, and others apply at higher test levels
+  (e.g., API testing) or use coverage unrelated to code (e.g., neuron coverage in neural network testing) —
+  "these techniques are not discussed in this syllabus."
+</p>
+
+<h2>4.3.1 Statement Testing and Statement Coverage</h2>
+<p>
+  "In statement testing, the coverage items are executable statements. The aim is to design test cases
+  that exercise statements in the code until an acceptable level of coverage is achieved." Coverage =
+  (statements exercised) ÷ (total executable statements), as a percentage.
+</p>
+<p>
+  "When 100% statement coverage is achieved, it ensures that all executable statements in the code have
+  been exercised at least once. In particular, this means that each statement with a defect will be
+  executed, which may cause a failure demonstrating the presence of the defect. However, exercising a
+  statement with a test case will not detect defects in all cases. For example, it may not detect defects
+  that are data dependent (e.g., a division by zero that only fails when a denominator is set to zero).
+  Also, 100% statement coverage does not ensure that all the decision logic has been tested as, for
+  instance, it may not exercise all the branches in the code."
+</p>
+
+<h2>4.3.2 Branch Testing and Branch Coverage</h2>
+<p>
+  "A branch is a transfer of control between two nodes in the control flow graph, which shows the possible
+  sequences in which source code statements are executed in the test object. Each transfer of control can
+  be either unconditional (i.e., straight-line code) or conditional (i.e., a decision outcome)."
+</p>
+<p>
+  "In branch testing the coverage items are branches and the aim is to design test cases to exercise
+  branches in the code until an acceptable level of coverage is achieved." Coverage = (branches exercised)
+  ÷ (total branches), as a percentage.
+</p>
+<p>
+  "When 100% branch coverage is achieved, all branches in the code, unconditional and conditional, are
+  exercised by test cases. Conditional branches typically correspond to a true or false outcome from an
+  "if...then" decision, an outcome from a switch/case statement, or a decision to exit or continue in a
+  loop. However, exercising a branch with a test case will not detect defects in all cases. For example, it
+  may not detect defects requiring the execution of a specific path in a code."
+</p>
+<div class="callout">
+  <strong>Branch coverage subsumes statement coverage:</strong> "any set of test cases achieving 100%
+  branch coverage also achieves 100% statement coverage (but not vice versa)." A test case can hit every
+  statement without exercising both outcomes of every decision (e.g., an <code>if</code> with no
+  <code>else</code>, tested only with the true case) — that's 100% statement coverage but less than 100%
+  branch coverage.
+</div>
+
+<h2>4.3.3 The Value of White-box Testing</h2>
+<p>
+  "A fundamental strength that all white-box test techniques share is that the entire software
+  implementation is taken into account during testing, which facilitates defect detection even when the
+  software specification is vague, outdated or incomplete. A corresponding weakness is that if the software
+  does not implement one or more requirements, white-box testing may not detect the resulting defects of
+  omission."
+</p>
+<p>
+  "White-box test techniques can be used in static testing (e.g., during dry runs of code). They are well
+  suited to reviewing code not yet ready for execution, pseudocode and other high-level or top-down logic
+  which can be modeled with a control flow graph."
+</p>
+<p>
+  "Performing only black-box testing does not provide a measure of actual code coverage. White-box coverage
+  measures provide an objective measurement of coverage and the necessary information to allow additional
+  tests to be generated to increase this coverage, and subsequently increase confidence in the code."
+</p>
+<div class="compare">
+  <div class="col good">
+    <h4>What white-box testing is good at</h4>
+    <p>Sees the whole implementation — catches defects the spec never mentioned (extra/unintended code
+    paths), works even when the spec is vague or stale, provides an objective, measurable coverage number,
+    and can be applied statically (before the code even runs).</p>
+  </div>
+  <div class="col bad">
+    <h4>What it structurally cannot catch</h4>
+    <p>Defects of <strong>omission</strong> — a missing requirement was never coded, so there's no
+    structure to analyze in the first place. Only reviewing the specification (or black-box testing against
+    it) can surface that kind of gap.</p>
+  </div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §4.3 "White-Box Test Techniques" (pages 42–43) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<h3>Statement testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q24 · FL-4.3.1 · K2</div>
+  <div class="q">Your test suite achieved 100% statement coverage. What is the consequence of this fact?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Since 100% statement coverage is achieved, every statement — including ones with defects — must have been executed and evaluated at least once.">Each instruction in the code that contains a defect has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Coverage depends on WHAT is tested, not how many test cases exist. One test case (x=0) for &quot;if (x==0) y=1&quot; achieves 100% statement coverage, but two different test cases (x=1, x=2) achieve only 50%.">Any test suite containing more test cases than your test suite will also achieve 100% statement coverage</button></li>
+    <li><button data-correct="false" data-why="A loop can create infinitely many possible paths through the code, so exhaustively executing every path is not possible.">Each path in the code has been executed at least once</button></li>
+    <li><button data-correct="false" data-why="Exhaustive testing of every input combination is impossible (testing principle #2) — for &quot;input x; print x&quot;, any single test achieves 100% statement coverage while covering just one input value.">Every combination of input values has been tested at least once</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q24 · FL-4.3.1 · K2</div>
+  <div class="q">Your test suite S for a program P achieves 100% statement coverage. It consists of three test cases, each of which achieves 50% statement coverage.
+
+Which of the following statements is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="A statement with a defect, when executed, doesn't necessarily cause a failure — e.g., x := y / z only fails when z equals 0.">Executing S will cause all possible failures in P</button></li>
+    <li><button data-correct="false" data-why="100% statement coverage does not guarantee 100% branch coverage. For example, x=0 on &quot;IF (x=0) THEN A; ENDIF&quot; achieves 100% statement coverage but doesn't cover the branch skipping A.">S achieves 100% branch coverage for P</button></li>
+    <li><button data-correct="true" data-why="100% statement coverage means, by definition, that each executable statement was executed at least once.">Every executable statement in P containing a defect has been run at least once during the execution of S</button></li>
+    <li><button data-correct="false" data-why="The removed test case may have uniquely covered statements the other two don't — so the remaining two together might NOT still achieve 100% statement coverage.">After removing one test case from S, the remaining two test cases will still achieve 100% statement coverage</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Branch testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A16 · FL-4.3.2 · K2</div>
+  <div class="q">Which of the following statements about branch testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="If there is at least one (unconditional) branch to cover, at least one test case is still needed to execute it — coverage isn't achieved for free.">If a program includes only unconditional branches, then 100% branch coverage can be achieved without executing any test cases</button></li>
+    <li><button data-correct="false" data-why="Covering unconditional branches doesn't automatically cover conditional branches too — those are separate coverage items.">If the test cases exercise all unconditional branches in the code, then 100% branch coverage is achieved</button></li>
+    <li><button data-correct="false" data-why="The subsumption runs the other way: 100% branch coverage implies 100% statement coverage, not the reverse. An IF without an ELSE needs only one test for 100% statement coverage, but that achieves only 50% branch coverage.">If 100% statement coverage is achieved, then 100% branch coverage is also achieved</button></li>
+    <li><button data-correct="true" data-why="Each decision outcome corresponds to a conditional branch, so achieving 100% branch coverage means every decision outcome (true/false, each case, loop continue/exit) has been exercised.">If 100% branch coverage is achieved, then all decision outcomes in each decision statement in the code are exercised</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q24 · FL-4.3.2 · K3</div>
+  <div class="q">You want to apply branch testing to the code represented by a control flow graph with the following structure: a start node leads to node A; node A has a loop back-and-forth with node B; node A also leads to node C; node C splits into two parallel branches to node D and node E; both D and E converge into a final node F.
+
+How many coverage items do you need to test?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This undercounts the edges in the control flow graph — there are more than 2.">2</button></li>
+    <li><button data-correct="false" data-why="This undercounts the edges in the control flow graph — there are more than 4.">4</button></li>
+    <li><button data-correct="true" data-why="In branch testing, the coverage items are branches — the edges of the control flow graph. Counting the described graph's edges (start→A, A↔B as two edges, A→C, C→D, C→E, D→F, E→F) gives 8 edges total.">8</button></li>
+    <li><button data-correct="false" data-why="The graph has 8 edges, not 7 — this undercounts by one.">7</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>The value of white-box testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q25 · FL-4.3.3 · K2</div>
+  <div class="q">Which of the following is NOT true for white-box testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS true — the fundamental strength of white-box techniques is that the entire software implementation is taken into account during testing.">During white-box testing the entire software implementation is considered</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box coverage measures provide an objective measure of coverage and help identify additional tests to increase it.">White-box coverage metrics can help identify additional tests to increase code coverage</button></li>
+    <li><button data-correct="false" data-why="This IS true — white-box test techniques can be used to perform reviews, which are a form of static testing.">White-box test techniques can be used in static testing</button></li>
+    <li><button data-correct="true" data-why="This is the one that is NOT true — it's actually the weakness of white-box testing. White-box techniques analyze the test object's existing structure, so they cannot detect a requirement that was never implemented at all (a defect of omission).">White-box testing can help identify gaps in requirements implementation</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q25 · FL-4.3.3 · K2</div>
+  <div class="q">Why does white-box testing facilitate defect detection even when the software specification is vague, outdated or incomplete?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Because white-box test cases are designed based on the code's own structure rather than the (possibly vague/outdated/incomplete) specification, white-box testing can find defects — like an extra, unintended feature in the code — that black-box testing against a poor spec would miss.">Test cases are designed based on the structure of the test object rather than the specification</button></li>
+    <li><button data-correct="false" data-why="Being able to precisely measure coverage isn't the reason white-box testing tolerates a poor spec — the achieved level of coverage matters far more than the mere ability to measure it.">For each white-box test technique the coverage can be well-defined and easily measured</button></li>
+    <li><button data-correct="false" data-why="The opposite is true — if a requirement was never implemented, white-box testing (which only analyzes existing structure) is unlikely to detect that defect of omission.">White-box test techniques are very well designed to detect omissions in the requirements</button></li>
+    <li><button data-correct="false" data-why="While true that white-box techniques apply to both static and dynamic testing, that fact has no bearing on WHY white-box testing tolerates a vague or incomplete specification.">White-box test techniques can be used in both static testing and dynamic testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">The subsumption relationship (branch coverage implies statement coverage, never the
+  reverse) and the "defects of omission" weakness of white-box testing are the two facts the exam leans on
+  hardest here — flag either one to your teacher if they're not fully solid yet.</div>
+  §4.3 complete.
+  <a href="0014-4.4-experience-based-test-techniques.html">Continue to 4.4 Experience-based Test Techniques →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

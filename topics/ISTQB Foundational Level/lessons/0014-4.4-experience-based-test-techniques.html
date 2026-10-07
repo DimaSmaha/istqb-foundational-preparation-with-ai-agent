@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>4.4 Experience-based Test Techniques</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §4.4 &nbsp;·&nbsp; Lesson 14 &nbsp;·&nbsp;
+  <a href="0013-4.3-white-box-test-techniques.html">← Back: 4.3</a> &nbsp;·&nbsp;
+  <a href="0015-4.5-collaboration-based-test-approaches.html">Next: 4.5 Collaboration-based Test Approaches →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>4.4 Experience-based Test Techniques</h1>
+<p class="subtitle">Three techniques that lean on the tester's own knowledge rather than a spec or the
+code: error guessing, exploratory testing, and checklist-based testing.</p>
+<span class="lo-tag">FL-4.4.1 (K2) Explain error guessing</span>
+<span class="lo-tag">FL-4.4.2 (K2) Explain exploratory testing</span>
+<span class="lo-tag">FL-4.4.3 (K2) Explain checklist-based testing</span>
+
+<p>"Commonly used experience-based test techniques discussed in the following sections are:" error
+guessing, exploratory testing, and checklist-based testing.</p>
+
+<h2>4.4.1 Error Guessing</h2>
+<p>
+  "Error guessing is a test technique used to anticipate the occurrence of errors, defects, and failures,
+  based on the tester's knowledge, including:"
+</p>
+<ul>
+  <li>"How the application has worked in the past"</li>
+  <li>"The types of errors the developers tend to make and the types of defects that result from these
+  errors"</li>
+  <li>"The types of failures that have occurred in other, similar applications"</li>
+</ul>
+<p>
+  "In general, errors, defects and failures may be related to: input (e.g., correct input not accepted,
+  parameters wrong or missing), output (e.g., wrong format, wrong result), logic (e.g., missing cases, wrong
+  operator), computation (e.g., incorrect operand, wrong computation), interfaces (e.g., parameter mismatch,
+  incompatible types), or data (e.g., incorrect initialization, wrong type)."
+</p>
+<div class="callout">
+  <strong>Fault attacks:</strong> "Fault attacks are a way to implement error guessing. This test technique
+  requires the tester to create or acquire a list of possible errors, defects and failures, and to design
+  tests that will identify defects associated with the errors, expose the defects, or cause the failures.
+  These lists can be built based on experience, defect and failure data, or from common knowledge about why
+  software fails." A fault attack is error guessing made systematic via a pre-built list.
+</div>
+
+<h2>4.4.2 Exploratory Testing</h2>
+<p>
+  "In exploratory testing, tests are simultaneously designed, executed, and evaluated while the tester
+  learns about the test object. The testing is used to learn more about the test object, to explore it more
+  deeply with focused tests, and to create tests for untested areas."
+</p>
+<p>
+  "Exploratory testing is sometimes performed using session-based testing to structure the testing. In a
+  session-based approach, exploratory testing is performed within a defined time box. The tester uses a
+  test charter containing test objectives to guide the testing. The test session is usually followed by a
+  debriefing that involves a discussion between the tester and stakeholders interested in the test results
+  of the test session." Test objectives may be treated as high-level test conditions; coverage items are
+  identified and exercised during the session; testers may use test session sheets to document steps and
+  discoveries.
+</p>
+<p>
+  "Exploratory testing is useful when there are few or inadequate specifications or there is significant
+  time pressure on the testing. Exploratory testing is also useful to complement other more formal test
+  techniques." It's more effective with an experienced tester who has domain knowledge and strong
+  analytical/curious/creative skills (§1.5.1). It "can incorporate the use of other test techniques (e.g.,
+  equivalence partitioning)."
+</p>
+
+<h2>4.4.3 Checklist-Based Testing</h2>
+<p>
+  "In checklist-based testing, a tester designs, implements, and executes tests to cover test conditions
+  from a checklist. Checklists can be built based on experience, knowledge about what is important for the
+  user, or an understanding of why and how software fails. Checklists should not contain items that can be
+  checked automatically, items better suited as entry criteria, exit criteria, or items that are too
+  general."
+</p>
+<p>
+  "Checklist items are often phrased in the form of a question. It should be possible to check each item
+  separately and directly." Checklists can support functional and non-functional testing alike (e.g., 10
+  heuristics for usability testing).
+</p>
+<p>
+  "Some checklist entries may gradually become less effective over time because the developers will learn
+  to avoid making the same errors. New entries may also need to be added to reflect newly found high
+  severity defects. Therefore, checklists should be regularly updated based on defect analysis. However,
+  care should be taken to avoid letting the checklist become too long."
+</p>
+<p>
+  "In the absence of detailed test cases, checklist-based testing can provide guidelines and some degree of
+  consistency for the testing. If the checklists are high-level, some variability in the actual testing is
+  likely to occur, resulting in potentially greater coverage but less repeatability."
+</p>
+
+<div class="compare">
+  <div class="col">
+    <h4>Error guessing</h4>
+    <p>Driven by a list of likely errors/defects/failures. Tests are aimed at causing specific anticipated
+    problems.</p>
+  </div>
+  <div class="col accent">
+    <h4>Exploratory testing</h4>
+    <p>Design, execution, and evaluation happen simultaneously, guided by what the tester learns in real
+    time — often session-based with a time box and a charter.</p>
+  </div>
+  <div class="col good">
+    <h4>Checklist-based testing</h4>
+    <p>Driven by a list of test conditions (not failures) to check off — e.g., usability heuristics or
+    domain-specific "must verify" items.</p>
+  </div>
+</div>
+<div class="callout">
+  <strong>The list-content distinction:</strong> error guessing / fault attacks use a list of possible
+  <em>errors, defects, and failures</em>. Checklist-based testing uses a list of <em>test conditions</em> to
+  check. Same shape (a pre-built list), different contents — this is exactly the distinction Exam A's Q26
+  tests below.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §4.4 "Experience-based Test Techniques" (pages 43–45) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<h3>Error guessing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q26 · FL-4.4.1 · K2</div>
+  <div class="q">Which of the following BEST describes the concept behind error guessing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The basic concept behind error guessing is that the tester tries to guess what errors may have been made by the developer and what defects may be in the test object, based on past experience (and sometimes checklists).">Error guessing involves using your knowledge and experience of defects found in the past and typical errors made by developers</button></li>
+    <li><button data-correct="false" data-why="A tester with prior development experience MAY use it, but error guessing itself isn't defined as being based on the tester's own past coding errors specifically.">Error guessing involves using your personal experience of development and the errors you made as a developer</button></li>
+    <li><button data-correct="false" data-why="Error guessing isn't a usability technique for imagining end-user mistakes — that's a different framing entirely.">Error guessing requires you to imagine that you are the user of the test object and to guess errors the user could make interacting with it</button></li>
+    <li><button data-correct="false" data-why="Duplicating the development task is impractical (requires developer-equivalent skill and takes as long as development itself) — that's not what error guessing means.">Error guessing requires you to rapidly duplicate the development task to identify the sort of errors a developer might make</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q26 · FL-4.4.1 · K2</div>
+  <div class="q">Which of the following is NOT anticipated by the tester while applying error guessing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a developer misunderstanding a spec is a classic anticipated error.">The developer misunderstood the formula in the user story for calculating the interest</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — a specific coding mistake (transposed exponent) is exactly the kind of anticipated defect.">The developer wrote "FA = A*(1+IR^N)" instead of "FA = A*(1+IR)^N" in the source code</button></li>
+    <li><button data-correct="true" data-why="Missing a seminar on new legislation is a potential ROOT CAUSE of a defect — but it's not itself an error, defect, or failure, and it's not the kind of thing error guessing (which anticipates errors/defects/failures directly) is built to anticipate.">The developer missed the seminar on new compound interest rate legislation</button></li>
+    <li><button data-correct="false" data-why="This IS something error guessing anticipates — insufficient calculation accuracy is exactly the kind of anticipated failure, perhaps drawn from experience with similar systems.">The accuracy of the interest calculated by the system is not precise enough</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Exploratory testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q27 · FL-4.4.2 · K2</div>
+  <div class="q">In your project there has been a delay in the release of a brand-new application and test execution started late, but you have very detailed domain knowledge and good analytical skills. The full list of requirements has not yet been shared with the team, but management is asking for some test results to be presented.
+
+Which test technique fits BEST in this situation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is a new product — you probably don't have a checklist yet, and test conditions might not even be known due to the missing requirements.">Checklist-based testing</button></li>
+    <li><button data-correct="false" data-why="This is a new product — you probably don't have enough experience with it yet to make correct error guesses.">Error guessing</button></li>
+    <li><button data-correct="true" data-why="Exploratory testing is most useful when there are few known specifications and/or significant time pressure on testing — exactly this situation, and your strong domain knowledge and analytical skills make you well-suited for it.">Exploratory testing</button></li>
+    <li><button data-correct="false" data-why="Branch testing is time-consuming and management wants results now — plus branch testing doesn't leverage domain knowledge at all.">Branch testing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q27 · FL-4.4.2 · K2</div>
+  <div class="q">Which of the following is true about exploratory testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="In exploratory testing, test cases are usually created DURING the session, alongside test analysis, implementation, and execution — not designed beforehand.">Test cases are designed before the exploratory testing session starts</button></li>
+    <li><button data-correct="false" data-why="In exploratory testing, tests are simultaneously designed, executed, and evaluated — the tester absolutely does perform test design.">The tester can perform test execution, but cannot perform test design</button></li>
+    <li><button data-correct="false" data-why="Exploratory testing results depend heavily on the individual tester's experience, so they aren't reliable predictors of the exact number of remaining defects, even though they can inform relative risk assessment.">Exploratory testing results are good predictors of the number of remaining defects</button></li>
+    <li><button data-correct="true" data-why="During exploratory testing, testers can use any test technique they find useful, including black-box techniques like equivalence partitioning — the syllabus explicitly says exploratory testing &quot;can incorporate the use of other test techniques.&quot;">During exploratory testing the tester may use black-box test techniques</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Checklist-based testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A17 · FL-4.4.3 · K2</div>
+  <div class="q">You are testing a mobile application that allows customers to access and manage their bank accounts. You are running a test suite that involves evaluating each screen, and each field on each screen, against a general list of user interface best practices derived from a popular book on the topic that maximizes usability for such applications. Which of the following options BEST categorizes the test technique you are using?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The book is general guidance, not a formal requirements document, specification, or set of use cases/user stories/business processes — so this isn't specification-based (black-box) testing.">Black-box</button></li>
+    <li><button data-correct="false" data-why="You could loosely view the list as test charters, but it much more closely resembles a set of test conditions to systematically check off — which points to a different technique.">Exploratory</button></li>
+    <li><button data-correct="true" data-why="The list of user interface best practices is exactly a list of test conditions to be systematically checked — the defining trait of checklist-based testing.">Checklist-based</button></li>
+    <li><button data-correct="false" data-why="These tests aren't focused on anticipated failures — they're based on established knowledge of what matters for usability, which is checklist-based testing, not error guessing.">Error guessing</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q27 · FL-4.4.3 · K2</div>
+  <div class="q">Which of the following BEST describes how using checklist-based testing can result in increased coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Even though the tester CAN implement detailed test cases from low-level checklist items, that fact alone doesn't explain how coverage specifically increases.">Checklist items can be defined at a sufficiently low level of detail, so the tester can implement and execute detailed test cases based on these items</button></li>
+    <li><button data-correct="false" data-why="Checklist items should not be automated — and even if they were, an automated script always executes the same way, which doesn't tend to increase coverage.">Checklists can be automated, so each time an automated test execution covers the checklist items, it results in additional coverage</button></li>
+    <li><button data-correct="false" data-why="It's true each checklist item should be tested separately and independently, but that affects execution order, not the coverage actually achieved.">Each checklist item should be tested separately and independently, so the elements cover different areas of the software</button></li>
+    <li><button data-correct="true" data-why="If checklists are high-level, some variability in actual testing is likely — resulting in potentially greater coverage but less repeatability. Two testers following the same high-level checklist items will use different test data and steps, so each is likely to cover areas the other doesn't, which increases overall coverage.">Two testers designing and executing tests based on the same high-level checklist items will typically perform the testing in slightly different ways</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">The error-guessing-vs-checklist-based distinction (list of failures vs. list of test
+  conditions) is subtle and worth double-checking with your teacher if it still feels blurry — the exam
+  likes to test exactly that boundary.</div>
+  §4.4 complete.
+  <a href="0015-4.5-collaboration-based-test-approaches.html">Continue to 4.5 Collaboration-based Test Approaches →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

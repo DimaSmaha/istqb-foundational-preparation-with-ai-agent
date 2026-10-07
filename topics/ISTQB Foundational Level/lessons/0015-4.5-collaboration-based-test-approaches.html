@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>4.5 Collaboration-based Test Approaches</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §4.5 &nbsp;·&nbsp; Lesson 15 &nbsp;·&nbsp;
+  <a href="0014-4.4-experience-based-test-techniques.html">← Back: 4.4</a> &nbsp;·&nbsp;
+  <a href="0016-5.1-test-planning.html">Next: 5.1 Test Planning →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>4.5 Collaboration-based Test Approaches</h1>
+<p class="subtitle">The last section of Chapter 4, and a shift in objective: instead of detecting defects
+after the fact, these approaches try to avoid them in the first place through collaboration.</p>
+<span class="lo-tag">FL-4.5.1 (K2) Explain how to write user stories in collaboration with developers and business representatives</span>
+<span class="lo-tag">FL-4.5.2 (K2) Classify the different options for writing acceptance criteria</span>
+<span class="lo-tag">FL-4.5.3 (K3) Use acceptance test-driven development (ATDD) to derive test cases</span>
+
+<p>
+  "Each of the above-mentioned test techniques [black-box, white-box, experience-based] has a particular
+  objective with respect to defect detection. Collaboration-based approaches, on the other hand, focus also
+  on defect avoidance by collaboration and communication."
+</p>
+
+<h2>4.5.1 Collaborative User Story Writing</h2>
+<p>
+  "A user story represents a feature that will be valuable to either a user or purchaser of a system or
+  software. User stories have three critical aspects, called together the "3 C's":"
+</p>
+<ul>
+  <li><strong>Card</strong> — "the medium describing a user story (e.g., an index card, an entry in an
+  electronic board)"</li>
+  <li><strong>Conversation</strong> — "explains how the software will be used (can be documented or
+  verbal)"</li>
+  <li><strong>Confirmation</strong> — "the acceptance criteria" (see §4.5.2)</li>
+</ul>
+<p>
+  "The most common format for a user story is "As a [role], I want [goal to be accomplished], so that I can
+  [resulting business value for the role]", followed by the acceptance criteria."
+</p>
+<p>
+  "Collaborative authorship of the user story can use techniques such as brainstorming and mind mapping.
+  The collaboration allows the team to obtain a shared vision of what should be delivered, by taking into
+  account three perspectives: business, development and testing."
+</p>
+<div class="callout">
+  <strong>INVEST:</strong> "Good user stories should be: Independent, Negotiable, Valuable, Estimable,
+  Small and Testable (INVEST). If a stakeholder does not know how to test a user story, this may indicate
+  that the user story is not clear enough, or that it does not reflect something valuable to them, or that
+  the stakeholder just needs help in testing."
+</div>
+
+<h2>4.5.2 Acceptance Criteria</h2>
+<p>
+  "Acceptance criteria for a user story are the conditions that an implementation of the user story must
+  meet to be accepted by stakeholders. From this perspective, acceptance criteria may be viewed as the test
+  conditions that should be exercised by the tests. Acceptance criteria are usually a result of the
+  Conversation."
+</p>
+<p>"Acceptance criteria are used to:"</p>
+<ul>
+  <li>"Define the scope of the user story"</li>
+  <li>"Reach consensus among the stakeholders"</li>
+  <li>"Describe both positive and negative scenarios"</li>
+  <li>"Serve as a basis for the user story acceptance testing"</li>
+  <li>"Allow accurate planning and estimation"</li>
+</ul>
+<div class="compare">
+  <div class="col">
+    <h4>Scenario-oriented</h4>
+    <p>"e.g., Given/When/Then format used in BDD" — describes a concrete example scenario the system must
+    realize.</p>
+  </div>
+  <div class="col accent">
+    <h4>Rule-oriented</h4>
+    <p>"e.g., bullet point verification list, or tabulated form of input-output mapping" — describes rules
+    or regulations the system must adhere to.</p>
+  </div>
+</div>
+<p>
+  "Most acceptance criteria can be documented in one of these two formats. However, the team may use
+  another, custom format, as long as the acceptance criteria are well-defined and unambiguous."
+</p>
+
+<h2>4.5.3 Acceptance Test-driven Development (ATDD)</h2>
+<p>
+  "ATDD is a test-first approach. Test cases are created prior to implementing the user story. The test
+  cases are created by team members with different perspectives, e.g., customers, developers, and
+  testers." Test cases may be manual or automated.
+</p>
+<p>
+  "The first step is a specification workshop where the user story and (if not yet defined) its acceptance
+  criteria are analyzed, discussed, and written by the team members. Incompleteness, ambiguities, or
+  defects in the user story are resolved during this process. The next step is to create the test cases.
+  This can be done by the team as a whole or by the tester individually. The test cases are based on the
+  acceptance criteria and can be seen as examples of how the software works." "Since examples and tests
+  are the same, these terms are often used interchangeably." During test design, the test techniques
+  described for black-box, white-box, and experience-based testing (§4.2–4.4) may be applied.
+</p>
+<p>
+  "Typically, the first test cases are positive, confirming the correct behavior without exceptions or
+  error conditions... After the positive test cases are done, the team should perform negative testing.
+  Finally, the team should cover non-functional quality characteristics" (e.g., performance efficiency,
+  usability). "Test cases should be expressed in a way that is understandable for the stakeholders" —
+  typically as natural-language sentences covering any necessary preconditions, the inputs, and the
+  postconditions.
+</p>
+<div class="callout">
+  <strong>Scope discipline:</strong> "The test cases must cover all the characteristics of the user story
+  and should not go beyond the story. However, the acceptance criteria may detail some of the issues
+  described in the user story. In addition, no two test cases should describe the same characteristics of
+  the user story." "When captured in a format supported by a test automation framework, the developers can
+  automate the test cases by writing the supporting code as they implement the feature" — "the acceptance
+  tests then become executable requirements."
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §4.5 "Collaboration-based Test Approaches" (pages 45–46) of the <em>ISTQB CTFL Syllabus v4.0.1</em>
+  — this closes out Chapter 4.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<h3>Collaborative user story writing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A18 · FL-4.5.1 · K2</div>
+  <div class="q">Which of the following BEST describe the collaborative approach to user story writing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Collaborative writing means ALL stakeholders create the story together to obtain a shared vision — it's not testers/developers drafting it for later acceptance by the business side.">User stories are created by testers and developers and then accepted by business representatives</button></li>
+    <li><button data-correct="true" data-why="Collaborative user story writing means that all stakeholders — business representatives, developers, and testers — create the user stories together, to obtain the shared vision the syllabus describes.">User stories are created by business representatives, developers, and testers together</button></li>
+    <li><button data-correct="false" data-why="This still isn't truly collaborative authorship — it has business representatives writing alone with dev/test only verifying afterward, rather than all three perspectives contributing from the start.">User stories are created by business representatives and verified by developers and testers</button></li>
+    <li><button data-correct="false" data-why="INVEST (independent, negotiable, valuable, estimable, small, testable) is the list of properties a good user story should have — it doesn't describe the collaborative-authorship process itself.">User stories are created in a way that they are independent, negotiable, valuable, estimable, small, and testable</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q28 · FL-4.5.1 · K2</div>
+  <div class="q">Which collaborative user story writing practice enables the team to achieve a collective understanding of what needs to be delivered?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Planning poker estimates the effort for a user story that's already written — it doesn't help the team understand what should be delivered in the first place.">Planning poker, so that a team can achieve consensus on the effort needed to implement a user story</button></li>
+    <li><button data-correct="false" data-why="Reviews aren't one of the collaborative user story writing practices described in the syllabus.">Reviews, so that a team can detect inconsistencies and contradictions in a user story</button></li>
+    <li><button data-correct="false" data-why="Iteration planning is a project-scheduling practice used to prioritize work, not to build shared understanding of what a story means.">Iteration planning, so that user stories with the highest business value for a customer can be prioritized for implementation</button></li>
+    <li><button data-correct="true" data-why="Conversation is one of the &quot;3 C's&quot; — it explains how the software will be used and typically leads to defining meaningful acceptance criteria, giving the team a shared vision of what should be delivered.">Conversation, so that team members can understand how the software will be used</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Acceptance criteria</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q28 · FL-4.5.2 · K2</div>
+  <div class="q">Which of the following BEST describes the way acceptance criteria can be documented?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Retrospectives capture lessons learned to improve the development/testing process — they aren't a way of documenting acceptance criteria.">Performing retrospectives to determine the actual needs of the stakeholders regarding a given user story</button></li>
+    <li><button data-correct="true" data-why="Given/When/Then is the standard scenario-oriented format the syllabus names explicitly for documenting acceptance criteria (used in BDD).">Using the given/when/then format to describe an example test condition related to a given user story</button></li>
+    <li><button data-correct="false" data-why="Verbal communication doesn't physically document anything — acceptance criteria need to be captured in the &quot;Card&quot; aspect of the user story, not just spoken.">Using verbal communication to reduce the risk of misunderstanding the acceptance criteria by others</button></li>
+    <li><button data-correct="false" data-why="Acceptance criteria attach to a user story, not a test plan — and risks aren't the same thing as the conditions that must be met for a story to be considered complete.">Documenting risks related to a given user story in a test plan to facilitate the risk-based testing of a given user story</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q28 · FL-4.5.2 · K2</div>
+  <div class="q">Which of the following provides the BEST example of a scenario-oriented acceptance criterion?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This describes a rule the system must adhere to (the right to be forgotten) — that's rule-oriented, not scenario-oriented.">The application must allow users to delete their account and all associated data upon request</button></li>
+    <li><button data-correct="true" data-why="This describes a concrete example scenario the system must realize — the customer does X, then Y should happen — which is exactly what a scenario-oriented acceptance criterion looks like.">When a customer adds an item to their cart and proceeds to checkout, they should be prompted to log in or create an account if they haven't already done so</button></li>
+    <li><button data-correct="false" data-why="This reads like a line of code implementing a business rule, not an acceptance criterion written in language business representatives would understand — that defeats the purpose of collaborative documentation.">IF (contain(product(23).Name, cart.products())) THEN return FALSE</button></li>
+    <li><button data-correct="false" data-why="This describes a compliance rule and how it will be ensured — a rule-oriented acceptance criterion, not a scenario.">The website must comply with the ICT Accessibility 508 Standards and ensure that all content is accessible to users with disabilities</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Acceptance test-driven development (ATDD)</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">Consider the following user story:
+As an Editor, I want to review content before it is published, so that I can ensure the grammar is correct.
+
+Acceptance criteria:
+• The user can log in to the content management system with "Editor" role
+• The editor can view existing content pages
+• The editor can edit the page content
+• The editor can add markup comments
+• The editor can save changes
+• The editor can reassign to the "content owner" role to make updates
+
+Which of the following is the BEST example of an ATDD test for this user story?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This test covers two acceptance criteria at once: editing the page content, and saving changes — both explicitly listed for this user story.">Test if the editor can save the document after edit the page content</button></li>
+    <li><button data-correct="false" data-why="The acceptance criteria describe the EDITOR's activities, not the content owner's — this test goes beyond the story's stated scope.">Test if the content owner can log in and make updates to the content</button></li>
+    <li><button data-correct="false" data-why="Scheduling content for publication might be a nice feature, but it isn't covered by any of the listed acceptance criteria — ATDD test cases must not go beyond the story.">Test if the editor can schedule the edited content for publication</button></li>
+    <li><button data-correct="false" data-why="The acceptance criteria describe reassigning FROM editor TO content owner — not reassigning to another editor, which isn't part of this story.">Test if the editor can reassign to another editor to make updates</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q29 · FL-4.5.3 · K3</div>
+  <div class="q">You are using acceptance test-driven development and designing test cases based on the following user story:
+
+As a Regular or Special user, I want to be able to use my electronic floor card, to access specific floors.
+
+Acceptance Criteria:
+AC1: Regular users have access to floors 1 to 3
+AC2: Floor 4 is only accessible to Special users
+AC3: Special users have all the access rights of Regular users
+
+Which test case is the MOST reasonable one to test AC3?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="AC3 is about whether Special users have the RIGHTS of Regular users — testing a Regular user's own access doesn't verify that.">Check that a Regular user can access floors 1 and 3</button></li>
+    <li><button data-correct="false" data-why="AC3 is about Special users having Regular users' rights — testing a Regular user's restriction on floor 4 doesn't address AC3 either.">Check that a Regular user cannot access floor 4</button></li>
+    <li><button data-correct="false" data-why="There's no floor 5 in the acceptance criteria at all — this test extends beyond the user story's stated scope, which ATDD test cases should not do.">Check that a Special user can access floor 5</button></li>
+    <li><button data-correct="true" data-why="This directly verifies AC3 — that a Special user retains the access rights (floors 1–3) that belong to Regular users.">Check that a Special user can access floors 1, 2 and 3</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">That's all of Chapter 4 — the biggest chapter in the syllabus, and the one with the
+  most K3 "apply" content. If any of the four §4.2 black-box techniques still feel shaky when you see a
+  fresh scenario (not one you've already seen), that's the single highest-value thing to revisit with your
+  teacher before moving on — §4.2 carries more exam weight than any other section in the course.</div>
+  Chapter 4 (Test Analysis and Design) complete.
+  <a href="0016-5.1-test-planning.html">Continue to 5.1 Test Planning →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.2 Risk Management</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §5.2 &nbsp;·&nbsp; Lesson 17 &nbsp;·&nbsp;
+  <a href="0016-5.1-test-planning.html">← Back: 5.1</a> &nbsp;·&nbsp;
+  <a href="0018-5.3-test-monitoring-control-completion.html">Next: 5.3 Test Monitoring, Control and Completion →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>5.2 Risk Management</h1>
+<p class="subtitle">How risk shapes what gets tested, how thoroughly, and in what order — the conceptual
+backbone behind risk-based prioritization from §5.1.5.</p>
+<span class="lo-tag">FL-5.2.1 (K1) Identify risk level by using risk likelihood and risk impact</span>
+<span class="lo-tag">FL-5.2.2 (K2) Distinguish between project risks and product risks</span>
+<span class="lo-tag">FL-5.2.3 (K2) Explain how product risk analysis may influence thoroughness and test scope</span>
+<span class="lo-tag">FL-5.2.4 (K2) Explain what measures can be taken in response to analyzed product risks</span>
+
+<h2>Risk management overview</h2>
+<p>"Organizations face many internal and external factors that make it uncertain whether and when they
+will achieve their objectives. Risk management allows the organizations to increase the likelihood of
+achieving objectives, improve the quality of their products and increase the stakeholders' confidence and
+trust."</p>
+<p>"The main risk management activities are:</p>
+<ul>
+  <li>Risk analysis (consisting of risk identification and risk assessment)</li>
+  <li>Risk control (consisting of risk mitigation and risk monitoring)"</li>
+</ul>
+<p>"The test approach, in which test activities are selected, prioritized, and managed based on risk
+analysis and risk control, is called <strong>risk-based testing</strong>."</p>
+
+<h2>5.2.1 Risk Definition and Risk Attributes</h2>
+<p>"Risk is a potential event, hazard, threat, or situation whose occurrence causes an adverse effect. A
+risk can be characterized by two factors:</p>
+<ul>
+  <li><strong>Risk likelihood</strong> – the probability of the risk occurrence (greater than zero and less
+  than one)</li>
+  <li><strong>Risk impact</strong> (harm) – the consequences of this occurrence"</li>
+</ul>
+<p>"These two factors express the <strong>risk level</strong>, which is a measure for the risk. The higher
+the risk level, the more important is its treatment."</p>
+<div class="callout">
+  <strong>Quantitative risk level</strong> = risk likelihood × risk impact. This is a plain multiplication,
+  and the exam likes to invert it: give you the risk level and one factor, and ask for the other (divide
+  instead of multiply). It also likes to stress that likelihood and impact are <strong>independent</strong>
+  of each other — a very-high-impact risk tells you nothing about how likely it is to occur.
+</div>
+
+<h2>5.2.2 Project Risks and Product Risks</h2>
+<p>"In software testing one is generally concerned with two types of risks: project risks and product
+risks."</p>
+<div class="compare">
+  <div class="col">
+    <h4>Project risks</h4>
+    <p>"related to the management and control of the project. Project risks include:</p>
+    <ul>
+      <li>Organizational issues (e.g., delays in work products deliveries, inaccurate estimates, cost
+      cutting)</li>
+      <li>People issues (e.g., insufficient skills, conflicts, communication problems, shortage of staff)</li>
+      <li>Technical issues (e.g., scope creep, poor tool support)</li>
+      <li>Supplier issues (e.g., third-party delivery failure, bankruptcy of the supporting company)"</li>
+    </ul>
+    <p>"Project risks, when they occur, may have an impact on the project schedule, budget or scope, which
+    affects the project's ability to achieve its objectives."</p>
+  </div>
+  <div class="col accent">
+    <h4>Product risks</h4>
+    <p>"related to the product quality characteristics. Examples of product risks include: missing or wrong
+    functionality, incorrect calculations, runtime errors, poor architecture, inefficient algorithms,
+    inadequate response time, poor user experience, security vulnerabilities."</p>
+    <p>"Product risks, when they occur, may result in various negative consequences, including: user
+    dissatisfaction, loss of revenue/trust/reputation, damage to third parties, high maintenance costs,
+    overload of the help desk, criminal penalties, in extreme cases, physical damage, injuries or even
+    death."</p>
+  </div>
+</div>
+<div class="callout">
+  <strong>The quick test:</strong> does the issue describe a characteristic <em>of the product itself</em>
+  (poor architecture, slow response time, missing functionality) → product risk. Does it describe a
+  <em>project management / people / organizational</em> problem (staff shortage, cost-cutting, scope creep,
+  supplier failure) → project risk. Inaccurate stakeholder expectations is a project risk (a people/
+  organizational issue), not a product characteristic.
+</div>
+
+<h2>5.2.3 Product Risk Analysis</h2>
+<p>"From a testing perspective, the goal of product risk analysis is to provide an awareness of product
+risk to focus the test effort in a way that minimizes the residual level of product risk. Ideally, product
+risk analysis begins early in the SDLC."</p>
+<p>"Product risk analysis consists of risk identification and risk assessment. Risk identification is about
+generating a comprehensive list of risks... Risk assessment involves: categorization of identified risks,
+determining their risk likelihood, risk impact and risk level, prioritizing, and proposing ways to handle
+them."</p>
+<p>"Risk assessment can use a quantitative or qualitative approach, or a mix of them. In the quantitative
+approach the risk level is calculated as the multiplication of risk likelihood and risk impact. In the
+qualitative approach the risk level can be determined using a risk matrix."</p>
+<p>"Product risk analysis may influence the thoroughness and test scope. Its results are used to:</p>
+<ul>
+  <li>Determine the test scope to be carried out</li>
+  <li>Determine the particular test levels and propose test types to be performed</li>
+  <li>Determine the test techniques to be employed and the coverage to be achieved</li>
+  <li>Estimate the test effort required for each task</li>
+  <li>Prioritize testing in an attempt to find the critical defects as early as possible</li>
+  <li>Determine whether any activities in addition to testing could be employed to reduce risk"</li>
+</ul>
+
+<h2>5.2.4 Product Risk Control</h2>
+<p>"Product risk control comprises all measures that are taken in response to identified and assessed
+product risks. Product risk control consists of risk mitigation and risk monitoring. Risk mitigation
+involves implementing the actions proposed in risk assessment to reduce the risk level. The aim of risk
+monitoring is to ensure that the mitigation actions are effective, to obtain further information to improve
+risk assessment, and to identify emerging risks."</p>
+<p>"With respect to product risk control, once a risk has been analyzed, several response options to risk
+are possible, e.g., risk mitigation by testing, risk acceptance, risk transfer, or a contingency plan.
+Actions that can be taken to mitigate the product risks by testing are as follows:</p>
+<ul>
+  <li>Select the testers with the right level of experience and skills, suitable for a given risk type</li>
+  <li>Apply an appropriate level of independence of testing</li>
+  <li>Perform reviews and static analysis</li>
+  <li>Apply the appropriate test techniques and coverage levels</li>
+  <li>Apply the appropriate test types addressing the affected quality characteristics</li>
+  <li>Perform dynamic testing, including regression testing"</li>
+</ul>
+<div class="callout">
+  <strong>Four response options, not just one:</strong> risk mitigation (act to reduce it — usually via
+  testing), risk acceptance (proceed without acting), risk transfer (shift it elsewhere, e.g. to a
+  third party), or a contingency plan (a fallback if the risk materializes). "We'll perform independent
+  performance testing early" is mitigation; "we'll ship anyway and monitor" is acceptance.
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §5.2 "Risk Management" (pages 51–53) of the <em>ISTQB CTFL Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A and D, tagged to this section's learning objectives.</p>
+
+<h3>5.2.1 — Risk level, likelihood, and impact</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q34 · FL-5.2.1 · K1</div>
+  <div class="q">For a given risk, its risk level is $1,000 and its risk likelihood is estimated as 50%.
+What is the risk impact?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Incorrect division.">$500</button></li>
+    <li><button data-correct="true" data-why="Risk level = risk likelihood × risk impact, so risk impact = risk level ÷ risk likelihood = $1,000 ÷ 0.5 = $2,000.">$2,000</button></li>
+    <li><button data-correct="false" data-why="Incorrect division.">$50,000</button></li>
+    <li><button data-correct="false" data-why="Incorrect division.">$200</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A22 · FL-5.2.1 · K1</div>
+  <div class="q">During risk analysis the team considered the following risk: "The system allows too high a discount for a customer". The team estimated the risk impact to be very high.
+What can one say about the risk likelihood?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Risk impact and risk likelihood are independent factors — a high impact does not imply anything about likelihood.">It is also very high. High risk impact always implies high risk likelihood</button></li>
+    <li><button data-correct="false" data-why="Risk impact and risk likelihood are independent factors.">It is very low. High risk impact always implies low risk likelihood</button></li>
+    <li><button data-correct="true" data-why="Risk impact and risk likelihood are independent — knowing one tells you nothing about the other. Both must be assessed separately to determine risk level.">One cannot say anything about risk likelihood. Risk impact and risk likelihood are independent.</button></li>
+    <li><button data-correct="false" data-why="Both factors are needed to calculate the risk level — likelihood is not unimportant just because impact is high.">Risk likelihood is not important with such a high-risk impact. One does not need to define it.</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.2.2 — Project risks vs. product risks</h3>
+
+<div class="quiz-multi" data-correct="b,e" data-why="Poor architecture and too-long response time are both product characteristics — product risks. Scope creep and poor tool support are project risks (technical issues); cost-cutting is a project risk (organizational issue).">
+  <div class="exam-tag">Exam D · Q35 · FL-5.2.2 · K2 · select TWO</div>
+  <div class="q">Which of the following are product risks?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> Scope creep</label></li>
+    <li><label><input type="checkbox" value="b"> Poor architecture</label></li>
+    <li><label><input type="checkbox" value="c"> Cost-cutting</label></li>
+    <li><label><input type="checkbox" value="d"> Poor tool support</label></li>
+    <li><label><input type="checkbox" value="e"> Too long response time</label></li>
+  </ul>
+  <button class="check-multi">Check answer</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A23 · FL-5.2.2 · K2</div>
+  <div class="q">The following list contains risks that have been identified for a new software product to be developed:
+i. Management moves two experienced testers to another project
+ii. The system does not comply with security standards
+iii. System response time exceeds user requirements
+iv. Stakeholders have inaccurate expectations
+v. Disabled people have problems when using the system
+Which of them are project risks?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="i (staff moved to another project — a people/organizational issue) and iv (inaccurate stakeholder expectations — a project management issue) are project risks. ii, iii, and v all describe product characteristics.">i, iv are project risks</button></li>
+    <li><button data-correct="false" data-why="iv is a project risk, but v (accessibility problems) is a product risk — a characteristic of the product itself.">iv, v are project risks</button></li>
+    <li><button data-correct="false" data-why="i is a project risk, but iii (response time) is a product risk — a quality characteristic of the system.">i, iii are project risks</button></li>
+    <li><button data-correct="false" data-why="Both ii (security non-compliance) and v (accessibility) are product risks, not project risks.">ii, v are project risks</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.2.3 — How product risk analysis influences thoroughness and scope</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q35 · FL-5.2.3 · K2</div>
+  <div class="q">Which of the following is an example of how product risk analysis may influence the thoroughness and scope of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Continuous risk monitoring to spot an emerging risk is part of risk control (monitoring), not risk analysis.">Continuous risk monitoring allows us to identify an emerging risk as soon as possible</button></li>
+    <li><button data-correct="false" data-why="Implementing mitigation actions is part of risk control, not risk analysis itself.">Risk identification allows us to implement risk mitigation activities and reduce the risk level</button></li>
+    <li><button data-correct="true" data-why="This is the syllabus's own example: risk analysis determines the assessed risk level, which is then used to select the rigor (thoroughness) of testing applied.">The assessed risk level helps us to select the rigor of testing</button></li>
+    <li><button data-correct="false" data-why="Coverage items are derived using test techniques, not through risk analysis.">Risk analysis allows us to derive coverage items</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A24 · FL-5.2.3 · K2</div>
+  <div class="q">Which of the following is an example of how product risk analysis influences thoroughness and scope of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Daily monitoring and reporting of known risk levels is a risk monitoring activity, not risk analysis.">The test manager monitors and reports the level of all known risks on a daily basis so the stakeholders can make an informed decision on the release date</button></li>
+    <li><button data-correct="false" data-why="Choosing to integrate with an open-source database is an architectural decision, unrelated to testing thoroughness.">One of the identified risks was &quot;Lack of support of open-source databases&quot;, so the team decided to integrate the system with an open-source database</button></li>
+    <li><button data-correct="false" data-why="Estimating total residual risk is an example of performing quantitative risk analysis itself, not an example of it influencing test thoroughness or scope.">During the quantitative risk analysis, the team estimated the total level of all identified risks and reported it as the total residual risk before testing</button></li>
+    <li><button data-correct="true" data-why="A very high assessed risk level (performance risk) directly leads to more thorough testing being scheduled earlier in the SDLC — this is exactly how risk analysis shapes thoroughness and timing of testing.">Risk assessment revealed a very high level of performance risks, so it was decided to perform detailed performance efficiency testing early in the SDLC</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>5.2.4 — Responding to analyzed product risks</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q35 · FL-5.2.4 · K2</div>
+  <div class="q">During a risk analysis the following risk was identified and assessed:
+Risk: Response time is too long to generate a report
+Risk likelihood: medium; risk impact: high
+Response to risk:
+— An independent test team performs performance efficiency testing during system testing
+— A selected sample of end users performs alpha testing and beta testing before the release
+What measure is proposed to be taken in response to this analyzed risk?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Risk acceptance means proceeding without action — but concrete testing actions are proposed here, so the risk is not simply being accepted.">Risk acceptance</button></li>
+    <li><button data-correct="false" data-why="No fallback/contingency plan is described — only proactive testing actions.">Contingency plan</button></li>
+    <li><button data-correct="true" data-why="The proposed actions (independent performance efficiency testing, alpha/beta testing) are testing activities aimed at reducing the risk level — this is risk mitigation by testing.">Risk mitigation</button></li>
+    <li><button data-correct="false" data-why="Risk transfer means shifting the risk to another party — nothing here indicates that; the team is mitigating it directly through testing.">Risk transfer</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the "risk level = likelihood × impact" arithmetic, or the project-risk-vs-product-risk
+  sorting test, still needs a second pass, ask your teacher now — §5.2's concepts resurface directly in
+  §5.1.5's risk-based prioritization and in §5.3's risk metrics.</div>
+  §5.2 complete.
+  <a href="0018-5.3-test-monitoring-control-completion.html">Continue to 5.3 Test Monitoring, Control and Completion →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

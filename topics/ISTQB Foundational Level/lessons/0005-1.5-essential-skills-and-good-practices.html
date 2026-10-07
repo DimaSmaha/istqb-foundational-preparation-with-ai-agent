@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1.5 Essential Skills and Good Practices in Testing</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §1.5 &nbsp;·&nbsp; Lesson 5 of 5 (Ch. 1) &nbsp;·&nbsp;
+  <a href="0004-1.4-test-activities-testware-roles.html">← Back: 1.4</a> &nbsp;·&nbsp;
+  <a href="0006-2.1-testing-in-the-sdlc.html">Next: 2.1 Testing in the Context of a SDLC →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>1.5 Essential Skills and Good Practices in Testing</h1>
+<p class="subtitle">Closes out Chapter 1: what makes a good tester, and a tension the exam likes to probe — whole-team collaboration vs. independence.</p>
+<span class="lo-tag">FL-1.5.1 (K2) Give examples of the generic skills required for testing</span>
+<span class="lo-tag">FL-1.5.2 (K1) Recall the advantages of the whole team approach</span>
+<span class="lo-tag">FL-1.5.3 (K2) Distinguish the benefits and drawbacks of independence of testing</span>
+
+<h2>Generic skills required for testing (FL-1.5.1)</h2>
+<p>Skill = the ability to do something well, from knowledge, practice, and aptitude. Relevant tester skills:</p>
+<ul>
+  <li><strong>Testing knowledge</strong> — using test techniques to increase effectiveness</li>
+  <li><strong>Thoroughness, carefulness, curiosity, attention to detail, being methodical</strong> — for finding hard-to-find defects</li>
+  <li><strong>Good communication, active listening, being a team player</strong> — testers are often "bearers of bad news"; confirmation bias can make people resist hearing it, so constructive communication matters</li>
+  <li><strong>Analytical thinking, critical thinking, creativity</strong></li>
+  <li><strong>Technical knowledge</strong> — for using tools effectively</li>
+  <li><strong>Domain knowledge</strong> — to understand and communicate with business/end users</li>
+</ul>
+
+<h2>Whole team approach (FL-1.5.2)</h2>
+<p>
+  Coming from Extreme Programming, in the <strong>whole team approach</strong> any team member with the
+  right knowledge and skills can perform any task, and <em>everyone</em> is responsible for quality. Teams
+  share a workspace (physical or virtual) to facilitate communication.
+</p>
+<div class="callout">
+  <strong>Advantages:</strong> improved team dynamics, better communication and collaboration, synergy
+  from leveraging varied skill sets. Testers still bring value here — they transfer testing knowledge to
+  the team, help business representatives write acceptance tests, and work with developers on test
+  strategy and automation approach.
+</div>
+<p>It's not always appropriate — safety-critical contexts may need a high level of test independence instead.</p>
+
+<h2>Independence of testing (FL-1.5.3)</h2>
+<p>
+  A certain degree of independence makes testers more effective at finding defects, because the author's
+  and the tester's cognitive biases differ. It is <em>not</em> a replacement for familiarity — developers
+  can efficiently find many defects in their own code.
+</p>
+<div class="diagram">
+  <div class="box"><div class="label">Author</div><div class="sub">no independence</div></div>
+  <div class="arrow">→</div>
+  <div class="box"><div class="label">Peer, same team</div><div class="sub">some independence</div></div>
+  <div class="arrow">→</div>
+  <div class="box"><div class="label">Tester, same org</div><div class="sub">high independence</div></div>
+  <div class="arrow">→</div>
+  <div class="box highlight"><div class="label">Outside the org</div><div class="sub">very high independence</div></div>
+</div>
+<p>Most projects use <strong>multiple levels at once</strong> — e.g. developers doing component/component integration testing, an independent test team doing system/system integration testing, business representatives doing acceptance testing.</p>
+<div class="compare">
+  <div class="col good">
+    <h4>Benefits</h4>
+    <ul>
+      <li>Recognizes different kinds of failures/defects than developers, due to differing backgrounds and biases</li>
+      <li>Can verify, challenge, or disprove assumptions made during specification and implementation</li>
+    </ul>
+  </div>
+  <div class="col bad">
+    <h4>Drawbacks</h4>
+    <ul>
+      <li>Isolation from the dev team → communication problems, adversarial relationships</li>
+      <li>Developers may feel less responsible for quality</li>
+      <li>Independent testers can be blamed as a bottleneck for release delays</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §1.5 "Essential Skills and Good Practices in Testing" (pages 21–23) of the <em>ISTQB CTFL
+  Syllabus v4.0.1</em>.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q7 · FL-1.5.1 · K2</div>
+  <div class="q">Which of the following skills (i-v) are the MOST important skills of a tester?
+i. Having domain knowledge
+ii. Creating a product vision
+iii. Being a good team player
+iv. Planning and organizing the work of the team
+v. Critical thinking</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Creating a product vision (business analyst/business representative work) and organizing the team's work (test manager/whole team, not specifically a tester skill) are both wrong fits here.">ii and iv are important</button></li>
+    <li><button data-correct="true" data-why="Domain knowledge, being a good team player, and critical thinking are all explicitly listed generic skills required for testing.">i, iii and v are important</button></li>
+    <li><button data-correct="false" data-why="Creating a product vision isn't a tester skill — that's the business analyst's/business representative's job.">i, ii and v are important</button></li>
+    <li><button data-correct="false" data-why="Planning and organizing the team's work belongs to the test manager (or the whole team in Agile), not specifically to the tester skill list.">iii and iv are important</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q8 · FL-1.5.2 · K1</div>
+  <div class="q">How is the whole team approach present in the interactions between testers and business representatives?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test automation approach is decided with developers, not business representatives.">Business representatives decide on test automation approaches</button></li>
+    <li><button data-correct="false" data-why="Test strategy is decided in collaboration with developers, not primarily business representatives.">Testers help business representatives to define a test strategy</button></li>
+    <li><button data-correct="false" data-why="Business representatives are explicitly part of the whole team approach, alongside testers and developers.">Business representatives are not part of the whole team approach</button></li>
+    <li><button data-correct="true" data-why="Testers work closely with business representatives, helping them create suitable acceptance tests — exactly the collaboration the whole team approach describes.">Testers help business representatives to create suitable acceptance tests</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q7 · FL-1.5.2 · K1</div>
+  <div class="q">Which of the following is an advantage of the whole team approach?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="The whole team approach promotes robust communication and collaboration between team members — a core stated advantage.">Improved communication between team members</button></li>
+    <li><button data-correct="false" data-why="The approach prioritizes collective accountability, but each individual is still equally accountable for quality — this isn't a decrease.">Decreased individual accountability for quality</button></li>
+    <li><button data-correct="false" data-why="The approach is about how the team works together for higher-quality deliverables — it doesn't necessarily speed up deployment.">Faster deployment of deliverables to the end users</button></li>
+    <li><button data-correct="false" data-why="The opposite is true — testers actively collaborate with business representatives under this approach, e.g. to build acceptance tests.">Reduced collaboration with external business users</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A6 · FL-1.5.3 · K2</div>
+  <div class="q">Which of the following BEST explains a benefit of independence of testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Quality should be everyone's responsibility on a project, not assigned solely to the test team.">The use of an independent test team allows project management to assign responsibility for the quality of the final deliverable to the test team</button></li>
+    <li><button data-correct="false" data-why="There's no reason to believe an external team feels less bound by delivery deadlines, and missing deadlines isn't a benefit anyway.">If a test team external to the organization can be afforded, then there are distinct benefits in terms of this external team not being so easily swayed by the delivery concerns of project management and the need to meet strict delivery deadlines</button></li>
+    <li><button data-correct="false" data-why="It's bad practice for a test team to work in isolation — good independent teams still stay concerned with changing requirements and communicate well with developers.">An independent test team can work separately from the developers, need not be distracted with project requirement changes, and can restrict communication with the developers to defect reporting through the defect management system</button></li>
+    <li><button data-correct="true" data-why="Specifications are never perfect — developers must make assumptions when interpreting them, and an independent tester is well-placed to challenge and verify those assumptions.">When specifications contain ambiguities and inconsistencies, assumptions are made on their interpretation, and an independent tester can be useful in questioning those assumptions and the interpretation made by the developer</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q8 · FL-1.5.3 · K2</div>
+  <div class="q">Which of the following statements about the independence of testing is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="This captures both sides accurately: testers spot different defects due to differing technical perspective, but independence risks an adversarial relationship with developers.">Independent testers will find defects due to their different technical perspective from developers, but their independence may lead to an adversarial relationship with the developers</button></li>
+    <li><button data-correct="false" data-why="Backwards on both counts: familiarity means developers find many defects in their own code efficiently, and it's a different (not shared) background that explains why testers find different defects.">Developers' familiarity with their own code means they only find a few defects in it, however their shared software background with testers means these defects would also be found by the testers</button></li>
+    <li><button data-correct="false" data-why="Testers can be within the developer's own team (some independence) — very high independence (outside the organization) is only one point on a spectrum, not a requirement.">Independent testing requires testers who are outside the developer's team and ideally from outside the organization, however these testers find it difficult to understand the application domain</button></li>
+    <li><button data-correct="false" data-why="The first half is right, but the isolation/blame risk applies more to testers outside the team, not to testers from within it.">Testers from outside the developer's team are more independent than testers from within the team, but the testers from within the team are more likely to be blamed for delays in product release</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">That's all of Chapter 1. If any of the five sections still feels shaky, say so
+  before moving to Chapter 2 — it's much easier to fix now than after we build on top of it.</div>
+  Chapter 1 (Fundamentals of Testing) complete.
+  Next up: <a href="0006-2.1-testing-in-the-sdlc.html">§2.1 — Testing in the Context of a Software Development Lifecycle →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

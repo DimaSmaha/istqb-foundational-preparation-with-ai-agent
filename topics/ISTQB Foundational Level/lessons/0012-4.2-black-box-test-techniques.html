@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>4.2 Black-Box Test Techniques</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §4.2 &nbsp;·&nbsp; Lesson 12 &nbsp;·&nbsp;
+  <a href="0011-4.1-test-techniques-overview.html">← Back: 4.1</a> &nbsp;·&nbsp;
+  <a href="0013-4.3-white-box-test-techniques.html">Next: 4.3 White-Box Test Techniques →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>4.2 Black-Box Test Techniques</h1>
+<p class="subtitle">The densest section in the syllabus: four techniques, all K3 "apply" — meaning the
+exam gives you a scenario (a rule, a table, a diagram) and asks you to derive or evaluate test cases from
+it, not just recite a definition.</p>
+<span class="lo-tag">FL-4.2.1 (K3) Use equivalence partitioning to derive test cases</span>
+<span class="lo-tag">FL-4.2.2 (K3) Use boundary value analysis to derive test cases</span>
+<span class="lo-tag">FL-4.2.3 (K3) Use decision table testing to derive test cases</span>
+<span class="lo-tag">FL-4.2.4 (K3) Use state transition testing to derive test cases</span>
+
+<p>"Commonly used black-box test techniques discussed in the following sections are:" Equivalence
+Partitioning, Boundary Value Analysis, Decision Table Testing, and State Transition Testing.</p>
+
+<h2>4.2.1 Equivalence Partitioning (EP)</h2>
+<p>
+  "Equivalence Partitioning (EP) divides data into partitions (known as equivalence partitions) based on
+  the expectation that all the elements of a given partition are to be processed in the same way by the
+  test object. The theory behind this technique is that if a test case, that tests one value from an
+  equivalence partition, detects a defect, this defect should also be detected by test cases that test any
+  other value from the same partition. Therefore, one test for each partition is sufficient."
+</p>
+<p>
+  "Equivalence partitions can be identified for any data element related to the test object, including
+  inputs, outputs, configuration items, internal values, time-related values, and interface parameters. The
+  partitions may be continuous or discrete, ordered or unordered, finite or infinite. The partitions must
+  not overlap and must be non-empty sets."
+</p>
+<p>
+  "A partition containing valid values is called a <strong>valid partition</strong>. A partition containing
+  invalid values is called an <strong>invalid partition</strong>. The definitions of valid and invalid values
+  may vary among teams and organizations" — valid values may be those that should be processed by the test
+  object or for which the specification defines their processing, while invalid values may be those that
+  should be ignored or rejected, or for which no processing is defined at all.
+</p>
+<p>
+  "In EP, the coverage items are the equivalence partitions. To achieve 100% coverage with this test
+  technique, test cases must exercise all identified partitions (including invalid partitions) by covering
+  each partition at least once." Coverage = (partitions exercised) ÷ (total partitions identified), as a
+  percentage.
+</p>
+<div class="callout">
+  <strong>Each Choice coverage:</strong> "Many test items include multiple sets of partitions (e.g., test
+  items with more than one input parameter), which means that a test case will cover partitions from
+  different sets of partitions." <strong>Each Choice coverage</strong> "requires test cases to exercise each
+  partition from each set of partitions at least once" — but it does <em>not</em> require every combination
+  of partitions to be tested, only that each partition appears somewhere.
+</div>
+
+<h2>4.2.2 Boundary Value Analysis (BVA)</h2>
+<p>
+  "Boundary Value Analysis (BVA) is a test technique based on exercising the boundaries of equivalence
+  partitions. Therefore, BVA can only be used for ordered partitions. The minimum and maximum values of a
+  partition are its boundary values." If two elements belong to the same partition, all elements between
+  them must also belong to that partition.
+</p>
+<p>
+  "BVA focuses on the boundary values of the partitions because developers are more likely to make errors
+  with these boundary values. Typical defects found by BVA are located where implemented boundaries are
+  misplaced to positions above or below their intended positions or are omitted altogether."
+</p>
+<div class="compare">
+  <div class="col">
+    <h4>2-value BVA</h4>
+    <p>"For each boundary value there are two coverage items: this boundary value and its closest neighbor
+    belonging to the adjacent partition." To achieve 100% coverage, test cases must exercise all identified
+    boundary values.</p>
+  </div>
+  <div class="col accent">
+    <h4>3-value BVA</h4>
+    <p>"For each boundary value there are three coverage items: this boundary value and both its
+    neighbors." Some coverage items may therefore not be boundary values themselves. To achieve 100%
+    coverage, test cases must exercise all boundary values and their neighbors.</p>
+  </div>
+</div>
+<p>
+  "3-value BVA is more rigorous than 2-value BVA as it may detect defects overlooked by 2-value BVA. For
+  example, if the decision "if (x ≤ 10) …" is incorrectly implemented as "if (x = 10) …", no test data
+  derived from the 2-value BVA (x = 10, x = 11) can detect the defect. However, x = 9, derived from the
+  3-value BVA, is likely to detect it."
+</p>
+
+<h2>4.2.3 Decision Table Testing</h2>
+<p>
+  "Decision tables are used for testing the implementation of requirements that specify how different
+  combinations of conditions result in different outcomes. Decision tables are an effective way of
+  recording complex logic, such as business rules."
+</p>
+<p>
+  "When creating decision tables, the conditions and the resulting actions of the system are defined. These
+  form the rows of the table. Each column corresponds to a decision rule that defines a unique combination
+  of conditions, along with the associated actions." In <strong>limited-entry</strong> decision tables, all
+  condition and action values (except irrelevant or infeasible ones) are shown as Boolean "true"/"false"
+  values. In <strong>extended-entry</strong> decision tables, some or all conditions and actions may instead
+  take on multiple values (e.g., ranges of numbers, equivalence partitions, discrete values). Notation: "T"
+  (true), "F" (false), "–" (irrelevant to the outcome), "N/A" (infeasible for this rule); for actions, "X"
+  means the action should occur, blank means it should not.
+</p>
+<p>
+  "In decision table testing, the coverage items are the columns containing feasible combinations of
+  conditions. To achieve 100% coverage with this technique, test cases must exercise all these columns."
+  Coverage = (exercised columns) ÷ (total feasible columns), as a percentage.
+</p>
+<p>
+  "The strength of decision table testing is that it provides a systematic approach to identify all the
+  combinations of conditions, some of which might otherwise be overlooked. It also helps to find any gaps
+  or contradictions in the requirements." Because the number of rules grows exponentially with the number
+  of conditions, exercising every rule in a table with many conditions can be time-consuming. A <strong>full
+  decision table</strong> has enough columns to cover every combination of conditions, but it can be
+  <strong>simplified</strong> (deleting columns with infeasible combinations) or <strong>minimized</strong>
+  (merging columns where some conditions don't affect the outcome) — or a risk-based approach may be used
+  to reduce the number of rules exercised.
+</p>
+<div class="callout">
+  <strong>Contradictions vs. omissions:</strong> a full decision table has one column per possible
+  combination of conditions. If a combination of condition-values doesn't match <em>any</em> column, that's
+  an <strong>omission</strong> (a gap in the requirements). If a combination matches <em>two or more</em>
+  columns that specify different actions, that's a <strong>contradiction</strong> — the exam distinguishes
+  these two failure modes explicitly.
+</div>
+
+<h2>4.2.4 State Transition Testing</h2>
+<p>
+  "A state diagram models the behavior of a system by showing its possible states and valid state
+  transitions. A transition is initiated by an event, which may be additionally qualified by a guard
+  condition." The transitions are assumed to be instantaneous and may sometimes result in the software
+  taking action. Labeling syntax: "event [guard condition] / action" (guard and action may be omitted).
+</p>
+<p>
+  "A state table is a model equivalent to a state diagram. Its rows represent states, and its columns
+  represent events... Table entries (cells) represent transitions, and contain the target state, as well as
+  the resulting actions, if defined. In contrast to the state diagram, the state table explicitly shows
+  invalid transitions, which are represented by empty cells."
+</p>
+<p>"A test case based on a state diagram or state table is usually represented as a sequence of events,
+which results in a sequence of state changes (and actions, if needed). One test case may, and usually
+will, cover several transitions between states."</p>
+<div class="compare">
+  <div class="col">
+    <h4>All states coverage</h4>
+    <p>Coverage items are the <strong>states</strong>. 100% means every state is exercised at least once.
+    Weaker than valid transitions coverage — can typically be achieved without exercising all transitions.</p>
+  </div>
+  <div class="col accent">
+    <h4>Valid transitions coverage <span class="tag">0-switch</span></h4>
+    <p>Coverage items are single <strong>valid transitions</strong>. 100% means every valid transition is
+    exercised. The most widely used criterion; achieving it guarantees full all states coverage.</p>
+  </div>
+  <div class="col good">
+    <h4>All transitions coverage</h4>
+    <p>Coverage items are <strong>all</strong> transitions in the state table, valid and invalid. 100% means
+    all valid transitions are exercised and invalid transitions are attempted (one invalid transition per
+    test case, to avoid defect masking). Guarantees full all states <em>and</em> full valid transitions
+    coverage — the minimum requirement for mission/safety-critical software.</p>
+  </div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §4.2 "Black-Box Test Techniques" (pages 39–42) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — this is
+  the most exam-dense section in the whole course; expect to reread it.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives. These are
+K3 "apply" questions, so each one comes with a full worked scenario — read the scenario carefully before
+answering.</p>
+
+<h3>Equivalence Partitioning</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q20 · FL-4.2.1 · K3</div>
+  <div class="q">You are testing a simplified apartment search form which has only two search criteria:
+• floor (with three possible options: ground floor; first floor; second or higher floor)
+• garden type (with three possible options: no garden; small garden; large garden)
+
+Each of the apartment on the ground floor has a garden, apartments on higher floors don't. The form has a built-in validation mechanism that will not allow you to use the search criteria which violate this rule.
+
+Each test has two input values: floor and garden type. You want to apply equivalence partitioning (EP) to cover each floor and each garden type in your tests.
+
+What is the MINIMAL number of test cases to achieve 100% EP coverage for valid partitions?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Three test cases can't cover both &quot;small garden&quot; and &quot;large garden&quot; (which only pair with ground floor) plus both remaining floor partitions.">3</button></li>
+    <li><button data-correct="true" data-why="This is Each Choice coverage. &quot;Small garden&quot; and &quot;large garden&quot; can only go with &quot;ground floor,&quot; so two test cases with ground floor cover those two garden partitions. Two more test cases cover the remaining two floor partitions (first floor, second-or-higher), each with &quot;no garden&quot; — which also covers that garden partition. Total: TC1 (ground floor, small garden), TC2 (ground floor, large garden), TC3 (first floor, no garden), TC4 (second-or-higher floor, no garden) — 4 test cases.">4</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 5 is more than the minimum required.">5</button></li>
+    <li><button data-correct="false" data-why="4 test cases achieve full Each Choice coverage; 6 is more than the minimum required.">6</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,e" data-why="The equivalence partitions here are {…,99,100} → error, {0–17} → student discount, {18–64} → no discount, {65,…} → pensioner discount, based on D = CY − BY. The two existing test cases (D=30 → no discount, D=−1 → error) already cover the &quot;no discount&quot; and &quot;error&quot; partitions. Option b gives D=65 (pensioner discount, uncovered). Option e gives D=0 (student discount, uncovered). Option a gives D=64 (no discount, already covered). Option c gives D=−65 (error, already covered). Option d gives D=18 (no discount, already covered).">
+  <div class="exam-tag">Exam D · Q20 · FL-4.2.1 · K3 · select TWO</div>
+  <div class="q">The system for selling cinema tickets calculates the discount type based on the client's birth year (BY) and on the current year (CY) as follows:
+Let D be the difference between CY and BY, that is, D = CY – BY
+• If D &lt; 0 then print the error message "birth year cannot be greater than current year"
+• If 0 ≤ D &lt; 18 then apply the student discount
+• If 18 ≤ D &lt; 65 then apply no discount
+• If D ≥ 65 then apply the pensioner discount
+
+Your test suite already contains two test cases:
+• BY = 1990, CY = 2020, expected result: no discount
+• BY = 2030, CY = 2029, expected result: print the error message
+
+Which of the following test data sets should be added to achieve full valid equivalence partitioning coverage for the discount type?</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> BY = 2001, CY = 2065</label></li>
+    <li><label><input type="checkbox" value="b"> BY = 1900, CY = 1965</label></li>
+    <li><label><input type="checkbox" value="c"> BY = 1965, CY = 1900</label></li>
+    <li><label><input type="checkbox" value="d"> BY = 2011, CY = 2029</label></li>
+    <li><label><input type="checkbox" value="e"> BY = 2000, CY = 2000</label></li>
+  </ul>
+  <button class="check-multi">Check answer</button>
+  <div class="feedback"></div>
+</div>
+
+<h3>Boundary Value Analysis</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q21 · FL-4.2.2 · K3</div>
+  <div class="q">You are testing a system that calculates the final course grade for a given student.
+The final grade is assigned based on the final result, according to the following rules:
+• 0 – 50 points: failed
+• 51 – 60 points: fair
+• 61 – 70 points: satisfactory
+• 71 – 80 points: good
+• 81 – 90 points: very good
+• 91 – 100 points: excellent
+
+You have prepared the following set of test cases:
+TC1: 91 → excellent
+TC2: 50 → failed
+TC3: 81 → very good
+TC4: 60 → fair
+TC5: 70 → satisfactory
+TC6: 80 → good
+
+What is the 2-value boundary value analysis (BVA) coverage for the final result that is achieved with the existing test cases?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="There are 12 boundary values: 0, 50, 51, 60, 61, 70, 71, 80, 81, 90, 91, 100. The existing test cases cover six of them (91, 50, 81, 60, 70, and 51 — note the syllabus answer key references a &quot;TC7&quot; covering 51 that doesn't appear in the listed table, an apparent error in the original source). 6/12 = 50%.">50%</button></li>
+    <li><button data-correct="false" data-why="50% (6 of 12 boundary values) is achieved, not 60%.">60%</button></li>
+    <li><button data-correct="false" data-why="50% (6 of 12 boundary values) is achieved, not 33.3%.">33.3%</button></li>
+    <li><button data-correct="false" data-why="Only 6 of the 12 identified boundary values are covered, not all of them.">100%</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A15 · FL-4.2.2 · K3</div>
+  <div class="q">A wine storage system uses a control device that measures the wine cell temperature T (measured in °C, rounded to the nearest degree) and alarms the user if it deviates from the optimal value of 12, according to the following rules:
+• if T = 12, the system says, "optimal temperature"
+• if T &lt; 12, the system says, "temperature is too low!"
+• if T &gt; 12, the system says, "temperature is too high!"
+
+You want to use the 3-point boundary value analysis (BVA) to verify the behavior of the control device. A test input is a temperature in °C provided by the device.
+
+What is the MINIMAL set of test inputs that achieves 100% of the desired coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This covers only the boundary values themselves (11, 12, 13), not their neighbors — that's 2-value coverage, not 3-value.">11, 12, 13</button></li>
+    <li><button data-correct="false" data-why="This skips 11 and 13, the boundary values themselves — 3-value BVA requires the boundary AND both its neighbors.">10, 12, 14</button></li>
+    <li><button data-correct="true" data-why="There are three equivalence partitions: {…,10,11}, {12}, {13,14,…}. The boundary values are 11, 12, and 13. In 3-value BVA, each boundary needs itself and both neighbors tested: for 11 → 10,11,12; for 12 → 11,12,13; for 13 → 12,13,14. Altogether: 10, 11, 12, 13, 14.">10, 11, 12, 13, 14</button></li>
+    <li><button data-correct="false" data-why="This omits 12 itself, one of the three boundary values that must be directly tested.">10, 11, 13, 14</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q21 · FL-4.2.2 · K3</div>
+  <div class="q">A developer was asked to implement the following business rule:
+INPUT: value (integer number)
+IF (value ≤ 100 OR value ≥ 200) THEN write "value incorrect"
+ELSE write "value OK"
+
+You design the test cases using 2-value boundary value analysis.
+
+Which of the following sets of test inputs achieves the greatest coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Only 100 and 200 are valid 2-value BVA coverage items here — 50% coverage.">100, 150, 200, 201</button></li>
+    <li><button data-correct="false" data-why="Only 100 and 200 are valid 2-value BVA coverage items here — 50% coverage.">99, 100, 200, 201</button></li>
+    <li><button data-correct="false" data-why="Only 100 and 101 are valid 2-value BVA coverage items here — 50% coverage.">98, 99, 100, 101</button></li>
+    <li><button data-correct="true" data-why="The equivalence partitions are {…,99,100}, {101,…,199}, {200,201,…}, so the four boundary values are 100, 101, 199, 200. This option hits 101, 199, and 200 — three of four, or 75% coverage, the highest of the four options.">101, 150, 199, 200</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>Decision Table Testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">Your favorite bicycle daily rental store has just introduced a new Customer Relationship Management system and asked you, one of their most loyal members, to test it.
+
+The implemented features are as follows:
+• Anyone can rent a bicycle, but members receive a 20% discount
+• However, if the return deadline is missed, the discount is no longer available
+• After 15 rentals, members get a gift: a T-Shirt
+
+Decision table:
+| Conditions | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 |
+|---|---|---|---|---|---|---|---|---|
+| Being a member | T | T | T | T | F | F | F | F |
+| Missed deadline | T | F | T | F | T | F | F | T |
+| 15th rental | F | F | T | T | F | F | T | T |
+| 20% discount (action) | | X | | X | | | | |
+| Gift T-Shirt (action) | | | X | X | | | | X |
+
+Based ONLY on the feature description of the Customer Relationship Management system, which of the above rules describes an impossible situation?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="R4 is consistent: a member without a missed deadline can get both the discount and, after 15 rentals, the gift T-Shirt.">R4</button></li>
+    <li><button data-correct="false" data-why="R2 is consistent: a member without a missed deadline gets the discount, and hasn't reached the 15th rental yet so no T-Shirt.">R2</button></li>
+    <li><button data-correct="false" data-why="R6 is consistent: non-members never get a discount, deadline status notwithstanding.">R6</button></li>
+    <li><button data-correct="true" data-why="R8 says: not a member, missed the deadline, at the 15th rental → no discount (correct, non-members never get one) but DOES get a gift T-Shirt. But gift T-Shirts are explicitly a members-only benefit — so a non-member receiving one is an impossible/contradictory action for this rule.">R8</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q22 · FL-4.2.3 · K3</div>
+  <div class="q">You are designing test cases based on the following decision table.
+| | R1 | R2 | R3 | R4 | R5 | R6 | R7 |
+|---|---|---|---|---|---|---|---|
+| C1: Age | 0-18 | 19-65 | 19-65 | &gt;65 | 0-18 | 19-65 | &gt;65 |
+| C2: Experience | - | 0-4 | &gt;4 | - | - | - | - |
+| C3: Registered? | NO | NO | NO | NO | YES | YES | YES |
+| Category (action) | A | A | B | B | B | D | C |
+
+So far you have designed the following test cases:
+• TC1: 19-year-old, unregistered man with no experience → category A
+• TC2: 65-year-old, unregistered woman with 5 years of experience → category B
+• TC3: 66-year-old, registered man with no experience → category C
+• TC4: 65-year-old, registered woman with 4 years of experience → category D
+
+Which of the following test cases, when added to the existing set of test cases, will increase the decision table coverage?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="TC1–TC4 cover rules R2, R3, R7, and R6 respectively. The conditions &quot;66-year-old, unregistered, no experience&quot; match rule R4, which isn't yet covered — so this test case increases decision table coverage.">66-year-old, unregistered man with no experience; expected result: category B</button></li>
+    <li><button data-correct="false" data-why="&quot;55-year-old, unregistered, 2 years of experience&quot; matches rule R2, already covered by TC1 — this wouldn't increase coverage.">55-year-old, unregistered woman with 2 years of experience; expected result: category A</button></li>
+    <li><button data-correct="false" data-why="&quot;19-year-old, registered, 5 years of experience&quot; matches rule R6, already covered by TC4 — this wouldn't increase coverage.">19-year-old, registered woman with 5 years of experience; expected result: category D</button></li>
+    <li><button data-correct="false" data-why="The existing test cases only cover 4 of the 7 columns (R2, R3, R6, R7) — R1, R4, and R5 remain uncovered, so additional test cases CAN increase coverage.">No additional test case can increase the already achieved decision table coverage</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<h3>State Transition Testing</h3>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q23 · FL-4.2.4 · K3</div>
+  <div class="q">You test a system whose lifecycle is modeled by the state transition diagram shown below. The system starts in the INIT state and ends its operation in the OFF state.
+
+States and transitions: INIT →(test)→ DEBUG MODE; DEBUG MODE →(done)→ OFF; INIT →(run)→ IN OPERATION; IN OPERATION →(error)→ DEBUG MODE; IN OPERATION →(pause)→ ON HOLD; ON HOLD →(resume)→ IN OPERATION; ON HOLD →(done)→ OFF.
+
+What is the MINIMAL number of test cases to achieve valid transitions coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="3 test cases are sufficient — 4 is more than the minimum required.">4</button></li>
+    <li><button data-correct="false" data-why="2 test cases cannot cover both &quot;test&quot; and &quot;run&quot; from INIT plus everything downstream — at least 3 are needed.">2</button></li>
+    <li><button data-correct="false" data-why="3 test cases are sufficient — 7 is far more than the minimum required.">7</button></li>
+    <li><button data-correct="true" data-why="&quot;test&quot; and &quot;error&quot; transitions can't occur in the same test case (both lead to DEBUG MODE from different starting points), and both &quot;done&quot; transitions can't either — so at least 3 test cases are required. Example: TC1: test, done. TC2: run, error, done. TC3: run, pause, resume, pause, done.">3</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q23 · FL-4.2.4 · K3</div>
+  <div class="q">You are applying state transition testing to the hotel room reservation system modeled by the following state transition table, with 4 states and 5 different events. Assume all test cases start in the 'Requesting' state.
+
+| State | Available | NotAvailable | ChangeRoom | Cancel | Pay |
+|---|---|---|---|---|---|
+| S1: Requesting | S2 | S3 | | | |
+| S2: Confirmed | | | S1 | S4 | S4 |
+| S3: Waiting list | S2 | | | S4 | |
+| S4: End | | | | | |
+
+Which of the following test cases, represented as sequences of events, achieves the highest valid transitions coverage?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Both &quot;NotAvailable&quot; events here correspond to the same S1→S3 transition, so this sequence covers only 4 of the 7 valid transitions.">NotAvailable, Available, ChangeRoom, NotAvailable, Cancel</button></li>
+    <li><button data-correct="true" data-why="This sequence's two &quot;Available&quot; events correspond to two DIFFERENT transitions (S1→S2, then S3→S2, since the state changes to Waiting list via NotAvailable/ChangeRoom in between) — so all five events cover 5 distinct transitions, the highest of the four options (5 of 7 valid transitions).">Available, ChangeRoom, NotAvailable, Available, Pay</button></li>
+    <li><button data-correct="false" data-why="Both &quot;Available&quot; events here are the same S1→S2 transition and both &quot;ChangeRoom&quot; events are the same S2→S1 transition, so this sequence covers only 3 of the 7 valid transitions.">Available, ChangeRoom, Available, ChangeRoom, NotAvailable</button></li>
+    <li><button data-correct="false" data-why="This isn't even a feasible test case — after &quot;Cancel&quot; the system reaches the End state, from which no further valid transitions (like ChangeRoom, Available, Pay) exist.">NotAvailable, Cancel, ChangeRoom, Available, Pay</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Four techniques, all K3, is a lot in one lesson. If the difference between 2-value and
+  3-value BVA, or how to read a decision table for contradictions, or transition-counting in a state
+  sequence still feels shaky, that's completely normal for this section — ask your teacher to walk through
+  any of the worked examples again before moving on.</div>
+  §4.2 complete.
+  <a href="0013-4.3-white-box-test-techniques.html">Continue to 4.3 White-Box Test Techniques →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>5.4 Configuration Management</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §5.4 &nbsp;·&nbsp; Lesson 19 &nbsp;·&nbsp;
+  <a href="0018-5.3-test-monitoring-control-completion.html">← Back: 5.3</a> &nbsp;·&nbsp;
+  <a href="0020-5.5-defect-management.html">Next: 5.5 Defect Management →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>5.4 Configuration Management</h1>
+<p class="subtitle">The shortest section in the chapter — a single K2 learning objective — but a
+recurring background assumption in almost every other section: reproducibility depends on it.</p>
+<span class="lo-tag">FL-5.4.1 (K2) Summarize how configuration management supports testing</span>
+
+<h2>Configuration Management</h2>
+<p>"In testing, configuration management (CM) provides a discipline for identifying, controlling, and
+tracking work products such as test plans, test strategies, test conditions, test cases, test scripts,
+test results, test logs, and test reports as configuration items."</p>
+<p>"For a complex configuration item (e.g., a test environment), CM records the items it consists of, their
+relationships, and versions. If the configuration item is approved for testing, it becomes a
+<strong>baseline</strong> and can only be changed through a formal change control process."</p>
+<p>"Configuration management keeps a record of changed configuration items when a new baseline is created.
+It is possible to revert to a previous baseline to reproduce previous test results."</p>
+<p>"To properly support testing, CM ensures the following:</p>
+<ul>
+  <li>All configuration items, including test items (individual parts of the test object), are uniquely
+  identified, version controlled, tracked for changes, and related to other configuration items so that
+  traceability can be maintained throughout the test process</li>
+  <li>All identified documentation and software items are referenced unambiguously in testware"</li>
+</ul>
+<p>"Continuous integration, continuous delivery, continuous deployment and the associated testing are
+typically implemented as part of an automated DevOps pipeline, in which automated CM is normally
+included."</p>
+<div class="callout">
+  <strong>The pattern the exam tests:</strong> a user reports a failure → someone needs to reassemble the
+  <em>exact</em> version of the software (and test scripts) the user was running → that reassembly is only
+  possible because every configuration item was uniquely identified and version-controlled. That chain —
+  unique identification → version control → reproducibility — is configuration management's job. Contrast
+  it with: risk management (deals with risks, not versions), test monitoring/control (deals with progress
+  and directives, not configuration items), the whole team approach (a team-collaboration practice, not a
+  versioning discipline), and defect management (assigns defect status, not configuration item identity).
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §5.4 "Configuration Management" (page 56) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — the shortest
+  section in Chapter 5, but worth reading slowly since every sentence tends to map to a distinct exam
+  distractor.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objective.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q37 · FL-5.4.1 · K2</div>
+  <div class="q">The user reported a software failure. An engineer from the support team asked the user for the software version number where the failure was observed. Based on the version number, the team reassembled all the files that made up the release. This later allowed a developer to perform analysis, find the defect, and fix it.
+Which of the following enabled the above activity to be performed by the team?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Risk management consists of risk analysis and risk control — neither supports reassembling files that made up a release, since those activities deal with risks, not configuration items.">Risk management</button></li>
+    <li><button data-correct="false" data-why="Test monitoring gathers progress information and test control issues directives from it — neither deals with the management of configuration items.">Test monitoring and control</button></li>
+    <li><button data-correct="false" data-why="The whole team approach is about the tester's ability to work effectively in a team context — it focuses on team-related issues, not configuration items.">Whole team approach</button></li>
+    <li><button data-correct="true" data-why="Configuration management provides a discipline for identifying, controlling, and tracking work products, keeping a record of changed configuration items when a new baseline is created — this is exactly what enabled reassembling the exact release version.">Configuration management</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q37 · FL-5.4.1 · K2</div>
+  <div class="q">Which of the following is NOT an example of how configuration management supports testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This IS supported by configuration management. Unique identification of commits/versions makes it possible to reassemble the exact software and test-script versions a user was running, reproducing the failure faster.">All commits to the repository are uniquely identified and version controlled</button></li>
+    <li><button data-correct="false" data-why="This IS supported by configuration management. If a test environment change causes issues, CM allows rolling back to a previous version so testing continues unaffected.">All changes in the test environment elements are tracked</button></li>
+    <li><button data-correct="false" data-why="This IS supported by configuration management. CM ensures that identified documentation (e.g. requirement specifications) and software items are referenced unambiguously in testware.">All requirement specifications are referenced unambiguously in test plans</button></li>
+    <li><button data-correct="true" data-why="Assigning and tracking a defect's status is ensured by defect management, not configuration management — this is NOT an example of configuration management support.">All identified defects have an assigned status</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q37 · FL-5.4.1 · K2</div>
+  <div class="q">You need to update one of the automated test scripts to be in line with a new requirement. Which process indicates that you create a new version of the test script in the test repository?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Traceability is the relationship between two or more work products, not between different versions of the same work product.">Traceability management</button></li>
+    <li><button data-correct="false" data-why="Maintenance testing is about testing changes made to a system in operation; it is not closely related to versioning a test script.">Maintenance testing</button></li>
+    <li><button data-correct="true" data-why="To support testing, configuration management may involve version control of all test items — including creating a new version of a changed test script in the repository.">Configuration management</button></li>
+    <li><button data-correct="false" data-why="Requirements engineering is the elicitation, documentation, and management of requirements; it is not closely related to test script versioning.">Requirements engineering</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the boundary between configuration management and defect management (or risk
+  management) still feels fuzzy, ask your teacher — §5.5's defect reports assume you already know CM's job
+  ends at "identify, version, track," not "assign a defect status."</div>
+  §5.4 complete.
+  <a href="0020-5.5-defect-management.html">Continue to 5.5 Defect Management →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1.1 What is Testing?</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §1.1 &nbsp;·&nbsp; Lesson 1 of 5 (Ch. 1) &nbsp;·&nbsp;
+  <a href="0002-1.2-why-testing-is-necessary.html">Next: 1.2 Why is Testing Necessary? →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>1.1 What is Testing?</h1>
+<p class="subtitle">Two misconceptions to unlearn before anything else: testing is not just running the software, and it's not just about checking requirements.</p>
+<span class="lo-tag">FL-1.1.1 (K1) Identify typical test objectives</span>
+<span class="lo-tag">FL-1.1.2 (K2) Differentiate testing from debugging</span>
+
+<h2>What testing actually is</h2>
+<p>
+  Software testing is <strong>a set of activities to discover defects and evaluate the quality of
+  software work products</strong>. Those work products, while being tested, are called
+  <strong>test objects</strong>.
+</p>
+
+<div class="callout">
+  <strong>Misconception 1:</strong> testing is not only executing tests. Running software and checking
+  results is one activity among several — planning, analysis, design, implementation, execution, and
+  completion (you'll meet all of these in §1.4) — and testing must be aligned with the software
+  development lifecycle (see chapter 2).
+</div>
+<div class="callout">
+  <strong>Misconception 2:</strong> testing is not only verification. <strong>Verification</strong> checks
+  whether the system meets specified requirements. <strong>Validation</strong> checks whether the system
+  meets users' and other stakeholders' actual needs in its operational environment. Testing involves both.
+</div>
+
+<p>
+  Testing can be <strong>static</strong> (no execution — reviews, static analysis) or
+  <strong>dynamic</strong> (executing the software). It is not purely technical either: it needs planning,
+  managing, estimating, monitoring, and controlling, and it is largely an intellectual activity requiring
+  testers to have specialized knowledge, use analytical skills, and apply critical thinking and
+  <strong>systems thinking</strong> — not just running tools.
+</p>
+
+<h2>Typical test objectives (FL-1.1.1)</h2>
+<p>The syllabus lists these as the typical objectives of testing:</p>
+<ul>
+  <li>Evaluating work products such as requirements, user stories, designs, and code</li>
+  <li>Causing failures and finding defects</li>
+  <li>Ensuring required coverage of a test object</li>
+  <li>Reducing the risk level of inadequate software quality</li>
+  <li>Verifying whether specified requirements have been fulfilled</li>
+  <li>Verifying that a test object complies with contractual, legal, and regulatory requirements</li>
+  <li>Providing information to stakeholders to allow them to make informed decisions</li>
+  <li>Building confidence in the quality of the test object</li>
+  <li>Validating whether the test object is complete and works as expected by the stakeholders</li>
+</ul>
+<p>These objectives vary by context: the work product being tested, the test level, risk, the SDLC in use, and business factors like time-to-market.</p>
+
+<h2>Testing vs. debugging (FL-1.1.2)</h2>
+<p>These are separate activities, usually performed by different people:</p>
+
+<div class="compare">
+  <div class="col accent">
+    <h4>Testing</h4>
+    <ul>
+      <li>Triggers failures (dynamic testing) or directly finds defects (static testing)</li>
+      <li>Performed by testers</li>
+      <li>Doesn't fix anything</li>
+    </ul>
+  </div>
+  <div class="col good">
+    <h4>Debugging</h4>
+    <ul>
+      <li>Finds the cause of a failure, analyzes it, and eliminates it</li>
+      <li>Performed by developers</li>
+      <li>Typical steps: reproduce → diagnose (find the defect) → fix</li>
+    </ul>
+  </div>
+</div>
+
+<p>
+  When dynamic testing triggers a failure, debugging locates and fixes the underlying defect.
+  Confirmation testing — preferably performed by the same person who ran the original test — then checks
+  the fix worked, and regression testing checks the fix didn't break anything else (both covered fully in
+  §2.2.3). When static testing finds a defect directly, there's no failure to reproduce or diagnose, since
+  static testing cannot cause failures — debugging just removes it.
+</p>
+
+<h2>Try to recall</h2>
+<div class="drill" data-answer="validation">
+  <div class="task">
+    Fill in the blank: checking that a system meets specified requirements is <strong>verification</strong>;
+    checking that it meets users' actual needs in its operational environment is ______.
+  </div>
+  <div class="row">
+    <input type="text" placeholder="type the term…">
+    <button class="check">Check</button>
+    <button class="reveal-btn" data-target="#drill1-answer">Show answer</button>
+  </div>
+  <div class="result"></div>
+  <div class="answer" id="drill1-answer">verification / <strong>validation</strong></div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §1.1 "What is Testing?" (pages 15–16) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — this lesson
+  follows its wording closely, but reading it directly is the highest-trust source for exact phrasing
+  the exam may quote.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives. Pick an answer to reveal feedback and the exam's own rationale.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following statements describe a valid test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing principle 1 says testing can show the presence of defects, never their absence — you can't prove there are none left.">To prove that there are no unfixed defects in the system under test</button></li>
+    <li><button data-correct="false" data-why="See testing principle 7 (absence-of-defects fallacy) — passing tests never proves there will be no failures in production.">To prove that there will be no failures after the implementation of the system into production</button></li>
+    <li><button data-correct="true" data-why="Testing finds defects and failures, which reduces risk level and simultaneously builds confidence in quality — this is a real, achievable objective.">To reduce the risk level of the test object and to build confidence in the quality level</button></li>
+    <li><button data-correct="false" data-why="Testing principle 2 (exhaustive testing is impossible) rules this out — you cannot test all input combinations.">To verify that there are no untested combinations of inputs</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following is a typical test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This is closer to validation than verification — 'validating' checks user requirements/expectations, 'verifying' checks specified requirements.">Validating that documented requirements are met</button></li>
+    <li><button data-correct="true" data-why="Causing failures and identifying defects is probably the most common objective of dynamic testing.">Causing failures and identifying defects</button></li>
+    <li><button data-correct="false" data-why="Testers don't initiate errors — errors are typically made by developers. Identifying root causes is part of debugging, a separate activity from testing.">Initiating errors and identifying root causes</button></li>
+    <li><button data-correct="false" data-why="This describes validation, not verification — verification checks specified (documented) requirements; validation checks user expectations.">Verifying the test object meets user expectations</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q1 · FL-1.1.1 · K1</div>
+  <div class="q">Which of the following is a typical test objective?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Identifying defects is a test objective, but fixing them is debugging — not a test activity.">Finding and fixing defects in the test object</button></li>
+    <li><button data-correct="false" data-why="Useful for other objectives (e.g. informing stakeholder decisions), but not itself a primary reason for testing.">Maintaining effective communications with developers</button></li>
+    <li><button data-correct="false" data-why="Checking legal requirements are met is a form of verification, not validation — validation is about meeting users' and stakeholders' needs in the operational environment.">Validating that legal requirements have been met</button></li>
+    <li><button data-correct="true" data-why="Building confidence in the quality of the test object is achieved by executing tests that pass — a core, real objective.">Building confidence in the quality of the test object</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A1 · FL-1.1.2 · K2</div>
+  <div class="q">You were given a task to analyze and fix causes of failures in a new system to be released. Which activity are you performing?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Debugging is the process of finding, analyzing, and removing the causes of failures in a component or system.">Debugging</button></li>
+    <li><button data-correct="false" data-why="Testing plans, prepares, and evaluates a component to detect defects — it is not about fixing causes of failures.">Software testing</button></li>
+    <li><button data-correct="false" data-why="Requirement elicitation is about gathering and consolidating requirements, unrelated to fixing failures.">Requirement elicitation</button></li>
+    <li><button data-correct="false" data-why="Defect management is about recognizing, recording, and resolving defects as a process — not the technical act of finding and removing a failure's cause.">Defect management</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q2 · FL-1.1.2 · K2</div>
+  <div class="q">Which of the following statements BEST describes the difference between testing and debugging?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Dynamic testing does cause failures, but debugging fixes defects, not failures — it locates and fixes the cause, it doesn't 'fix a failure' directly.">Testing causes failures while debugging fixes failures</button></li>
+    <li><button data-correct="false" data-why="Both activities improve quality and should be seen positively; dynamic testing intentionally trying to break things is a narrow, not-typical view.">Testing is a negative activity while debugging is a positive activity</button></li>
+    <li><button data-correct="true" data-why="Testing determines defects exist (directly via review/static analysis, or indirectly by causing a failure); debugging — a separate, usually developer-performed activity — locates and fixes those defects.">Testing determines that defects exist while debugging removes defects</button></li>
+    <li><button data-correct="false" data-why="Testing finds defects (directly or via failures), it doesn't find 'the cause' of defects — that's debugging's job, and debugging fixes defects, not their causes.">Testing finds the cause of defects while debugging fixes the cause of defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-1.1.1</div>
+  <div class="q">A regulator requires proof that the system's login flow matches the documented security specification exactly. Which activity produces that evidence?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: validating checks a system against stakeholders' actual needs in the operational environment, not against a documented specification — that's verification's job.">Validating the login flow</button></li>
+    <li><button data-correct="true" data-why="Checking a system object against a documented, specified requirement is verification, whether that spec is functional, contractual, or regulatory.">Verifying the login flow</button></li>
+    <li><button data-correct="false" data-why="Debugging finds, analyzes, and removes the cause of a failure — it isn't the activity that confirms compliance with a spec.">Debugging the login flow</button></li>
+    <li><button data-correct="false" data-why="Building confidence is a broader outcome of testing in general — it's not the specific term for checking against a documented specification, which is verification.">Building confidence in the login flow</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">Unsure why one option is "more correct" than another that sounds similar? Ask your
+  teacher to walk through the distinction — that's exactly what these sessions are for.</div>
+  Next up: <a href="0002-1.2-why-testing-is-necessary.html">§1.2 — Why is Testing Necessary? →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

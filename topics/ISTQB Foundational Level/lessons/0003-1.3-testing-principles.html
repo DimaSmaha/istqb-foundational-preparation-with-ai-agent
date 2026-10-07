@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1.3 Testing Principles</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §1.3 &nbsp;·&nbsp; Lesson 3 of 5 (Ch. 1) &nbsp;·&nbsp;
+  <a href="0002-1.2-why-testing-is-necessary.html">← Back: 1.2</a> &nbsp;·&nbsp;
+  <a href="0004-1.4-test-activities-testware-roles.html">Next: 1.4 Test Activities, Testware and Test Roles →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>1.3 Testing Principles</h1>
+<p class="subtitle">Seven principles, each a named exam trap. Learn the name, not just the idea — questions frequently ask "which principle is this?"</p>
+<span class="lo-tag">FL-1.3.1 (K2) Explain the seven testing principles</span>
+
+<h2>The seven principles</h2>
+<ol>
+  <li>
+    <strong>Testing shows the presence, not the absence, of defects.</strong> Testing can show defects
+    exist; it can never prove the test object is defect-free.
+  </li>
+  <li>
+    <strong>Exhaustive testing is impossible.</strong> Testing every combination is infeasible except in
+    trivial cases — use test techniques, prioritization, and risk-based testing to focus effort instead.
+  </li>
+  <li>
+    <strong>Early testing saves time and money.</strong> Defects removed early don't cause further defects
+    downstream. Start both static and dynamic testing as early as possible.
+  </li>
+  <li>
+    <strong>Defects cluster together.</strong> A small number of components usually contain most defects
+    or cause most failures (a Pareto-principle effect) — an important input for risk-based testing.
+  </li>
+  <li>
+    <strong>Tests wear out.</strong> Repeating the same tests over and over becomes less effective at
+    finding new defects — existing tests need modifying and new ones written (though repetition is
+    still valuable for automated regression testing).
+  </li>
+  <li>
+    <strong>Testing is context dependent.</strong> There's no single universally correct way to test —
+    it's done differently in different contexts.
+  </li>
+  <li>
+    <strong>Absence-of-defects fallacy.</strong> Fixing every defect found against specified requirements
+    doesn't guarantee success — the system can still fail to meet users' actual needs. Verification alone
+    isn't enough; validation matters too.
+  </li>
+</ol>
+
+<div class="callout">
+  <strong>Two principles that are easy to mix up:</strong> "tests wear out" is about <em>repeating the
+  same tests</em> losing effectiveness over time. "Absence-of-defects fallacy" is about <em>fixing all
+  known defects</em> still not guaranteeing user satisfaction. They sound similarly pessimistic but
+  address completely different problems.
+</div>
+
+<h2>Try to recall</h2>
+<div class="drill" data-answer="exhaustive testing is impossible|exhaustive testing">
+  <div class="task">
+    Name the principle: a team can't test every possible combination of inputs, so they use equivalence
+    partitioning and risk-based testing to prioritize instead. Which principle is this an application of?
+  </div>
+  <div class="row">
+    <input type="text" placeholder="type the principle's name…">
+    <button class="check">Check</button>
+    <button class="reveal-btn" data-target="#drill1-answer">Show answer</button>
+  </div>
+  <div class="result"></div>
+  <div class="answer" id="drill1-answer"><strong>Exhaustive testing is impossible</strong></div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §1.3 "Testing Principles" (pages 17–18) of the <em>ISTQB CTFL Syllabus v4.0.1</em> — each
+  principle's full explanation (with its historical citation, e.g. Buxton 1970, Beizer 1990) is there.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objective.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">You have been assigned as a tester to a team producing a new system incrementally. You have noticed that no changes have been made to the existing regression test cases for several iterations and no new regression defects were identified. Your manager is happy, but you are not. Which testing principle explains your skepticism?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="If the same tests run unchanged release after release, they eventually stop finding new defects — which is probably exactly why they all keep passing.">Tests wear out</button></li>
+    <li><button data-correct="false" data-why="This principle is about fixing all known defects still not guaranteeing success — not about repeating unchanged tests.">Absence-of-defects fallacy</button></li>
+    <li><button data-correct="false" data-why="This principle is about a small number of components containing most defects — unrelated to repeating unchanged regression tests.">Defects cluster together</button></li>
+    <li><button data-correct="false" data-why="This principle is about the infeasibility of testing every input/precondition combination — not about static, unchanging regression suites.">Exhaustive testing is impossible</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">The 'absence-of-defects fallacy' is one of the principles of testing. Which of the following is an example of addressing this principle in practice?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This describes the 'testing shows the presence, not the absence of defects' principle, not the absence-of-defects fallacy.">Explaining that it is not possible for testing to show the absence of defects</button></li>
+    <li><button data-correct="true" data-why="Letting end users perform acceptance testing validates that the system meets their actual needs and expectations — directly addressing the fallacy that fixing known defects alone guarantees success.">Supporting the end users to perform acceptance testing</button></li>
+    <li><button data-correct="false" data-why="This is impossible per the 'testing shows presence, not absence, of defects' principle — you can never guarantee zero remaining defects.">Ensuring that no implementation defects remain in the delivered system</button></li>
+    <li><button data-correct="false" data-why="This addresses the 'tests wear out' principle instead — it's about keeping tests effective, not about validating user needs.">Modifying tests that cause no failures to ensure few defects remain</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q3 · FL-1.3.1 · K2</div>
+  <div class="q">Test conditions are being used by testers to generate test cases and execute tests. Even though the test conditions remain the same, the test cases are varied each time. Which of the following 'principles of testing' is being addressed through the variation of test cases?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Varying the test cases each time, even from the same conditions, directly counters tests becoming stale and losing their ability to find new defects.">Tests wear out</button></li>
+    <li><button data-correct="false" data-why="This principle is about validating user needs even when no defects are found — unrelated to varying test cases from fixed conditions.">Absence-of-defects fallacy</button></li>
+    <li><button data-correct="false" data-why="This principle is about starting testing early in the SDLC — unrelated to varying the test cases themselves.">Early testing saves time and money</button></li>
+    <li><button data-correct="false" data-why="This principle is about defect distribution following a Pareto pattern, addressed by risk-based testing — not by varying test cases.">Defects cluster together</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If two principles keep blurring together for you, tell your teacher which two —
+  that's a great thing to work through out loud.</div>
+  Next up: <a href="0004-1.4-test-activities-testware-roles.html">§1.4 — Test Activities, Testware and Test Roles →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

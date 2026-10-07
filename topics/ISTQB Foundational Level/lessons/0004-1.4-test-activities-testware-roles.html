@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1.4 Test Activities, Testware and Test Roles</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §1.4 &nbsp;·&nbsp; Lesson 4 of 5 (Ch. 1) &nbsp;·&nbsp;
+  <a href="0003-1.3-testing-principles.html">← Back: 1.3</a> &nbsp;·&nbsp;
+  <a href="0005-1.5-essential-skills-and-good-practices.html">Next: 1.5 Essential Skills and Good Practices →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>1.4 Test Activities, Testware and Test Roles</h1>
+<p class="subtitle">The densest section in Chapter 1 — the test process, its seven activities, what each one outputs, and who does what.</p>
+<span class="lo-tag">FL-1.4.1 (K2) Explain the different test activities and related tasks</span>
+<span class="lo-tag">FL-1.4.2 (K2) Explain the impact of context on the test process</span>
+<span class="lo-tag">FL-1.4.3 (K2) Differentiate the testware that supports the test activities</span>
+<span class="lo-tag">FL-1.4.4 (K2) Explain the value of maintaining traceability</span>
+<span class="lo-tag">FL-1.4.5 (K2) Compare the different roles in testing</span>
+
+<h2>The test process: seven activities (FL-1.4.1)</h2>
+<p>These activities often look sequential but are usually done iteratively or in parallel:</p>
+<ul>
+  <li><strong>Test planning</strong> — define test objectives, select the approach to achieve them within constraints.</li>
+  <li><strong>Test monitoring and test control</strong> — monitoring checks progress against plan; control takes the actions needed to meet objectives.</li>
+  <li><strong>Test analysis</strong> — analyze the test basis to identify testable features and define/prioritize test conditions; also evaluates the test basis and test object to find defects and assess testability. Answers <em>"what to test?"</em></li>
+  <li><strong>Test design</strong> — elaborate test conditions into test cases and testware. Answers <em>"how to test?"</em></li>
+  <li><strong>Test implementation</strong> — create/acquire testware for execution: organize test cases into test procedures, build the test environment.</li>
+  <li><strong>Test execution</strong> — run the tests, compare actual vs. expected results, log results, analyze anomalies.</li>
+  <li><strong>Test completion</strong> — at milestones (release, iteration end, test level completion): archive testware, shut down the test environment to an agreed state, raise change requests for unresolved defects, capture lessons learned, issue the test completion report.</li>
+</ul>
+
+<h2>Context shapes the process (FL-1.4.2)</h2>
+<p>Testing is context dependent (principle 6, §1.3) — the test process is tailored based on:</p>
+<ul>
+  <li>Stakeholders (needs, expectations, willingness to cooperate)</li>
+  <li>Team members (skills, experience, availability)</li>
+  <li>Business domain (criticality, risk, regulations)</li>
+  <li>Technical factors (software type, architecture, technology)</li>
+  <li>Project constraints (scope, time, budget, resources)</li>
+  <li>Organizational factors, the SDLC in use, and tool availability</li>
+</ul>
+<p>These factors influence test strategy, technique choice, automation level, required coverage, testware detail, and reporting.</p>
+
+<h2>Testware: what each activity produces (FL-1.4.3)</h2>
+<p><strong>Testware</strong> is the output work products of the test activities. Not exhaustive, but the syllabus's own mapping:</p>
+<ul>
+  <li><strong>Test planning →</strong> test plan, test schedule, risk register, entry/exit criteria</li>
+  <li><strong>Test monitoring &amp; control →</strong> test progress reports, control directives, risk information</li>
+  <li><strong>Test analysis →</strong> (prioritized) test conditions, defect reports on the test basis</li>
+  <li><strong>Test design →</strong> (prioritized) test cases, test charters, coverage items, test data/environment requirements</li>
+  <li><strong>Test implementation →</strong> test procedures, manual/automated scripts, test suites, test data, execution schedule, environment items (stubs, drivers, simulators, service virtualizations)</li>
+  <li><strong>Test execution →</strong> test logs, defect reports</li>
+  <li><strong>Test completion →</strong> test completion report, action items for improvement, lessons learned, change requests</li>
+</ul>
+
+<h2>Traceability (FL-1.4.4)</h2>
+<p>
+  Traceability is the ability to establish a relationship between the test basis, testware (conditions,
+  risks, cases), test results, and defects. It supports <strong>coverage evaluation</strong> — e.g. tracing
+  test cases to requirements verifies requirement coverage; tracing test results to risks evaluates
+  residual risk. Good traceability also determines change impact, facilitates audits, supports IT
+  governance, and makes progress/completion reports clearer to stakeholders. It also provides information
+  to assess product quality, process capability, and project progress against business goals.
+</p>
+
+<h2>Two roles in testing (FL-1.4.5)</h2>
+<div class="compare">
+  <div class="col accent">
+    <h4>Test management role</h4>
+    <ul>
+      <li>Overall responsibility for the test process, team, leadership</li>
+      <li>Focused on: planning, monitoring, control, completion</li>
+      <li>In Agile, some tasks may be handled by the Agile team itself; cross-team tasks by a test manager outside it</li>
+    </ul>
+  </div>
+  <div class="col good">
+    <h4>Testing role</h4>
+    <ul>
+      <li>Overall responsibility for the engineering/technical side</li>
+      <li>Focused on: analysis, design, implementation, execution</li>
+      <li>One person can hold both roles at the same time</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §1.4 "Test Activities, Testware and Test Roles" (pages 18–21) of the <em>ISTQB CTFL Syllabus
+  v4.0.1</em> — the full testware list and the traceability discussion repay a careful read.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A, C, and D, tagged to this section's learning objectives.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">Given the following test tasks:
+1. Derive test cases from test conditions
+2. Identify reusable testware
+3. Organize test cases into test procedures
+4. Evaluate the test basis and the test object
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST matches the tasks with the activities?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test analysis evaluates the test basis/object (task 4, not 1), and completion identifies reusable testware (task 2, not 3).">1B, 2A, 3D, 4C</button></li>
+    <li><button data-correct="true" data-why="Test design derives cases from conditions (1B); completion identifies reusable testware (2D); implementation organizes cases into procedures (3C); analysis evaluates the test basis/object (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="Deriving test cases from conditions is test design, not implementation.">1C, 2A, 3B, 4D</button></li>
+    <li><button data-correct="false" data-why="Organizing cases into procedures is test implementation, not analysis.">1C, 2D, 3A, 4B</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="b,e" data-why="Test techniques like boundary value analysis and equivalence partitioning are used to identify test conditions during test analysis, and to create test cases from them during test design.">
+  <div class="exam-tag">Exam C · Q4 · FL-1.4.1 · K2</div>
+  <div class="q">Which of the following test activities are MOST likely to involve the application of boundary value analysis and equivalence partitioning? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Test implementation</label></li>
+    <li><label><input type="checkbox" value="b"> b) Test design</label></li>
+    <li><label><input type="checkbox" value="c"> c) Test execution</label></li>
+    <li><label><input type="checkbox" value="d"> d) Test monitoring</label></li>
+    <li><label><input type="checkbox" value="e"> e) Test analysis</label></li>
+  </ul>
+  <button class="check-multi">Check answers</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q5 · FL-1.4.2 · K2</div>
+  <div class="q">Which of the following factors have a SIGNIFICANT influence on the test approach?
+i. The SDLC
+ii. The number of defects detected in previous projects
+iii. The identified product risks
+iv. New regulatory requirements forcing formal white-box testing
+v. The test environment setup</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="This omits two genuinely significant factors (product risks and regulatory requirements) and includes a weaker one (past defect counts).">i, ii have significant influence</button></li>
+    <li><button data-correct="true" data-why="The SDLC, identified product risks, and regulatory requirements are all called out as significant influences on test approach; past defect counts and environment setup are not, by comparison.">i, iii, iv have significant influence</button></li>
+    <li><button data-correct="false" data-why="Past defect counts and environment setup are the two weaker factors here — this set misses the SDLC and product risks entirely.">ii, iv, v have significant influence</button></li>
+    <li><button data-correct="false" data-why="Product risks matter a great deal; the test environment setup itself does not significantly shape the test approach.">iii, v have significant influence</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A4 · FL-1.4.3 · K2</div>
+  <div class="q">Consider the following testware: a test charter (#04.018, 1h session) instructing the tester to explore the registration page with different sets of incorrect input data, to discover defects related to accepting registration with incorrect input. Which test activity produces this testware as an output?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Test planning produces the test plan, schedule, and risk register — not test charters.">Test planning</button></li>
+    <li><button data-correct="false" data-why="Test monitoring and control produce progress reports and control directives — not test charters.">Test monitoring and test control</button></li>
+    <li><button data-correct="false" data-why="Test analysis produces test conditions and defect reports on the test basis — test charters come one step later.">Test analysis</button></li>
+    <li><button data-correct="true" data-why="Test charters are explicitly listed as an output of test design.">Test design</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam C · Q5 · FL-1.4.3 · K2</div>
+  <div class="q">Given the following testware:
+1. Coverage items
+2. Change requests
+3. Test execution schedule
+4. Prioritized test conditions
+
+And the following test activities:
+A. Test analysis
+B. Test design
+C. Test implementation
+D. Test completion
+
+Which of the following BEST shows the testware produced by the activities?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Coverage items are a test design output (1B); change requests come from test completion (2D); the test execution schedule comes from test implementation (3C); prioritized test conditions come from test analysis (4A).">1B, 2D, 3C, 4A</button></li>
+    <li><button data-correct="false" data-why="The execution schedule is a test implementation output, not test analysis; change requests come from completion, not implementation.">1B, 2D, 3A, 4C</button></li>
+    <li><button data-correct="false" data-why="Coverage items come from test design, not completion; prioritized test conditions come from analysis, not design.">1D, 2C, 3A, 4B</button></li>
+    <li><button data-correct="false" data-why="This reverses several pairings — coverage items are a design output, and change requests come from completion, not implementation.">1D, 2C, 3B, 4A</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A5 · FL-1.4.4 · K2</div>
+  <div class="q">Which of the following is the BEST example of how traceability supports testing?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Impact analysis doesn't tell you about test completeness — that's more a coverage question.">Performing the impact analysis of a change will give information about the completion of the tests</button></li>
+    <li><button data-correct="false" data-why="Traceability only gives residual-risk information if test cases are actually traced back to risks in the first place — this option assumes a connection that isn't guaranteed.">Analyzing the traceability between test cases and test results will give information about the estimated level of residual risk</button></li>
+    <li><button data-correct="true" data-why="Impact analysis of a change is exactly how traceability helps select the right test cases to run for regression testing.">Performing the impact analysis of a change will help selecting the right test cases for regression testing</button></li>
+    <li><button data-correct="false" data-why="Traceability doesn't directly help select test data — that's more a test analysis/implementation concern.">Analyzing the traceability between the test basis, the test objects and the test cases will help in selecting test data to achieve the assumed coverage of the test object</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz-multi" data-correct="a,e" data-why="Configuring test environments and analyzing the test basis are both hands-on technical tasks that fall under the testing role, not the test management role.">
+  <div class="exam-tag">Exam A · Q6 · FL-1.4.5 · K2</div>
+  <div class="q">Which TWO of the following tasks belong MAINLY to a testing role? (Select TWO options)</div>
+  <ul class="options">
+    <li><label><input type="checkbox" value="a"> a) Configure test environments</label></li>
+    <li><label><input type="checkbox" value="b"> b) Maintain the product backlog</label></li>
+    <li><label><input type="checkbox" value="c"> c) Design solutions to new requirements</label></li>
+    <li><label><input type="checkbox" value="d"> d) Create the test plan</label></li>
+    <li><label><input type="checkbox" value="e"> e) Analyze the test basis</label></li>
+  </ul>
+  <button class="check-multi">Check answers</button>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q6 · FL-1.4.5 · K2</div>
+  <div class="q">Which of the following is MOST likely to describe a task performed by someone in a test management role?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Evaluating the test basis and test object is part of test analysis — the testing role's territory.">Evaluate the test basis and the test object</button></li>
+    <li><button data-correct="false" data-why="Defining test environment requirements is part of test design — the testing role's territory.">Define test environment requirements</button></li>
+    <li><button data-correct="false" data-why="Assessing testability is part of test analysis — the testing role's territory.">Assess testability of the test object</button></li>
+    <li><button data-correct="true" data-why="The test completion report is the prime output of test completion, one of the test management role's core activities (planning, monitoring & control, completion).">Create the test completion report</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">The activity-to-testware mapping is a lot to hold at once — if you want to talk through
+  a specific pairing that isn't sticking, ask your teacher rather than just re-reading the list.</div>
+  Next up: <a href="0005-1.5-essential-skills-and-good-practices.html">§1.5 — Essential Skills and Good Practices in Testing →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam C v1.6 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

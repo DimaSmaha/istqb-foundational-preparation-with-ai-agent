@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>1.2 Why is Testing Necessary?</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/theme.js"></script>
+</head>
+<body>
+<div class="page">
+
+<nav class="crumbs">
+  <span class="path">ISTQB Foundational Level &nbsp;·&nbsp; §1.2 &nbsp;·&nbsp; Lesson 2 of 5 (Ch. 1) &nbsp;·&nbsp;
+  <a href="0001-1.1-what-is-testing.html">← Back: 1.1</a> &nbsp;·&nbsp;
+  <a href="0003-1.3-testing-principles.html">Next: 1.3 Testing Principles →</a> &nbsp;·&nbsp;
+  <a href="../reference/glossary.html">Glossary ↗</a></span>
+  <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">☾ Dark</button>
+</nav>
+
+<h1>1.2 Why is Testing Necessary?</h1>
+<p class="subtitle">One exam favorite lives here: testing and QA are not the same thing, and the exam loves testing whether you know why.</p>
+<span class="lo-tag">FL-1.2.1 (K2) Exemplify why testing is necessary</span>
+<span class="lo-tag">FL-1.2.2 (K1) Recall the relation between testing and quality assurance</span>
+<span class="lo-tag">FL-1.2.3 (K2) Distinguish between root cause, error, defect, and failure</span>
+
+<h2>Testing's contributions to success (FL-1.2.1)</h2>
+<p>
+  Testing is a form of quality control that helps achieve agreed test objectives within scope, time,
+  quality, and budget constraints. The syllabus highlights three distinct contributions:
+</p>
+<ul>
+  <li><strong>Detecting defects cost-effectively</strong> — removed by debugging (a non-testing activity), so testing indirectly improves quality.</li>
+  <li><strong>Directly evaluating quality</strong> at various SDLC phases, feeding decisions like whether to release.</li>
+  <li><strong>Indirect user representation</strong> — testers stand in for users' needs throughout development, cheaper than involving real users directly.</li>
+</ul>
+<p>Testing may also be required to meet contractual, legal, or regulatory requirements. Crucially, this contribution isn't restricted to the test team — any stakeholder can use testing skills to bring a project closer to success.</p>
+
+<h2>Testing vs. Quality Assurance (FL-1.2.2)</h2>
+<p>People often use "testing" and "QA" interchangeably. The syllabus is explicit that they are not the same:</p>
+
+<div class="compare">
+  <div class="col accent">
+    <h4>Testing</h4>
+    <ul>
+      <li>Product-oriented, corrective</li>
+      <li>A major form of quality control</li>
+      <li>Results used to fix defects</li>
+    </ul>
+  </div>
+  <div class="col good">
+    <h4>Quality Assurance (QA)</h4>
+    <ul>
+      <li>Process-oriented, preventive</li>
+      <li>Good process → good product</li>
+      <li>Results used as feedback on process performance</li>
+      <li>Responsibility of everyone on the project</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout">
+  <strong>Memory hook:</strong> testing is a form of quality <em>control</em> (one of several — others include formal methods, simulation, prototyping). QA is about the <em>process</em> that produces the product, not the product itself.
+</div>
+
+<h2>Errors, defects, failures, root causes (FL-1.2.3)</h2>
+<p>A chain, not synonyms:</p>
+<div class="diagram">
+  <div class="box"><div class="label">Root cause</div><div class="sub">why the mistake happened</div></div>
+  <div class="arrow">→</div>
+  <div class="box"><div class="label">Error</div><div class="sub">a human mistake</div></div>
+  <div class="arrow">→</div>
+  <div class="box"><div class="label">Defect</div><div class="sub">fault/bug in the work product</div></div>
+  <div class="arrow">→</div>
+  <div class="box highlight"><div class="label">Failure</div><div class="sub">if the defect is executed</div></div>
+</div>
+<ul>
+  <li><strong>Error (mistake)</strong> — made by humans, for reasons like time pressure, complexity, tiredness, or lack of training.</li>
+  <li><strong>Defect (fault, bug)</strong> — what an error produces; can live in documentation, source code, or any work product. Undetected defects in earlier work products often lead to defective work products later in the SDLC.</li>
+  <li><strong>Failure</strong> — what happens if a defect is executed and the system does something wrong. Not every defect causes a failure — some always do, some only under specific conditions, some never do.</li>
+  <li><strong>Root cause</strong> — the fundamental reason a problem occurred (e.g. the situation that led to the error). Found via root cause analysis, usually done after a failure or defect is identified, to prevent recurrence.</li>
+</ul>
+<div class="aside">Failures aren't only caused by errors and defects — environmental conditions (e.g. radiation affecting firmware) can cause them too.</div>
+
+<h2>Primary source</h2>
+<p>
+  Read §1.2 "Why is Testing Necessary?" (pages 16–17) of the <em>ISTQB CTFL Syllabus v4.0.1</em> for the
+  exact phrasing — the QA-vs-testing distinction in particular is often quoted near-verbatim in exam
+  questions.
+</p>
+
+<h2>Practice from the mock exams</h2>
+<p>Real questions from Sample Exams A and D, tagged to this section's learning objectives.</p>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · Q2 · FL-1.2.1 · K2</div>
+  <div class="q">Which of the following options shows an example of test activities that contribute to success?</div>
+  <ul class="options">
+    <li><button data-correct="true" data-why="Involving testers from the start of the SDLC increases understanding of design decisions and detects defects early.">Having testers involved during various software development lifecycle (SDLC) activities will help to detect defects in work products</button></li>
+    <li><button data-correct="false" data-why="The opposite is true: both developers and testers benefit from more mutual understanding of each other's work, not from testers staying out of the way.">Testers try not to disturb the developers while coding, so that the developers write better code</button></li>
+    <li><button data-correct="false" data-why="End users don't typically improve defect-report quality at integration/system testing, and users usually aren't involved at those lower test levels anyway.">Testers collaborating with end users help to improve the quality of defect reports during component integration and system testing</button></li>
+    <li><button data-correct="false" data-why="Certification doesn't automatically translate into better test design skill.">Certified testers will design much better test cases than non-certified testers</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A2 · FL-1.2.2 · K1</div>
+  <div class="q">In many software organizations the test department is called the Quality Assurance (QA) department. Is this sentence correct or not and why?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Testing and QA do not mean exactly the same thing — testing is product-oriented/corrective, QA is process-oriented/preventive.">It is correct. Testing and QA mean exactly the same thing</button></li>
+    <li><button data-correct="false" data-why="They cannot be used interchangeably — they focus on different things (product vs. process).">It is correct. These names can be used interchangeably because both testing and QA focus their activities on the same quality issues</button></li>
+    <li><button data-correct="false" data-why="Close, but backwards: QA is the broader process-oriented discipline; testing is the narrower activity focused on demonstrating fitness for purpose and detecting defects.">It is not correct. Testing is something more; testing includes all activities with regard to quality. QA focuses on quality-related processes</button></li>
+    <li><button data-correct="true" data-why="QA is focused on establishing, monitoring, and improving quality-related processes, while testing concentrates on demonstrating fitness for purpose and detecting defects — genuinely different things.">It is not correct. QA is focused on quality-related processes while testing concentrates on demonstrating that a component or system is fit for purpose and to detect defects</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam A · A3 · FL-1.2.3 · K2</div>
+  <div class="q">A phone ringing in a neighboring cubicle distracts a programmer causing him to improperly program the logic that checks the upper boundary of an input variable. Later, during system testing, a tester notices that this input field accepts invalid input values. Which of the following correctly describes an incorrectly coded upper bound?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The root cause is the distraction (the phone ringing) that led to the programmer's mistake, not the code itself.">The root cause</button></li>
+    <li><button data-correct="false" data-why="Accepting invalid input is the failure — the incorrectly coded boundary is what caused it.">A failure</button></li>
+    <li><button data-correct="false" data-why="The error is the mistaken thinking that led to writing the wrong logic — the code itself is the resulting defect.">An error</button></li>
+    <li><button data-correct="true" data-why="The problem sitting in the code — the incorrectly coded upper bound — is the defect.">A defect</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Exam D · Q2 · FL-1.2.3 · K2</div>
+  <div class="q">A designer documents a design for a user interface that does not suitably address disabled users because the designer is tired. The programmer implements the user interface in line with the design but as they are working under severe time pressure, they do not include suitable exception handling in their program code for bonus calculations. When the operational system is used, complaints are made by some disabled users about the interface and the company is subsequently fined by the relevant regulatory authority. No one notices that bonus calculations are sometimes incorrect. Which of the following statements is CORRECT?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="The miscalculation of bonuses is a failure by the system, not a defect.">The miscalculation of bonuses is a defect that occasionally occurs</button></li>
+    <li><button data-correct="false" data-why="The system failing to support disabled users is the failure — the fine is a consequence, not itself a failure (it's the regulatory system working correctly).">The fine received for failing to address some disabled users is a failure</button></li>
+    <li><button data-correct="true" data-why="The error is the mistake made by the programmer, and working under severe time pressure is the root cause of that error — and of the resulting defect.">The programmer working under severe time pressure is a root cause</button></li>
+    <li><button data-correct="false" data-why="The tired designer's mistake is the error; the resulting poor interface design is a design defect, not a 'designer error' embedded in the design.">The design of the user interface includes a designer error</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<div class="quiz">
+  <div class="exam-tag">Drill · Spot the swap · FL-1.2.3</div>
+  <div class="q">After the operational system started crashing on bonus calculations, the developer traced the bug back to a miscoded rounding function and rewrote it correctly. What did debugging fix?</div>
+  <ul class="options">
+    <li><button data-correct="false" data-why="Swap trap: a failure is the past event where the system did the wrong thing — an event that already happened can't be 'fixed,' only prevented from recurring.">The failure</button></li>
+    <li><button data-correct="true" data-why="Debugging locates and removes the defect (the miscoded rounding function) — fixing the fault in the work product is what prevents the failure from recurring.">The defect</button></li>
+    <li><button data-correct="false" data-why="The root cause here would be why the miscoding happened in the first place (e.g. time pressure) — debugging fixes the defect in the code, not the human/process reason it was introduced.">The root cause</button></li>
+    <li><button data-correct="false" data-why="The error was the programmer's past mistake while writing the code — it can't be undone; debugging targets its product, the defect, not the mistake itself.">The error</button></li>
+  </ul>
+  <div class="feedback"></div>
+</div>
+
+<footer class="lesson-footer">
+  <div class="ask">If the error/defect/failure/root-cause chain feels slippery on a specific scenario, describe
+  it to your teacher and ask them to walk through which word applies where.</div>
+  Next up: <a href="0003-1.3-testing-principles.html">§1.3 — Testing Principles →</a>
+</footer>
+
+
+<footer class="istqb-notice">
+  <p><strong>Copyright &amp; Attribution Notice.</strong> This page contains question extracts from the official ISTQB&reg; Certified Tester Foundation Level (CTFL) Sample Exams and wording from the CTFL Syllabus. Sources: ISTQB&reg; CTFL Syllabus v4.0.1; CTFL v4.0 Sample Exam A v1.7 (Questions &amp; Answers); CTFL v4.0 Sample Exam D v1.5 (Questions &amp; Answers).</p>
+  <p>All questions, answers, and syllabus structures are copyrighted by the International Software Testing Qualifications Board (ISTQB&reg;). All rights reserved. The authors and ISTQB&reg; are acknowledged as the source and copyright owners. Extracts, for non-commercial use, from this document may be copied if the source is acknowledged. These extracts are reproduced strictly for non-commercial, educational use in accordance with the ISTQB&reg; Copyright Notice &mdash; see <a href="../../../NOTICE.md">NOTICE</a>. Official documents: <a href="https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/">istqb.org</a>.</p>
+  <p>Unofficial study aid &mdash; not affiliated with, endorsed by, or accredited by ISTQB&reg;. ISTQB&reg; is a registered trademark of the International Software Testing Qualifications Board.</p>
+</footer>
+</div>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
