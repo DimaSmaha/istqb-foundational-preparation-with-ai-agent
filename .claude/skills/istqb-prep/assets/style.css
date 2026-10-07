@@ -1,0 +1,580 @@
+/* Shared stylesheet for the ISTQB Foundational Level lesson series.
+   Tufte-ish: readable serif body, generous whitespace, quiet color.
+   Same variable names as the other topics' stylesheets, own accent, plus dark mode. */
+
+:root {
+  --paper: #fdfcf9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --accent: #2f5fa6;
+  --accent-soft: #e7edf6;
+  --rule: #ddd6c9;
+  --code-bg: #1e1e1e;
+  --code-fg: #f2f2f2;
+  --ok: #2e7d32;
+  --bad: #b3261e;
+  --surface: #ffffff;
+  --measure: 700px;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --mono: "SFMono-Regular", Consolas, Menlo, monospace;
+}
+
+:root[data-theme="dark"] {
+  --paper: #1b1b1d;
+  --ink: #e8e6e1;
+  --ink-soft: #a9a7a0;
+  --accent: #7aa7e0;
+  --accent-soft: #22314a;
+  --rule: #3a3a3d;
+  --code-bg: #121213;
+  --code-fg: #f2f2f2;
+  --ok: #4caf50;
+  --bad: #e57373;
+  --surface: #242426;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 3.5rem 1.5rem 6rem;
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+}
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+nav.crumbs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+nav.crumbs .path { flex: 1 1 auto; }
+nav.crumbs a { color: var(--accent); text-decoration: none; }
+nav.crumbs a:hover { text-decoration: underline; }
+
+.theme-toggle {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  margin: 0 0 0.3rem;
+}
+.subtitle {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+}
+.lo-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 0.15em 0.5em;
+  margin: 0 0.3em 0.3em 0;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 2.8rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+}
+h3 { font-size: 1.05rem; margin-top: 1.8rem; }
+
+p { margin: 0.9rem 0; }
+
+a { color: var(--accent); }
+
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 0.9rem 1.1rem;
+  margin: 1.4rem 0;
+  font-size: 0.97rem;
+}
+.callout strong { color: var(--accent); }
+
+.aside {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--rule);
+  border-bottom: 1px dashed var(--rule);
+  padding: 0.7rem 0;
+  margin: 1.4rem 0;
+}
+
+code, kbd {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre {
+  font-family: var(--mono);
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+ol, ul { padding-left: 1.4rem; }
+li { margin: 0.4rem 0; }
+
+/* --- Flow diagram (box -> arrow -> box) --- */
+.diagram {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 1.8rem 0;
+  padding: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+.diagram .box {
+  flex: 1 1 0;
+  min-width: 130px;
+  text-align: center;
+  padding: 0.9rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper);
+}
+.diagram .box .label {
+  font-family: var(--mono);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.diagram .box .sub { display: block; font-size: 0.72rem; color: var(--ink-soft); margin-top: 0.2rem; }
+.diagram .box.highlight { border-style: dashed; border-color: var(--accent); background: var(--accent-soft); }
+.diagram .arrow { font-size: 1.4rem; color: var(--ink-soft); flex: 0 0 auto; }
+
+.caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: -1rem;
+}
+
+/* --- Side-by-side comparison --- */
+.compare {
+  display: flex;
+  gap: 1rem;
+  margin: 1.6rem 0;
+  flex-wrap: wrap;
+}
+.compare .col {
+  flex: 1 1 200px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+}
+.compare .col h4 {
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+}
+.compare .col.good h4 { color: var(--ok); }
+.compare .col.bad h4 { color: var(--bad); }
+.compare .col.accent h4 { color: var(--accent); }
+.compare .col ul { margin: 0; padding-left: 1.2rem; font-size: 0.9rem; }
+.compare .col li { margin: 0.3rem 0; }
+
+/* --- Quiz widget (used both for comprehension checks and reproduced exam questions) --- */
+.quiz {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  margin: 1.6rem 0;
+  background: var(--surface);
+}
+.quiz .exam-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.15em 0.5em;
+  margin-bottom: 0.6rem;
+}
+.quiz .q { font-weight: bold; margin-bottom: 0.7rem; white-space: pre-line; }
+.quiz .options { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.quiz .options button {
+  width: 100%;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+.quiz .options button:hover { border-color: var(--accent); }
+.quiz .options button.correct { background: #e6f4e6; border-color: var(--ok); color: #1a1a1a; }
+.quiz .options button.incorrect { background: #fbe9e7; border-color: var(--bad); color: #1a1a1a; }
+.quiz .feedback { margin-top: 0.7rem; font-size: 0.9rem; display: none; white-space: pre-line; }
+.quiz .feedback.shown { display: block; }
+.quiz .feedback.ok { color: var(--ok); }
+.quiz .feedback.bad { color: var(--bad); }
+
+/* --- Copy-for-notes button (appended into .feedback once a quiz/quiz-multi is answered) --- */
+.copy-btn {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--serif);
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  color: var(--ink-soft);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--ink); }
+
+/* --- Multi-select quiz (exam questions with "Select TWO options") --- */
+.quiz-multi {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  margin: 1.6rem 0;
+  background: var(--surface);
+}
+.quiz-multi .exam-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.15em 0.5em;
+  margin-bottom: 0.6rem;
+}
+.quiz-multi .q { font-weight: bold; margin-bottom: 0.7rem; white-space: pre-line; }
+.quiz-multi .options { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.quiz-multi .options li {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+}
+.quiz-multi .options li.correct-selected { background: #e6f4e6; border-color: var(--ok); }
+.quiz-multi .options li.correct-missed { background: var(--accent-soft); border-color: var(--accent); }
+.quiz-multi .options li.incorrect-selected { background: #fbe9e7; border-color: var(--bad); }
+.quiz-multi label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.quiz-multi button.check-multi {
+  margin-top: 0.9rem;
+  font-family: var(--serif);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.quiz-multi .feedback { margin-top: 0.7rem; font-size: 0.9rem; display: none; white-space: pre-line; }
+.quiz-multi .feedback.shown { display: block; }
+.quiz-multi .feedback.ok { color: var(--ok); }
+.quiz-multi .feedback.bad { color: var(--bad); }
+
+/* --- Final mock exam: live scoreboard + topic jump index --- */
+#exam-scoreboard {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+#exam-scoreboard.pass { color: var(--ok); border-color: var(--ok); }
+#exam-scoreboard.fail { color: var(--bad); border-color: var(--bad); }
+
+.topic-index {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 1.2rem 0 2rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+.topic-index a { display: block; padding: 0.15rem 0; break-inside: avoid; }
+
+/* --- Exam mode: selected-not-revealed interaction + global submit (exam.js only;
+   these classes/ids never appear in lesson-page markup, so quiz.js pages are unaffected) --- */
+.quiz .options button.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+body.exam-locked .quiz .options button,
+body.exam-locked .quiz-multi .options input[type="checkbox"] {
+  pointer-events: none;
+}
+body.exam-locked .quiz .options button:not(.correct):not(.incorrect) { opacity: 0.6; }
+body.exam-locked .quiz-multi .options li:not(.correct-selected):not(.correct-missed):not(.incorrect-selected) {
+  opacity: 0.75;
+}
+
+.exam-submit-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.exam-progress { flex: 1 1 auto; }
+.exam-timer { font-variant-numeric: tabular-nums; }
+.exam-warning { color: var(--bad); font-family: var(--serif); font-size: 0.85rem; }
+.btn-submit-exam, .btn-retake-exam {
+  font-family: var(--serif);
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+.btn-retake-exam { background: var(--paper); color: var(--ink); }
+
+.exam-results {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  margin: 1.5rem 0 2rem;
+  background: var(--surface);
+}
+.exam-score-summary { font-family: var(--mono); font-size: 1rem; margin-bottom: 1rem; }
+.exam-score-summary.pass { color: var(--ok); }
+.exam-score-summary.fail { color: var(--bad); }
+.topic-breakdown { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.topic-breakdown th, .topic-breakdown td { text-align: left; padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--rule); }
+.topic-breakdown td.pass { color: var(--ok); }
+.topic-breakdown td.fail { color: var(--bad); }
+
+/* --- Recall drill (type-the-word) --- */
+.drill {
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0;
+}
+.drill .task { margin-bottom: 0.6rem; }
+.drill .row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.drill input[type="text"] {
+  flex: 1 1 260px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.drill button.check {
+  font-family: var(--serif);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.drill .result { margin-top: 0.6rem; font-size: 0.9rem; min-height: 1.2em; }
+.drill .result.ok { color: var(--ok); }
+.drill .result.bad { color: var(--bad); }
+.drill .answer { display: none; font-family: var(--mono); margin-top: 0.5rem; background: var(--accent-soft); padding: 0.5rem 0.7rem; border-radius: 6px; }
+.drill .answer.shown { display: block; }
+
+/* --- reveal button --- */
+.reveal-btn {
+  font-family: var(--serif);
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.88rem;
+}
+
+/* --- Match widget (term <-> definition) --- */
+.match {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  margin: 1.6rem 0;
+  background: var(--surface);
+}
+.match .instructions { font-weight: bold; margin-bottom: 0.8rem; }
+.match .columns { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.match .terms, .match .defs {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.match button {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+.match .term { font-weight: bold; }
+.match button:hover:not(:disabled) { border-color: var(--accent); }
+.match button.selected { border-color: var(--accent); background: var(--accent-soft); }
+.match button.matched { background: #e6f4e6; border-color: var(--ok); cursor: default; }
+.match button.incorrect { background: #fbe9e7; border-color: var(--bad); }
+.match button:disabled { opacity: 0.85; }
+.match .match-status { margin-top: 0.8rem; font-size: 0.88rem; color: var(--ink-soft); }
+
+/* --- Recap page: exact-phrasing/description table + missed-question card --- */
+table.recap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0 1.8rem;
+  font-size: 0.92rem;
+}
+table.recap-table th, table.recap-table td {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+table.recap-table th {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--rule);
+}
+table.recap-table td:first-child { width: 46%; }
+table.recap-table td:last-child { color: var(--ink-soft); }
+
+.miss {
+  border-left: 3px solid var(--bad);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+.miss .miss-q { font-weight: bold; margin-bottom: 0.5rem; }
+.miss .miss-wrong { color: var(--bad); }
+.miss .miss-right { color: var(--ok); }
+.miss .miss-why { color: var(--ink-soft); margin-top: 0.4rem; }
+
+footer.lesson-footer {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+footer.lesson-footer .ask {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1rem;
+}
+
+footer.istqb-notice {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+footer.istqb-notice p { margin: 0 0 0.5rem; }
+footer.istqb-notice a { color: var(--accent); }
+
+@media print {
+  :root, :root[data-theme="dark"] {
+    --paper: #ffffff; --ink: #1a1a1a; --ink-soft: #4a4a4a; --accent: #2f5fa6;
+    --accent-soft: #e7edf6; --rule: #ddd6c9; --surface: #ffffff;
+  }
+  body { padding: 0; background: #fff; }
+  .quiz .options, .match .columns, .reveal-btn, .drill .row, .theme-toggle, .copy-btn,
+  .quiz-multi .options input, .quiz-multi .check-multi, .exam-submit-bar { display: none; }
+  .drill .answer, .quiz .feedback, .quiz-multi .feedback, .exam-results { display: block !important; }
+  nav.crumbs { display: block; }
+}
